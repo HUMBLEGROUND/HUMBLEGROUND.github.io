@@ -1,0 +1,221 @@
+I"'<p><img src="https://velog.velcdn.com/images/-__-/post/b6d953b3-0af7-4929-bc06-208b962e9137/image.png" alt="" /></p>
+
+<h2 id="kip-17-기반-nft-만들기-클레이튼-개발-환경에서-nft-개발">KIP-17 기반 NFT 만들기 (클레이튼 개발 환경에서 NFT 개발)</h2>
+
+<h3 id="kip-17-이란">KIP-17 이란?</h3>
+
+<ul>
+  <li>
+    <p>KIP-17은 <strong>Klaytn Improvement Proposals-17</strong> 의 약자<br />
+👉 클레이튼의 <u>17번째 개선 제안</u>이다</p>
+  </li>
+  <li>
+    <p>KIP는 <span style="background-color:#34CDEF; color:#000;">클레이튼 블록체인 네트워크에서 발행되는 <strong>토큰(token)의 표준</strong></span></p>
+  </li>
+  <li>
+    <p>KIP-17은 ERC-721 토큰에서 파생되었다</p>
+  </li>
+  <li>
+    <p><span style="background-color:#F7969A; color:#000;">‘KIP-17’ 기반으로 발행된 토큰은 <strong>대체가 불가능</strong>하다</span><br />
+👉 <u>대체 불가능 토큰 (NFT, Non-Fungible Token)</u></p>
+  </li>
+</ul>
+
+<p><a href="http://wavescats.github.io/blockchain/2022/05/26/bc40.html">http://wavescats.github.io/blockchain/2022/05/26/bc40.html</a><br />
+👆 (KIP-17 정리 참고)</p>
+
+<hr />
+
+<h3 id="baobab-테스트넷에-kip-17-토큰-만들고-배포하기">Baobab 테스트넷에 KIP-17 토큰 만들고 배포하기</h3>
+
+<ol>
+  <li>카이카스에 접속하고, <strong>Baobab 테스트넷</strong> 을 선택한다</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c5b68e15-501f-45f6-a9f1-32a46a491eeb/image.gif" alt="" /></p>
+
+<hr />
+
+<ol>
+  <li><strong>Baobab 테스트넷</strong> 에서 사용할 테스트용 KLAY 를 받는다
+https://baobab.wallet.klaytn.foundation/faucet
+(Baobab 테스트넷 클레이튼 Faucet 👆)
+👉 <strong>24시간마다 테스트용 150 klay 를 받을수 있다</strong></li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/4397731e-8ec3-4fe9-a49a-2d8d35d43d23/image.png" alt="" /></p>
+
+<hr />
+
+<ol>
+  <li>Klaytn IDE에서 <code class="language-plaintext highlighter-rouge">KlaytnNFT.sol</code> 파일을 생성 후 <strong>‘KIP-17’</strong> 코드를 입력한다
+https://ide.klaytn.foundation/ (👈 Klaytn IDE 사이트)</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/65ead24e-9598-4bfe-980a-6e760cea2e72/image.png" alt="" /></p>
+
+<hr />
+
+<ol>
+  <li>EVM VERSION 을 👉 byzantium 으로 선택 후 컴파일 한다</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b66942b8-c079-4e87-b057-924bf8786524/image.gif" alt="" /></p>
+
+<hr />
+
+<ol>
+  <li>DEPLOY &amp; RUN TRANSACTIONS 에서 CONTRACT 배포하려는 <code class="language-plaintext highlighter-rouge">MyNFTs</code> 컨트랙트를 선택한다</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/6ec26ce9-12d8-4e83-8990-dc75866ec0a4/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>5-1. ENVIRONMENT 부분을
+<u>**Baobab**로 변경</u>하여 <strong>‘카이카스’</strong>와 연동한다<br />
+5-2. Account 옆에있는 + 버튼을 눌러서
+발급받은 <strong>개인키</strong>를 입력한다<br />
+5-3. 설정이 완료되면 <strong>Deploy</strong> 버튼을 누른다</p>
+</blockquote>
+
+<h3 id="-kaikas-지갑에서-개인키를-발급받는-방법">🔐 Kaikas 지갑에서 <strong>개인키</strong>를 발급받는 방법</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ea31b0d8-c7e7-4693-b054-684fddf71fbc/image.png" alt="" /><img src="https://velog.velcdn.com/images/-__-/post/f5d65c34-a111-44ea-936b-942a8e34a7c1/image.png" alt="" /></p>
+
+<hr />
+
+<ol>
+  <li>배포된 함수중에 <code class="language-plaintext highlighter-rouge">mintNFT</code> 를 선택해서 빈칸을 입력한다</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/36ee3f86-3bca-42dc-a9fa-7248a33304ed/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>tokenURI 에는 <strong>NFT화 시킬 이미지</strong>가 저장되어있는 <strong>‘주소’</strong>를 입력하면 된다
+CID를 붙여넣는데 앞에 <code class="language-plaintext highlighter-rouge">ipfs://</code> 를 꼭 써줘야한다 👆</p>
+</blockquote>
+
+<hr />
+
+<h3 id="-tokenuri-에-입력할-주소-적는법">💻 tokenURI 에 입력할 주소 적는법</h3>
+
+<p>6-1. IPFS 분산저장소인 pinata 사이트에 접속해서
+https://www.pinata.cloud/ (👈 pinata 사이트)</p>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/10d1a52d-42c0-46e3-899c-9149b954042b/image.png" alt="" /><img src="https://velog.velcdn.com/images/-__-/post/88310fdf-e3a8-49a1-84f8-d9b7760650ad/image.png" alt="" />
+6-2. NFT로 만들 이미지를 업로드 한다 👆</p>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8dda0da0-4cdd-47ea-8032-6bab61f07357/image.png" alt="" />6-3. 업로드한 이미지의 CID를 복사해서 <strong>‘json 파일’</strong>로 만들어야한다 👆</p>
+
+<hr />
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">attributes</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">trait_type</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Breed</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Maltipoo</span><span class="dl">"</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">trait_type</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Eye color</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Mocha</span><span class="dl">"</span>
+    <span class="p">}</span> <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">The world's most adorable and sensitive pup.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">image</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">ipfs://이부분에 CID 를 복사해서 넣음</span><span class="dl">"</span><span class="p">,</span><span class="err">👈</span>
+    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">이름 지정하기</span><span class="dl">"</span> <span class="err">👈</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>6-4. **“image” **에 CID를 붙여넣는데 앞에 <code class="language-plaintext highlighter-rouge">ipfs://</code> 를 꼭 써줘야한다 👆</p>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0fe0dee2-e93b-4ac1-bd4b-7c618e720408/image.png" alt="" />
+6-5. 그리고 작성한 <strong>json 파일</strong> 을 업로드 👆</p>
+
+<hr />
+
+<ol>
+  <li><strong>‘OpenSea 테스트넷’</strong> 에 들어가서 카이카스 지갑연결을 하고 보면
+NFT가 정상적으로 발행된걸 확인 할 수 있다
+https://testnets.opensea.io/ (👈 OpenSea 테스트넷 사이트)</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2609913f-b7f1-4118-a994-371a34557360/image.png" alt="" /></p>
+
+<hr />
+
+<ol>
+  <li><strong>‘OpenSea 테스트넷’</strong> 에서 내가 발행한 NFT의 컨트랙트를 바로 확인할수도 있다</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3bd99272-d174-4c8d-8fd7-c83d7c7a5c01/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>https://baobab.scope.klaytn.com/tx/0xa0382453e6649400638804b8cdbfdb257a6d0c4feb88d8f311b692f20d1b64e0?tabId=nftTransfer
+👆 (바오밥 테스트넷에 NFT를 발행한 트랜잭션 컨트랙트 주소)</p>
+</blockquote>
+
+<hr />
+
+<h3 id="kip-17-기반-토큰을-만들기-위한-코드">KIP-17 기반 토큰을 만들기 위한 코드</h3>
+
+<p>https://github.com/wavescats/solidity-study/blob/main/KIP-17%20%EA%B8%B0%EB%B0%98%20NFT%20%EB%A7%8C%EB%93%A4%EA%B8%B0/MyNFTs.sol
+👆 (코드가 길어서 링크 첨부)</p>
+
+<hr />
+
+<h3 id="코딩-없이-nft-발행하는-사이트">코딩 없이 NFT 발행하는 사이트</h3>
+
+<p>https://www.krafter.space/ko/explore
+👆 (크래프터 스페이스)</p>
+
+<ul>
+  <li>그라운드 X 에서 만든 사이트</li>
+  <li>클레이튼기반 NFT 발행은 <strong>‘크래프터 스페이스’</strong> 사이트에서 쉽게 할 수 있다</li>
+</ul>
+
+<blockquote>
+  <h3 id="준비물">준비물</h3>
+
+  <p>회원 가입 후 <br /></p>
+</blockquote>
+
+<ol>
+  <li>카이카스 지갑 주소</li>
+  <li>NFT화 시킬 이미지 (600px 이상의 크기)</li>
+</ol>
+
+<hr />
+
+<h3 id="개발-회고-">개발 회고 💡</h3>
+
+<p>KIP-17 기반으로 NFT 만들기 🪙</p>
+
+<p>클레이튼 기반 NFT는
+그라운드 X 에서 만든 코딩 없이 NFT 발행하는 사이트도 있었다
+개발이 아닌 창작물들은 이렇게 발행해도 괜찮겠는걸 😎</p>
+
+<p>공개된 코드들도 내가 직접 NFT를 만들어보니까
+생각보다 재미있고 쉬웠다
+여기에 경쟁력을 갖출만한 기술적인 코드가 추가되어야 되겠지!</p>
+
+<p>코인과 NFT를 발행하는 것은 생각보다 쉬워서
+기술적인 아이디어와 디자인적인 부분,
+그 가치를 뒷받침하는 커뮤니티의 형성,
+마케팅이 더 중요할거라는 생각이 들었다</p>
+
+<p>틈틈이 배워둬야지 ✍</p>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>https://www.youtube.com/watch?v=X_61rLj9hfw
+(KIP-17 기반 NFT A-Z 만들기)</li>
+</ul>
+
+<hr />
+:ET

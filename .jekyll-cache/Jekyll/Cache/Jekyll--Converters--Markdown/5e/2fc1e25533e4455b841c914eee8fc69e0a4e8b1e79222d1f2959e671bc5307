@@ -1,0 +1,358 @@
+I"�y<p><img src="https://velog.velcdn.com/images/-__-/post/9e1e5237-a65b-4c45-82f8-d77beb566096/image.png" alt="" /></p>
+
+<h2 id="erc-20-기반-토큰코인-만들기">ERC-20 기반 토큰(코인) 만들기</h2>
+
+<h3 id="ropsten-테스트넷에-erc-20-토큰-만들고-배포하기">Ropsten 테스트넷에 ERC-20 토큰 만들고 배포하기</h3>
+
+<p>-1. 메타마스크에 접속하고, <strong>Ropsten 테스트 네트워크</strong>를 선택한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/21f62a38-c9d3-4d35-bc77-e3633bd591c1/image.png" alt="" /></p>
+
+<hr />
+
+<p>-2. Remix IDE 에서 <code class="language-plaintext highlighter-rouge">SimpleToken.sol</code> 파일을 생성한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/169f7e5f-99a3-4b03-a352-e53ebd4b4fd6/image.png" alt="" /></p>
+
+<hr />
+
+<p>-3. ERC-20 코드를 입력한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/e1521970-48aa-4279-8611-c7e4b00ff503/image.png" alt="" /></p>
+
+<hr />
+
+<p>-4. <code class="language-plaintext highlighter-rouge">SimpleToken.sol</code> 파일을 컴파일한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/db418a21-6fb2-4430-8745-227a3193bb27/image.png" alt="" /></p>
+
+<hr />
+
+<p>-5. DEPLOY &amp; RUN TRANSACTIONS 항목으로 이동한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/555e0f7e-ec92-4187-a168-7ca207a9c8af/image.png" alt="" /></p>
+
+<blockquote>
+  <p>5-1. ENVIRONMENT 부분을
+<u>**Injected Web3**로 변경</u>하여 <strong>‘메타마스크’</strong>와 연동한다
+<br />
+5-2. DEPLOY에 들어갈 인자값을 입력한다</p>
+</blockquote>
+
+<ul>
+  <li>GETNAME 👉 코인이름</li>
+  <li>GETSYMBOL 👉 코인이름약자
+<br />
+5-3. 설정이 완료되면 <strong>transact</strong> 버튼을 누른다</li>
+</ul>
+
+<hr />
+
+<p>-6. 메타마스크에서 <strong>계약 생성</strong>에 대한 내역을 확인하고, 확인 버튼을 눌러 진행한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/dbfe0be3-5d6f-4428-a054-2f78afc8f018/image.png" alt="" /></p>
+
+<hr />
+
+<p>-7. 계약 생성이 완료되면 Remix IDE 내에 <strong>Deployed Contracts</strong>에서 계약을 확인할 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/e6e97a33-ffdd-4156-924c-d9f1db161d42/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>‘컨트랙트 해쉬 주소’</strong>를 복사하여 이더스캔에서 컨트랙트 정보를 확인 할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<p>-8. 메타마스크 하단의 <strong>토큰 가져오기 (Import tokens)</strong>를 클릭한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/5a1b4a24-83ab-46b6-899d-c34cc3538e66/image.png" alt="" /></p>
+
+<hr />
+
+<p>-9. 토큰 계약 주소에는 Remix IDE에서 복사한 주소를 입력한 후,
+<strong>‘맞춤형 토큰 추가(Add Custom Token)’</strong> 버튼을 누른다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8d7a06c6-6940-4a00-b198-bda21908ce69/image.png" alt="" /></p>
+
+<hr />
+
+<p>-10. ERC-20 코드의 설정한 <strong>‘총 발행량 (totalSupply)’</strong> 개수만큼
+잔액이 적용된 토큰을 확인 할 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/9f659acd-2f82-49e4-8fac-071078aa4dac/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="erc-20-기반-토큰을-만들기-위한-함수">ERC-20 기반 토큰을 만들기 위한 함수</h3>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">totalSupply</code> 👉 해당 스마트 컨트랙트 기반 ERC-20 토큰의 **총 발행량 **확인</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">balanceOf</code> 👉 owner가 가지고 있는 토큰의 <strong>보유량 확인</strong></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">transfer</code> 👉 토큰을 <strong>전송</strong></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">approve</code> 👉 spender 에게 value 만큼의 토큰을 <strong>인출할 권리를 부여</strong>. 이 함수를 이용할 때는 반드시 Approval 이벤트 함수를 호출해야 함</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">allowance</code> 👉 owner가 spender에게 양도 설정한 <strong>토큰의 양을 확인</strong></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">transferFrom</code> 👉 spender가 거래 가능하도록 양도 받은 <strong>토큰을 전송</strong></p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/12679e59-86be-41a5-93db-7673c9a55143/image.png" alt="" /></p>
+
+<blockquote>
+  <p>_ERC-20에서는 토큰의 owner가 직접 토큰을 다른 사람에게 전송할 수도 있지만, 토큰을 양도할 만큼 등록해두고, 필요할 때 제삼자를 통해 토큰을 양도할 수 있습니다.<br /> &gt; <u>직접 토큰을 다른 사람에게 전송할 때는 transfer 함수를 사용</u>하고, <u>토큰을 등록하는 방식을 사용하는 경우, approve, allowance, transferFrom 함수를 사용</u>합니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="erc-20-기반-토큰을-만들기-위한-코드">ERC-20 기반 토큰을 만들기 위한 코드</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
+<span class="nx">pragma</span> <span class="nx">solidity</span> <span class="o">&gt;=</span><span class="mf">0.5</span><span class="p">.</span><span class="mi">0</span> <span class="o">&lt;</span><span class="mf">0.9</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// 솔리디티에서 'Interface'는 사용할 함수의 형태를 선언한다</span>
+<span class="c1">// 실제 함수의 내용은 Contract에서 사용한다</span>
+<span class="c1">// 👉 'ERC20Interface'는 'SimpleToken' 컨트랙트에서 사용할 함수의 형태를 선언하며,</span>
+<span class="c1">// 'ERC-20' 에서 사용하는 함수들의 형태를 선언한 것을 확인할 수 있다</span>
+
+<span class="kr">interface</span> <span class="nx">ERC20Interface</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">totalSupply</span><span class="p">()</span> <span class="nx">external</span> <span class="nx">view</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint256</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span> <span class="nx">account</span><span class="p">)</span> <span class="nx">external</span> <span class="nx">view</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint256</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">transfer</span><span class="p">(</span><span class="nx">address</span> <span class="nx">recipient</span><span class="p">,</span> <span class="nx">uint256</span> <span class="nx">amount</span><span class="p">)</span>
+        <span class="nx">external</span>
+        <span class="nx">returns</span> <span class="p">(</span><span class="nx">bool</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">approve</span><span class="p">(</span><span class="nx">address</span> <span class="nx">spender</span><span class="p">,</span> <span class="nx">uint256</span> <span class="nx">amount</span><span class="p">)</span> <span class="nx">external</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">bool</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">allowance</span><span class="p">(</span><span class="nx">address</span> <span class="nx">owner</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">spender</span><span class="p">)</span>
+        <span class="nx">external</span>
+        <span class="nx">view</span>
+        <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint256</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">transferFrom</span><span class="p">(</span>
+        <span class="nx">address</span> <span class="nx">spender</span><span class="p">,</span>
+        <span class="nx">address</span> <span class="nx">recipient</span><span class="p">,</span>
+        <span class="nx">uint256</span> <span class="nx">amount</span>
+    <span class="p">)</span> <span class="nx">external</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">bool</span><span class="p">);</span>
+
+    <span class="c1">// 함수(function)는 이더리움에서 제공하는 함수이며, event는 이더리움에서 제공하는 로그이다</span>
+    <span class="c1">// 'function'과 'event'를 선언할 때는 입력값과 반환값은 선택할 수 있으나,</span>
+    <span class="c1">// 'function'의 자료형 / 이름 / 순서를 주의해야 한다</span>
+
+    <span class="nx">event</span> <span class="nx">Transfer</span><span class="p">(</span><span class="nx">address</span> <span class="nx">indexed</span> <span class="k">from</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">indexed</span> <span class="nx">to</span><span class="p">,</span> <span class="nx">uint256</span> <span class="nx">amount</span><span class="p">);</span>
+    <span class="nx">event</span> <span class="nx">Transfer</span><span class="p">(</span>
+        <span class="nx">address</span> <span class="nx">indexed</span> <span class="nx">spender</span><span class="p">,</span>
+        <span class="nx">address</span> <span class="nx">indexed</span> <span class="k">from</span><span class="p">,</span>
+        <span class="nx">address</span> <span class="nx">indexed</span> <span class="nx">to</span><span class="p">,</span>
+        <span class="nx">uint256</span> <span class="nx">amount</span>
+    <span class="p">);</span>
+    <span class="nx">event</span> <span class="nx">Approval</span><span class="p">(</span>
+        <span class="nx">address</span> <span class="nx">indexed</span> <span class="nx">owner</span><span class="p">,</span>
+        <span class="nx">address</span> <span class="nx">indexed</span> <span class="nx">spender</span><span class="p">,</span>
+        <span class="nx">uint256</span> <span class="nx">oldAmount</span><span class="p">,</span>
+        <span class="nx">uint256</span> <span class="nx">amount</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 'ERC20Interface'의 ⭐ 'Transfer' 이벤트는 토큰이 이동할 때마다 로그를 남기고,</span>
+<span class="c1">// ⭐ 'Approval' 이벤트는 'approve' 함수가 실행 될 때 로그를 남긴다</span>
+
+<span class="c1">//-------------------------------------------------------------------</span>
+
+<span class="nx">contract</span> <span class="nx">SimpleToken</span> <span class="nx">is</span> <span class="nx">ERC20Interface</span> <span class="p">{</span>
+    <span class="c1">// contract SimpleToken 뒤에 'is ERC20Interface'를 붙여서</span>
+    <span class="c1">// SimpleToken 컨트랙트가 'ERC20Interface' 함수를 사용할 수 있다고 선언한다</span>
+    <span class="c1">// 이렇게 사용하면 'SimpleToken' 안에서 'ERC20Interface'에 선언된 함수와 이벤트를 사용할 수 있다</span>
+
+    <span class="nx">mapping</span><span class="p">(</span><span class="nx">address</span> <span class="o">=&gt;</span> <span class="nx">uint256</span><span class="p">)</span> <span class="kr">private</span> <span class="nx">_balances</span><span class="p">;</span>
+    <span class="nx">mapping</span><span class="p">(</span><span class="nx">address</span> <span class="o">=&gt;</span> <span class="nx">mapping</span><span class="p">(</span><span class="nx">address</span> <span class="o">=&gt;</span> <span class="nx">uint256</span><span class="p">))</span> <span class="kr">public</span> <span class="nx">_allowances</span><span class="p">;</span>
+    <span class="c1">// 이중으로 매핑된 approvals를 확인할 수 있다</span>
+
+    <span class="nx">uint256</span> <span class="kr">public</span> <span class="nx">_totalSupply</span><span class="p">;</span> <span class="c1">// 토큰 총발행량</span>
+    <span class="nx">string</span> <span class="kr">public</span> <span class="nx">_name</span><span class="p">;</span> <span class="c1">// 토큰 이름</span>
+    <span class="nx">string</span> <span class="kr">public</span> <span class="nx">_symbol</span><span class="p">;</span> <span class="c1">// 토큰 약자</span>
+    <span class="nx">uint8</span> <span class="kr">public</span> <span class="nx">_decimals</span><span class="p">;</span> <span class="c1">// 18진수</span>
+    <span class="nx">uint256</span> <span class="kr">private</span> <span class="nx">E18</span> <span class="o">=</span> <span class="mi">1000000000000000000</span><span class="p">;</span> <span class="c1">// 토큰 총발행량 설정</span>
+
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">string</span> <span class="nx">memory</span> <span class="nx">getName</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">memory</span> <span class="nx">getSymbol</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">_name</span> <span class="o">=</span> <span class="nx">getName</span><span class="p">;</span>
+        <span class="nx">_symbol</span> <span class="o">=</span> <span class="nx">getSymbol</span><span class="p">;</span>
+        <span class="nx">_decimals</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+        <span class="nx">_totalSupply</span> <span class="o">=</span> <span class="mi">100000000</span> <span class="o">*</span> <span class="nx">E18</span><span class="p">;</span>
+        <span class="nx">_balances</span><span class="p">[</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_totalSupply</span><span class="p">;</span> <span class="c1">// 추가</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">name</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">string</span> <span class="nx">memory</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">_name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">symbol</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">string</span> <span class="nx">memory</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">_symbol</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">decimals</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint8</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">_decimals</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">totalSupply</span><span class="p">()</span> <span class="nx">external</span> <span class="nx">view</span> <span class="nx">virtual</span> <span class="nx">override</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint256</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">_totalSupply</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 👉 totalSupply는 토큰의 총 발행량을 반환한다</span>
+
+    <span class="kd">function</span> <span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span> <span class="nx">account</span><span class="p">)</span>
+        <span class="nx">external</span>
+        <span class="nx">view</span>
+        <span class="nx">virtual</span>
+        <span class="nx">override</span>
+        <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint256</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">_balances</span><span class="p">[</span><span class="nx">account</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 👉 balanceOf는 매핑된 값인 '_balanceOf'에서 입력한 address인 account가 가지고있는 토큰의 수를 리턴한다</span>
+
+    <span class="kd">function</span> <span class="nx">transfer</span><span class="p">(</span><span class="nx">address</span> <span class="nx">recipient</span><span class="p">,</span> <span class="nx">uint256</span> <span class="nx">amount</span><span class="p">)</span>
+        <span class="kr">public</span>
+        <span class="nx">virtual</span>
+        <span class="nx">override</span>
+        <span class="nx">returns</span> <span class="p">(</span><span class="nx">bool</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">_transfer</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">,</span> <span class="nx">recipient</span><span class="p">,</span> <span class="nx">amount</span><span class="p">);</span>
+        <span class="nx">emit</span> <span class="nx">Transfer</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">,</span> <span class="nx">recipient</span><span class="p">,</span> <span class="nx">amount</span><span class="p">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 👉 transfer는 내부 함수인 '_transfer'를 호출한다</span>
+    <span class="c1">// 호출이 정상적으로 완료되었을 경우 Transfer event를 발생시킴</span>
+
+    <span class="kd">function</span> <span class="nx">allowance</span><span class="p">(</span><span class="nx">address</span> <span class="nx">owner</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">spender</span><span class="p">)</span>
+        <span class="nx">external</span>
+        <span class="nx">view</span>
+        <span class="nx">override</span>
+        <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint256</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">_allowances</span><span class="p">[</span><span class="nx">owner</span><span class="p">][</span><span class="nx">spender</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="c1">// allowance는 입력한 두개의 주소값에 대한 '_allowances'값,</span>
+    <span class="c1">// 다시말해 '내가(owner)'가 '토큰을 양도할 상대방(spender)'에게 토큰을 등록한 양을 반환한다</span>
+
+    <span class="kd">function</span> <span class="nx">approve</span><span class="p">(</span><span class="nx">address</span> <span class="nx">spender</span><span class="p">,</span> <span class="nx">uint256</span> <span class="nx">amount</span><span class="p">)</span>
+        <span class="nx">external</span>
+        <span class="nx">virtual</span>
+        <span class="nx">override</span>
+        <span class="nx">returns</span> <span class="p">(</span><span class="nx">bool</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nx">uint256</span> <span class="nx">currentAllowance</span> <span class="o">=</span> <span class="nx">_allowances</span><span class="p">[</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">][</span><span class="nx">spender</span><span class="p">];</span>
+        <span class="nx">require</span><span class="p">(</span>
+            <span class="nx">_balances</span><span class="p">[</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nx">amount</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">ERC20: The amount to be transferred exceeds the amount of tokens held by the owner.</span><span class="dl">"</span>
+        <span class="p">);</span>
+        <span class="nx">_approve</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">,</span> <span class="nx">spender</span><span class="p">,</span> <span class="nx">currentAllowance</span><span class="p">,</span> <span class="nx">amount</span><span class="p">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">transferFrom</span><span class="p">(</span>
+        <span class="nx">address</span> <span class="nx">sender</span><span class="p">,</span>
+        <span class="nx">address</span> <span class="nx">recipient</span><span class="p">,</span>
+        <span class="nx">uint256</span> <span class="nx">amount</span>
+    <span class="p">)</span> <span class="nx">external</span> <span class="nx">virtual</span> <span class="nx">override</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">_transfer</span><span class="p">(</span><span class="nx">sender</span><span class="p">,</span> <span class="nx">recipient</span><span class="p">,</span> <span class="nx">amount</span><span class="p">);</span>
+        <span class="nx">emit</span> <span class="nx">Transfer</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">,</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">recipient</span><span class="p">,</span> <span class="nx">amount</span><span class="p">);</span>
+        <span class="nx">uint256</span> <span class="nx">currentAllowance</span> <span class="o">=</span> <span class="nx">_allowances</span><span class="p">[</span><span class="nx">sender</span><span class="p">][</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">];</span>
+        <span class="nx">require</span><span class="p">(</span>
+            <span class="nx">currentAllowance</span> <span class="o">&gt;=</span> <span class="nx">amount</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">ERC20: transfer amount exceeds allowance</span><span class="dl">"</span>
+        <span class="p">);</span>
+        <span class="nx">_approve</span><span class="p">(</span>
+            <span class="nx">sender</span><span class="p">,</span>
+            <span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">,</span>
+            <span class="nx">currentAllowance</span><span class="p">,</span>
+            <span class="nx">currentAllowance</span> <span class="o">-</span> <span class="nx">amount</span>
+        <span class="p">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 👉 transferFrom은 양도를 수행하는 거래 대행자(msg.sender)가 sender가 허락해준 값만큼 상대방(recipient)에게 토큰을 이동한다</span>
+    <span class="c1">// 이동을 위해 _transfer 함수를 실행시킨다</span>
+    <span class="c1">// '_transfer' 에서는 양도를 하는 sender의 잔고를 amount만큼 줄이고, recipient의 잔고를 amount만큼 늘린다</span>
+    <span class="c1">// '_transfer' 함수 실행이 완료되고, require를 모두 통과한다면 currentAllowance를 체크하여 _approve 함수를 실행한다</span>
+
+    <span class="kd">function</span> <span class="nx">_transfer</span><span class="p">(</span>
+        <span class="nx">address</span> <span class="nx">sender</span><span class="p">,</span>
+        <span class="nx">address</span> <span class="nx">recipient</span><span class="p">,</span>
+        <span class="nx">uint256</span> <span class="nx">amount</span>
+    <span class="p">)</span> <span class="nx">internal</span> <span class="nx">virtual</span> <span class="p">{</span>
+        <span class="nx">require</span><span class="p">(</span><span class="nx">sender</span> <span class="o">!=</span> <span class="nx">address</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="dl">"</span><span class="s2">ERC20: transfer from the zero address</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">require</span><span class="p">(</span><span class="nx">recipient</span> <span class="o">!=</span> <span class="nx">address</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="dl">"</span><span class="s2">ERC20: transfer to the zero address</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">uint256</span> <span class="nx">senderBalance</span> <span class="o">=</span> <span class="nx">_balances</span><span class="p">[</span><span class="nx">sender</span><span class="p">];</span>
+        <span class="nx">require</span><span class="p">(</span>
+            <span class="nx">senderBalance</span> <span class="o">&gt;=</span> <span class="nx">amount</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">ERC20: transfer amount exceeds balance</span><span class="dl">"</span>
+        <span class="p">);</span>
+        <span class="nx">_balances</span><span class="p">[</span><span class="nx">sender</span><span class="p">]</span> <span class="o">=</span> <span class="nx">senderBalance</span> <span class="o">-</span> <span class="nx">amount</span><span class="p">;</span>
+        <span class="nx">_balances</span><span class="p">[</span><span class="nx">recipient</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">amount</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// _transfer는 require를 통해 세가지 조건을 검사한다</span>
+    <span class="c1">// 1. 보내는 사람의 주소가 잘못되었는지 체크한다</span>
+    <span class="c1">// 2. 받는사람의 주소가 잘못되었는지 체크한다</span>
+    <span class="c1">// 3. transfer 함수를 실행한 사람(sender)이 가진 토큰(senderBalance)이 신청한 값(amount)보다 많은 토큰을 가지고 있는지 체크한다</span>
+    <span class="c1">// 👉 위의 세 조건을 충족하는 경우,</span>
+    <span class="c1">// 실행한 사람(sender)이 가진 토큰의 지갑에서 토큰을 개수만큼 빼고,</span>
+    <span class="c1">// 받을 사람(recipient)의 토큰 지갑에 개수만큼 더해준다</span>
+
+    <span class="kd">function</span> <span class="nx">_approve</span><span class="p">(</span>
+        <span class="nx">address</span> <span class="nx">owner</span><span class="p">,</span>
+        <span class="nx">address</span> <span class="nx">spender</span><span class="p">,</span>
+        <span class="nx">uint256</span> <span class="nx">currentAmount</span><span class="p">,</span>
+        <span class="nx">uint256</span> <span class="nx">amount</span>
+    <span class="p">)</span> <span class="nx">internal</span> <span class="nx">virtual</span> <span class="p">{</span>
+        <span class="nx">require</span><span class="p">(</span><span class="nx">owner</span> <span class="o">!=</span> <span class="nx">address</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="dl">"</span><span class="s2">ERC20: approve from the zero address</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">require</span><span class="p">(</span><span class="nx">spender</span> <span class="o">!=</span> <span class="nx">address</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="dl">"</span><span class="s2">ERC20: approve to the zero address</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">require</span><span class="p">(</span>
+            <span class="nx">currentAmount</span> <span class="o">==</span> <span class="nx">_allowances</span><span class="p">[</span><span class="nx">owner</span><span class="p">][</span><span class="nx">spender</span><span class="p">],</span>
+            <span class="dl">"</span><span class="s2">ERC20: invalid currentAmount</span><span class="dl">"</span>
+        <span class="p">);</span>
+        <span class="nx">_allowances</span><span class="p">[</span><span class="nx">owner</span><span class="p">][</span><span class="nx">spender</span><span class="p">]</span> <span class="o">=</span> <span class="nx">amount</span><span class="p">;</span>
+        <span class="nx">emit</span> <span class="nx">Approval</span><span class="p">(</span><span class="nx">owner</span><span class="p">,</span> <span class="nx">spender</span><span class="p">,</span> <span class="nx">currentAmount</span><span class="p">,</span> <span class="nx">amount</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// 내부 함수인 _approve를 호출한다</span>
+    <span class="c1">//_approve에서는 내가 토큰을 양도할 상대방(spender)에게 양도할 값(amount)를 allowances에 기록한다</span>
+    <span class="c1">// 그리고 Approval event를 호출하여 기록한다</span>
+    <span class="c1">// 이 상태에서는 양도가 실제로 이루어진 것이 아니라, 양도를 할 주소와 양을 정한 것이다</span>
+    <span class="c1">// 👉 approve는 단순 변경을 위한 함수이기 때문에 내부적으로 값을 올리고,</span>
+    <span class="c1">// 내리는 'increaseApproval'과 / 'decreaseApproval' 함수를 사용하기도 한다</span>
+    <span class="c1">// approve 는 spender 가 당신의 계정으로부터 amount 한도 하에서 여러 번 출금하는 것을 허용합니다.</span>
+    <span class="c1">// 이 함수를 여러번 호출하면, 단순히 허용량을 amount 으로 재설정한다</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="더-공부할-내용-">더 공부할 내용 📃</h3>
+
+<ul>
+  <li>SafeMath</li>
+  <li>오버플로(Overflow)</li>
+  <li>언더플로(Underflow)</li>
+  <li>OwnerHelper</li>
+  <li>TokenLock</li>
+</ul>
+
+<hr />
+:ET

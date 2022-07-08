@@ -1,0 +1,97 @@
+I"2<p><img src="https://velog.velcdn.com/images/-__-/post/8c38d2b1-2399-443a-9842-e88fbb4cfbca/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/898f1bf5-574b-4fba-ba70-eac58c300f3d/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>KIP-17은 <strong>Klaytn Improvement Proposals-17</strong> 의 약자<br />
+👉 클레이튼의 <u>17번째 개선 제안</u>이다</p>
+  </li>
+  <li>
+    <p>KIP는 <span style="background-color:#34CDEF; color:#000;">클레이튼 블록체인 네트워크에서 발행되는 <strong>토큰(token)의 표준</strong></span></p>
+  </li>
+  <li>
+    <p>KIP-17은 ERC-721 토큰에서 파생되었다</p>
+  </li>
+  <li>
+    <p><span style="background-color:#F7969A; color:#000;">‘KIP-17’ 기반으로 발행된 토큰은 <strong>대체가 불가능</strong>하다</span><br />
+👉 <u>대체 불가능 토큰 (NFT, Non-Fungible Token)</u></p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/1067736d-8f51-4ddd-af19-e3c2d25f533c/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>‘KIP-17’ 기반 NFT</strong> 메타콩즈 👆</p>
+</blockquote>
+
+<ul>
+  <li>KIP-17 기능을 확인하기 위해서 <span style="background-color:#F7969A; color:#000;"><strong>‘KIP-13’</strong> 자체 검사</span>를 수행하여야 한다</li>
+</ul>
+
+<blockquote>
+  <h3 id="kip-13">KIP-13</h3>
+
+  <p>토큰에 어떤 기능이 컨트랙트에 <u>구현되어 있는지<br />
+알 수 있는 명확한 방법이 없기 때문에</u></p>
+
+  <p>KIP-13 에서는 컨트랙트에서 인터페이스를 정의하고 구현 &amp; 요청<br />
+표준 방법을 제안한것</p>
+
+  <p>👉 예를 들어, KIP-17 기반으로 토큰을 만들고<br />
+그 토큰은 부동산 거래를 하는 기능이 있다면<br />
+그 기능을 구현하는지 여부를 쉽게 알수 있다~~</p>
+
+  <p>👉 예를 들어, KIP-17의 인터페이스 식별자를 정의하면<br />
+계약이 KIP-17 을 구현하는지 여부를 쉽게 결정할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="kip-17--erc-721의-차이점">KIP-17 <ㅡ> ERC-721의 차이점</ㅡ></h3>
+
+<ul>
+  <li>
+    <p>ERC-721 보다 많은 선택 가능한 기능들을 지원한다
+<code class="language-plaintext highlighter-rouge">Minting extension</code> <code class="language-plaintext highlighter-rouge">minting with URL extension</code>
+<code class="language-plaintext highlighter-rouge">burning extension</code> <code class="language-plaintext highlighter-rouge">and pausing extension</code></p>
+  </li>
+  <li>
+    <p>ERC-721의 지갑 인터페이스 <u>( ex) 메타마스크 )</u> 가 ERC-721과 호환되도록 지원한다</p>
+  </li>
+  <li>
+    <p>모든 토큰의 transfer / mint / burn 작업은 이벤트 로그별 추적을 거쳐야 한다</p>
+  </li>
+</ul>
+
+<p>👉 송금 작업은 무조건 transfer / mint / burn 관련된 작업들에서 발생되어야 한다</p>
+
+<blockquote>
+  <ul>
+    <li>transfer 👉 토큰 거래 / 지갑 이동</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>mint 👉 토큰 총 발행량에서의 토큰 추가 발행</li>
+  <li>burn 👉 토큰 총 발행량에서의 토큰 소각</li>
+</ul>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>https://ko.docs.klaytn.foundation/smart-contract/token-standard</li>
+  <li>https://support.klaytnapi.com/hc/ko/articles/4403232605711-KCT-KIP-7-KIP-17-%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94-
+(KIP-17)</li>
+  <li>
+    <p>https://kips.klaytn.foundation/KIPs/kip-17#wallet-interface
+(KIP-17)</p>
+  </li>
+  <li>https://kips.klaytn.foundation/KIPs/kip-13
+(KIP-13)</li>
+</ul>
+
+<hr />
+:ET

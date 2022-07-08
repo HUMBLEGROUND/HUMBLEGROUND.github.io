@@ -1,0 +1,268 @@
+I"�2<p><img src="https://velog.velcdn.com/images/-__-/post/7b9914c1-b12d-4fd3-8180-d8bec02196c6/image.png" alt="" /></p>
+
+<h2 id="erc-721-기반-nft-만들기-로컬-환경에서-truffle-이용">ERC-721 기반 NFT 만들기 (로컬 환경에서 Truffle 이용)</h2>
+
+<h3 id="erc-721-이란">ERC-721 이란?</h3>
+
+<ul>
+  <li>
+    <p>EIP-721 (Ethereum Improvement Proposal-721)<br />
+이더리움 개선 제안의 <strong>721번째 토론</strong> 에서 채택되었다</p>
+  </li>
+  <li>
+    <p>ERC-721은 <strong>Ethereum Request for Comment-721</strong> 의 약자<br />
+👉 ERC의 <strong>721번째 요청사항</strong>이다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/cc6c3f2f-377a-4ca2-8a6a-a32b766c6b13/image.png" alt="" /></p>
+
+<ul>
+  <li>ERC는 <span style="background-color:#34CDEF; color:#000;">이더리움 블록체인 네트워크에서 발행되는 <strong>토큰(token)의 표준</strong></span></li>
+</ul>
+
+<p><a href="http://wavescats.github.io/blockchain/2022/05/26/bc39.html">http://wavescats.github.io/blockchain/2022/05/26/bc39.html</a><br />
+👆 (ERC-721 정리 참고)</p>
+
+<hr />
+
+<h3 id="rinkeby-테스트넷에-erc-721-토큰-만들고-배포하기">Rinkeby 테스트넷에 ERC-721 토큰 만들고 배포하기</h3>
+
+<p>-1. 메타마스크에 접속하고, <strong>Rinkeby 테스트 네트워크</strong>를 선택한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/134eb495-c14f-4e9d-abf2-75b694fdf736/image.png" alt="" /></p>
+
+<hr />
+
+<p>-2. <strong>Rinkeby 테스트넷</strong> 에서 사용할 테스트용 ETH 를 받는다<br />
+<a href="https://rinkebyfaucet.com/">https://rinkebyfaucet.com/</a><br />
+(👆 Rinkeby 테스트넷 이더리움 Faucet)<br /></p>
+
+<p>👉 <strong>24시간 마다 ‘0.1 ETH’ 씩 받을수 있다</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0ba42c1b-3f5a-48cc-b2e4-5c44a23f19a3/image.png" alt="" /></p>
+
+<hr />
+
+<p>-3. 로컬에서 truffle 개발 환경 설정을 한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/185f4bff-7d64-46c0-ac97-8d1f1c2cca0c/image.gif" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">truffle init</code> 👈 명령어를 입력하여 truffle 모듈 생성</p>
+</blockquote>
+
+<hr />
+
+<p>-4. truffle ↔ Rinkeby 네트워크 연결 설정을 해준다<br />
+(truffle-config.js 설정)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a28e7130-e169-42db-b460-3b053793de2d/image.png" alt="" /></p>
+
+<blockquote>
+  <h3 id="truffle-configjs-설정">truffle-config.js 설정</h3>
+
+  <p>4-1. <strong>‘Infura’</strong>를 사용하기 위해 <strong>@truffle/hdwallet-provider</strong>를 설치해준다.<br /> &gt; <code class="language-plaintext highlighter-rouge">npm install @truffle/hdwallet-provider</code><br /></p>
+
+  <p>4-2. 메타마스크의 <strong>‘니모닉코드’</strong> 를 적는다<br /></p>
+
+  <p>4-3. ‘Infura’ 에서 <span style="background-color:#ffdce0; color:#000;">Rinkeby <strong>‘ENDPOINTS’</strong></span> 주소를 적는다</p>
+
+  <p><img src="https://velog.velcdn.com/images/-__-/post/cede1341-1b0d-4d8d-902a-60192fbc68c4/image.png" alt="" /></p>
+
+  <p><a href="https://infura.io/">https://infura.io/</a> (👈 infura 사이트)</p>
+</blockquote>
+
+<hr />
+
+<p>-5. <strong>‘contracts’</strong> 폴더 안에 <code class="language-plaintext highlighter-rouge">MyNFTs.sol</code> 파일을 생성해서 ‘ERC-721’ 코드를 입력한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/086ff913-c23e-4f82-bb41-eabfed9b95e3/image.gif" alt="" /></p>
+
+<blockquote>
+  <h3 id="openzeppelin">OpenZeppelin</h3>
+
+  <p><strong>‘ERC-721’</strong> 코드를 사용하기위해 <strong>‘OpenZeppelin’</strong> 라이브러리를 설치한다
+<code class="language-plaintext highlighter-rouge">npm install @openzeppelin/contracts</code></p>
+</blockquote>
+
+<hr />
+
+<p>-6. 작성한 코드를 배포하기 위한 <strong>‘migration’</strong> 코드를 작성한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/f74afad9-4d58-4784-9d9c-450a0798d3a0/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>‘migrations’</strong> 폴더 내의 생성되어있는
+<code class="language-plaintext highlighter-rouge">1_initial_migration.js</code> 파일의 코드를 수정하여
+<code class="language-plaintext highlighter-rouge">MyNFTs.sol</code> 코드를 배포할 수 있게 만든다</p>
+</blockquote>
+
+<hr />
+
+<p>-7. 이제 코드 작성과 셋팅이 끝났으니 컴파일 &amp; 배포를 한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/86b65d6b-4a38-42d5-a1f7-7575a6a2e5f2/image.png" alt="" /></p>
+
+<blockquote>
+  <p>터미널을 열고 truffle을 통해 <strong>‘rinkeby 테스트넷’</strong> 에 컴파일 &amp; 배포를 한다
+<code class="language-plaintext highlighter-rouge">truffle migrate --compile-all --network rinkeby</code></p>
+</blockquote>
+
+<h3 id="컴파일이나-배포-할때-에러가-발생한다면">컴파일이나 배포 할때 에러가 발생한다면</h3>
+
+<p>👉 <span style="background-color:#ffdce0; color:#000;"><strong>‘build’ 폴더</strong></span>를 완전히 삭제해주고 다시 명령어 실행해보기</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/5d81417b-02c3-48f7-81c8-6a6147175404/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 메타마스크 주소를 rinkeby 테스트넷 <strong>‘이더스캔’</strong>에 입력하면
+truffle을 이용해 배포 완료된 컨트랙트를 확인 할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<hr />
+
+<h3 id="truffle에서-nft-발행하기">truffle에서 NFT 발행하기</h3>
+
+<p>-1. 컨트랙트의 배포가 잘 이루어졌다면
+<code class="language-plaintext highlighter-rouge">Truffle console</code>을 이용해 컨트랙트를 조작할 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/d14a3dbb-cef5-47b0-a9b4-4762a71123f8/image.png" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">truffle console --network rinkeby</code> 👈 명령어</p>
+</blockquote>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c8a6f285-3455-4d68-bf2c-91ef7a71ef78/image.png" alt="" />
+<code class="language-plaintext highlighter-rouge">instance = await MyNFTs.deployed()</code>
+👉 ‘MyNFTs’ 함수를 배포
+<code class="language-plaintext highlighter-rouge">instance.name()</code>
+👉 ‘MyNFTs’
+<code class="language-plaintext highlighter-rouge">instance.symbol()</code>
+👉 ‘MNFT’</p>
+
+<hr />
+
+<p>-2. NFT 를 배포할 함수 <code class="language-plaintext highlighter-rouge">mintNFT</code> 를 입력하고 <strong>‘tokenURI’</strong> 주소와 <strong>‘몇번째 계정’</strong> 인지를 입력한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/93dc797d-adb3-48bd-a9ed-8a784774e761/image.png" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">instance.mintNFT("ipfs://tokenURI주소", { from: accounts[0] })</code></p>
+</blockquote>
+
+<blockquote>
+  <p>tokenURI 에는 <strong>NFT화 시킬 이미지</strong>가 저장되어있는 <strong>‘주소’</strong>를 입력하면 된다
+CID를 붙여넣는데 앞에 <code class="language-plaintext highlighter-rouge">ipfs://</code> 를 꼭 써줘야한다 👆</p>
+</blockquote>
+
+<hr />
+
+<h3 id="-tokenuri-에-입력할-주소-적는법">💻 tokenURI 에 입력할 주소 적는법</h3>
+
+<p>2-1. IPFS 분산저장소인 pinata 사이트에 접속해서
+https://www.pinata.cloud/ (👈 pinata 사이트)</p>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/10d1a52d-42c0-46e3-899c-9149b954042b/image.png" alt="" /><img src="https://velog.velcdn.com/images/-__-/post/88310fdf-e3a8-49a1-84f8-d9b7760650ad/image.png" alt="" />
+2-2. NFT로 만들 이미지를 업로드 한다 👆</p>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8dda0da0-4cdd-47ea-8032-6bab61f07357/image.png" alt="" />2-3. 업로드한 이미지의 CID를 복사해서 <strong>‘json 파일’</strong>로 만들어야한다 👆</p>
+
+<hr />
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="dl">"</span><span class="s2">attributes</span><span class="dl">"</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">trait_type</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Breed</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Maltipoo</span><span class="dl">"</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">trait_type</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Eye color</span><span class="dl">"</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">value</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Mocha</span><span class="dl">"</span>
+    <span class="p">}</span> <span class="p">],</span>
+    <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">The world's most adorable and sensitive pup.</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">image</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">ipfs://이부분에 CID 를 복사해서 넣음</span><span class="dl">"</span><span class="p">,</span><span class="err">👈</span>
+    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">이름 지정하기</span><span class="dl">"</span> <span class="err">👈</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>2-4. **“image” **에 CID를 붙여넣는데 앞에 <code class="language-plaintext highlighter-rouge">ipfs://</code> 를 꼭 써줘야한다 👆</p>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0fe0dee2-e93b-4ac1-bd4b-7c618e720408/image.png" alt="" />
+2-5. 그리고 작성한 <strong>json 파일</strong> 을 업로드 👆</p>
+
+<hr />
+
+<p>-3. 발행된 NFT의 tokenURI 를 확인 해본다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0260b872-86da-4585-9a5f-d7c85908a8a3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">instance.tokenURI(1)</code> 👈 명령어</p>
+</blockquote>
+
+<hr />
+
+<p>-4. <strong>‘OpenSea 테스트넷’</strong> 에 들어가서 메타마스크 지갑연결을 하고 보면
+NFT가 정상적으로 발행된걸 확인 할 수 있다
+https://testnets.opensea.io/ (👈 OpenSea 테스트넷 사이트)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2b793e9d-6044-45ba-b6d9-e2490d00c08a/image.png" alt="" /></p>
+
+<hr />
+
+<p>-5. <strong>‘OpenSea 테스트넷’</strong> 에서 내가 발행한 NFT의 컨트랙트를 바로 확인할수도 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/7f6de34d-7908-4791-9a17-f6679ab543ba/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>https://rinkeby.etherscan.io/tx/0x3bf3d5665b7d2d671ff54a7b85ebf4ae0a2afe6d1d88d061fba127e538bbf6ed
+👆 (rinkeby 테스트넷에 NFT를 발행한 트랜잭션 컨트랙트 주소)</p>
+</blockquote>
+
+<hr />
+
+<h3 id="truffle-에서-erc-721-기반-토큰을-만들기-위한-코드">truffle 에서 ERC-721 기반 토큰을 만들기 위한 코드</h3>
+
+<p>https://github.com/wavescats/solidity-study/tree/main/Truffle%EC%9D%84%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20ERC-721%20%EA%B8%B0%EB%B0%98%20NFT%20%EB%A7%8C%EB%93%A4%EA%B8%B0
+👆 (코드가 길어서 링크 첨부)</p>
+
+<hr />
+
+<h3 id="개발-회고-">개발 회고 💡</h3>
+
+<p>ERC-721 기반으로 NFT 만들기 🪙</p>
+
+<p>겉으로만 알던 NFT에 대해 정말 자세히 배웠다
+NFT 만드는 법을 배웠으니 디자인적인 것도 배워두면 좋겠다</p>
+
+<p>Remix IDE 를 이용해서 배포할때는
+UI가 눈에 직접 보이면서 작업하는거라
+이해가 쉽고 조작하기도 수월했는데</p>
+
+<p>truffle 을 이용해서 개발을 할때는
+라이브러리 불러오기, npm 설치, 설치 중 에러 등
+조금 번거로운부분이 많았다 💧</p>
+
+<p>개발자들도 truffle이 불편해서
+Remix IDE 같은 사이트가 개발되어진거겠지</p>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>https://andresaaap.medium.com/how-to-deploy-a-smart-contract-on-a-public-test-network-rinkeby-using-infura-truffle-8e19253870c4
+(truffle 에서 Rinkeby 테스트넷 연결하기)</li>
+</ul>
+
+<hr />
+:ET
