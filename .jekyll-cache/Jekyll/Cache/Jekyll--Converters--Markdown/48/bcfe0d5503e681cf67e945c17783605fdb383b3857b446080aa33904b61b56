@@ -1,0 +1,74 @@
+I"V<p>typescript에 Redux를 사용하던 도중 <code class="language-plaintext highlighter-rouge">useDispatch</code> 에러 발생 ❗</p>
+
+<blockquote>
+  <h4 id="typescript에서-redux를-사용하기-위해-설치하는-모듈">typescript에서 Redux를 사용하기 위해 설치하는 모듈</h4>
+
+  <p><code class="language-plaintext highlighter-rouge">npm install redux</code>
+<code class="language-plaintext highlighter-rouge">npm install @types/redux</code>
+<code class="language-plaintext highlighter-rouge">npm install react-redux</code>
+<code class="language-plaintext highlighter-rouge">npm install @types/react-redux</code>
+<code class="language-plaintext highlighter-rouge">npm install redux-thunk</code>
+<code class="language-plaintext highlighter-rouge">npm install @types/redux-thunk</code></p>
+</blockquote>
+
+<hr />
+
+<h3 id="apptsx">App.tsx</h3>
+
+<p><code class="language-plaintext highlighter-rouge">dispatch</code> 의 유형을 읽어오지 못하는 에러발생 💫</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b7ac79a8-2abc-4b65-8283-5de0ae42b55d/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="storets">store.ts</h3>
+
+<p>store 에서 작성된코드는 문제가 없어보였다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/fec5be63-9c19-4d72-bfff-8631db96abfd/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="packagejson-수정작업">package.json 수정작업</h3>
+
+<p>혹시 몰라서 버전을 조금 낮춰서 다시 설치를 했는데
+에러가 해결되었다…😓</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a7b6d83e-67ff-4f6e-bab0-27b0ca556225/image.png" alt="" /></p>
+
+<p>package.json 에서
+<strong>“react-redux”</strong> 버전을 낮추는 작업
+“8.0.2” 👉👉👉 “7.2.1”
+<strong>(8 버전 이하면 다 실행이 된다)</strong></p>
+
+<p>버전을 임의로 낮추고 수정 후에는 <code class="language-plaintext highlighter-rouge">npm install</code> 을 해줘야 적용이 된다 !</p>
+
+<blockquote>
+  <p>redux 8 버전으로 업데이트 되면서 <code class="language-plaintext highlighter-rouge">Dispatch</code> 호출방법이 바뀐듯한데 알아봐야겠다… ✍
+👉 <code class="language-plaintext highlighter-rouge">useAppDispatch</code> 으로 호출해주는 방식</p>
+</blockquote>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>
+    <p>https://github.com/reduxjs/redux-toolkit/issues/2294</p>
+  </li>
+  <li>
+    <p>https://stackoverflow.com/questions/72396293/argument-of-type-dispatch-dispatchshopdispatchtypes-promisevoid-is-n</p>
+  </li>
+  <li>
+    <p>https://redux.js.org/tutorials/typescript-quick-start</p>
+  </li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <h3 id="발생했던-에러-내용">발생했던 에러 내용</h3>
+
+  <p><code class="language-plaintext highlighter-rouge">(alias) fetchPokemonData(pokemonNames: string): (dispatch: Dispatch&lt;PokemonDispatchType&gt;) =&gt; Promise&lt;void&gt; import fetchPokemonData Argument of type '(dispatch: Dispatch&lt;PokemonDispatchType&gt;) =&gt; Promise&lt;void&gt;' is not assignable to parameter of type 'AnyAction'.ts(2345)</code></p>
+</blockquote>
+:ET
