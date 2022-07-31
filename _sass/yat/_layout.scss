@@ -119,12 +119,6 @@ body {
     &:visited {
       color: $header-text-color;
     }
-
-    .site-favicon {
-      display: inline-block;
-      height: $header-height / 1.5;
-      margin-right: 5px;
-    }
   }
 }
 
