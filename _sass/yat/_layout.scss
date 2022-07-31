@@ -1,7 +1,7 @@
 /**
  * Animation for transparent header
  */
- html {
+html {
   &[data-header-transparent] {
     header.site-header {
       position: fixed;
@@ -300,19 +300,6 @@ body {
     a {
       text-decoration: none;
 
-      &:after {
-        content: "NEW";
-        position: absolute;
-        margin-left: 8px;
-        margin-top: 3px;
-        padding: 0px 3px;
-        background-color: $brand-color;
-        color: #fff;
-        font-size: 10px;
-        font-weight: 600;
-        border-radius: 2px;
-      }
-
       &:visited:after {
         background-color: #fff;
       }
@@ -498,19 +485,6 @@ body {
           color: #333;
         }
 
-        &:after {
-          content: "NEW";
-          position: absolute;
-          margin-left: 8px;
-          margin-top: 3px;
-          padding: 0px 3px;
-          background-color: $brand-color;
-          color: #fff;
-          font-size: 10px;
-          font-weight: 600;
-          border-radius: 2px;
-        }
-
         &:visited:after {
           background-color: #fff;
         }
@@ -541,7 +515,7 @@ body {
 
   .previous:before {
     content: " ";
-    border: solid #787878;
+    border: solid #1b75a8;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
@@ -552,7 +526,7 @@ body {
 
   .next:after {
     content: " ";
-    border: solid #787878;
+    border: solid #1b75a8;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
@@ -735,6 +709,7 @@ body {
   }
 
   .segment-name {
+    color: #00a2ff;
     font-weight: $base-font-weight * 1.5;
     margin-bottom: 8px;
     position: relative;
@@ -766,19 +741,6 @@ body {
 
     &:hover {
       color: #000;
-    }
-
-    &:after {
-      content: "NEW";
-      position: absolute;
-      margin-left: 8px;
-      margin-top: 3px;
-      padding: 0px 3px;
-      background-color: $brand-color;
-      color: #fff;
-      font-size: 10px;
-      font-weight: 600;
-      border-radius: 2px;
     }
 
     &:visited:after {
