@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wavescats.github.io/sitemap.xml
