@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     display: none;
   }
 </style>
+
 </head>
 <body>
 
@@ -637,8 +638,8 @@ function googleTranslateElementInit() {
     }
   });
 </script>
-<div class="theme-toggle">
-  <input type="checkbox" id="theme-switch">
+<!-- <div class="theme-toggle">
+  <input type="checkbox" id="theme-switch" />
   <label for="theme-switch">
     <div class="toggle"></div>
     <div class="names">
@@ -646,7 +647,7 @@ function googleTranslateElementInit() {
       <p class="dark">Dark</p>
     </div>
   </label>
-</div>
+</div> -->
 
 
 
@@ -677,10 +678,7 @@ function googleTranslateElementInit() {
     function handleThemeToggle(nightShift) {
       themeData.nightShift = nightShift;
       saveThemeData(themeData);
-      html.dataset.theme = nightShift ? "light" : "dark";
-      setTimeout(function () {
-        sw.checked = nightShift ? true : false;
-      }, 50);
+      html.dataset.theme = "light";
     }
 
     function autoThemeToggle() {

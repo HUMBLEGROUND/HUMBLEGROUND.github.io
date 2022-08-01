@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     display: none;
   }
 </style>
+
 </head>
 <body>
 
@@ -652,8 +653,8 @@ function googleTranslateElementInit() {
     }
   });
 </script>
-<div class="theme-toggle">
-  <input type="checkbox" id="theme-switch">
+<!-- <div class="theme-toggle">
+  <input type="checkbox" id="theme-switch" />
   <label for="theme-switch">
     <div class="toggle"></div>
     <div class="names">
@@ -661,7 +662,7 @@ function googleTranslateElementInit() {
       <p class="dark">Dark</p>
     </div>
   </label>
-</div>
+</div> -->
 
 
 
@@ -692,10 +693,7 @@ function googleTranslateElementInit() {
     function handleThemeToggle(nightShift) {
       themeData.nightShift = nightShift;
       saveThemeData(themeData);
-      html.dataset.theme = nightShift ? "light" : "dark";
-      setTimeout(function () {
-        sw.checked = nightShift ? true : false;
-      }, 50);
+      html.dataset.theme = "light";
     }
 
     function autoThemeToggle() {
@@ -1081,6 +1079,127 @@ Mumbai 테스트넷 RPC Error
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/solidity/2022/05/26/sol4.html">
+          [Solidity] ERC-721 기반 NFT 만들기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> May 26, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/solidity/2022/05/26/sol4.html">
+        <p>
+        
+
+ERC-721 기반 NFT 만들기
+
+Rinkeby 테스트넷에 ERC-721 토큰 만들고 배포하기
+
+-1. 메타마스크에 접속하고, Rinkeby 테스트 네트워크를 선택한다
+
+
+
+
+
+-2. Remix IDE 에서 MyNFTs.sol 파일을 생성한다
+
+
+
+
+
+-3. ERC-721 코드를 입력한다
+
+
+
+
+
+-4. MyNFTs.sol 파일을 컴파일한다
+
+
+
+
+
+-5. DEPLOY &amp; RUN TRANSACTIONS 항목으로 이동한다
+
+
+
+
+  5-1. ENVIRONMENT 부분을
+Injected Web3로 변경하여 ‘메타마스크’와 연동한다
+
+5-2. DEPLOY에 들어갈 인자값을 입력한다
+
+
+
+  NAME 👉 NF... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#solidity">#solidity</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/blockchain/2022/05/26/bc38.html">
           [Blockchain] 린케비(Rinkeby) 테스트넷 이더리움 받기 (Rinkeby Faucet)
         </a>
@@ -1221,8 +1340,6 @@ ppa.launchpad.net:80에 연결할 수 없습니다 에러발생 🚫
 
 
 
-
-
 해결 방법 😎
 
 
@@ -1236,7 +1353,7 @@ sudo vi /etc/apt/sources.list
 
 sudo gedit /etc/apt/sources.list
 
-👆 명령어를 이용하여 / 에디... <span class="read_more">Read More</span>
+👆 명령어를 이용하여 / 에디터 ... <span class="read_more">Read More</span>
         </p>
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#%EC%9A%B0%EB%B6%84%ED%88%AC">#우분투</a></div>
@@ -2021,7 +2138,7 @@ You'll need to up... <span class="read_more">Read More</span>
   <ul>
     <li>
       <a href="/index.html">
-        All<span>11</span>
+        All<span>12</span>
       </a>
     </li>
 
@@ -2041,6 +2158,12 @@ You'll need to up... <span class="read_more">Read More</span>
       <li>
         <a href="/categories.html#h-review">
           review <span>4</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-solidity">
+          solidity <span>1</span>
         </a>
       </li>
     

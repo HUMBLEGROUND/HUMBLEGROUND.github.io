@@ -1,4 +1,4 @@
-<div class="theme-toggle">
+<!-- <div class="theme-toggle">
   <input type="checkbox" id="theme-switch" />
   <label for="theme-switch">
     <div class="toggle"></div>
@@ -7,7 +7,7 @@
       <p class="dark">Dark</p>
     </div>
   </label>
-</div>
+</div> -->
 
 {%- assign name = 'night_mode' -%} {%- include functions.html func='get_value'
 default='auto' -%} {%- assign night_mode = return -%}
@@ -38,10 +38,7 @@ default='auto' -%} {%- assign night_mode = return -%}
     function handleThemeToggle(nightShift) {
       themeData.nightShift = nightShift;
       saveThemeData(themeData);
-      html.dataset.theme = nightShift ? "light" : "dark";
-      setTimeout(function () {
-        sw.checked = nightShift ? true : false;
-      }, 50);
+      html.dataset.theme = "light";
     }
 
     function autoThemeToggle() {

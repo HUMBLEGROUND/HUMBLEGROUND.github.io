@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     display: none;
   }
 </style>
+
 </head>
 <body>
 
@@ -639,8 +640,8 @@ function googleTranslateElementInit() {
     }
   });
 </script>
-<div class="theme-toggle">
-  <input type="checkbox" id="theme-switch">
+<!-- <div class="theme-toggle">
+  <input type="checkbox" id="theme-switch" />
   <label for="theme-switch">
     <div class="toggle"></div>
     <div class="names">
@@ -648,7 +649,7 @@ function googleTranslateElementInit() {
       <p class="dark">Dark</p>
     </div>
   </label>
-</div>
+</div> -->
 
 
 
@@ -679,10 +680,7 @@ function googleTranslateElementInit() {
     function handleThemeToggle(nightShift) {
       themeData.nightShift = nightShift;
       saveThemeData(themeData);
-      html.dataset.theme = nightShift ? "light" : "dark";
-      setTimeout(function () {
-        sw.checked = nightShift ? true : false;
-      }, 50);
+      html.dataset.theme = "light";
     }
 
     function autoThemeToggle() {
@@ -912,16 +910,16 @@ HTML과 CSS 에 대해서 기초내용을 학습했다</p>
       <div>관련 글</div>
       <ul>
         <li>
-          <a class="post-link" href="/review/2022/03/11/beb2.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차">코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차</a>
+          <a class="post-link" href="/error/2022/01/26/ubun2.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차">[ubuntu 20.04] Node.js 버전 업데이트 시 에러 해결 방법 (npm 버전 업데이트)...</a>
         </li>
 <li>
-          <a class="post-link" href="/blockchain/2022/05/26/bc38.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차">[Blockchain] 린케비(Rinkeby) 테스트넷 이더리움 받기 (Rinkeby Faucet)</a>
+          <a class="post-link" href="/blockchain/2022/06/04/bc47.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차">[Blockchain] 뭄바이(Mumbai) 테스트넷 폴리곤 받기 (MATIC Mumbai Faucet) &amp; 네트워크 추가</a>
         </li>
 <li>
-          <a class="post-link" href="/review/2022/03/04/beb1.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차">코드스테이츠 블록체인 부트캠프 후기 BEB 4기 1주차</a>
+          <a class="post-link" href="/blockchain/2022/05/13/bc26.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차">[Blockchain] 블록체인 해시함수</a>
         </li>
 <li>
-          <a class="post-link" href="/blockchain/2022/05/18/bc33.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차">[Blockchain] 롭스텐 테스트넷 이더리움 받기 (Ropsten Faucet)</a>
+          <a class="post-link" href="/error/2022/07/21/ts3.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차">[typescript] Redux 8 버전 dispatch =&gt; Promise&lt;void&gt; Error - ts(2345)</a>
         </li>
 </ul>
     </div>
