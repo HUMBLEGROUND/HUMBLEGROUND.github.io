@@ -240,7 +240,7 @@ body {
   .post-title {
     @include relative-font-size(2.625);
     letter-spacing: -1px;
-    line-height: 1;
+    line-height: 1.4;
 
     @include media-query($on-laptop) {
       @include relative-font-size(2.25);
@@ -395,6 +395,7 @@ body {
 
     .post-subtitle {
       font-weight: lighter;
+      font-size: 1.2rem;
     }
 
     .post-meta {
@@ -508,9 +509,9 @@ body {
 
   a {
     @include relative-font-size(1.125);
-    line-height: 15px;
+    line-height: 2rem;
     color: #666;
-    max-width: 50%;
+    max-width: 30%;
   }
 
   .previous:before {

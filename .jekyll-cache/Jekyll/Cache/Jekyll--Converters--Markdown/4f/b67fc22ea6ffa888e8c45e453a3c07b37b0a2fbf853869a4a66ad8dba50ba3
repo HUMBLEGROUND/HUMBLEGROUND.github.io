@@ -1,0 +1,44 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/9c7655fe-c701-45ce-9346-a3ff0f04624e/image.png" alt="" /></p>
+
+<h3 id="ethereum-reth-faucet">Ethereum (rETH) Faucet</h3>
+
+<ul>
+  <li>
+    <p>Ropsten 롭스텐 테스트넷에서 사용할수있는 <strong>‘테스트용’</strong>으로 나눠주는 이더리움</p>
+  </li>
+  <li>
+    <p>Ethereum (rETH) Faucet</p>
+  </li>
+</ul>
+
+<p><a href="https://faucet.dimensions.network/">https://faucet.dimensions.network/</a></p>
+
+<p>👆 위 사이트에서 <strong>Faucet 받기</strong>를 누르면 된다</p>
+
+<blockquote>
+  <p>만약에 받은적도 없는데<br />
+24시간 후에 다시 요청하라고 나오는 에러가 나온다면<br /> &gt; <code class="language-plaintext highlighter-rouge">You have requested a withdrawal in the last 24 hours. Please try again later.</code></p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/6a7b0b95-83fc-42c4-aa9f-4e9444a8b61c/image.png" alt="" /></p>
+
+<hr />
+
+<blockquote>
+  <p>그럴땐 <span style="background-color:#F7969A; color:#000;"><strong>‘다른 Faucet 사이트’</strong></span>에서도 안받아지는지 확인해본다</p>
+</blockquote>
+
+<p><a href="https://faucet.egorfine.com/">https://faucet.egorfine.com/</a><br />
+(👆 테스트 이더받기 다른 Faucet 사이트 1)</p>
+
+<p><a href="https://faucet.metamask.io/">https://faucet.metamask.io/</a><br />
+(👆 테스트 이더받기 다른 Faucet 사이트 2)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3e0537d0-4023-4c09-bdad-318cfea8f011/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 Ropsten 테스트넷 네트워크에 이더리움이 잘 받아진걸 확인할수 있다</p>
+</blockquote>
+
+<hr />
+:ET
