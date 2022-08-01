@@ -240,7 +240,7 @@ body {
   .post-title {
     @include relative-font-size(2.625);
     letter-spacing: -1px;
-    line-height: 1.4;
+    line-height: 4rem;
 
     @include media-query($on-laptop) {
       @include relative-font-size(2.25);
@@ -509,7 +509,7 @@ body {
 
   a {
     @include relative-font-size(1.125);
-    line-height: 2rem;
+    line-height: 1.8rem;
     color: #666;
     max-width: 30%;
   }
