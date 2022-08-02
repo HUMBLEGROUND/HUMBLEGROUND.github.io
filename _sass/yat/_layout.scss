@@ -469,8 +469,9 @@ body {
   .post-related {
     & > *:first-child {
       @include relative-font-size(1.425);
-      color: #333;
+      color: #1b75a8;
       margin-bottom: 14px;
+      font-weight: bold;
     }
 
     ul {

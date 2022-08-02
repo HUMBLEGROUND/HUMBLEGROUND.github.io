@@ -234,7 +234,7 @@ body { font-family: "MyLotteLight"; }
 
 .post .post-content hr { height: 1px; background-color: #ebebeb; border: none; }
 
-.post .post-related > *:first-child { font-size: 22.8px; color: #333; margin-bottom: 14px; }
+.post .post-related > *:first-child { font-size: 22.8px; color: #1b75a8; margin-bottom: 14px; font-weight: bold; }
 
 .post .post-related ul { margin-left: 15px; }
 

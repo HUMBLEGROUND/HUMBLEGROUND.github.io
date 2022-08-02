@@ -59,13 +59,24 @@ sidebar:
     </div>
     {%- endif -%} {%- assign result = hidden | where_exp: "item", "item ==
     'comments'" -%} {%- if result.size == 0 -%}
-    <div class="post-comments">
+    <br />
+    <hr />
+    <br />
+    <!-- <div class="post-comments">
       {%- if page.comments != false -%} {%- if site.disqus.shortname -%} {%-
       include extensions/comments/disqus.html -%} {%- endif -%} {%- if
       site.gitment.username -%} {%- include extensions/comments/gitment.html -%}
       {%- endif -%} {%- if site.utterances.repo -%} {%- include
       extensions/comments/utterances.html -%} {%- endif -%} {%- endif -%}
-    </div>
+    </div> -->
+    <script
+      src="https://utteranc.es/client.js"
+      repo="wavescats/blog-post-comments"
+      issue-term="pathname"
+      theme="github-light"
+      crossorigin="anonymous"
+      async
+    ></script>
     {%- endif -%}
   </section>
 </div>
