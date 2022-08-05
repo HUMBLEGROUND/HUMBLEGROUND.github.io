@@ -1,0 +1,272 @@
+I"/<p><img src="https://velog.velcdn.com/images/-__-/post/94feda14-6106-4531-a21f-f795ef1f5a5a/image.png" alt="" /></p>
+
+<h2 id="project-beb-프로젝트-1-회고">[Project] BEB 프로젝트 #1 회고</h2>
+
+<h3 id="-프로젝트-명-closesea">⛵ 프로젝트 명 ‘CloseSea’</h3>
+
+<p><img src="https://user-images.githubusercontent.com/97342533/174011145-1161884e-5cab-40a1-99f9-cb20b09bf956.png" alt="스크린샷, 2022-06-15 01-52-42" /></p>
+
+<p><strong>‘CloseSea’는 NFT 가격의 지속적인 하락으로 인해 Open된 Sea를 Close로 문을 잠시 닫는다는🚫 의미입니다</strong><br />
+(저희팀은 NFT 붐이 다시 올거라 믿습니다)</p>
+
+<p><img src="https://user-images.githubusercontent.com/97342533/174014715-d0c6d57a-164a-4b44-9fb5-6bd35a02832d.png" alt="image" /></p>
+
+<p><strong>‘CloseSea’ 웹 페이지는</strong><br />
+간단한 기능을 가진 Opensea Clone 사이트로<br />
+<span style="background-color:#B5E045; color:#000;">자신이 소유중인 NFT를 조회하고 상대방에게 NFT를 전송</span>할 수 있습니다</p>
+
+<hr />
+
+<h3 id="-프로젝트-팀-구성--역할-분담">🚦 프로젝트 팀 구성 &amp; 역할 분담</h3>
+
+<h4 id="프로젝트-기간-613--617">프로젝트 기간 (6/13 ~ 6/17)</h4>
+
+<ul>
+  <li><strong>Front-end 👉 (내가 담당한 역할 😎)</strong><br />
+리액트를 이용한 web3 웹페이지 개발 및 CSS 작업<br /></li>
+  <li><strong>Back-end</strong><br />
+Opensea Api 를 통해 정보 받아오는 작업<br /></li>
+  <li><strong>Smart Contract</strong><br />
+ERC-721 기반 NFT 발행, 조회, 전송을 위한 컨트랙트 개발 및 배포</li>
+</ul>
+
+<hr />
+
+<h3 id="-기능-소개">💻 기능 소개</h3>
+
+<ul>
+  <li><strong>Explore</strong> 👉 실제 Opensea에서 Api를 받아와서 판매되고 있는 NFT를 인기순으로 조회<br /></li>
+  <li><strong>Stats</strong> 👉 실제 Opensea Stats 화면으로 이동<br /></li>
+  <li><strong>Resources</strong> 👉 실제 Opensea Resources 화면으로 이동<br /></li>
+  <li><strong>Trade</strong> 👉 자신이 소유중인 NFT를 조회 할 수 있고 다른사람에게 전송 할 수 있습니다<br /></li>
+  <li><strong>Wallet</strong> 👉 홈페이지와 MetaMask 지갑과 연결 할 수 있습니다</li>
+</ul>
+
+<hr />
+
+<h4 id="wallet">Wallet</h4>
+
+<p>웹페이지와 MetaMask 지갑연결 &amp; 지갑연결 끊기</p>
+
+<blockquote>
+  <p>연결이 완료되면 환영 메세지와 함께<br />
+연결된 MetaMask 주소가 같이 출력</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2cc27fcc-1955-4620-87cc-c10c15933db2/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="explore">Explore</h4>
+
+<p>Explore 버튼을 클릭하면<br />
+Opensea Api를 받아와서 실제 판매되고 있는 NFT를 인기순으로 조회한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8fcad1e4-e069-47fa-93f8-13f31af8d861/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="trade---nft-조회기능">Trade - NFT 조회기능</h4>
+
+<p>웹페이지와 MetaMask 지갑연결을 한 후에<br />
+<span style="background-color:#B5E045; color:#000;">NFT를 민팅한 트랜잭션 컨트랙트 주소</span>를 입력하면<br />
+자신이 소유중인 NFT를 조회 할 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/4741b525-5036-474a-b5b5-d322301b4a4f/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="trade---nft-전송기능">Trade - NFT 전송기능</h4>
+
+<p>자신이 소유중인 NFT를 다른사람의 주소를 입력하여 전송 할 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/cfdc893c-df27-481b-8c1e-4f02635b6cb1/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="trade---전송받은-nft-확인">Trade - 전송받은 NFT 확인</h4>
+
+<p>NFT를 전송한 원래 계정은 연결해제를 하고<br />
+NFT를 전송받을 주소로 다시 지갑을 연결하여<br />
+NFT를 민팅한 트랜잭션 컨트랙트 주소를 입력하면<br />
+NFT가 잘 받아진걸 확인할수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0e9168ef-e5cd-46bc-9d89-a6458298e3e1/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="stats">Stats</h4>
+
+<p>Stats 버튼을 클릭하면 실제 Opensea 홈페이지의 Stats 화면으로 이동된다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c677ba2e-fa89-4e7c-b504-79168f55312b/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="resources">Resources</h4>
+
+<p>Resources 버튼을 클릭하면 실제 Opensea 홈페이지의 Resources 화면으로 이동된다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/54d41aaa-a025-400d-b417-fb27ba4d6e09/image.gif" alt="" /></p>
+
+<hr />
+
+<blockquote>
+  <h3 id="closesea-github-코드">CloseSea Github 코드</h3>
+
+  <p><a href="https://github.com/codestates/beb-04-CloseSea">https://github.com/codestates/beb-04-CloseSea</a></p>
+
+  <h3 id="nft를-민팅한-트랜잭션-컨트랙트-주소">NFT를 민팅한 트랜잭션 컨트랙트 주소</h3>
+
+  <p><a href="https://rinkeby.etherscan.io/tx/0x8d5cddd62003f5a7e475058f1996425ef61d552d50d90a2b3983f702b4e2fb1b">NFT를 발행한 트랜잭션 컨트랙트 주소</a></p>
+</blockquote>
+
+<hr />
+
+<h2 id="개발-회고-">개발 회고 💡</h2>
+
+<h3 id="1-개발내용-회고">1. 개발내용 회고</h3>
+
+<p>4일간 진행되는 프로젝트라서<br />
+다양한 기능 구현을 하지 못할거라 생각하고<br />
+욕심을 많이 내려놓고 진행했다</p>
+
+<p>팀원분들 다들 자신 있어 하는 파트가 없었기에<br />
+사다리 타기로 역할 분담을 했다</p>
+
+<p>그러나 역할 분담을 하는 게 의미가 없었을 정도로<br />
+부족한 점이 많아서 맡은 파트를 넘나들며<br />
+도와주고 다같이 공부하며 작업하는 시간이었다</p>
+
+<p>제로베이스가 아닌 어느정도 기본이 만들어져있는 키트<br />
+<strong>‘ethereum nft marketplace boilerplate’</strong> 라는 걸<br />
+이용해서 만들어 볼까 라고도 생각했으나</p>
+
+<p>그 안에 작성되어있는 코드들을 완벽히 이해하지 않은 상태면<br />
+복붙이나 마찬가지로 생각해서<br />
+프로젝트만큼은 제로베이스에서 해보기로 했다</p>
+
+<p><strong>‘코드스테이츠’</strong> 에서 요구했던 최소 수준의 결과물은 구현해냈고<br />
+부가적으로 구현하고자 했던 것들은<br />
+나중에 복습하면서 구현해보고자 한다</p>
+
+<hr />
+
+<h3 id="2-개발감정-회고">2. 개발감정 회고</h3>
+
+<p>팀원들과 협업하며 하는 첫 프로젝트라서<br />
+부담감과 걱정과 설레임과 많은 감정들이 있었지만</p>
+
+<p>막상 프로젝트를 들어가니 클론코딩 방식으로 진행을 하니까<br />
+전체적인 가이드가 있는 느낌이여서<br />
+큰 부담은 없이 했던거같다</p>
+
+<p>세부 로직이나 기능적인 부분도 중요하겠지만<br />
+클라이언트에게 직접적으로 보여지는<br />
+UI/UX 에 대해 상당히 많은 부분을 차지한다는걸 느꼈다</p>
+
+<hr />
+
+<h3 id="3-아쉬웠던-점--보완해야-할-사항">3. 아쉬웠던 점 &amp; 보완해야 할 사항</h3>
+
+<blockquote>
+  <h3 id="metamask-연결해제-기능">MetaMask 연결해제 기능</h3>
+
+  <p>MetaMask와 웹페이지랑 연결하고 나서<br />
+연결을 끊어주고 다시 로그인을 하는걸 구현해보려고 했는데 <br /></p>
+
+  <ol>
+    <li>useState 빈 배열에 연결된 MetaMask 지갑 주소를 담고</li>
+    <li>연결을 끊을때는 주소가 담긴 useState 배열 값을 비워주면</li>
+    <li>연결이 끊어질줄 알았으나</li>
+    <li><span style="background-color:#F7969A; color:#000;">배열이 비워지는건 맞는데 연결이 끊어지진 않음</span></li>
+    <li>MetaMask 에서 수동적으로 연결을 끊어야함</li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <h3 id="component-간-metamask-연결유지-기능">Component 간 MetaMask 연결유지 기능</h3>
+
+  <p>Wallet 부분에서 지갑과 연결된 상태정보를<br />
+다른 컴포넌트에서도 유지될수 있게 하는 기능이 쉬워보였는데<br />
+생각보다 구현이 잘 안됨<br /></p>
+
+  <p>MetaMask 가 계속 연결은 되어있으나<br />
+그 연결되어있다는 정보를 다른 컴포넌트에 가져와서<br />
+web3 로직을 짜야하는데 그 정보만 분리해서 가져오는게 힘들었다<br /></p>
+
+  <p>👉 리액트 함수 안에 함수(변수)를 <strong>export</strong> 할수는 없을까?<br />
+👉 리액트 컴포넌트 메인 함수 안에 MetaMask 가 연결된 정보가 담긴 변수를 <strong>export</strong> 할수는 없을까?</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="tokenuri-에-담기는-정보">TokenURI 에 담기는 정보</h3>
+
+  <p><code class="language-plaintext highlighter-rouge">TokenURI</code> 에 이미지 정보만 입력해서<br />
+가져오는 방식밖에 구현을 못하였는데<br />
+다양한 정보를 Json 파일에 넣고 구현을 해봐야겠다<br /></p>
+
+  <p>👉 <code class="language-plaintext highlighter-rouge">https://ipfs.io/ipfs/이미지CID</code> 이렇게만 넣었는데<br />
+👉 <code class="language-plaintext highlighter-rouge">ipfs://json CID</code> 이렇게 넣어서 구현해보기 !</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="누구나-nft-민팅을-하는-기능">누구나 NFT 민팅을 하는 기능</h3>
+
+  <p><code class="language-plaintext highlighter-rouge">Remix IDE</code>를 이용한 민팅 기능을<br /> &gt; <code class="language-plaintext highlighter-rouge">VSCode</code>에서도 구현할수 있을 것 같았다<br /></p>
+
+  <ol>
+    <li>내 지갑주소와 <code class="language-plaintext highlighter-rouge">TokenURI</code> 정보를 입력하면 그 민팅 기능이 실행 되는데<br /></li>
+    <li><strong>‘스마트 컨트랙트 주소’와 ‘ABI’</strong>를 변수에 담아놓고<br /></li>
+    <li>
+      <p>web3 컨트랙트를 실행할 수 있었으나<br />
+혼자서는 그 구현 방법이 생각되는데<br />
+‘다같이 이 서비스를 이용해야할때는 어떻게 해야 할까?’<br />
+에서 구현방법이 막혔다<br /></p>
+
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; 👉 그래서 생각해낸 방법은&lt;br&gt;
+&gt; VSCode 폴더 안에 민팅할 NFT Json 파일을 많이 넣어놓고&lt;br&gt;
+</code></pre></div>      </div>
+
+      <blockquote>
+        <p><span style="background-color:#B5E045; color:#000;">(Json 파일을 반복문을 돌려서 랜덤으로 나오게)</span><br /> &gt; MetaMask 와 연결된 주소가 담긴 변수 + Json 을<br /> &gt; web3 컨트랙트 민팅 함수에 인자로 넣어 실행시키면 ( .call )<br /> &gt; 민팅 기능을 구현할수 있지 않을까?</p>
+      </blockquote>
+    </li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <h3 id="git-issue--project">git issue &amp; project</h3>
+
+  <p>git 에 대해 익숙하다고 생각했는데
+팀원들과 협업하기 위한 <code class="language-plaintext highlighter-rouge">branch</code>를 사용하다보니까
+새로 배워가는 부분이 있었다<br />
+branch를 이용하기에도 벅차서
+git issue &amp; project 탭 부분 기능은 사용하지도 못했는데
+추가적으로 공부해봐야겠다</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="도메인에-배포하기">도메인에 배포하기</h3>
+
+  <p>작성한 코드들을 <code class="language-plaintext highlighter-rouge">localhost</code> 에서만 돌려보지말고
+무료로 받을수 있는 도메인 주소에 배포를 해보고 싶었지만
+이것도 에러가 많이 발생하고 기한내에 배포하는게 쉬운일이 아니었다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="더-공부할-내용-">더 공부할 내용 📃</h3>
+
+<ul>
+  <li>이더리움 보일러 플레이트 코드 분석해보기</li>
+  <li>git issue &amp; project 탭</li>
+  <li>Tailwind CSS</li>
+  <li>Figma</li>
+  <li>Thirdweb</li>
+  <li>리액트 핫 토스트기능</li>
+  <li>sanity</li>
+</ul>
+
+<hr />
+:ET

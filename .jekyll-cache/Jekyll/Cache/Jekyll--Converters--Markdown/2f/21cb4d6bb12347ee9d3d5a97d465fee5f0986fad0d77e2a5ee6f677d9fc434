@@ -1,0 +1,290 @@
+I"mN<p><img src="https://velog.velcdn.com/images/-__-/post/ad4e344b-5bdc-4410-89bd-90fa68a87ae9/image.png" alt="" /></p>
+
+<h3 id="-project-lion-nft-블록체인-마켓-앱-만들기-with-그라운드x-3기---챕터-4-3-회고">🦁 [PROJECT LION] NFT 블록체인 마켓 앱 만들기 with 그라운드X 3기 - 챕터 4-3 회고</h3>
+
+<hr />
+
+<h3 id="kas--klaytn-api-service-">KAS ( Klaytn API Service )</h3>
+
+<blockquote>
+  <p>Klaytn에서 제공하는 클레이튼 네트워크 전용 API</p>
+
+  <p>클레이튼 환경에서 dApp을 개발하려면 <br />
+클레이튼 네트워크에 <strong>엔드포인트(Endpoint Node)</strong> 를 띄워야 하는데</p>
+
+  <p>KAS를 사용하면 <strong>Endpoint Node</strong> 역할을 해줘서 <br />
+따로 노드를 띄울 필요없이 API 로 개발이 가능하다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="caver-js">Caver-js</h3>
+
+<blockquote>
+  <p><strong>‘caver-js’</strong> 는 개발자가 HTTP 또는 웹소켓 연결을 사용하여 <br />
+Klaytn 노드와 상호작용할 수 있도록하는 자바스크립트 API 라이브러리</p>
+</blockquote>
+
+<ol>
+  <li>
+    <p>블록체인 노드에 직접적으로 콜하기 어려워서 <strong>KAS 를 사용</strong></p>
+  </li>
+  <li>
+    <p>KAS 는 우리가 블록체인에 <strong>‘접근’</strong> 하는걸 도와준다</p>
+  </li>
+  <li>
+    <p>스마트 컨트랙트에 있는 데이터를 <strong>읽고 실행</strong>하는걸 도와준다</p>
+  </li>
+  <li>
+    <p>이 과정에서 <strong>Caver-js</strong> 를 쓰면 우리가 사용하는 코드를</p>
+  </li>
+  <li>
+    <p>스마트 컨트랙트 블록체인이 이해할수 있는 코드로 <strong>‘변형’</strong> 해줘서</p>
+  </li>
+  <li>
+    <p>Klaytn 노드와 <strong>상호작용</strong>할 수 있도록 도와준다</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="kas-와-caver-js를-이용한-dapp-개발-세팅">KAS 와 Caver-js를 이용한 dApp 개발 세팅</h3>
+
+<ol>
+  <li>KSA 웹페이지에 접속하여 키를 생성한다</li>
+</ol>
+
+<p>https://console.klaytnapi.com/ko/security/credential
+(👆 Klaytn API Service 키 생성)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/4354ab3d-03f3-4b93-a40e-5637cef3bd90/image.png" alt="" /></p>
+
+<blockquote>
+  <p>생성한 키 AccessKey ID / Secret AccessKey / Authorization
+따로 적어두거나 다운로드 받아서 보관해야한다 <strong>(노출되면 안됨)</strong>
+👉 <code class="language-plaintext highlighter-rouge">.env</code> 환경변수로 설정해줘야한다</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li>간단한 스마트 컨트랙트 코드를 작성하고 <strong>배포(Deploy)</strong></li>
+</ol>
+
+<p>👉 카운터 숫자를 증가시키는 예제</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/09b09cee-7244-41e2-8c39-363acc5bdc33/image.png" alt="" /></p>
+
+<blockquote>
+  <p>배포하고 나온 <span style="background-color:#FFC701; color:#000;">ABI / 컨트랙트 주소</span> 를 복사한다</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">npx create-react-app .</code> 을 이용하여 리액트 개발환경을 만들어주고 코드를 입력한다</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/1f9753ae-4fd4-46ac-9e08-1e70562b1029/image.png" alt="" /></p>
+
+<blockquote>
+  <p>3-1. KAS 에서 발급받은 키를 변수에 담아주고
+3-2. Klaytn IDE에서 배포하고 나온 ABI / 컨트랙트 주소도 변수에 담아준다
+3-3. <strong>네트워크 체인의 아이디</strong>도 입력</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li><strong>‘생성한 키’</strong> 를 대입하여 Klaytn Node API를 사용하기 위한 코드를 입력한다</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ec4e0abf-c74d-4618-be80-50a4f12a2871/image.png" alt="" /></p>
+
+<blockquote>
+  <p>https://console.klaytnapi.com/ko/service/node
+(👆 코드는 KAS Docs에 나와있음)</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li><strong>Caver-js</strong> 를 이용하여 컨트랙트와 <ㅡ> 리액트 연동작업</ㅡ></li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/e8babc8a-a874-4733-9a76-d5670d03090d/image.png" alt="" /></p>
+
+<blockquote>
+  <p>5-1. Klaytn IDE 에서 작성한 <code class="language-plaintext highlighter-rouge">count</code> 메소드를 호출( Call ) 해본다</p>
+
+  <p>5-2. caver-js 에서 기본으로 제공하는 <code class="language-plaintext highlighter-rouge">getBalance</code> 함수를 이용하여 지갑의 잔고를 확인해본다</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">npm run start</code> 로 실행시킨뒤 콘솔을 찍어보면</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/5d836b65-7e58-4227-b274-5ea380e38cbf/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 스마트 컨트랙트 <code class="language-plaintext highlighter-rouge">count</code> 의 값과
+지갑의 잔고가 잘 찍히는걸 확인 할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li>Klaytn IDE에서 배포된 컨트랙트의 값을 변경해보면
+콘솔에 실시간으로 변경된 값과 / 지갑의 잔고 변경 값이 반영이 된다</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b7cd39ce-fdb3-4789-b17a-ca6e007bf12e/image.png" alt="" /></p>
+
+<hr />
+
+<blockquote>
+  <h3 id="카운터-숫자를-증가시키는-스마트컨트랙트-예제-코드">카운터 숫자를 증가시키는 스마트컨트랙트 예제 코드</h3>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SPDX-License-Identifier: GPL-3.0</span>
+
+<span class="nx">pragma</span> <span class="nx">solidity</span> <span class="o">&gt;=</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">24</span> <span class="o">&lt;=</span><span class="mf">0.5</span><span class="p">.</span><span class="mi">6</span><span class="p">;</span>
+
+<span class="nx">contract</span> <span class="nx">Count</span> <span class="p">{</span>
+    <span class="nx">uint256</span> <span class="kr">public</span> <span class="nx">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">getBlockNumber</span><span class="p">()</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint256</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">block</span><span class="p">.</span><span class="nx">number</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">uint256</span> <span class="nx">_count</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
+        <span class="nx">count</span> <span class="o">=</span> <span class="nx">_count</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <h3 id="kas-와-caver-js를-이용한-dapp-개발-셋팅코드">KAS 와 Caver-js를 이용한 dApp 개발 셋팅코드</h3>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">"</span><span class="s2">./App.css</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Caver</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">caver-js</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">COUNT_CONTRACT</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">0xdB4854fd2d3c6D65F0d5f581f9d3aE2d93C821FA</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// 배포하고 나온 컨트랙트 주소</span>
+<span class="kd">const</span> <span class="nx">COUNT_ABI</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">constant</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">inputs</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">outputs</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">uint256</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="na">payable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">stateMutability</span><span class="p">:</span> <span class="dl">"</span><span class="s2">view</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">function</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">constant</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="na">inputs</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">getBlockNumber</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">outputs</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">uint256</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="na">payable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">stateMutability</span><span class="p">:</span> <span class="dl">"</span><span class="s2">view</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">function</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">constant</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">inputs</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">_count</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">uint256</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">setCount</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">outputs</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="na">payable</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="na">stateMutability</span><span class="p">:</span> <span class="dl">"</span><span class="s2">nonpayable</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">function</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+<span class="c1">// 배포하고 나온 ABI</span>
+<span class="kd">const</span> <span class="nx">ACCESS_KEY_ID</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">KASKQOJG0EB473CRCRCGBH3S</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// KAS에서 발급받은 엑세스 키</span>
+<span class="kd">const</span> <span class="nx">SECRET_ACCESS_KEY</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">zkjGXV5JakSEyVtOX3Iy3RdU0lZpgQ3CJYt_YeO0</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// KAS에서 발급받은 비밀 키</span>
+<span class="kd">const</span> <span class="nx">CHAIN_ID</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1001</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// 체인 아이디 바오밥테스트넷은 1001 / 클레이튼 메인넷은 8217</span>
+
+<span class="kd">const</span> <span class="nx">option</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// Klaytn Node API를 사용하기 위한 코드 (Docs에 나와있음)</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">value</span><span class="p">:</span>
+        <span class="dl">"</span><span class="s2">Basic </span><span class="dl">"</span> <span class="o">+</span>
+        <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">ACCESS_KEY_ID</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">SECRET_ACCESS_KEY</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="dl">"</span><span class="s2">base64</span><span class="dl">"</span><span class="p">),</span>
+    <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">x-chain-id</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">CHAIN_ID</span> <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">caver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Caver</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nx">Caver</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">HttpProvider</span><span class="p">(</span>
+    <span class="dl">"</span><span class="s2">https://node-api.klaytnapi.com/v1/klaytn</span><span class="dl">"</span><span class="p">,</span>
+    <span class="nx">option</span>
+  <span class="p">)</span>
+<span class="p">);</span> <span class="c1">// Klaytn Node API를 사용하기 위한 코드 (Docs에 나와있음)</span>
+
+<span class="kd">const</span> <span class="nx">CountContract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">caver</span><span class="p">.</span><span class="nx">contract</span><span class="p">(</span><span class="nx">COUNT_ABI</span><span class="p">,</span> <span class="nx">COUNT_CONTRACT</span><span class="p">);</span>
+<span class="c1">// ⭐ 개발자는 '스마트 컨트랙트 주소'와 'ABI'를 알면 'caver' 를 통해</span>
+<span class="c1">// ⭐ 스마트 컨트랙트를 생성하고 / 특정 함수를 실행할 수 있다</span>
+<span class="kd">const</span> <span class="nx">readCount</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">_count</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">CountContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">count</span><span class="p">().</span><span class="nx">call</span><span class="p">();</span>
+  <span class="c1">// 스마트컨트랙트 배포후에 나오는 함수</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">_count</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// 블록체인 노드에 직접적으로 콜하기 어려워서 KAS 를 사용</span>
+<span class="c1">// KAS 는 우리가 블록체인에 접근하는걸 도와준다</span>
+<span class="c1">// 스마트컨트랙트에 있는 데이터를 읽고 실행하는걸 도와준다</span>
+<span class="c1">// 이 과정에서 Caver-js 를 쓰면 인간이 사용하는 코드를</span>
+<span class="c1">// 스마트컨트랙트 블록체인이 이해할수 있는 코드로 변형해줘서</span>
+<span class="c1">// Klaytn 노드와 상호작용할 수 있도록 도와준다</span>
+<span class="c1">//</span>
+<span class="kd">const</span> <span class="nx">getBalance</span> <span class="o">=</span> <span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">caver</span><span class="p">.</span><span class="nx">rpc</span><span class="p">.</span><span class="nx">klay</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">(</span><span class="nx">address</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 클레이 잔고를 확인 (다른코인이 있다면 klay말고 적으면 된다)</span>
+    <span class="kd">const</span> <span class="nx">balance</span> <span class="o">=</span> <span class="nx">caver</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">convertFromPeb</span><span class="p">(</span>
+      <span class="c1">// convertFromPeb 👉 10 ** 18 로 클레이단위를 변경</span>
+      <span class="nx">caver</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToNumberString</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+      <span class="c1">// hexToNumberString 👉 16진수문자열로 변경</span>
+    <span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">balance</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">balance</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">readCount</span><span class="p">();</span>
+  <span class="nx">getBalance</span><span class="p">(</span><span class="dl">"</span><span class="s2">0x21e90d232a37530041469a2d7e7fa3e62fe9d18a</span><span class="dl">"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+:ET

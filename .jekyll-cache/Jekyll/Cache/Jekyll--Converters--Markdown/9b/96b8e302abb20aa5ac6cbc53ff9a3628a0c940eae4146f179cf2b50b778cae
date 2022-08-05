@@ -1,0 +1,281 @@
+I"�)<p><img src="https://velog.velcdn.com/images/-__-/post/e36b405c-5997-4ad8-9d6b-d60f36f4d4bb/image.png" alt="" /></p>
+
+<h2 id="project-beb-프로젝트-2-회고">[Project] BEB 프로젝트 #2 회고</h2>
+
+<h3 id="-프로젝트-명-dao-mychain">🔗 프로젝트 명 ‘DAO MyChain’</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/eb861f2c-3b07-4163-ab7e-89ab59b2c39b/image.png" alt="" /></p>
+
+<p><strong>‘DAO MyChain’는 <br />
+Web 2.0 블록체인 인센티브 기반(Web 3.0) 커뮤니티 이며<br />
+<span style="color:#00d7c2">Web 2.0</span>와 <span style="color:#ff62ac">Web 3.0</span>의 연결고리 (Chain 🔗) 이라는 의미입니다</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/7cc19fa4-684f-4479-9fad-5e2b7c0d926e/image.png" alt="" /></p>
+
+<p><strong>‘DAO MyChain’ 웹 페이지는</strong> <br />
+Web 2.0 CRUD 기능이 구현된 사이트로 <br />
+<span style="background-color:#B5E045; color:#000;"><strong>게시판에 글을 쓸때마다 Web 3.0 의 보상</strong></span>을 받으며 보상받은 토큰으로 <br />
+NFT를 민팅 &amp; 조회 &amp; 판매를 할수 있습니다</p>
+
+<hr />
+
+<h3 id="-프로젝트-팀-구성--역할-분담">🚦 프로젝트 팀 구성 &amp; 역할 분담</h3>
+
+<h4 id="프로젝트-기간-613--617">프로젝트 기간 (6/13 ~ 6/17)</h4>
+
+<ul>
+  <li>
+    <p><strong>Front-end 👉 (내가 담당한 역할 😎)</strong><br />
+리액트를 이용한 CRUD 게시판 구현 및 CSS 작업<br />
+타입스크립트를 이용한 web3 웹개발</p>
+  </li>
+  <li>
+    <p><strong>Smart Contract 👉 (내가 담당한 역할 😎)</strong><br />
+ERC-721 기반 NFT 발행 &amp; 조회 &amp; 판매를 위한 컨트랙트 개발 및 배포</p>
+  </li>
+  <li>
+    <p><strong>Back-end</strong><br />
+MySQL을 이용한 DataBase 서버 구축 <br />
+회원가입 &amp; 로그인 기능 구현</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="-기능-소개">💻 기능 소개</h3>
+
+<ul>
+  <li>
+    <p><strong>Writing</strong> 👉 게시판에 글을 쓸 수 있는 기능</p>
+  </li>
+  <li>
+    <p><strong>Editing</strong> 👉 작성된 게시물의 내용을 수정할 수 있는 기능</p>
+  </li>
+  <li>
+    <p><strong>Remove</strong> 👉 작성된 게시물을 삭제 할 수 있는 기능</p>
+  </li>
+  <li>
+    <p><strong>Profile</strong> 👉 회원가입과 로그인을 할 수 있는 기능</p>
+  </li>
+  <li>
+    <p><strong>Wallet</strong> 👉 홈페이지와 MetaMask 지갑과 연결</p>
+  </li>
+  <li>
+    <p><strong>NFT-Zone</strong> 👉 NFT를 민팅하고 민팅한 NFT를 조회 &amp; 판매</p>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="wallet">Wallet</h4>
+
+<p>웹페이지와 MetaMask 지갑 연결</p>
+
+<blockquote>
+  <p>지갑 연결이 완료되면 연결 완료 메세지가 뜬다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b9dee7a7-f096-4265-ad0d-3ef7e6705cf5/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="sign-up">Sign Up</h4>
+
+<p>이메일 / 비밀번호 / 닉네임<br />
+유효성 검사를 통한 회원가입 기능</p>
+
+<blockquote>
+  <p>MetaMask 지갑이 <span style="background-color:#B5E045; color:#000;">연결된 상태여야만</span> 회원가입을 진행할 수 있다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ec4dc6e5-363a-45bb-9e38-08265e83b7be/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="login">Login</h4>
+
+<p>회원가입을 완료하고 로그인을 하면 메인페이지로 들어간다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/347cf6d9-13ad-434b-ad94-e3d67319f8e3/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="writing">Writing</h4>
+
+<p>글쓰기를 하면 <span style="background-color:#B5E045; color:#000;">보상으로 토큰</span>을 받는다</p>
+
+<blockquote>
+  <p>글을 쓰면 DataBase에 정보가 담겨서 글 목록에 바로 출력된다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/4a89e492-adbe-424c-92f1-98b218b18eb6/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="post-view">Post View</h4>
+
+<p>글 목록에 제목을 클릭하면 작성된 세부 내용이 나온다<br />
+작성된 글을 <strong>수정(Editing) &amp; 삭제(Remove)</strong> 할 수 있다</p>
+
+<blockquote>
+  <p>제목 / 아이디 / 날짜 / 글내용</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/e8ad77f2-83f8-4882-9969-57cb816b9e78/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="nft-zone---mint">NFT Zone - MINT</h4>
+
+<p>MINT 버튼을 클릭하면 랜덤한 NFT를 얻을 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/7088c804-7c2b-454e-92b1-dfa7f2cc4bb5/image.gif" alt="" /></p>
+
+<hr />
+
+<h4 id="nft-zone---list--sell">NFT Zone - List &amp; Sell</h4>
+
+<p>보유 중인 NFT의 리스트를 확인하고 판매까지 할 수 있다<br />
+(기능 구현 중…)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/4a914ed4-31ed-41cf-824a-9fffada50b9b/image.gif" alt="" /></p>
+
+<hr />
+
+<blockquote>
+  <h3 id="mychain-github-코드">‘MyChain’ Github 코드</h3>
+
+  <p><a href="https://github.com/codestates/beb-04-second-MyChain">https://github.com/codestates/beb-04-second-MyChain</a></p>
+</blockquote>
+
+<hr />
+
+<h2 id="개발-회고-">개발 회고 💡</h2>
+
+<h3 id="1-개발내용-회고">1. 개발내용 회고</h3>
+
+<p>BEB에서 두 번째 진행되는 프로젝트<br />
+한번 해봐서 그런지 시간적 여유가 있어서 그런지 긴장감이 덜했다</p>
+
+<p>이번에는 팀원분들이 맡고 싶어 하는 파트가 명확해서<br />
+역할을 분담하는 건 수월하게 진행됐다</p>
+
+<p>근데 나를 포함해 팀원 4명 중에 <br />
+갑자기 두 분이 진행하지 못하는 상황이 되어서</p>
+
+<p>나와 다른 한 분, 두 명이서 프로젝트를 진행했다</p>
+
+<p>그러다 보니 많은 걸 구현해 내는건 시간이 부족했고<br />
+Web 2.0 부분은 기본적인 기능은 구현해냈으나<br />
+Web 3.0 부분은 아쉬움이 많이 남았다</p>
+
+<p>아쉬움이 많은 만큼<br />
+보완해서 개인적으로 깃허브에 커밋하려 한다</p>
+
+<hr />
+
+<h3 id="2-개발감정-회고">2. 개발감정 회고</h3>
+
+<p>팀에 갑작스러운 결원이 생기고<br />
+역할 분담했던 다른 파트까지 맡게 되면서<br />
+약간의 부담감이 있었는데</p>
+
+<p>현업에서도 이러한 변수가 생기지 않을 거라는 법이 없기에<br />
+오히려 감사하며 진행했다 🙏</p>
+
+<p>그렇게 진행하다 보니 이번에 정말 많은걸 배우게 되었다</p>
+
+<p>그리고 프로젝트 중 1/3 은 에러를 해결하느라 시간을 보냈는데<br />
+구글링의 중요성을 이번에 제대로 느낀거 같다</p>
+
+<hr />
+
+<h3 id="3-아쉬웠던-점--보완해야-할-사항">3. 아쉬웠던 점 &amp; 보완해야 할 사항</h3>
+
+<blockquote>
+  <h3 id="props-로-인자-전달의-한계">Props 로 인자 전달의 한계</h3>
+
+  <p><img src="https://velog.velcdn.com/images/-__-/post/400bc9db-30cc-42bf-b0fe-3722abf6ce79/image.png" alt="" /></p>
+
+  <p>글 목록에 있는 제목을 누르면 작성한 글 세부 내용을 볼 수 있게
+DataBase 서버에서 그 정보를 가져와야 했는데
+한번 서버에서 가져온 정보를
+다른 컴포넌트에 ‘Props’로 전달할 방법이 떠오르지 않았다<br /></p>
+
+  <ol>
+    <li>글 목록에 있는 정보를 세부 내용에 ‘Props’로 넘겨주려면</li>
+    <li>컴포넌트를 한 번 더 출력해야 하는데 그러면 <strong>CSS가 꼬이게 됨</strong></li>
+    <li>한번 전달받은 ‘Props’를 또 다른 곳으로는 전달이 안 됨</li>
+    <li>‘Props’는 한 다리를 꼭 거쳐서 인자를 전달 해야 하는데</li>
+    <li>전달이 안되니까 똑같은 코드를 다른 컴포넌트에서도 작성해서 가져와야했다</li>
+  </ol>
+
+  <p>👉 이러한 문제는 <span style="background-color:#BFA8EE; color:#000">‘Redux’</span> 를 통해 해결할 수 있다는데<br />
+‘Redux’ 를 좀 더 자유롭게 사용하기 위해 더 공부해봐야겠다</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="검색창-게시물-검색-기능">검색창 게시물 검색 기능</h3>
+
+  <p>검색창까지는 구현은 했으니 ⌨ <br />
+키워드를 입력해서 해당 키워드에 맞는<br />
+게시물을 찾아주는 기능을 구현해보기 !</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="작성된-글에-댓글-달기">작성된 글에 댓글 달기</h3>
+
+  <p>작성된 글에 댓글을 달고<br />
+그 댓글에 답글을 다는 기능까지 추가해 보고 싶다<br />
+(+ 좋아요 기능까지)<br />
+⭐ 이 기능은 서버를 거치지 않고 프론트엔드 내에서 구현이 가능하다</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="글-작성-시-보상으로-토큰-지급">글 작성 시 보상으로 토큰 지급</h3>
+
+  <p>글 작성을 다 하고 버튼을 누를 때 onClick 함수를 이용하여<br />
+토큰을 지급하는 기능을 구현할 수 있을 거 같았다</p>
+
+  <ol>
+    <li>작성된 글의 DB가 서버로 흘러 들어가서</li>
+    <li>글 작성자의 아이디와 지갑 주소를 찾은 후에</li>
+    <li>관리자는 해당 주소로 토큰을 지급한다</li>
+  </ol>
+
+  <p>👉 관리자 계정에 보상을 줄 토큰이 미리 준비되어있어야 할거고
+👉 스마트컨트랙트에서 서버로 전달할 방법을 생각해봐야 겠다</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="쌩으로-작성하는-css">쌩으로 작성하는 CSS</h3>
+
+  <p><img src="https://velog.velcdn.com/images/-__-/post/1650cf3e-4bbc-49f9-a8c4-ac53681994a3/image.png" alt="" />라이브러리를 사용하지 않고 쌩으로 CSS를 작업하다보니
+은근히 시간을 많이 잡아 먹었다
+<strong>‘부트스트랩’</strong>과 같은 CSS 라이브러리를 이용하여
+부분적으로 바꿔 나가는 디자인도 많이 연습해봐야겠다</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="다양한-테스트넷-환경에서-web-30-개발">다양한 테스트넷 환경에서 Web 3.0 개발</h3>
+
+  <p>이더리움2.0 하드포크 테스트로 인해
+‘롭스텐’ , ‘린케비’ 테스트넷이 불안정한 것 같아
+이번에는 <strong>‘폴리곤 뭄바이 테스트넷’</strong> 환경에서 스마트컨트랙트 코드를 작성했다
+몇 가지의 코드만 수정하면 다양한 테스트넷에서도 가능할 거 같은데
+클레이튼, 바이낸스, 솔라나 등 다양한 테스트넷에서도 가능한지 구현해보고 싶다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="더-공부할-내용-">더 공부할 내용 📃</h3>
+
+<ul>
+  <li>Redux</li>
+  <li>타입스크립트</li>
+  <li>솔리디티 심화</li>
+  <li>토큰 스왑기능</li>
+</ul>
+
+<hr />
+:ET
