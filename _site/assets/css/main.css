@@ -454,15 +454,15 @@ html[data-theme="dark"] .post-menu .post-menu-content ul a:hover { color: #fff !
 
 .post-menu .post-menu-content ul { border-left: 1px solid #e9ecef; }
 
-.post-menu .post-menu-content ul .h-h2 { padding-inline-start: 4px; font-size: 17.6px; line-height: 1.4; }
+.post-menu .post-menu-content ul .h-h2 { padding-inline-start: 4px; font-size: 14.4px; line-height: 1.8; }
 
-.post-menu .post-menu-content ul .h-h3 { padding-inline-start: 24.8px; font-size: 17.6px; line-height: 1.4; }
+.post-menu .post-menu-content ul .h-h3 { padding-inline-start: 24.8px; font-size: 14.4px; line-height: 1.8; }
 
-.post-menu .post-menu-content ul .h-h4 { padding-inline-start: 45.6px; font-size: 17.6px; line-height: 1.4; }
+.post-menu .post-menu-content ul .h-h4 { padding-inline-start: 45.6px; font-size: 14.4px; line-height: 1.8; }
 
-.post-menu .post-menu-content ul .h-h5 { padding-inline-start: 66.4px; font-size: 17.6px; line-height: 1.4; }
+.post-menu .post-menu-content ul .h-h5 { padding-inline-start: 66.4px; font-size: 14.4px; line-height: 1.8; }
 
-.post-menu .post-menu-content ul .h-h6 { padding-inline-start: 87.2px; font-size: 17.6px; line-height: 1.4; }
+.post-menu .post-menu-content ul .h-h6 { padding-inline-start: 87.2px; font-size: 14.4px; line-height: 1.8; }
 
 .post-menu .post-menu-content ul a { display: flex; padding: 2px 8px; color: #2c2c2c; }
 
