@@ -1,0 +1,145 @@
+I"i/<p><img src="https://velog.velcdn.com/images/-__-/post/b2bd7c08-e005-49d2-be4c-65c7a4351c5f/image.png" alt="" /></p>
+
+<p>React 기반이므로
+<strong>보일러플레이트 ‘CRA’</strong> 를 설치해준다</p>
+
+<p><code class="language-plaintext highlighter-rouge">npx create-react-app "이름" —template typescript</code></p>
+
+<p>web3을 설치해준다</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm install web3</code></p>
+
+<hr />
+
+<h3 id="windowethereum-인터페이스-react-app-envdts">window.ethereum 인터페이스 (react-app-env.d.ts)</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;reference types="react-scripts" /&gt;</span>
+
+<span class="kr">interface</span> <span class="nx">Window</span> <span class="p">{</span>
+  <span class="nl">ethereum</span><span class="p">:</span> <span class="nx">any</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 👉 Window라는 객체에 메타마스크를 설치하면 ethereum: any 라는 오브젝트가 생긴다</span>
+<span class="c1">// 👉 리액트에선 이걸 인식하지 못함</span>
+<span class="c1">// 👉 그래서 이런식으로 강제로 적어주는것이다</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="web3js-를-통해-스마트-컨트랙트-생성하기-indexts">web3.js 를 통해 스마트 컨트랙트 생성하기 (index.ts)</h3>
+
+<ul>
+  <li>개발자는 <span style="background-color:#B5E045; color:#000;">‘스마트 컨트랙트 주소’</span>와 <span style="background-color:#B5E045; color:#000;">‘ABI’</span>를 알면 ‘web3.js’ 를 통해</li>
+  <li>스마트 컨트랙트를 생성하고 / 특정 함수를 실행할 수 있다</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">AbiItem</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">web3-utils</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Web3</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">web3</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// remix IDE 에서 컴파일 밑에 ABI 를 복사해온다</span>
+<span class="kd">const</span> <span class="nx">mintAnimalTokenAbi</span><span class="p">:</span> <span class="nx">AbiItem</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">ABI</span> <span class="nx">붙혀넣기</span><span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">saleAnimalTokenAbi</span><span class="p">:</span> <span class="nx">AbiItem</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">ABI</span> <span class="nx">붙혀넣기</span><span class="p">];</span>
+
+<span class="c1">// remix IDE 에서 메타마스크로 각각 배포하고 나온 컨트랙트 주소를 복사해온다</span>
+<span class="kd">const</span> <span class="nx">mintAnimalTokenAddress</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">0x9bADD7AB6c2d6929bf8483Db8aBD9D71EFd49E29</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">saleAnimalTokenAddress</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">0x01F1A290D1954f770B4CeF170EBF1DeE474Ceb3F</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">);</span>
+<span class="c1">// 메타마스크가 설치되어있으면 따로 import하지 않아도 작동하는 모듈 (window.ethereum)</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">mintAnimalTokenContract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span>
+  <span class="c1">// ⭐ 개발자는 '스마트 컨트랙트 주소'와 'ABI'를 알면 'web3.js' 를 통해</span>
+  <span class="c1">// ⭐ 스마트 컨트랙트를 생성하고 / 특정 함수를 실행할 수 있다</span>
+  <span class="nx">mintAnimalTokenAbi</span><span class="p">,</span>
+  <span class="nx">mintAnimalTokenAddress</span>
+<span class="p">);</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">saleAnimalTokenContract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span>
+  <span class="nx">saleAnimalTokenAbi</span><span class="p">,</span>
+  <span class="nx">saleAnimalTokenAddress</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="리액트와-메타마스크-지갑-연결-apptsx">리액트와 메타마스크 지갑 연결 (App.tsx)</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">FC</span><span class="p">,</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Routes</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Main</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./routes/main</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">App</span><span class="p">:</span> <span class="nx">FC</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">account</span><span class="p">,</span> <span class="nx">setAccount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span> <span class="o">&lt;</span> <span class="nx">string</span> <span class="o">&gt;</span> <span class="dl">""</span><span class="p">;</span>
+
+  <span class="kd">const</span> <span class="nx">getAccount</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="c1">// try 문 안의 코드가 쭉 실행되고 에러가 없다면 catch는 건너뛴다</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// if 👉 메타마스크가 설치되어있으면 실행된다</span>
+        <span class="kd">const</span> <span class="nx">accounts</span> <span class="o">=</span> <span class="k">await</span> <span class="nb">window</span><span class="p">.</span><span class="nx">ethereum</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+          <span class="na">method</span><span class="p">:</span> <span class="dl">"</span><span class="s2">eth_requestAccounts</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">});</span> <span class="c1">// 연결된 메타마스크의 주소가 나온다</span>
+        <span class="c1">// 👉 window.ethereum.request 을 console.log에 찍어보면 확인할수 있다</span>
+
+        <span class="nx">setAccount</span><span class="p">(</span><span class="nx">accounts</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="c1">// 연결된 메타마스크의 주소를 useState에 담는다</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// 메타마스크가 설치되어있지 않다면 👉 alert 문구가 나온다</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Install Metamask!</span><span class="dl">"</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 에러가 발생한다면 catch 실행</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span> <span class="c1">// 👉 에러가 발생했다고 출력</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">getAccount</span><span class="p">();</span> <span class="c1">// getAccount 한번만 실행</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">BrowserRouter</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Routes</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Route</span> <span class="nx">path</span><span class="o">=</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span> <span class="nx">element</span><span class="o">=</span><span class="p">{</span><span class="o">&lt;</span><span class="nx">Main</span> <span class="o">/&gt;</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/Routes</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/BrowserRouter</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="리액트와-메타마스크-지갑-연결-구현">리액트와 메타마스크 지갑 연결 구현</h3>
+
+<p><code class="language-plaintext highlighter-rouge">npm run start</code> 를 하면</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/34b76109-aa2f-4e2a-8b58-820c77641210/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 메타마스크 지갑과 연결할 수 있는 팝업창이 나오고 연결할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="전체코드-github">전체코드 github</h3>
+
+<p><a href="https://github.com/wavescats/mini-project/tree/main/Dapp-NFT(MintAnimal)/front-end">https://github.com/wavescats/mini-project/tree/main/Dapp-NFT(MintAnimal)/front-end</a></p>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>
+    <p><a href="https://blog.valist.io/how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a">https://blog.valist.io/how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a</a></p>
+  </li>
+  <li>
+    <p><a href="https://velog.io/@mjlee0326/React%EC%99%80-Web3%EC%9D%98-%EB%A7%8C%EB%82%A8">https://velog.io/@mjlee0326/React%EC%99%80-Web3%EC%9D%98-%EB%A7%8C%EB%82%A8</a></p>
+  </li>
+</ul>
+
+<hr />
+:ET

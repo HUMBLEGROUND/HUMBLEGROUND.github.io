@@ -1,0 +1,62 @@
+I"�
+<p><img src="https://velog.velcdn.com/images/-__-/post/0173722d-0fbd-40cb-9a1c-eb1b90a93b07/image.png" alt="" /></p>
+
+<h3 id="setstate-인자-자체를-props로-전달">setState 인자 자체를 Props로 전달</h3>
+
+<blockquote>
+  <p><strong>‘PoolListProps’</strong> 는 다른 컴포넌트에서 타입이 정의된적이 있기에<br />
+export하고 👉 import로 가져왔습니다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/1f62afd2-63f0-46d2-ba7a-339171f2874b/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/964dd76b-3ded-42e7-8ebd-da5e147a1e03/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li>정의된 타입으로 useState 빈배열을 만들고</li>
+    <li>서버에서 가져온 데이터를 빈배열에 담는다</li>
+    <li>useState 배열 <u>'저장값 &amp; 갱신값'</u> <strong>인자 자체</strong>를 넘겨줘야만 할때</li>
+    <li>일단 Props 로 해당 컴포넌트에 전달해준다</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<h3 id="전달받은-props-컴포넌트에서-타입-지정">전달받은 Props 컴포넌트에서 타입 지정</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/d7750007-e324-4aed-bc81-ebd4fc73c737/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li>useState 배열에서 일부 객체만 전달 받았으면</li>
+    <li>전달받은 객체 <strong>‘타입만’</strong> 지정해주면 됐는데</li>
+    <li>State 인자 <strong>‘전체’</strong> 를 가져오는거라서</li>
+    <li>가져온 Props 에 <span style="background-color:#34CDEF; color:#000;"><strong>‘SetStateAction’</strong></span> 으로 <strong>‘타입 전체 선언’</strong>을 해줘야 한다</li>
+  </ol>
+</blockquote>
+
+<p>👉 <strong>SetStateAction</strong> 은 정의된 useState의 속성을 그대로 가져온다</p>
+
+<hr />
+
+<h3 id="any-type">any Type</h3>
+
+<p>useState 타입에 <strong>‘string’</strong> 과 <strong>‘number’</strong> 타입이 섞여있어서<br />
+<code class="language-plaintext highlighter-rouge">&lt;any&gt;</code> 라는 타입으로 전체 선언을 해줬는데</p>
+
+<p>알아보니 <code class="language-plaintext highlighter-rouge">&lt;any&gt;</code> 로 배열에 전체 타입을 선언해주게 되면<br />
+유형 안전성이 손실되어 <strong>TypeScript</strong> 의 목적을 어지럽힌다고 한다 😵‍💫</p>
+
+<p>👉 유형을 가능한 한 구체적으로 만드는 것이 가장 좋다!</p>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/64729482/typescript-usestate-setstate-in-child-with-argument">https://stackoverflow.com/questions/64729482/typescript-usestate-setstate-in-child-with-argument</a></li>
+</ul>
+
+<hr />
+:ET

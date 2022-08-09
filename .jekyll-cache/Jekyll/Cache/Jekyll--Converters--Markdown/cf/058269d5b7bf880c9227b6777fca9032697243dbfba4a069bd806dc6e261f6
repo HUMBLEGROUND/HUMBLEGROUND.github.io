@@ -1,0 +1,95 @@
+I"�	<p><img src="https://velog.velcdn.com/images/-__-/post/627ccddb-4fbb-4e1c-8164-0369f46c4122/image.png" alt="" /></p>
+
+<h2 id="찾아보게된-이유-">찾아보게된 이유 🧐</h2>
+
+<ul>
+  <li>윈도우 노트북에 우분투를 설치해서 사용하다보니<br />
+발열이 심해서 열을 식혀주려고 팬이 계속돌아<br />
+소음이 심해지는 현상이 발생 ♨<br />
+구글링을 해서 내가 해결한 방법을 기록으로 남기려고 한다.</li>
+</ul>
+
+<hr />
+
+<h2 id="해결-방법-">해결 방법 😎</h2>
+
+<h4 id="전력관리-모듈-tlp-라는걸-설치">전력관리 모듈 ‘TLP’ 라는걸 설치</h4>
+
+<ul>
+  <li>터미널을 열어서 명령어를 입력</li>
+</ul>
+
+<blockquote>
+  <p>sudo add-apt-repository ppa:linrunner/tlp</p>
+
+  <p><img src="https://velog.velcdn.com/images/-__-/post/57ea8117-9e8a-415c-9156-90647f93badf/image.png" alt="" /></p>
+
+  <p>👆 엔터키를 눌러서 설치를 계속 진행한다.</p>
+</blockquote>
+
+<ul>
+  <li>설치가 끝나면 습관처럼 업데이트를 해준다</li>
+</ul>
+
+<blockquote>
+  <p>sudo apt-get update</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>본격적으로 tlp 를 설치해주는 작업</li>
+</ul>
+
+<blockquote>
+  <p>sudo apt-get install tlp tlp-rdw</p>
+</blockquote>
+
+<ul>
+  <li>설치가 끝났으면 tlp 을 실행</li>
+</ul>
+
+<blockquote>
+  <p>sudo tlp start</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>만약에 실행을 했는데 이러한 오류가 나온다면</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b355df0c-27a0-486a-a4e4-0b9dba1bfd22/image.png" alt="" /></p>
+
+<blockquote>
+  <p>sudo vim /etc/tlp.conf
+👆 위 명령어를 쳐서 텍스트 수정에 들어간다
+<img src="https://velog.velcdn.com/images/-__-/post/bc37103e-451b-4909-91be-aca3f9f1913e/image.png" alt="" /></p>
+</blockquote>
+
+<p>그냥은 수정이 안되고 ‘ i ‘ 키를 누르면 수정이 가능해지는데</p>
+
+<ol>
+  <li>i 키를 눌러서 수정 가능하게 만듬</li>
+  <li>0을 1로 바꿔줌</li>
+  <li>control+c 눌러줌</li>
+  <li>:wq! 키를 그대로 입력해서 빠져나옴</li>
+</ol>
+
+<p>이러면 수정 완료.</p>
+
+<hr />
+
+<ul>
+  <li>수정이 끝났으면 다시 tlp 을 실행</li>
+</ul>
+
+<blockquote>
+  <p>sudo tlp start<br />
+<img src="https://velog.velcdn.com/images/-__-/post/1f54f4f1-675b-4604-a754-bf1633a5b9fe/image.png" alt="" /></p>
+</blockquote>
+
+<p>👆 위와같이 뜬다면 실행이 된것이다</p>
+
+<hr />
+:ET
