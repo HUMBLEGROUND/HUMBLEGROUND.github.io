@@ -1,0 +1,137 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/7c320ae0-f333-4824-ae1c-120ae8a0a6fc/image.png" alt="" /></p>
+
+<h3 id="web3js">Web3.js</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8bb2a698-643f-46fb-b868-66f81764e1f5/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>Web3.js 는 이더리움 블록체인과 상호작용하는 <strong>‘클라이언트를 개발’</strong> 하는 데 사용한다</p>
+  </li>
+  <li>
+    <p>Web3.js는 다른 계정으로 이더리움을 전송하거나,</p>
+  </li>
+  <li>
+    <p>스마트 컨트랙트에서 데이터를 읽고 쓰거나,</p>
+  </li>
+  <li>
+    <p>스마트 컨트랙트를 만드는 등</p>
+  </li>
+  <li>
+    <p>다양한 액션을 수행할 수 있게 해주는 라이브러리의 집합이다</p>
+  </li>
+  <li>
+    <p>Web3.js는 이더리움 블록체인과 <strong>JSON-RPC</strong> 를 사용하여 소통한다</p>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="json-rpc">JSON-RPC</h3>
+
+  <ul>
+    <li>RPC 를 JSON 포맷으로 표현한 것</li>
+  </ul>
+
+  <h3 id="rpc-remote-procedure-call">RPC (Remote Procedure Call)</h3>
+
+  <ul>
+    <li>원격 프로시져 호출<br />
+👉 언어나 환경 등에 <strong>‘종속되지 않고’</strong> 서비스 간 프로시저를 호출하도록 해주는 개념</li>
+  </ul>
+</blockquote>
+
+<p><br /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8fda9f2b-2cc3-427c-993d-3818d0887a8f/image.png" alt="" /></p>
+
+<blockquote>
+  <h3 id="web3js는">web3.js는</h3>
+
+  <p><strong>‘JSON-RPC’</strong> 를 통해 <strong>‘블록체인의 데이터’</strong>와 스마트 컨트랙트의 <strong>‘바이트 코드’</strong>를<br /> &gt; <span style="background-color:#BFA8EE; color:#000;">자바스크립트로 다룰 수 있도록</span> 다양한 <strong>‘객체</strong>와 <strong>함수’</strong>를 제공한다<br /></p>
+
+  <p>이더리움 네트워크에 있는 각 노드들은 지갑을 통해 상호작용 하는데,<br />
+이 때 <strong>‘JSON-RPC’</strong> 형식의 데이터로 상호작용을 한다<br />
+이 상호작용을 위한 데이터가 바로 <strong>‘ABI’</strong> 이다</p>
+</blockquote>
+
+<h3 id="abi">ABI</h3>
+
+<ul>
+  <li>
+    <p>ABI는 <strong>‘스마트 컨트랙트 코드’</strong>에 대한 설명이 담긴 JSON 형식의 인터페이스이다</p>
+  </li>
+  <li>
+    <p>함수 이름과 매개변수들이 들어가 있다</p>
+  </li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">constant</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="dl">"</span><span class="s2">inputs</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="dl">"</span><span class="s2">internalType</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tokenOwner</span><span class="dl">"</span><span class="p">,</span>
+          <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">address</span><span class="dl">"</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+</code></pre></div></div>
+
+<p><a href="https://wavescats.github.io/blockchain/2022/05/21/bc35.html">https://wavescats.github.io/blockchain/2022/05/21/bc35.html</a><br />
+👆 (ABI 정리 참고)</p>
+
+<hr />
+
+<h3 id="web3js-모듈">Web3.js 모듈</h3>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">web3-eth</code> 👉 이더리움 블록체인과 스마트 컨트랙트 모듈</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">web3-shh</code> 👉 P2P 커뮤니케이션과 브로드캐스트를 위한 위스퍼 프로토콜 모듈</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">web3-bzz</code> 👉 탈중앙화 파일 스토리지를 위한 스왐 프로토콜 모듈</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">web3-utils</code> 👉 dApp 개발자를 위한 유용한 헬퍼 함수들을 모아둔 모듈</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="windowethereum">window.ethereum</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/dbaf9c9b-7f50-4f2d-8ee0-c49e17e6c75d/image.png" alt="" /></p>
+
+<p><strong>EIP-1139</strong> 를 통해<br />
+메타마스크는 👉 웹 페이지에 <strong>자바스크립트 객체 형태 (ABI)</strong>로<br />
+<code class="language-plaintext highlighter-rouge">window.ethereum</code> 객체 제공</p>
+
+<ul>
+  <li>공급자 (provider) 객체이므로 web3.js 사용 가능</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/f33e0217-3be1-4aed-99bf-7ef0ef31eb7c/image.png" alt="" /></p>
+
+<blockquote>
+  <p>크롬 개발자 콘솔 창에 <code class="language-plaintext highlighter-rouge">window.ethereum</code> 입력한 결과 👆</p>
+</blockquote>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>
+    <p><a href="https://blog.valist.io/how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a">https://blog.valist.io/how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a</a></p>
+  </li>
+  <li>
+    <p><a href="https://velog.io/@mjlee0326/React%EC%99%80-Web3%EC%9D%98-%EB%A7%8C%EB%82%A8">https://velog.io/@mjlee0326/React%EC%99%80-Web3%EC%9D%98-%EB%A7%8C%EB%82%A8</a></p>
+  </li>
+</ul>
+
+<hr />
+:ET

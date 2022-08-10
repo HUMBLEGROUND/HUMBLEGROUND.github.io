@@ -1,0 +1,66 @@
+I"�	<p><img src="https://velog.velcdn.com/images/-__-/post/6103531d-d8b3-4754-bb93-2ac5528e68f3/image.png" alt="" /></p>
+
+<h3 id="mumbai-테스트넷-test-network">Mumbai 테스트넷 (Test Network)</h3>
+
+<p>폴리곤(Polygon)을 기반으로 테스트를 하기위한 네트워크</p>
+
+<p>비싼 <strong>이더리움</strong>의 가스비로 인해<br />
+이용에 어려움을 겪는 개발자들이 저렴한 비용으로 대체한 <strong>‘폴리곤’</strong> 이다</p>
+
+<hr />
+
+<h3 id="mumbai-테스트넷-메타마스크에-등록-추가">Mumbai 테스트넷 메타마스크에 등록 (추가)</h3>
+
+<ol>
+  <li>Chainlist 사이트에 들어가서 <strong>‘Mumbai 테스트넷’</strong> 검색 후 추가</li>
+</ol>
+
+<p><a href="https://chainlist.org/">https://chainlist.org/</a><br />
+(👆 Chainlist 사이트)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b449e609-1c2e-4de6-8da7-5e14c28f2c1f/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>Chainlist 사이트</strong>는 <strong>‘메타마스크’</strong>에 안보이는 네트워크를 추가 할 수 있는 사이트다</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li>메타마스크에 추가된 <strong>‘Mumbai 테스트넷’</strong> 확인</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/6cc7badf-2a96-4e81-a24d-7479fc3ca560/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="matic-mumbai-faucet">MATIC Mumbai Faucet</h3>
+
+<p>Mumbai (뭄바이) 테스트넷에서 사용할수있는 <strong>‘테스트용’</strong>으로 나눠주는 폴리곤 (MATIC)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/d10f9500-6fdf-45f6-af0b-303aaa9b9f07/image.png" alt="" /></p>
+
+<p><a href="https://mumbaifaucet.com/">https://mumbaifaucet.com/</a><br />
+(👆 MATIC Mumbai Faucet 사이트 )</p>
+
+<blockquote>
+  <p>24시간 마다 <strong>‘1 MATIC’</strong> 씩 받을수 있다</p>
+</blockquote>
+
+<hr />
+
+<p>만약 24시간 내에 테스트 수수료로 <strong>‘1 MATIC’</strong> 을 다썼다면</p>
+
+<p><strong>‘다른 Faucet 사이트’</strong>에서도 추가로 받을 수 있다</p>
+
+<p><a href="https://faucet.polygon.technology/">https://faucet.polygon.technology/</a><br />
+(👆 다른 Faucet 사이트)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a6b76984-a228-4f3b-9ce4-9cd0f1d8a2e8/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>‘MATIC Mumbai 테스트 네트워크’</strong> 에 폴리곤이 잘 받아진걸 확인할수 있다</p>
+</blockquote>
+
+<hr />
+:ET
