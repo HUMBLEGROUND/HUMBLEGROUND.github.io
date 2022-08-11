@@ -1,0 +1,167 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/171cab88-9172-4109-bd87-aa4b57e4cee9/image.png" alt="" /></p>
+
+<h3 id="ssi-self-sovereignty-identity-자기-주권-신원">SSI (Self Sovereignty Identity, 자기 주권 신원)</h3>
+
+<ul>
+  <li>
+    <p>신원증명이 필요한 <strong>서비스를 이용할 때</strong>,</p>
+  </li>
+  <li>
+    <p>인증정보를 제3자에게 맡기는 것이 아닌 <span style="background-color:#B5E045; color:#000;"><strong>사용자가 직접 관리</strong>하도록</span></p>
+  </li>
+  <li>
+    <p>데이터 <strong>‘주권을 사용자에게’</strong> 가져다주는 것</p>
+  </li>
+  <li>
+    <p>스스로가 독립적인 권한을 가진 신원, <span style="background-color:#B5E045; color:#000;"><strong>‘자신이 스스로 부여한 신원’</strong></span>이다</p>
+  </li>
+  <li>
+    <p>신원의 <strong>소유권</strong>을 가진 주체가 👉 신원에 대한 <strong>권리</strong>를 가지고 <u>공개 대상과 범위를 선택</u>할 수 있다</p>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="did-decentralized-identity-탈중앙-신원증명">DID (Decentralized Identity, 탈중앙 신원증명)</h3>
+
+  <ul>
+    <li>
+      <p>DID는 기존의 중앙화된 인증방식에서 벗어나 탈중앙화 방식의
+신원 증명을 통해</p>
+    </li>
+    <li>
+      <p>자기 자신이 신원증명에 대한 권한을 갖도록 하겠다는 <span style="background-color:#B5E045; color:#000;"><strong>‘SSI 개념을 현실화’</strong>하기 위해 사용된다</span></p>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h3 id="ssi가-형성되기-위한-요소">SSI가 형성되기 위한 요소</h3>
+
+<h4 id="1-did-decentralized-identifier-탈중앙화-식별자">1. DID (Decentralized identifier, 탈중앙화 식별자)</h4>
+
+<ul>
+  <li>누구나 DID 메소드로 자신의 주소를 만들 수 있으며, DID는 주소이면서 마스터키를 활용하여 만들 수 있다</li>
+</ul>
+
+<h4 id="2-did-auth-did-authentication">2. DID Auth (DID Authentication)</h4>
+
+<ul>
+  <li>아이디 소유자가 개인키를 가지고 있다는 것을 간단히 인증할 수 있는 방법을 다룬다</li>
+</ul>
+
+<h4 id="3-dkms-decentralized-key-management-system-탈중앙-키관리-시스템">3. DKMS (Decentralized Key Management System, 탈중앙 키관리 시스템)</h4>
+
+<ul>
+  <li>신원을 증명하는데 사용하는 개인키를 어떻게 관리할 것인가를 다룬다</li>
+</ul>
+
+<h4 id="4-verifiable-credentials-검증가능한-크레덴셜">4. Verifiable Credentials (검증가능한 크레덴셜)</h4>
+
+<ul>
+  <li>아이디의 소유자가 어떤 것을 할 수 있는 자격을 갖추었음을 검증하는 방법을 다룬다</li>
+</ul>
+
+<blockquote>
+  <h3 id="ssi를-구성하기-위한-요소">SSI를 구성하기 위한 요소</h3>
+
+  <ul>
+    <li>Issuer(발행자) 👉 발행자</li>
+    <li>Holder(소유자) 👉 자격증명 소유자</li>
+    <li>Verifier(검증자) 👉 자격증명 검증자</li>
+    <li>Verifiable data Registry(검증데이터 저장소) 👉 블록체인 등 분산저장소</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h3 id="1세대---개별신원모델-siloed-identity">1세대 - 개별신원모델 (Siloed Identity)</h3>
+
+<ul>
+  <li>
+    <p><span style="background-color:#F7969A; color:#000;">여러 인터넷 <strong>사이트마다</strong></span> 아이디 &amp; 비밀번호를 발급 받아 사용하는 모델</p>
+  </li>
+  <li>
+    <p>아이디 &amp; 비밀번호가 분실되면 번거롭다</p>
+  </li>
+  <li>
+    <p>여러 사이트에 <strong>‘동일한’</strong> 아이디 &amp; 비밀번호를 사용한다면 개인 정보 위험이 증가한다 (신원 유출 가능성)</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/05218d6f-a1d6-43e3-b3f5-c5b88b34c7e4/image.png" alt="" /></p>
+
+<blockquote>
+  <p>비밀번호 설정 중에 <strong>최소한 알파벳 대문자와 숫자와 특수기호가 포함</strong>되어야 하는 조건을 가지고 있으면 다른 사이트와는 다른 형태의 비밀번호를 만들어야 한다
+👉 이용자의 편의성이 떨어진다</p>
+</blockquote>
+
+<ul>
+  <li><strong>개인이 개별 사이트</strong> 아이디 &amp; 비밀번호 <strong>관리</strong>해야 함</li>
+  <li>개별 서비스 제공자 정보보호의무 가중 / 천문학적 비용 발생</li>
+  <li>개인정보 유출 우려</li>
+</ul>
+
+<hr />
+
+<h3 id="2세대---연합-신원-모델-federated-identities">2세대 - 연합 신원 모델 (Federated Identities)</h3>
+
+<ul>
+  <li>
+    <p><span style="background-color:#F7969A; color:#000;">기존 소셜 미디어 계정으로</span> 다른 사이트에 로그인하는 방식이다</p>
+  </li>
+  <li>
+    <p><strong>‘OAuth’</strong> 와 같은 기반으로 <strong>중앙화된</strong> 연결 서비스제공자 (구글, 카카오, 페이스북)</p>
+  </li>
+  <li>
+    <p>특정 서비스에 개인 정보가 <strong>‘집중’</strong>되어 개인정보 유출시 위험이 상당하다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3ffeadd5-4775-4d21-a709-3c2f4c3f8cb0/image.png" alt="" /></p>
+
+<blockquote>
+  <ul>
+    <li>사용자의 편의성은 좋다 🔺</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>글로벌 기업의 개인정보 <strong>독점적</strong> 확보 (구글 / 아마존 / 페이스북)</li>
+  <li>사용자 개인정보의 대한 <strong>권리 주장</strong> 어려움</li>
+  <li>개인정보가 독점되고 계속하여 <strong>유출 위험성</strong> 존재</li>
+</ul>
+
+<hr />
+
+<h3 id="3세대---자기주권-신원-모델-ssi-self-sovereignty-identities">3세대 - 자기주권 신원 모델 (SSI, Self Sovereignty Identities)</h3>
+
+<ul>
+  <li>개인 정보를 사용자가 직접 본인의 단말기로 관리한다</li>
+  <li>단말기 분실시 위험할 수 있다</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>신원이 분산 관리되어, <strong>가용성과 무결성</strong>이 높음 🔺</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>통합된 분산원장 관리가 가능하다면 <strong>확정성</strong>이 더 높음 🔺</li>
+  <li>신원확인 정보를 <strong>블록체인</strong>에 공유하여 신원확인이 필요한 서비스를 활용할 때 사용</li>
+  <li>비밀번호를 잃어버렸을 경우, 다시 찾기 어려움</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/7d6f00cf-58a0-4bad-bbc9-9e2c3fcc98a8/image.png" alt="" /></p>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ca657d10-d885-4efc-a4af-8348dcf0f02b/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b388f381-0b9a-473d-a3b9-8d14d4df448e/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/832984c6-f4b4-45f2-8ad8-638404f4b1dc/image.png" alt="" /></p>
+
+<hr />
+:ET

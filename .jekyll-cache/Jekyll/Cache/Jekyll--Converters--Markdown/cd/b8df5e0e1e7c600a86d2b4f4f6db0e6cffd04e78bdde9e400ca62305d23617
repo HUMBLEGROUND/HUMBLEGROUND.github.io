@@ -1,0 +1,87 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/fae6f945-efb7-430b-986d-6f6b29808548/image.png" alt="" /></p>
+
+<h3 id="did-decentralized-identity-탈중앙-신원증명">DID (Decentralized Identity, 탈중앙 신원증명)</h3>
+
+<ul>
+  <li>
+    <p>DID는 기존의 <strong>중앙화된 인증방식</strong>에서 벗어나 <span style="background-color:#34CDEF; color:#000;">탈중앙화 방식의 신원 증명</span></p>
+  </li>
+  <li>
+    <p><strong>‘데이터의 주권’</strong>이 개개인에게 있다</p>
+  </li>
+  <li>
+    <p>필요할 때 <span style="background-color:#34CDEF; color:#000;"><strong>중앙화된 시스템</strong>을 거치지 않고 증명</span>할 수 있는 기술</p>
+  </li>
+  <li>
+    <p>개인 정보를 사용자의 단말기에 저장해, 개인 정보 인증 시 <strong>필요한 정보만 골라서 제출</strong>하도록 해주는 전자신원증명 기술</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/9e83cb20-3339-416c-b543-0bb92a120e3e/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="w3c-world-wide-web-consortium">W3C (World Wide Web Consortium)</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8f46c13f-63de-4013-807e-f06b9a40b13a/image.png" alt="" /></p>
+
+<ul>
+  <li>분산원장기술에 기반한 DID 는 신원을 증명하는 특정한 주체가 없기 때문에 다양한 곳에서 사용하기 위한 <strong>표준화가 필수</strong>적이다<br />
+👉 <span style="background-color:#B5E045; color:#000;">표준화를 W3C에서 했다</span></li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/db1f2342-3590-4d7b-ba82-3dbe34d90125/image.png" alt="" /></p>
+
+<ul>
+  <li>W3C에서 진행하는 데이터 탈중앙 운동에서 가장 중요한 부분은 <span style="background-color:#34CDEF; color:#000;"><strong>데이터의 연동</strong>이다</span></li>
+</ul>
+
+<hr />
+
+<h3 id="w3c의-did-표준">W3C의 DID 표준</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b61fbd51-8f43-4c00-80f1-6936303a3956/image.png" alt="" /></p>
+
+<blockquote>
+  <h3 id="탈중앙화-식별자-dids-decentralized-identifiers">탈중앙화 식별자 (DIDs, Decentralized Identifiers)</h3>
+
+  <ul>
+    <li>
+      <p>생성과 인증이 모두 <strong>개개인에 의해 컨트롤</strong>(Entity-Controlled)되므로,<br /></p>
+    </li>
+    <li>
+      <p><span style="background-color:#34CDEF; color:#000;">중앙화된 인증 기관을 거칠 필요가 없고,</span> <br /></p>
+    </li>
+    <li>
+      <p>자신의 신원을 <strong>필요로 하는 사람</strong>에게 필요한 정보만을 제공할 수 있다</p>
+    </li>
+  </ul>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ad5dc31b-96ea-4d0c-92a0-362a043c5551/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/18155156-a352-4e38-812d-63c1a4609700/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/d5807678-c9b6-4e4e-9c37-bbc1f7703805/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/756885cc-fca6-4011-8653-20d6b6b76f7a/image.png" alt="" /></p>
+
+<blockquote>
+  <ul>
+    <li>did 👉 문자열이 did임을 나타내며, 이 주소가 did스키마에 따른 것임을 나타냅니다. 항상 did로 시작한다
+<br /></li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>example 👉 did 메소드의 이름이고, did는 메소드별로 다르게 처리된다
+<br /></li>
+  <li>123456789abcdefghi 👉 DID 메소드 안에서 사용되는 고유 아이디다
+<br /></li>
+  <li>did 아이디가 주는 가장 중요한 정보는 <strong>“DID 문서가 어디에 있는지”</strong> 다
+<br /></li>
+  <li>ID 와 관련된 정보는 <strong>DID 문서에 담겨 있다</strong></li>
+</ul>
+
+<hr />
+:ET
