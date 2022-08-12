@@ -43,6 +43,7 @@ author: wavescats
 copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
 description: "THISISWAVES (A) wavescats 블록체인 개발 블로그 입니다"
+favicon: "/assets/images/favicon/favicon.ico"
 # baseurl:
 
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -178,7 +179,7 @@ google_analytics: G-9Z1V88EHJY
 # excerpt_size: 350
 
 # Pagination setting
-# paginate: 5
+paginate: 5
 
 # Disqus comments
 # disqus:
