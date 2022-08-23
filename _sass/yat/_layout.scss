@@ -568,12 +568,19 @@ body {
 .visit-views {
   display: flex;
 }
+
+.page-banner-heading {
+  font-weight: 900;
+}
+
 .page-banner {
   display: block;
   position: relative;
   height: $banner-height;
   background-color: $banner-background;
   transition: height 0.2s;
+  letter-spacing: 3px;
+  font-weight: 700;
 
   .page-banner-img {
     position: absolute;
