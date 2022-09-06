@@ -1,0 +1,160 @@
+I"c<p><img src="https://velog.velcdn.com/images/-__-/post/2d0b3dd6-6be4-467e-9f5c-b31e112b753a/image.png" alt="" /></p>
+
+<h2 id="핫-월렛-vs-콜드-월렛">핫 월렛 vs 콜드 월렛</h2>
+
+<blockquote>
+  <p><span style="color: red">핫 월렛(Hot Wallet)</span>과 <span style="color: blue">콜드 월렛(Cold Wallet)</span>의 차이점은<br />
+단순히 암호화 지갑 유형이 <span style="background-color: #dcffe4; color:#000;"><strong>인터넷에 연결</strong>되어 있는지 여부이다
+<img src="https://velog.velcdn.com/images/-__-/post/15f47c05-360d-4118-b26e-84423efe036d/image.png" alt="" /></span></p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/627c18bd-f054-48c5-9b9d-c338d6ef03ad/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p><span style="color: red"><strong>‘핫 월렛’</strong></span> 은 인터넷 액세스가 개인 정보 / 보안 위험 때문에
+덜 안전한 암호화폐 지갑 이지만 훨씬 더 <strong>사용자 친화적인</strong> 지갑이다</p>
+  </li>
+  <li>
+    <p><span style="color: blue"><strong>‘콜드 월렛’</strong></span> 은 암호화폐의 <strong>“콜드 스토리지”</strong> 에 사용되는 암호화폐 지갑 유형으로 보안 강화를 위해 <strong>오프라인</strong>에 저장된다
+일상적인 거래를 위해 가지고 다니는 지갑이라기 보다는, <strong>금고</strong>에 가깝다</p>
+  </li>
+</ul>
+
+<h2 id="핫-월렛hot-wallet-유형">핫 월렛(Hot Wallet) 유형</h2>
+
+<h3 id="웹-월렛">웹 월렛</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/730f536a-d16a-4767-b405-8f53528b1fc9/image.png" alt="" /></p>
+
+<ul>
+  <li>일반적으로 <strong>웹 브라우저</strong>를 통해 액세스하는 암호화폐 지갑</li>
+  <li>경우에 따라 사람들은 <u>모든 핫 월렛을 웹 월렛이라고 부른다</u></li>
+</ul>
+
+<h3 id="장점">장점</h3>
+
+<ul>
+  <li>트랜잭션을 완료하는 <strong>가장 빠른</strong> 방법</li>
+  <li>앱과 서버 위치 사이에 지연시간이 없다</li>
+  <li><strong>‘소량’</strong>의 암호화폐 보유에 이상적</li>
+  <li>일부는 여러 암호 화폐를 관리하거나</li>
+  <li>둘 사이에서 금액을 전송하거나 <strong>거래소</strong>에 직접 통합할 수 있다</li>
+</ul>
+
+<h3 id="단점">단점</h3>
+
+<ul>
+  <li>사용자는 피싱 사기 / 맬웨어 / 내부자 해킹 / DDoS 공격 / 구식 보안 조치에 취약하다</li>
+  <li>웹 월렛의 암호화폐 정보는 제3자에 저장된다</li>
+</ul>
+
+<hr />
+
+<h3 id="모바일-월렛">모바일 월렛</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/7d20d28a-9619-4e64-8c57-551e0a63c89c/image.png" alt="" /></p>
+
+<ul>
+  <li><strong>모바일 장치</strong>가 있는 곳이면 어디에서나 암호 화폐에 액세스할 수 있다</li>
+  <li>완전히 인터넷 기반인 월렛 이상의 <strong>‘추가 기능’</strong> 을 제공하지만, <strong>‘추가 보안’</strong> 위험도 따른다</li>
+</ul>
+
+<h3 id="장점-1">장점</h3>
+
+<ul>
+  <li>다른 암호화폐 지갑 유형보다 더 실용적이고 사용하기 쉽고 <strong>즉시 지불</strong>을 수락하거나 보낼 수 있다</li>
+  <li><strong>QR 코드 스캔</strong>과 같은 온라인 및 하드웨어 지갑 이상의 <strong>추가 기능</strong></li>
+</ul>
+
+<h3 id="단점-1">단점</h3>
+
+<ul>
+  <li>휴대전화가 악의적으로 손상되거나 <strong>루팅</strong>된 경우 지갑 앱 암호화 위험</li>
+  <li>휴대전화 자체가 맬웨어 / 키로거 / 바이러스에 노출되어 있음</li>
+</ul>
+
+<hr />
+
+<h3 id="데스크탑-월렛">데스크탑 월렛</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/658952b3-370a-4934-ad8b-cd94830113be/image.png" alt="" /></p>
+
+<ul>
+  <li>데스크탑 암호화폐 지갑은 <strong>웹 지갑</strong>과 <strong>모바일 지갑</strong>보다 다소 <strong>안전</strong>한 것으로 간주되지만 이는 온라인 보안을 잘 적용한 경우에 따라 달라진다</li>
+</ul>
+
+<h3 id="장점-2">장점</h3>
+
+<ul>
+  <li>사용하기 쉬운 암호화 지갑 유형</li>
+  <li>타사 서버에 저장되지 않은 개인 키</li>
+</ul>
+
+<h3 id="단점-2">단점</h3>
+
+<ul>
+  <li>인터넷에 연결된 경우 보안 / 개인 정보 보호 관련 주의해야 한다</li>
+  <li>컴퓨터 <strong>수리를 맡길 경우</strong> 코인을 빼앗길 수 있다</li>
+  <li>컴퓨터가 물리적으로 고장난 경우 <strong>복구할 방법이 없다</strong></li>
+  <li>컴퓨터 자체가 맬웨어 / 키로거 / 바이러스에 노출되어 있음</li>
+</ul>
+
+<hr />
+
+<h2 id="콜드-월렛cold-wallet">콜드 월렛(Cold Wallet)</h2>
+
+<h3 id="하드웨어-월렛">하드웨어 월렛</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8070a58d-b9d7-4f01-82c2-02910c2c24c1/image.png" alt="" /></p>
+
+<ul>
+  <li>하드웨어 월렛은 웹 월렛 / 데스크탑 월렛보다 사용자 <strong>친화적이지 않은</strong> 암호화폐 월렛이다</li>
+  <li>핫 월렛 (대부분의 경우)보다 안전하다</li>
+  <li>어떤 것은 배터리가 필요하고, 어떤 것은 필요하지 않다</li>
+  <li>자주 이동할 필요가 없는 <strong>‘많은 양’</strong>의 암호화폐를 저장하는 데 적합하다</li>
+</ul>
+
+<h3 id="장점-3">장점</h3>
+
+<ul>
+  <li>암호화폐를 <strong>장기간 보관</strong>하는 가장 안전한 방법</li>
+  <li>대부분의 경우 다른 모든 지갑보다 <strong>강력한 보안</strong></li>
+</ul>
+
+<h3 id="단점-3">단점</h3>
+
+<ul>
+  <li>약간의 번거로움</li>
+  <li>별도의 사용법을 익혀야 함</li>
+</ul>
+
+<hr />
+
+<h3 id="종이-월렛">종이 월렛</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/9d095968-8702-46a4-a72d-1315d0fb4423/image.png" alt="" /></p>
+
+<ul>
+  <li>하드웨어 월렛 이전에는 종이 월렛이 암호화폐 콜드 월렛의 표준이었다</li>
+  <li>일반적인 종이 월렛이 있고, <strong>보안에 특화</strong>된 종이 월렛이 있다</li>
+</ul>
+
+<h3 id="장점-4">장점</h3>
+
+<ul>
+  <li>해커로부터 <strong>가장 안전한</strong> 암호화 지갑 선택 중 하나</li>
+  <li>대컴퓨터에 저장되지 않음</li>
+  <li>타사 서버에 저장되지 않은 개인 키</li>
+</ul>
+
+<h3 id="단점-4">단점</h3>
+
+<ul>
+  <li>약간의 번거로움</li>
+  <li>별도의 사용법을 익혀야 함</li>
+  <li>더 많은 기술적 이해 필요</li>
+</ul>
+
+<hr />
+:ET

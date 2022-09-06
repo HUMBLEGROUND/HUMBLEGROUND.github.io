@@ -1,0 +1,46 @@
+I"<p><img src="https://velog.velcdn.com/images/-__-/post/f55c4622-c4de-47e6-a230-20ca009ef792/image.png" alt="" /></p>
+
+<h3 id="블룸필터-bloom-filter">블룸필터 (Bloom Filter)</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/58a0a6cd-857f-43d1-a626-9945052ecf5f/image.png" alt="" /></p>
+
+<ul>
+  <li>블룸필터는 특정 원소가 <span style="background-color:#34CDEF; color:#000;"><strong>집합에 속하는지 검사</strong></span>하는데 사용할 수 있는 확률형 자료 구조</li>
+  <li>
+    <p>블룸필터는 비트코인 언리미티드(Bitcoin Unlimited) 팀이 <span style="background-color:#34CDEF; color:#000;">노드에 알려지지 않은 <strong>거래를 식별</strong>하는 데 도움을 주고 있다</span></p>
+
+    <p><img src="https://velog.velcdn.com/images/-__-/post/fa3293eb-59ea-43b0-8039-9b57fd770c72/image.png" alt="" /></p>
+  </li>
+  <li>
+    <p>블룸 필터에 의해 어떤 원소가 <strong>집합에 속한다</strong>고 판단된 경우 실제로는 원소가 집합에 속하지 않는 <span style="background-color:#B5E045; color:#000;"><strong>긍정 오류</strong>가 발생하는 것이 가능</span>하지만,</p>
+  </li>
+  <li>
+    <p>반대로 원소가 <strong>집합에 속하지 않는</strong> 것으로 판단되었는데 실제로는 원소가 집합에 속하는 <span style="background-color:#F7969A; color:#000;"><strong>부정 오류</strong>는 절대로 발생하지 않는다</span>는 특성이 있다</p>
+  </li>
+  <li>
+    <p>집합에 원소를 <span style="background-color:#B5E045; color:#000;"><strong>추가하는 것은 가능</strong></span>하나,</p>
+  </li>
+  <li>
+    <p>집합에서 원소를 <span style="background-color:#F7969A; color:#000;"><strong>삭제하는 것은 불가능</strong></span></p>
+  </li>
+  <li>집합 내 원소의 숫자가 증가할수록🔺 긍정 오류 발생 확률도 증가한다🔺</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/1ba95b33-d55f-4e48-983d-08471f91eba7/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="프루닝pruning">프루닝(Pruning)</h3>
+
+<ul>
+  <li>프루닝(Pruning)은 <strong>‘경량화 기법’</strong>의 하나로,</li>
+  <li>학습 이후 각 심층 신경망 층의 상대적으로 불필요한 매개변수를 <strong>제거</strong>함으로써,</li>
+  <li>딥러닝 성능의 저하를 <strong>‘최소화’</strong>하면서 성공적인 <strong>‘정확도’</strong>를 가져오는 방법으로 사용된다</li>
+</ul>
+
+<p>👉 블록체인에서도 <strong>오래된</strong> 블록체인 데이터를 <span style="background-color:#FFC701; color:#000;"><strong>자동으로</strong> 삭제하기 위해 사용된다</span></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b45a55ec-d7e4-47ed-ace7-d8a3e7b26f7e/image.png" alt="" /></p>
+
+<hr />
+:ET

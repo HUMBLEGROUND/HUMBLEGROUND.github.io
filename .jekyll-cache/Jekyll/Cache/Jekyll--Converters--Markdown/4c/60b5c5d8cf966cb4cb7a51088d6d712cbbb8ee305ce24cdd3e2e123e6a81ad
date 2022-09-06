@@ -1,0 +1,49 @@
+I"4
+<p><img src="https://velog.velcdn.com/images/-__-/post/9633273d-99c3-4caa-8b7b-059b118fd87b/image.png" alt="" /></p>
+
+<h3 id="evmethereum-virtual-machine">EVM(Ethereum Virtual Machine)</h3>
+
+<p>👉 <code class="language-plaintext highlighter-rouge">이더리움 가상머신(EVM)은 스마트 컨트랙트를 처리해주는 컴퓨터</code></p>
+
+<ul>
+  <li>EVM은 작성한 <strong>코드</strong>와 <ㅡ> 이더리움 **블록체인** 사이에 있는 **'가상 머신'**이다</ㅡ></li>
+  <li>
+    <p><u>블록체인에서 코드가 실행될 수 있도록</u> 한다</p>
+  </li>
+  <li>이더리움 스마트 컨트랙트에 기반한 <strong>‘dApp’</strong>은 <u>솔리디티</u> 라는 언어로 작성된다</li>
+  <li>솔리디티로 작성된 dApp을 이더리움 <u>네트워크에 올려야 한다</u></li>
+</ul>
+
+<blockquote>
+  <p><strong>‘솔리디티’</strong> 언어는 고급 언어이기 때문에 <span style="background-color:#F7969A; color:#000;">EVM은 솔리디티를 읽을 수 없다</span>
+그래서 작성한 솔리디티 코드를 <strong>‘solc’</strong>를 이용해 <span style="background-color:#B5E045; color:#000;">컴파일</span>하여 <u>EVM이 읽을 수 있는 **'바이트코드 형태'**</u>로 만든다
+이 바이트코드를 <strong>‘Geth’</strong> 를 이용해 이더리움 네트워크에 올린다
+솔리디티 코드 👉 바이트코드 👉 Opcode 흐름이다
+<br />
+<img src="https://velog.velcdn.com/images/-__-/post/cc8f811d-27d5-4fdf-8dc4-d2e393f55250/image.png" alt="" /></p>
+</blockquote>
+
+<h4 id="스마트-컨트랙트를-생성하고-사용가능하게-하기-위한-과정-순서">스마트 컨트랙트를 생성하고 사용가능하게 하기 위한 과정 순서</h4>
+
+<p>스마트 컨트랙트 코딩 👉 소스 코드 컴파일 👉 ABI 로부터 스마트 컨트랙트 객체 생성 👉 스마트 컨트랙트 배포 👉 채굴</p>
+
+<h3 id="geth-go-ethereum">Geth (Go Ethereum)</h3>
+
+<p>👉 이더리움 가상머신<strong>(EVM)</strong> 을 만들 수 있는
+<strong>‘Go 언어’</strong> 로 개발된 <u>이더리움 클라이언트 소프트웨어이다</u></p>
+
+<hr />
+
+<h3 id="바이트코드">바이트코드</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2dded88d-b545-46a4-9387-4198e337001f/image.png" alt="" /></p>
+
+<p><strong>‘Opcode’</strong> 를 효율적으로 저장하기 위해,
+<strong>‘Opcode’</strong> 는 바이트코드(Bytecode)로 인코딩된다
+모든 Opcode에는 1바이트가 할당된다</p>
+
+<p>https://velog.io/@-__-/bc32
+(👆 바이트코드 분석)</p>
+
+<hr />
+:ET

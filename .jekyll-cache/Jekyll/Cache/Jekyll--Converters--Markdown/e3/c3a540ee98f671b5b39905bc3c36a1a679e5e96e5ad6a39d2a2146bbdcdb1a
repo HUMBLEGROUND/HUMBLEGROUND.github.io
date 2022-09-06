@@ -1,0 +1,118 @@
+I"B<p><img src="https://velog.velcdn.com/images/-__-/post/f6713be4-a6dc-4d4d-ad74-3304279ac120/image.png" alt="" /></p>
+
+<h3 id="가스수수료를-지불하는-이유">가스(수수료)를 지불하는 이유</h3>
+
+<p>이더리움은 비트코인과는 달리,<br />
+<span style="background-color:#BFA8EE; color:#000;"> 스마트 컨트랙트에서 수행되는 <strong>모든 연산</strong>에 대해 <strong>‘가스(Gas)’</strong>라는 수수료를 부과한다</span></p>
+
+<ul>
+  <li>
+    <p>수수료를 부과하는 이유는 이더리움 네트워크 위에서 동작하는 스마트 컨트랙트 작업들이 <span style="background-color:#BFA8EE; color:#000;"> <strong>‘전체 노드’</strong>에 영향을 미치기 때문</span></p>
+  </li>
+  <li>
+    <p>이더리움은 튜링 완전 언어 <strong>(솔리디티)</strong>이기 때문에, 튜링 불완전한 비트코인 <strong>‘스크립트’</strong> 와는 달리 <strong>반복문</strong>을 지원한다</p>
+  </li>
+  <li>
+    <p>그러나 <u>반복문의 가장 큰 단점</u>은 <strong>‘무한 루프 🔄 문제’</strong>가 일어날 수 있다는 것이다</p>
+  </li>
+  <li>
+    <p>만약 악의적인👹 사용자가 <strong>큰 자원을 소모</strong>하는 ‘무한 루프🔄 코드’가 들어있는 트랜잭션을 실행시킨다면,</p>
+  </li>
+  <li>
+    <p>트랜잭션은 이더리움 네트워크의 <u>엄청난 양의 자원을 소모</u>하게 될 것이고, 심각하게는 이더리움 네트워크 전체가 멈출 수도 있다 🚫</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>👉 <span style="background-color:#B5E045; color:#000;"><strong>수수료</strong>는 이러한 악의적인 공격으로부터 <strong>‘네트워크를 보호’</strong>한다</span></p>
+
+  <ul>
+    <li><strong>‘각 연산마다’</strong> 수수료를 부과하면 <u>악의적인 사용자라도 수수료를 지불</u>해야 하기 때문에 쉽게 <strong>‘무한 루프 코드’</strong>를 실행시킬 수 없습니다.
+<br /></li>
+    <li>의도치 않게 <strong>‘무한 루프’</strong>를 만든 코드를 실행시키더라도 <strong>‘Gas Limit’</strong> 을 설정해두면 <u>지정해둔 가스를 다 소모하기 전에</u> 실행을 멈출 수 있다</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h3 id="가스-단위gas-unit">가스 단위(Gas Unit)</h3>
+
+<blockquote>
+  <p><strong>‘가스 단위’</strong>는 수행해야 하는 작업량의 측정값
+<span style="background-color:#B5E045; color:#000;"><strong>‘Gwei’</strong></span> 라는 단위를 사용한다
+<br /></p>
+
+  <ul>
+    <li>일반적으로 이더리움에서 표준 가스 한도는 21,000가스 이다</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>
+    <p>1,000,000,000 Gwei = 1ETH</p>
+  </li>
+  <li>
+    <p>210,000 Gwei는 👉 0.00021ETH 이므로,</p>
+  </li>
+  <li>
+    <p>0.00021 * 1 ETH를 계산하면,</p>
+  </li>
+  <li>
+    <p>이더리움 네트워크상에서 트랜잭션을 발생시키기 위해<br />
+얼마의 수수료를 지불해야하는지 알 수 있다</p>
+  </li>
+  <li>
+    <p>가스비 = 가스 가격(10Gwei) * 가스 한도(21,000) = 210,000Gwei<br /><br />
+<code class="language-plaintext highlighter-rouge">1 이더리움 = 10^18 wei 이며 / 1 Gwei = 10^9 wei 이다</code></p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c6d620ed-f470-4d7a-a6d1-875e89e2b240/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>트랜잭션 송신자는 <strong>‘Gas Limit’</strong> 과 <strong>‘Gas Price’</strong> 를 트랜잭션에 지정한다</p>
+  </li>
+  <li>
+    <p><strong>‘이더리움의 작은 값’</strong>으로 단위로 가스 가격(Gas Price)을 측정한다</p>
+  </li>
+  <li>
+    <p>가스를 더 많이 지불하면 먼저 수행하게 할 수 있다</p>
+  </li>
+  <li>
+    <p>가스 가격은 <u>먼저 수행하게 만드는</u> <strong>‘뇌물’</strong> 과도 같다<br />
+👉 ex) 가스 가격을 0으로 설정한다면 처리 순위가 밀려나게 된다</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>👉 예를 들어<br />
+송신자가 <strong>‘Gas Limit’</strong> 을 50,000 으로 지정하고,<br />
+<strong>‘Gas Price’</strong> 를 20 Gwei로 지정했다고 가정해보면<br />
+<br />
+이것은 송신자가 <strong>‘최대’</strong> <code class="language-plaintext highlighter-rouge">50,000 x 20 Gwei = 10^15 Wei = 0.001 이더</code>를 <u>트랜잭션을 실행하는 데 지불</u>한다는 것을 의미한다<br />
+<img src="https://velog.velcdn.com/images/-__-/post/2aee5c13-9de3-4ccb-ab35-60fcb60dca01/image.png" alt="" /></p>
+</blockquote>
+
+<hr />
+
+<h3 id="gas-limit">Gas Limit</h3>
+
+<ul>
+  <li>
+    <p><strong>‘Gas Limit’</strong> 은 송신자가 지불하고자 하는 <strong>‘가스의 최댓값’</strong>을 의미한다</p>
+  </li>
+  <li>
+    <p>만약 <strong>‘가스 최대치’</strong>를 지불하고도 남을 <u>충분한 이더가 들어있다면</u> 트랜잭션은 문제없이 실행될 것이고</p>
+  </li>
+  <li>
+    <p>송신자는 트랜잭션이 완료된 후, <u>사용되지 않은 가스</u>를 기존 비율로 <strong>‘환불’</strong>받는다</p>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Gas Limit - Use Gas(50) - Use Gas(30) = Remaining Gas</code></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/7069e059-f88c-45d6-bc4d-c7a8174ae65c/image.png" alt="" /></p>
+
+<hr />
+:ET

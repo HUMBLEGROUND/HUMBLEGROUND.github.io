@@ -1,0 +1,107 @@
+I"C<p><img src="https://velog.velcdn.com/images/-__-/post/fa8f4b40-cedf-4f03-9214-e107a82d0dd4/image.png" alt="" /></p>
+
+<h3 id="코인">코인</h3>
+
+<p>블록체인 <strong>‘노드’</strong>를 통해 <strong>‘채굴’</strong>하는, 채굴자에 대한 <strong>보상</strong>으로 주어지는 암호화폐</p>
+
+<h3 id="토큰">토큰</h3>
+
+<p>블록체인 <strong>‘네트워크’</strong> 위에서 구현된, 별개의 생태계를 위해 사용되는 <strong>지역화폐</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/4d9e3ea3-e311-4fbb-9b84-58e719ba3e4e/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="ft-fungible-token">FT (Fungible Token)</h3>
+
+<ul>
+  <li>FT는 <span style="background-color: #fff5b1; color:#000;">대체가능한 토큰 (<strong>스왑</strong>이 가능하다)</span></li>
+  <li>블록체인 네트워크에서 누구나 발행할 수 있는 지역화폐</li>
+  <li><strong>‘De-Fi’</strong> 에서는 다른 코인 또는 토큰과 함께 <u>페어(Pair)로 예치</u>되어,
+<strong>유동성 풀</strong>을 제공한다</li>
+  <li>이 유동성 풀을 통해 이 블록체인 네트워크 위의 모든 사용자는 다른 토큰 또는 코인으로 환전할 수 있다 <strong>(스왑기능)</strong></li>
+  <li>이때 발생한 <strong>수수료</strong>는 유동성 풀에 예치한 사람들에게 <strong>재분배</strong></li>
+</ul>
+
+<h3 id="erc-20-ethereum-request-for-comment-20">ERC-20 (Ethereum Request for Comment-20)</h3>
+
+<ul>
+  <li>이더리움 네트워크에서 <strong>토큰을 발행할 때</strong> 사용된다</li>
+  <li><strong>‘ERC-20’</strong> 을 이용하면 Fungible Token(대체가능한 토큰; 지역화폐)을 발행할 수 있다</li>
+  <li>ERC-20은 이더리움 기반 가상머신 EVM에서 사용되는 언어인 <strong>‘Solidity’</strong> 로 제공된다</li>
+  <li>ERC-20의 대표적인 토큰은 <strong>‘유니스왑’</strong> Uniswap($UNI)</li>
+</ul>
+
+<hr />
+
+<h3 id="nft-non-fungible-token">NFT (Non-Fungible Token)</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2e2fb7a7-1bc5-4f62-b0d0-c241de0a9c9b/image.png" alt="" /></p>
+
+<ul>
+  <li>NFT는 <span style="background-color: #fff5b1; color:#000;">대체 불가능한 토큰 (<strong>스왑</strong>이 불가능하다)</span></li>
+  <li><strong>재발행</strong>이 불가능한 토큰</li>
+  <li>블록체인 상에서 복제할 수 없는 <strong>단 하나의 가치</strong>를 나타낸다</li>
+  <li>예를 들어 그림 작가가 그림을 그려 NFT로 발행하면 NFT는 <span style="background-color: #dcffe4; color:#000;"><strong>원작임을 보증</strong>하는 인증서 역할</span>을 담당할 수 있다</li>
+  <li>기존의 피지컬 아트(현실 세계의 아트)에 비해, 복제가 가능하다는 이유로 외면받던 디지털 아트 생태계에 <span style="background-color: #dcffe4; color:#000;"><strong>‘원본 증명’</strong></span> 이라는 어마어마한 기술로 환대받고 있다</li>
+</ul>
+
+<h3 id="erc-721-ethereum-request-for-comment-721">ERC-721 (Ethereum Request for Comment-721)</h3>
+
+<ul>
+  <li>이더리움 네트워크에서, <strong>NFT를 발행할 때</strong> 사용된다</li>
+  <li><strong>‘NFT 토큰의 표준 스펙’</strong></li>
+  <li>ERC-20와 같이 <strong>‘Solidity’</strong> 언어로 제공된다</li>
+  <li>ERC-721의 대표적인 토큰은 CryptoPunks</li>
+</ul>
+
+<hr />
+
+<h3 id="sftsemi-fungible-token">SFT(Semi-Fungible Token)</h3>
+
+<ul>
+  <li>SFT는 FT와 NFT의 특성을 합친 토큰</li>
+  <li>FT와 NFT를 <u>하나의 스마트 컨트랙트</u>에서 관리할 수 있도록 도와준다</li>
+  <li>초기의 SFT는 다른 동일한 SFT와 유사하게 거래될 수 있다는 점에서, <strong>일반적인 FT처럼 작동</strong>한다</li>
+</ul>
+
+<blockquote>
+  <p>👉 예를 들어<br />
+비틀즈의 마지막 공연의 콘서트 티켓을 토큰 으로 발행하고<br />
+이 티켓은 액면가를 가지며 아직 콘서트🎸 가 <u>시작하기 전</u>이라고 가정했을때<br /></p>
+
+  <p>이 티켓은 <strong>동일한</strong> ‘날짜’/ <strong>동일한</strong> ‘좌석 공간’에 있는 <strong>동일한</strong> ‘밴드’라면,<br />
+<strong>동일한</strong> ‘다른 콘서트 티켓’으로 <span style="background-color: #fff5b1; color:#000;">교환</span>될 수 있다<br /></p>
+
+  <p><strong>콘서트🎸 가 끝나면</strong>, 티켓을 나타내는 토큰(티켓)은 <strong>‘수집 가능한 기념품’</strong>이 되어 완전히 새로운 가치를 갖게 된다<br />
+동시에, 이 토큰으로 ‘다른 콘서트 티켓’과 <strong>교환할 수 없다</strong>는 것을 의미한다<br />
+이처럼 <u>FT로 사용되다가 NFT로 변하는 과정</u>이 SFT가 의미를 갖게된 이유이다</p>
+</blockquote>
+
+<p>👉 SFT는 <strong>‘금괴’</strong> 또는 <strong>‘게임’</strong> 내 <span style="background-color: #fff5b1; color:#000;">통화와 같은 대체 가능한</span> 요소와,<br />
+<span style="background-color: #fff5b1; color:#000;">아이템 및 무기와 같은 대체할 수 없는</span> 항목이 있는 <strong>‘게임 🎮 산업’</strong>에서 특히 유용하다<br />
+게임 회사는 두 가지 유형의 토큰을 모두 만들고 상호 운용성을 보장하여,<br />
+게이머가 <u>아이템을 금괴와 쉽게 교환</u>할 수 있으며,<br />
+그 반대의 경우도 마찬가지다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/387ecc2f-4308-403a-be9d-226024ebe6b4/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>게임 아이템(NFT)를 코인(FT) 으로 구매(교환)</strong> 👆</p>
+</blockquote>
+
+<h3 id="erc-1155">ERC-1155</h3>
+
+<ul>
+  <li>ERC-1155는 다른 ERC 기반 프로젝트와 호환되어 FT, NFT, SFT를 모두 발행할 수 있다</li>
+  <li>대체 가능 토큰(FT) <strong>‘ERC-20’</strong>와 대체 불가능 토큰(NFT) <strong>‘ERC-721’</strong> 을 하나의 <strong>스마트 컨트랙트</strong>에 담아 <span style="background-color: #fff5b1; color:#000;">결합</span>한 것이다</li>
+  <li><strong>‘Solidity’</strong> 언어로 제공된다</li>
+  <li>
+    <p>ERC-1155는 NFT 마켓, <strong>‘OpenSea’</strong> 에서 사용되고 있다</p>
+
+    <p><img src="https://velog.velcdn.com/images/-__-/post/0775f7fa-8de8-406c-a8d3-46f5f565d43f/image.png" alt="" /></p>
+  </li>
+</ul>
+
+<hr />
+:ET

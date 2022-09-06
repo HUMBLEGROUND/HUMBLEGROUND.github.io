@@ -1,0 +1,249 @@
+I"U(<p><img src="https://velog.velcdn.com/images/-__-/post/a7acda8c-b695-4d62-a43f-81a2b2925957/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/cb29c0a4-d8a1-416b-be58-3577a49326e3/image.png" alt="" /></p>
+
+<h3 id="블록체인-트릴레마-blockchain-trilemma">블록체인 트릴레마 (Blockchain Trilemma)</h3>
+
+<blockquote>
+  <p>3가지의 문제가 각각 서로 영향을 주고있어서,<br />
+3가지 중 어느 것을 선택하면 다른 부분이 악화된다는 의미<br />
+세 가지 요소를 모두 만족하는 일이 얼마나 어려운지를 말한다</p>
+</blockquote>
+
+<ul>
+  <li>확장성(Scalability)</li>
+  <li>탈중앙화(Decentralization)</li>
+  <li>보안(Security)</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a3eb6d43-4b05-414d-8be1-0896c5500bcc/image.png" alt="" /></p>
+
+<h3 id="블록체인-트릴레마의-사례">블록체인 트릴레마의 사례</h3>
+
+<p><strong>비트코인</strong></p>
+
+<ul>
+  <li>높은 탈중앙화와 보안성은 확보했으나 <strong>확장성의 한계</strong>로 트릴레마 발생</li>
+  <li>탈중앙화와 보안에 초점을 맞춰 개발 되었으며 네트워크 확장에 따른 <strong>트랜잭션 속도</strong>에 대한 확장성 문제 발생</li>
+</ul>
+
+<p><strong>이더리움</strong></p>
+
+<ul>
+  <li><strong>확장성 한계</strong>로 트릴레마 발생 (이더리움 플랫폼 위의 dApp에서 이루어지는 거래를 1초에 20건 처리)</li>
+  <li>확장성 한계 극복을 위해 <strong>‘이더리움 2.0’ 발표</strong></li>
+  <li>작업증명 방식의 대안으로 <strong>‘지분증명(PoS)’</strong>과 <strong>‘샤딩 기술’</strong> 활용</li>
+  <li>이더리움 2.0이 블록체인 트릴레마를 해결 할 수 있을지 관심 집중</li>
+</ul>
+
+<p><strong>이오스</strong></p>
+
+<ul>
+  <li><strong>‘위임지분증명(DPoS)’</strong> 합의 알고리즘을 통해 ‘탈중앙화’와 ‘확장성’ 해결</li>
+  <li>위임지분증명 합의 알고리즘의 특성상 소수의 노드를 통해 합의가 이루어지기 때문에 <u>탈중앙화 가치 저하</u></li>
+  <li>소수의 노드가 블록을 생각하기 때문에 <u>보안성 저하</u></li>
+</ul>
+
+<hr />
+
+<h3 id="확장성scalability">확장성(Scalability)</h3>
+
+<ul>
+  <li>
+    <p>사용자 수가 늘어나더라도, <strong>유연하게 대응</strong>할 수 있는 정도</p>
+  </li>
+  <li>
+    <p>확장성이 높으면 사용자수의 증가에 따라 <strong>거래건수가 늘어</strong>나더라도, 무리없이 <strong>전송 처리용량을 증가</strong>시킬 수 있다</p>
+  </li>
+  <li>
+    <p><strong>TPS</strong>(Transaction Per Second)가 높다고도 표현한다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a9945a13-2b90-4bf4-a7fb-f96694fd3026/image.png" alt="" /></p>
+
+<blockquote>
+  <p>확장성을 쉽게 이해하자면, <strong>‘블록체인 네트워크’</strong>가 <strong>‘트랜잭션’</strong>을 얼마나 빠르게 처리를 할 수 있는지로 나타낼 수 있다<br /></p>
+
+  <p>TPS(Transaction Per Second)는 초당 트랜잭션 처리 속도로,<br />
+블록체인 네트워크의 <strong>‘성능지표’</strong>로 사용한다.<br />
+👉비트코인과 이더리움은 확장성의 문제로 인해 <strong>TPS</strong>가 낮다<br />
+👉<u>트랜잭션 처리에 드는 수수료가 비싸지는 이유</u>이기도 하다</p>
+</blockquote>
+
+<h3 id="확장성-중심-네트워크의-장점">확장성 중심 네트워크의 장점</h3>
+
+<ul>
+  <li>
+    <p>네트워크가 많은 양의 트랜잭션을 지원한다</p>
+  </li>
+  <li>
+    <p>소셜 메시징 애플리케이션과 같은 <u>보안성이 중요하지 않은</u> 애플리케이션에서 <strong>유용하다</strong></p>
+  </li>
+</ul>
+
+<h3 id="확장성-중심-네트워크의-단점">확장성 중심 네트워크의 단점</h3>
+
+<ul>
+  <li>
+    <p>확장성(TPS)을 위해 보안을 <strong>희생</strong>해야 한다</p>
+  </li>
+  <li>
+    <p>네트워크 확장에 따라 합의 매커니즘도 확장되어야 <strong>‘중앙집중화’</strong>를 벗어날 수 있다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="탈중앙화decentralization">탈중앙화(Decentralization)</h3>
+
+<ul>
+  <li>
+    <p><u>중앙집권화를 벗어나 분산된 소규모 단위</u>가 모여, <strong>자율적</strong>으로 운영되는 방식</p>
+  </li>
+  <li>
+    <p>탈중앙화 네트워크는 <strong>‘합의(Consensus)’</strong> 를 통해 의사결정을 내린다</p>
+  </li>
+  <li>
+    <p>누구도 이를 통해 거래되는 데이터를 제어하거나 검열할 수 없다</p>
+  </li>
+  <li>
+    <p>최적의 탈중앙화를 달성하면, <strong>네트워크 처리량(TPS)</strong>이 감소하는 경향이 있다</p>
+  </li>
+  <li>
+    <p>더 많은 채굴 노드의 합의를 통해 네트워크를 보호하면, 트랜잭션 속도(TPS)가 떨어진다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/e9509ae9-6fd5-4c8d-ac77-fb2871756675/image.png" alt="" /></p>
+
+<h3 id="de-fidecentralized-finance-탈중앙-금융">De-Fi(Decentralized Finance, 탈중앙 금융)</h3>
+
+<ul>
+  <li>
+    <p>탈중앙화의 좋은 예시인 <strong>‘금융 상품’</strong> 💰</p>
+  </li>
+  <li>
+    <p><u>중앙집권식 중개자인 '은행'이 제거된</u> <strong>‘De-Fi’ 플랫폼</strong>이다</p>
+  </li>
+  <li>
+    <p>해당 플랫폼은 사용자로만 구성되어 더 많은 사람들에게 이익을 분배할수 있다</p>
+  </li>
+</ul>
+
+<h3 id="탈중앙화-네트워크의-장점">탈중앙화 네트워크의 장점</h3>
+
+<ul>
+  <li>
+    <p>탈중앙화를 통해 사용자가 단일 엔티티를 신뢰하지 않고도 합의를 유지할 수 있다</p>
+  </li>
+  <li>
+    <p>분산화를 통해 시스템의 견고성을 증가시킨다</p>
+  </li>
+  <li>
+    <p>누구나 네트워크를 사용할 수 있도록 하여 재산권을 향상시킨다</p>
+  </li>
+</ul>
+
+<h3 id="탈중앙화-네트워크의-단점">탈중앙화 네트워크의 단점</h3>
+
+<ul>
+  <li>
+    <p>분산화는 지연을 초래하여 네트워크 속도를 늦춘다 (확장성 감소)</p>
+  </li>
+  <li>
+    <p>중복성의 도입으로 비용이 많이 든다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="보안security">보안(Security)</h3>
+
+<ul>
+  <li>
+    <p>보안은 블록체인이 <strong>거래</strong>를 취소할 수 없도록 하는 능력</p>
+  </li>
+  <li>
+    <p>네트워크 참여자가 <u>더 많은 리소스를 사용할수록</u> 블록체인의 보안이 강화된다</p>
+  </li>
+  <li>
+    <p>데이터나 프로그램이 보호되어 있고, 권한이 없는 사용자나 악의적인 사용자의 접근을 막는 것</p>
+  </li>
+  <li>
+    <p>블록체인 내의 데이터나 프로그램을 권한이 없는 이용자가 사용할 수 없도록 하는 제한하여, 외부의 공격으로부터 프로그램을 보호한다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/5aa46d00-28bf-4c23-a9f9-e0c1c3b94c36/image.png" alt="" /></p>
+
+<blockquote>
+  <p>비트코인과 이더리움 같은 메이저 코인은<br />
+PoW와 PoS로 이어지는 <strong>해킹 불가능</strong> 영역이라는 점이다<br /></p>
+
+  <p>이런 코인을 해킹하기 위해서는 <strong>엄청난 자금</strong>이 필요하기 때문에,<br />
+사실상 일반적인 해커가 해킹을 시도하는 일은 상당히 어렵다<br /></p>
+
+  <p>이 정도의 시총 규모를 해킹하기 위해서는 거대한 채굴 풀이 필요하기 때문에 해킹을 하기 위해서 <strong>51%</strong>의 장비를 구비하는 것이 불가능에 가깝다<br /></p>
+
+  <p>👉이와 같은 <strong>보안적인</strong> 측면으로 볼 때,<br />
+메이저 코인이라 부를 수 있는 코인(시총이 높은)은 보안성이 매우 높다</p>
+</blockquote>
+
+<h3 id="보안-중심-네트워크의-장점">보안 중심 네트워크의 장점</h3>
+
+<ul>
+  <li>
+    <p>기존 가치 이전보다 빠르고 <u>저렴한 대규모 가치 이전이 가능</u>하다</p>
+  </li>
+  <li>
+    <p><strong>‘퍼블릭’</strong> 블록체인의 보안은 네트워크 <strong>참여자</strong>로부터 나온다</p>
+  </li>
+  <li>
+    <p>높은 보안은 복제하기 쉽지 않은 높은 네트워크 효과를 의미한다</p>
+  </li>
+</ul>
+
+<h3 id="보안-중심-네트워크의-단점">보안 중심 네트워크의 단점</h3>
+
+<ul>
+  <li>더 많은 자원과 투자가 필요하다</li>
+</ul>
+
+<hr />
+
+<h3 id="세-요소의-상호작용과-한계">세 요소의 상호작용과 한계</h3>
+
+<ul>
+  <li>
+    <p>보안성의 수준이 비슷하다면, <strong>‘확장성’</strong>과 <strong>‘탈중앙화’</strong>는 <strong>반비례</strong>한다<br />
+👉 ex) 시스템에 참가자가 (노드가) 많을 때 (=탈중앙화)<br />
+계약에 시간(트랜잭션 처리 속도)가 느려진다<br />
+<img src="https://velog.velcdn.com/images/-__-/post/80741ecb-a082-4705-bf47-b830eb002781/image.png" alt="" /></p>
+  </li>
+  <li>
+    <p>탈중앙화의 수준이 비슷하다면, <strong>‘확장성’</strong>과 <strong>‘보안성’</strong>이 <strong>비례</strong>한다<br />
+👉 ex) 블록체인의 해시율(보안성)이 높을수록<br />
+확인 시간이 짧아져 보안과 함께 <strong>‘확장성’</strong> 이 높아진다<br />
+<img src="https://velog.velcdn.com/images/-__-/post/505e9e09-fa89-4a4e-93fa-13cdf0cd29b6/image.png" alt="" /></p>
+  </li>
+</ul>
+
+<p><span style="color:red">⭐ <strong>블록체인은 세 가지 특성을 동시에 최적화할 수 없으며, 상호간의 절충이 필요하다</strong></span></p>
+
+<ul>
+  <li>
+    <p>비트코인과 이더리움은 ‘확장성’보다 ‘탈중앙화’와 <strong>‘보안’</strong>을 선호했다<br />
+(TPS가 낮다는 말은 수수료가 비싸진다)</p>
+  </li>
+  <li>
+    <p>솔루션인 리플(Ripple)은 ‘탈중앙화’보다 ‘보안’과 <strong>‘확장성’</strong>을 선호<br />
+(리플은 TPS가 높다 -&gt; 수수료가 싸고 전송속도가 빠르다)</p>
+  </li>
+  <li>
+    <p>이오스(EOS)는 ‘탈중앙화’와 ‘보안’을 희생하면서까지 <strong>‘확장성’</strong>을 선호</p>
+  </li>
+</ul>
+
+<hr />
+:ET
