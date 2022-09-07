@@ -1,0 +1,260 @@
+I"�a<p><img src="https://velog.velcdn.com/images/-__-/post/f3837dd8-aff1-47ac-abc9-c26e83397bb2/image.png" alt="" /></p>
+
+<h3 id="-project-lion-nft-블록체인-마켓-앱-만들기-with-그라운드x-3기---챕터-3-9-회고">🦁 [PROJECT LION] NFT 블록체인 마켓 앱 만들기 with 그라운드X 3기 - 챕터 3-9 회고</h3>
+
+<hr />
+
+<ol>
+  <li>카이카스(Kaikas) 지갑에 두개의 계정을 준비합니다.</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/995396f8-0300-44a2-839b-ca7cec34e030/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>바오밥(Baobab) 테스트넷</strong> 👆</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li>두개의 계정을 연결 후 솔리디티 코드를 입력하고 **배포(Deploy) **</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/120064e4-f527-40b0-a5c0-779cc1d809de/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👉 전체 코드는 하단에 있습니다</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li>배포하고 나온 <code class="language-plaintext highlighter-rouge">mintWithTokenURI</code> 함수로 토큰 <strong>발행 (mint)</strong></li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/d936dbf0-5cc9-4c97-9b09-71255cbc70c1/image.png" alt="" /></p>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">function</span> <span class="n">mintWithTokenURI</span> <span class="p">(</span><span class="kt">address</span> <span class="n">to</span><span class="p">,</span> <span class="kt">uint256</span> <span class="n">tokenId</span><span class="p">,</span> <span class="kt">string</span> <span class="k">memory</span> <span class="n">tokenURI</span><span class="p">)</span> <span class="k">public</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 토큰을 발행 하는 함수
+</span>        <span class="n">tokenOwner</span><span class="p">[</span><span class="n">tokenId</span><span class="p">]</span> <span class="o">=</span> <span class="n">to</span><span class="p">;</span> <span class="c1">// to는 소유주 이기때문에 👉 msg.sender 으로도 쓸수 있다
+</span>                                       <span class="c1">// 토큰 번호를 입력하면 토큰 소유주의 주소가 나온다
+</span>        <span class="n">tokenURIs</span><span class="p">[</span><span class="n">tokenId</span><span class="p">]</span> <span class="o">=</span> <span class="n">tokenURI</span><span class="p">;</span> <span class="c1">// 토큰 번호를 입력하면 토큰의 이름이 나온다
+</span>
+        <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">to</span><span class="p">].</span><span class="n">push</span><span class="p">(</span><span class="n">tokenId</span><span class="p">);</span> <span class="c1">// 주소를 입력하면 소유중인 토큰 번호들이 나온다
+</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// 리턴
+</span>    <span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>to 👉 나의 지갑 주소<br />
+tokenId 👉 임의의 토큰 번호<br />
+tokenURI 👉 임의의 토큰 별명<br /></p>
+
+  <p>👉 입력 후 <code class="language-plaintext highlighter-rouge">transcat</code></p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li>발행된 토큰의 조회 기능</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/012d35b2-a193-400a-9157-ef4f2348543e/image.png" alt="" /></p>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tokenOwner</span><span class="p">[</span><span class="n">tokenId</span><span class="p">]</span> <span class="o">=</span> <span class="n">to</span><span class="p">;</span> <span class="c1">// to는 소유주 이기때문에 👉 msg.sender 으로도 쓸수 있다
+// 토큰 번호를 입력하면 토큰 소유주의 주소가 나온다
+</span><span class="n">tokenURIs</span><span class="p">[</span><span class="n">tokenId</span><span class="p">]</span> <span class="o">=</span> <span class="n">tokenURI</span><span class="p">;</span> <span class="c1">// 토큰 번호를 입력하면 토큰의 이름이 나온다
+</span></code></pre></div></div>
+
+<blockquote>
+  <p>발행된 토큰의 번호를 입력하면<br /></p>
+
+  <ul>
+    <li>tokenOwner 👉 토큰을 소유하고 있는 지갑주소 조회<br /></li>
+    <li>tokenURI 👉 토큰의 별명을 조회<br /></li>
+  </ul>
+
+  <p>👉트랜잭션을 발생시키지 않고 <strong>call( )</strong> 한다</p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li>토큰을 추가 발행해보고 총 보유중인 토큰 조회</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3aa1aebd-6861-4540-b84a-1cae25d69119/image.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">ownedTokens</span> <span class="p">(</span><span class="nx">address</span> <span class="nx">owner</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">view</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint256</span><span class="p">[]</span> <span class="nx">memory</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 내가 가지고 있는 모든 토큰들 조회</span>
+        <span class="k">return</span> <span class="nx">_ownedTokens</span><span class="p">[</span><span class="nx">owner</span><span class="p">];</span> <span class="c1">// 조회하고자 하는 주소를 입력하면 토큰들(배열)이 나온다</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>토큰을 2번과 3번을 추가로 발행하고
+<code class="language-plaintext highlighter-rouge">ownedTokens</code> 함수에 👉 지갑주소를 입력하여 통해 조회</p>
+
+  <p>👉 <u>조회는 트랜잭션을 발생시키지 않고 call( ) 한다</u></p>
+</blockquote>
+
+<hr />
+
+<ol>
+  <li>보유중인 토큰을 다른 주소로 전송</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/6705ae7b-b718-4b01-bc36-3093d9acf8fa/image.png" alt="" /></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">safeTransferFrom</span><span class="p">(</span><span class="nx">address</span> <span class="k">from</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">to</span><span class="p">,</span> <span class="nx">uint256</span> <span class="nx">tokenId</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
+        <span class="c1">// 토큰을 전송하는 함수</span>
+        <span class="nx">require</span><span class="p">(</span><span class="k">from</span> <span class="o">==</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Not from</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 토큰을 보내는 사람이 소유주일때만 실행 👉 아니면 에러</span>
+        <span class="nx">require</span><span class="p">(</span><span class="k">from</span> <span class="o">==</span> <span class="nx">tokenOwner</span><span class="p">[</span><span class="nx">tokenId</span><span class="p">],</span> <span class="dl">"</span><span class="s2">NotTokenFrom</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 토큰이 본인의 토큰일때만 실행 👉 아니면 에러</span>
+
+        <span class="nx">_removeTokenFromList</span><span class="p">(</span><span class="k">from</span><span class="p">,</span> <span class="nx">tokenId</span><span class="p">);</span>
+        <span class="c1">// 밑에서 정의한 함수를 여기서 사용 (토큰을 전송하면 내 목록에서 사라져야하기때문)</span>
+        <span class="nx">_ownedTokens</span><span class="p">[</span><span class="nx">to</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">tokenId</span><span class="p">);</span>
+        <span class="c1">// 전송후에 상대방이 가지고 있는 토큰배열에 전송받은 토큰을 추가 해주기</span>
+        <span class="nx">tokenOwner</span><span class="p">[</span><span class="nx">tokenId</span><span class="p">]</span> <span class="o">=</span> <span class="nx">to</span><span class="p">;</span> <span class="c1">// from은 내 주소(소유쥬) to는 받는사람 토큰의 번호를 입력한다</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>👉 이 과정에서는 <code class="language-plaintext highlighter-rouge">require</code> 기능이 필요한데 ❗
+조건에 맞으면 통과되고 아니면 에러메세지와 함께 실행이 중지된다
+(에러핸들러 <code class="language-plaintext highlighter-rouge">require</code>)</p>
+
+<blockquote>
+  <p>from 👉 나의 지갑 주소
+to 👉 토큰을 전송받을 주소
+tokenId 👉 전송할 토큰의 번호</p>
+
+  <p>👉 입력 후 <code class="language-plaintext highlighter-rouge">transcat</code></p>
+</blockquote>
+
+<hr />
+
+<p>나의 지갑에 있던 토큰이 상대방의 지갑으로 전달되었으니
+전달되는 과정에서 나의 지갑에 있던 토큰을
+<span style="background-color:#B5E045; color:#000;">제거하는 작업을 해야한다 (스왑기능)</span></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">_removeTokenFromList</span><span class="p">(</span><span class="nx">address</span> <span class="k">from</span><span class="p">,</span> <span class="nx">uint256</span> <span class="nx">tokenId</span><span class="p">)</span> <span class="kr">private</span> <span class="p">{</span>
+        <span class="c1">// [10, 15, 20, 23] 👈 20번을 삭제하고 싶을때</span>
+        <span class="c1">// [10, 15, 23, 20] 👈 20번과 23번을 스왑하고</span>
+        <span class="c1">// [10, 15, 23] 👈 배열의 마지막 제거</span>
+        <span class="nx">uint256</span> <span class="nx">lastTokenIndex</span> <span class="o">=</span> <span class="nx">_ownedTokens</span><span class="p">[</span><span class="k">from</span><span class="p">].</span><span class="nx">length</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="c1">// 👆 배열의 마지막을 선택해주는 변수</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">uint256</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span> <span class="nx">_ownedTokens</span><span class="p">[</span><span class="k">from</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 반복문실행 소유중인 토큰 번호(배열)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">tokenId</span> <span class="o">==</span> <span class="nx">_ownedTokens</span><span class="p">[</span><span class="k">from</span><span class="p">][</span><span class="nx">i</span><span class="p">])</span> <span class="p">{</span>
+                <span class="c1">// 삭제하고싶은 토큰번호를 소유주의 배열에서 찾았다면</span>
+                <span class="c1">// 스왑기능 실행</span>
+                <span class="nx">_ownedTokens</span><span class="p">[</span><span class="k">from</span><span class="p">][</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_ownedTokens</span><span class="p">[</span><span class="k">from</span><span class="p">][</span><span class="nx">lastTokenIndex</span><span class="p">];</span>
+                <span class="c1">// 배열과 = 배열의 마지막 위치는 같다 선언함으로써 위치 변경</span>
+                <span class="nx">_ownedTokens</span><span class="p">[</span><span class="k">from</span><span class="p">][</span><span class="nx">lastTokenIndex</span><span class="p">]</span> <span class="o">=</span> <span class="nx">tokenId</span><span class="p">;</span>
+                <span class="c1">// 배열의 마지막이 삭제하고 싶은 토큰번호로 스왑됨</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nx">_ownedTokens</span><span class="p">[</span><span class="k">from</span><span class="p">].</span><span class="nx">length</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 👈 배열의 맨마지막 제거</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<ol>
+  <li>토큰 전송 후 각 지갑의 토큰보유 조회</li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/1a134951-9df9-43e5-afa1-fa9d51c51229/image.png" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">ownedTokens</code> 함수에 👉 각각 지갑주소를 입력하여 통해 조회</p>
+
+  <p>원래 가지고 있던 토큰 1, 2, 3 번</p>
+
+  <p>👉 전송 후 지갑에 남은 토큰 2, 3번이 조회되고</p>
+
+  <p>👉 전송 받은 다른지갑에는 1번이 조회되는걸 확인 할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><strong>Caver.js 를 이용하여 웹페이지 UI를 만들어서 실제 기능을 구현해볼 계획입니다 !</strong> 🦁</p>
+</blockquote>
+
+<hr />
+
+<h3 id="전체코드">전체코드</h3>
+
+<div class="language-solidity highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SPDX-License-Identifier: GPL-3.0
+</span>
+<span class="k">pragma</span> <span class="n">solidity</span> <span class="o">&gt;=</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">24</span> <span class="o">&lt;=</span><span class="mf">0.5</span><span class="p">.</span><span class="mi">6</span><span class="p">;</span>
+
+<span class="k">contract</span> <span class="n">NFTSimple</span> <span class="p">{</span>
+    <span class="kt">string</span> <span class="k">public</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"KlayLion"</span><span class="p">;</span> <span class="c1">// 토큰이름
+</span>    <span class="kt">string</span> <span class="k">public</span> <span class="n">symbol</span> <span class="o">=</span> <span class="s">"KL"</span><span class="p">;</span> <span class="c1">// 토큰심볼
+</span>
+    <span class="k">mapping</span> <span class="p">(</span><span class="kt">uint256</span> <span class="o">=&gt;</span> <span class="kt">address</span><span class="p">)</span> <span class="k">public</span> <span class="n">tokenOwner</span><span class="p">;</span> <span class="c1">// 숫자를 넣으면 주소로 반환
+</span>    <span class="k">mapping</span> <span class="p">(</span><span class="kt">uint256</span> <span class="o">=&gt;</span> <span class="kt">string</span><span class="p">)</span> <span class="k">public</span> <span class="n">tokenURIs</span><span class="p">;</span> <span class="c1">// 숫자를 넣으면 문자로 반환
+</span>	  <span class="k">mapping</span> <span class="p">(</span><span class="kt">address</span> <span class="o">=&gt;</span> <span class="kt">uint256</span><span class="p">[])</span> <span class="k">private</span> <span class="n">_ownedTokens</span><span class="p">;</span> <span class="c1">// 주소를 넣으면 숫자 배열로 반환
+</span>
+    <span class="k">function</span> <span class="n">mintWithTokenURI</span> <span class="p">(</span><span class="kt">address</span> <span class="n">to</span><span class="p">,</span> <span class="kt">uint256</span> <span class="n">tokenId</span><span class="p">,</span> <span class="kt">string</span> <span class="k">memory</span> <span class="n">tokenURI</span><span class="p">)</span> <span class="k">public</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 토큰을 발행 하는 함수
+</span>        <span class="n">tokenOwner</span><span class="p">[</span><span class="n">tokenId</span><span class="p">]</span> <span class="o">=</span> <span class="n">to</span><span class="p">;</span> <span class="c1">// to는 소유주 이기때문에 👉 msg.sender 으로도 쓸수 있다
+</span>                                       <span class="c1">// 토큰 번호를 입력하면 토큰 소유주의 주소가 나온다
+</span>        <span class="n">tokenURIs</span><span class="p">[</span><span class="n">tokenId</span><span class="p">]</span> <span class="o">=</span> <span class="n">tokenURI</span><span class="p">;</span> <span class="c1">// 토큰 번호를 입력하면 토큰의 이름이 나온다
+</span>
+        <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">to</span><span class="p">].</span><span class="n">push</span><span class="p">(</span><span class="n">tokenId</span><span class="p">);</span> <span class="c1">// 주소를 입력하면 소유중인 토큰 번호들이 나온다
+</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// 리턴
+</span>    <span class="p">}</span>
+
+    <span class="k">function</span> <span class="n">safeTransferFrom</span><span class="p">(</span><span class="kt">address</span> <span class="n">from</span><span class="p">,</span> <span class="kt">address</span> <span class="n">to</span><span class="p">,</span> <span class="kt">uint256</span> <span class="n">tokenId</span><span class="p">)</span> <span class="k">public</span> <span class="p">{</span>
+        <span class="c1">// 토큰을 전송하는 함수
+</span>        <span class="nb">require</span><span class="p">(</span><span class="n">from</span> <span class="o">==</span> <span class="n">msg</span><span class="p">.</span><span class="n">sender</span><span class="p">,</span> <span class="s">"Not from"</span><span class="p">);</span> <span class="c1">// 토큰을 보내는 사람이 소유주일때만 실행 👉 아니면 에러
+</span>        <span class="nb">require</span><span class="p">(</span><span class="n">from</span> <span class="o">==</span> <span class="n">tokenOwner</span><span class="p">[</span><span class="n">tokenId</span><span class="p">],</span> <span class="s">"NotTokenFrom"</span><span class="p">);</span> <span class="c1">// 토큰이 본인의 토큰일때만 실행 👉 아니면 에러
+</span>
+        <span class="n">_removeTokenFromList</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">tokenId</span><span class="p">);</span>
+        <span class="c1">// 밑에서 정의한 함수를 여기서 사용 (토큰을 전송하면 내 목록에서 사라져야하기때문)
+</span>        <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">to</span><span class="p">].</span><span class="n">push</span><span class="p">(</span><span class="n">tokenId</span><span class="p">);</span>
+        <span class="c1">// 전송후에 상대방이 가지고 있는 토큰배열에 전송받은 토큰을 추가 해주기
+</span>        <span class="n">tokenOwner</span><span class="p">[</span><span class="n">tokenId</span><span class="p">]</span> <span class="o">=</span> <span class="n">to</span><span class="p">;</span> <span class="c1">// from은 내 주소(소유쥬) to는 받는사람 토큰의 번호를 입력한다
+</span>    <span class="p">}</span>
+
+    <span class="k">function</span> <span class="n">_removeTokenFromList</span><span class="p">(</span><span class="kt">address</span> <span class="n">from</span><span class="p">,</span> <span class="kt">uint256</span> <span class="n">tokenId</span><span class="p">)</span> <span class="k">private</span> <span class="p">{</span>
+        <span class="c1">// [10, 15, 20, 23] 👈 20번을 삭제하고 싶을때
+</span>        <span class="c1">// [10, 15, 23, 20] 👈 20번과 23번을 스왑하고
+</span>        <span class="c1">// [10, 15, 23] 👈 배열의 마지막 제거
+</span>        <span class="kt">uint256</span> <span class="n">lastTokenIndex</span> <span class="o">=</span> <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">from</span><span class="p">].</span><span class="n">length</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="c1">// 👆 배열의 마지막을 선택해주는 변수
+</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">uint256</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">from</span><span class="p">].</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 반복문실행 소유중인 토큰 번호(배열)
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">tokenId</span> <span class="o">==</span> <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">from</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+                <span class="c1">// 삭제하고싶은 토큰번호를 소유주의 배열에서 찾았다면
+</span>                <span class="c1">// 스왑기능 실행
+</span>                <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">from</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">from</span><span class="p">][</span><span class="n">lastTokenIndex</span><span class="p">];</span>
+                <span class="c1">// 배열과 = 배열의 마지막 위치는 같다 선언함으로써 위치 변경
+</span>                <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">from</span><span class="p">][</span><span class="n">lastTokenIndex</span><span class="p">]</span> <span class="o">=</span> <span class="n">tokenId</span><span class="p">;</span>
+                <span class="c1">// 배열의 마지막이 삭제하고 싶은 토큰번호로 스왑됨
+</span>                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">from</span><span class="p">].</span><span class="n">length</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 👈 배열의 맨마지막 제거
+</span>    <span class="p">}</span>
+
+    <span class="k">function</span> <span class="n">ownedTokens</span> <span class="p">(</span><span class="kt">address</span> <span class="n">owner</span><span class="p">)</span> <span class="k">public</span> <span class="k">view</span> <span class="k">returns</span> <span class="p">(</span><span class="kt">uint256</span><span class="p">[]</span> <span class="k">memory</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 내가 가지고 있는 토큰들 조회
+</span>        <span class="k">return</span> <span class="n">_ownedTokens</span><span class="p">[</span><span class="n">owner</span><span class="p">];</span> <span class="c1">// 조회하고자 하는 주소를 입력하면 토큰들(배열)이 나온다
+</span>    <span class="p">}</span>
+
+    <span class="k">function</span> <span class="n">setTokenURI</span> <span class="p">(</span><span class="kt">uint256</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="k">memory</span> <span class="n">uri</span><span class="p">)</span> <span class="k">public</span> <span class="p">{</span>
+        <span class="c1">// 토큰의 이름 바꾸기 함수
+</span>        <span class="n">tokenURIs</span><span class="p">[</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">uri</span><span class="p">;</span> <span class="c1">// 바꾸고자 하는 토큰번호을 입력하고 바꾸고자 하는 토큰명을 입력한다
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">---</span>
+</code></pre></div></div>
+:ET

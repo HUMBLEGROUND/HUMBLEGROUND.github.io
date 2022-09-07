@@ -1,0 +1,64 @@
+I"+<p><img src="https://velog.velcdn.com/images/-__-/post/8bd4d2e9-693b-4d6e-94c2-5173a571f01a/image.png" alt="" /></p>
+
+<h3 id="baas-blockchain-as-a-service">BaaS (Blockchain as a Service)</h3>
+
+<ul>
+  <li>
+    <p>블록체인 개발 환경을 <strong>‘클라우드’</strong> 로 서비스하는 개념</p>
+  </li>
+  <li>
+    <p>블록체인 네트워크에 노드를 <strong>추가 &amp; 제거</strong>하는 일이 간단해진다</p>
+  </li>
+  <li>
+    <p>블록체인 기본 인프라를 <strong>‘추상화’</strong> 해서 블록체인 응용 프로그램을 만들 수 있는 프로그래밍 모델도 제공</p>
+  </li>
+  <li>
+    <p>장소와 상관없이 서버 지원을 할당하는 <strong>‘프로비저닝’</strong> 이 가능하다</p>
+  </li>
+</ul>
+
+<blockquote>
+  <h4 id="프로비저닝provisioning">프로비저닝(provisioning)<br /></h4>
+
+  <p>사용자의 <strong>요구</strong>에 맞게 시스템 자원을 할당, 배치, 배포해 두었다가 필요 시 시스템을 <strong>즉시 사용할 수 있는 상태</strong>로 <span style="background-color:#34CDEF; color:#000;">‘미리 준비해 두는 것’</span> 을 말한다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/92c81a7a-0573-42b1-93b9-5f0028f55250/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="기업용-블록체인-네트워크-구축단계">기업용 블록체인 네트워크 구축단계</h3>
+
+<ol>
+  <li>리눅스 설치 or 리눅스가 설치된 클라우드 세팅</li>
+  <li>개발자가 직접 환경설정</li>
+  <li>docker, golong, git 등 라이브러리 설치</li>
+  <li>하이퍼레저 패브릭 이미지 다운로드</li>
+  <li>각각 컨테이너 실행</li>
+  <li>채널 구성</li>
+</ol>
+
+<blockquote>
+  <p>👆 위와 같은 단계를 <strong>클릭 몇번으로</strong>
+하이퍼레저 패브릭 블록체인 네트워크를 <span style="background-color:#34CDEF; color:#000;">구축 해주는 서비스가 ‘BaaS’</span> 이다<br />
+서비스 이용시 <strong>하루에 2~ 5만원 이상의 비용</strong>이 나갈 수 있으니 주의해야한다 ❗</p>
+</blockquote>
+
+<hr />
+
+<h3 id="글로벌-baas-시장">글로벌 BaaS 시장</h3>
+
+<blockquote>
+  <p>BaaS(Blockchain as a Service), 속칭 ‘바스’로 불리는 클라우드 서비스형 블록체인은 블록체인의 대중화를 견인할 주요 열쇠 중 하나로 꼽힌다. 성장세도 뚜렷하다. 포춘 비즈니스 인사이트는 올해 5월 보고서에서 글로벌 BaaS 시장이 연평균 약 40%씩 성장해 2027년 250억달러(30조원) 규모까지 성장할 것으로 예측한 바 있다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=xqUbxDfYkno">https://www.youtube.com/watch?v=xqUbxDfYkno</a></li>
+</ul>
+
+<hr />
+:ET

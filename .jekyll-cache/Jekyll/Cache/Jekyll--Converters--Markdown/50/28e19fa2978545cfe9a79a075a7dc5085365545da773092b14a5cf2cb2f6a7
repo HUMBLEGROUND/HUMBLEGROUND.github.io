@@ -1,0 +1,70 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/34a14490-ddb3-46dc-880a-946d3f3d0198/image.png" alt="" /></p>
+
+<h3 id="블록체인의-데이터-불변">블록체인의 데이터 불변</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b3587ddb-1ca8-45e3-81e2-9a0ec563928b/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>블록체인에 등록된 기록은 아무도 삭제, 변경, 위조할 수 없다</p>
+  </li>
+  <li>
+    <p>블록에 기록 데이터가 계속 축적된다</p>
+  </li>
+  <li>
+    <p>블록체인 기술의 장점 중 하나는 <strong>‘영원불변’, ‘비가역성’</strong> 이다</p>
+  </li>
+  <li>
+    <p>한 번 기록된 데이터는 영원히 저장되고 누구도 수정하거나 지울 수 없다</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p><strong>‘DB’</strong> 는 변경할 수 있으나, <br /> &gt;<strong>‘블록’</strong>에서는 이력이 남고 이는 변경할 수 없다<br /></p>
+
+  <p>다시말해 <strong>‘DB’</strong> 를 임의로 변경하더라도 <br /> &gt;<strong>‘블록’</strong> 에 기록이 남아있으니까 <br />
+데이터에 문제가 있음을 잡아낼수있다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="블록체인에서의-curd-기능">블록체인에서의 CURD 기능</h3>
+
+<blockquote>
+  <p>👉 블록 데이터 생성, 조회는 가능 한데 <strong>‘삭제’</strong> 가 가능할까?</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/cb531945-e2c3-4ba0-9901-a549d9d6226d/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li>하나의 블록에 <strong>‘블록 기록1’</strong> 을 생성했다고 치고
+<br /></li>
+    <li><strong>‘블록 기록1’</strong> 의 내용을 변경해야 할 상황이 생겨서
+<br /></li>
+    <li>변경된 내용인 <strong>‘블록 기록2’</strong> 를 생성한다
+<br /></li>
+    <li>근데 <strong>‘블록 기록2’</strong> 마저 필요가 없어졌을때
+<br /></li>
+    <li>이 블록은 삭제 되었다고 블록을 생성해서 기록한다
+(이제는 쓰지않는 데이터라고 기록)
+<br /></li>
+    <li>가장 최신 블록에 <strong>‘블록 기록삭제’</strong> 라고 기록하면
+<br /></li>
+    <li>그동안의 블록 <strong>기록내역은 남아있지만</strong>
+<br /></li>
+    <li><strong>‘WSDB’</strong> 에서는 최신 블록값만 읽기때문에 블록이 삭제된값으로 읽어온다</li>
+  </ol>
+</blockquote>
+
+<p>⭐ <u>하이퍼레저 패브릭 월드스테이트 데이터베이스(WSDB)</u> 는 <span style="background-color:#BFA8EE; color:#000;">블록의 최신기록만 저장해놓는다</span></p>
+
+<p>👉 <strong>이런 의미에서 블록체인에서도 데이터 삭제가 가능하다</strong></p>
+
+<hr />
+
+<p><a href="https://wavescats.github.io/blockchain/2022/08/25/bc51.html">https://wavescats.github.io/blockchain/2022/08/25/bc51.html</a><br />
+(👆 월드스테이트 데이터베이스 개념)</p>
+
+<hr />
+:ET

@@ -1,0 +1,92 @@
+I"B<p><img src="https://velog.velcdn.com/images/-__-/post/20beb1e4-7e84-4c96-88fd-a75e48cfd07c/image.png" alt="" /></p>
+
+<h3 id="월드스테이트-데이터베이스-world-state-db">월드스테이트 데이터베이스 (World State DB)</h3>
+
+<ul>
+  <li>
+    <p>하이퍼레저 패브릭의 용어</p>
+  </li>
+  <li>
+    <p>모든 원장의 <strong>‘현재 상태’</strong> 를 의미한다</p>
+  </li>
+  <li>
+    <p>패브릭에서는 원장(Ledger)에 모든 데이터를 넣지 않고 거래내역만을 기록한다</p>
+  </li>
+  <li>
+    <p>실제 데이터는 <strong>‘월드스테이트’</strong> 라는 데이터베이스에 저장한다</p>
+  </li>
+  <li>
+    <p>현재 값을 얻기 위해서 <strong>‘전체 블록체인’</strong> 을 뒤질 필요가 없고 <strong>‘월드스테이트’</strong> 가 있다면 <span style="background-color:#B5E045; color:#000;">바로 현재 값을 얻을 수 있다</span></p>
+  </li>
+  <li>
+    <p>트랜잭션에 의해서 체인코드가 호출될 때
+상태 &amp; 데이터 저장을 위한 **Key-Value 데이터베이스 (json) **</p>
+  </li>
+  <li>
+    <p>트랜잭션 처리 결과를 보존한다</p>
+  </li>
+  <li>
+    <p>패브릭은 종료된 시점의 상태를 월드스테이트에 보존한다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ae883dee-8200-4afb-9eb1-9100f4685b0d/image.png" alt="" /></p>
+
+<h4 id="월드-스테이트">월드 스테이트</h4>
+
+<p>트랜잭션들의 로그들로 생성, 변경된 모든 Key-Value 의 최신 상태</p>
+
+<h4 id="블록체인">블록체인</h4>
+
+<p>트랜잭션들의 모든 블록이 암호학적 해시 함수로 연결되어 있는 형태</p>
+
+<hr />
+
+<h3 id="하이퍼레저-패브릭의-데이터-흐름">하이퍼레저 패브릭의 데이터 흐름</h3>
+
+<p>스마트컨트랙트 데이터 👉 월드스테이트 DB (json) 👉</p>
+
+<ol>
+  <li>데이터베이스 자체에서도 열어볼 수 있고 <br /></li>
+  <li>익스플로어 모니터링에서도 열어볼 수 있고 <br /></li>
+  <li>스마트컨트랙트에서 다시 꺼내 볼 수도 있다</li>
+</ol>
+
+<blockquote>
+  <p>스마트컨트랙트는 Go 언어로 작성되어있지만<br />
+Unmarshal 되어 쓰이는 곳에서는 자바스크립트 일수도있고 파이썬일수도 있다<br /></p>
+
+  <p>👉 그래서 <span style="background-color:#B5E045; color:#000;">블록에 저장될때 (원장에 저장될때)</span> json 형식으로 저장한다</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <h3 id="하이퍼레저-패브릭은">하이퍼레저 패브릭은</h3>
+
+  <p><span style="background-color:#B5E045; color:#000;">블록체인과 DB를 동시에 가지고 있는 구조이다</span>
+속도와 신뢰를 동시에 얻기 위함이다<br />
+월드스테이트라는 DB에 저장을 하기 위해서는
+하이퍼레저 패브릭에 들어있는 자체 블록체인에 저장하고
+월드스테이트에 <strong>최종의 값(현재의 값)</strong>을 저장해둔다<br />
+⭐ <strong>최종값을 알기 위해서는</strong> 월드스테이트의 값만 확인하면 된다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>
+    <p><a href="https://goroutine.tistory.com/2">https://goroutine.tistory.com/2</a></p>
+  </li>
+  <li>
+    <p><a href="https://steemit.com/blockchain/@keepit/keep-t-column-hyperledger-fabric">https://steemit.com/blockchain/@keepit/keep-t-column-hyperledger-fabric</a></p>
+  </li>
+  <li>
+    <p><a href="https://m.blog.naver.com/passerby4/221994040905">https://m.blog.naver.com/passerby4/221994040905</a></p>
+  </li>
+</ul>
+
+<hr />
+:ET
