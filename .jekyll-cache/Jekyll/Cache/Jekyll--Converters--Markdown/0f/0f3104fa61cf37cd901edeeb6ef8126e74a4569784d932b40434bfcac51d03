@@ -1,0 +1,297 @@
+I"�*<p><img src="https://velog.velcdn.com/images/-__-/post/4cfcc99f-81ae-4504-9aea-bd3fb613c77a/image.png" alt="" /></p>
+
+<h3 id="합의-알고리즘consensus-algorithm">합의 알고리즘(Consensus Algorithm)</h3>
+
+<blockquote>
+  <p>다수의 참여자들이 <u>통일된 의사결정을 하기 위해</u> 사용하는 알고리즘<br />
+합의 모델 / 합의 방식 / 합의 메커니즘 / 합의 프로토콜 이라고도 불린다</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>블록체인 시스템의 경우 통일된 의사결정을 내릴 수 있는 권위 있는 <u>중앙(Center)이 존재하지 않는다</u></p>
+  </li>
+  <li>
+    <p>블록체인의 데이터는 중앙화된 서버 대신 전세계에 <u>흩어져 있는 수많은 노드에 보관</u>되기 때문에, 각각의 노드들은 블록에 기록하는 데이터가 위변조되지 않은 <strong>‘원본’</strong>이라는 것이라는 것을 <strong>상호간에 합의</strong>하는 과정이 필요하다</p>
+  </li>
+  <li>
+    <p>누군가 악의적으로 데이터를 조작하려고 해도 다수의 노드들이 상호검증을 거쳐 올바른 블록 생성을 할 수 있게 하는 프로세스와 알고리즘을 바로 <strong>‘합의(Consensus)’</strong>라고 한다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="작업-증명-pow-proof-of-work">작업 증명 (PoW, Proof of Work)</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c4bce491-5ef5-4dba-af99-177690d02149/image.png" alt="" /></p>
+
+<blockquote>
+  <p>비트코인을 창시한 <strong>‘사토시 나카모토’</strong>가 제안한 합의 알고리즘이다</p>
+</blockquote>
+
+<h3 id="장점">장점</h3>
+
+<ul>
+  <li>
+    <p>모든 노드의 승인을 거쳐야 해서 <u>거래 내역을 속이기 힘들다</u></p>
+  </li>
+  <li>
+    <p><strong>(탈중앙화라는 본질을 가장 잘 살린 방식)</strong></p>
+  </li>
+</ul>
+
+<h3 id="단점">단점</h3>
+
+<ul>
+  <li>
+    <p>모든 노드의 승인을 거쳐야 하기 때문에 <u>거래 처리 속도가 느리고</u></p>
+  </li>
+  <li>
+    <p>채굴에 따른 <u>부수적인 비용과 **에너지 과잉 소비**</u> (전기 이용)</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/42cc05d7-408e-4acf-be4a-39e4a73abfbc/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>블록생성 시간동안 <strong>가장 많은 해시파워</strong>를 제공한 노드가 블록을 생성할 수 있도록 설계가 되어있다</p>
+  </li>
+  <li>
+    <p>이 기법은 비트코인, 비트코인캐시, 라이트코인 등 여러 암호화폐 블록체인에서 사용 된다</p>
+  </li>
+  <li>
+    <p>블록을 생성하기 위해 <strong>논스(Nonce)</strong>라는 임의의 값을 맞히는 과정을 <strong>‘마이닝(Mining, 채굴)’</strong>이라고 부른다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="노드node">노드(Node)</h3>
+
+<ul>
+  <li>
+    <p>P2P(Peer to Peer) 로 연결되어 <u>블록 체인 네트워크에 연결된</u></p>
+  </li>
+  <li>
+    <p>모든 블록 정보를 가지는 각각의 서버&lt;/u&gt;를 노드(Node)라고 한다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="노드의-종류">노드의 종류</h3>
+
+<ul>
+  <li>
+    <p>풀 노드 : 모든 기능을 다 가지고 있는 노드</p>
+  </li>
+  <li>
+    <p>라이트 노드 : 모든 블록정보의 원본을 가지고 있지 않고
+일종의 <strong>요약본</strong> 즉 헤더정보만 가지고 있는 노드</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="채굴mining">채굴(Mining)</h3>
+
+<p>암호화폐의 거래내역을 기록한 <strong>블록을 생성</strong>하고 그 대가로 암호화폐를 얻는 행위</p>
+
+<h3 id="채굴-노드가-하는-일은">채굴 노드가 하는 일은,</h3>
+
+<ul>
+  <li>
+    <p>목표값 이하의 블록해시를 생성하는 <u>**'논스'**를 찾아 **새로운 블록을 생성**하는 것</u>이다</p>
+  </li>
+  <li>
+    <p>블록체인 네트워크에 전송된 암호화된 거래정보를 <strong>새로운 블록에 담고</strong>,<br />
+새로운 블록을 체인에 연결하는 작업을 완료했다는 것을 증명하는데 사용되는 <strong>‘컴퓨팅 파워’</strong>라고 이해할 수 있다</p>
+  </li>
+  <li>
+    <p>작업 증명에서는 브랜치가 생긴 경우 가장 긴 블록체인이 남을 때까지 서로 <strong>경쟁</strong>하여 <br />
+이긴 브랜치가 최종적인 브랜치로 <strong>채택</strong>이 되며, 다른 브랜치는 버려진다</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>작업 증명은 현재 <strong>‘시빌공격(Sybil Attack)’</strong>과 같은 블록체인 네트워크에 대한 각종 공격을 막을 수 있다고 <u>증명된 유일한 알고리즘이다</u></p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>작업 증명 방식은 채굴시 모든 것을 처음부터 계산하다 보니 <strong>블록체인의 속도가 느리다</strong></p>
+  </li>
+  <li>
+    <p>이 방식은 노드의 <strong>51%가 정당</strong>하다고 인정해야 블록이 생성된다</p>
+  </li>
+  <li>
+    <p>거대 자본의 담합으로 연산 능력의 <strong>51%를 장악하여 채굴권이 집중</strong>되는 문제가 발생할 수 있다</p>
+  </li>
+  <li>
+    <p>이로 인해 거대 단합 조직이 엉뚱한 블록을 생성하고 <strong>조작</strong>할 수도 있다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="지분-증명-pos-proof-of-stake">지분 증명 (PoS, Proof of Stake)</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a3f58e9b-5676-485b-92f0-7664711ffd3f/image.png" alt="" /></p>
+
+<blockquote>
+  <p>지분이 많을수록 블록 생성 권한을 얻을 확률이 올라간다</p>
+</blockquote>
+
+<h3 id="장점-1">장점</h3>
+
+<ul>
+  <li>
+    <p>PoW 처럼 무의미한 계산을 지속적으로 하지 않아 조금 더 경제적이고,</p>
+  </li>
+  <li>
+    <p>더 분산화된 네트워크를 가진다</p>
+  </li>
+</ul>
+
+<h3 id="단점-1">단점</h3>
+
+<ul>
+  <li>
+    <p>빈익빈 부익부, 모든 네트워크가 참여하여 속도가 저하된다</p>
+  </li>
+  <li>
+    <p>아직 보안성이 검증되지 않았다</p>
+  </li>
+  <li>
+    <p>지분이 많은 소수의 거대 권력이 독점할 가능성이 있다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="nothing-at-stake-problem">Nothing at Stake Problem</h4>
+
+<ul>
+  <li>
+    <p>지분 증명(PoS) 방식은 모든 노드들이 제한없이 여러 블록에 자신의 지분을 증명할 수 있기 때문에,</p>
+  </li>
+  <li>
+    <p>만약 하나의 거래에서 서로 다른 거래내용이 발생한 경우</p>
+  </li>
+  <li>
+    <p>많은 지분을 가진 노드가 공격을 목적으로 두 개의 블록에 모두 증명을 해놓고,</p>
+  </li>
+  <li>
+    <p><span style="background-color: #ffdce0"><strong>거짓인 체인도 참인 것처럼 길게 체인을 형성시킬 수 있다</strong></span></p>
+  </li>
+  <li>
+    <p>블록에 새로 참여한 검증자(Validator)는 어느 것이 정당한 블록체인인지 <strong>알 수 있는 방법이 없다</strong></p>
+  </li>
+  <li>
+    <p>그래서 새로 많은 지분을 사들여 검증에 참여하는 노드가 거짓인 블록체인에 증명(합의)을 해버릴 경우 제대로 된 거래를 한 사람은 모두 공격에 당하는 꼴이 되는 것이다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ca506ef5-2be0-4c1e-8d30-f29efe6e8fc2/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>PoS는 <strong>지분을 많이 가지고 있는 노드</strong>에게 블록을 생성할 권한을 준다</p>
+  </li>
+  <li>
+    <p>작업이 아닌 더 <u>많은 지분(해당 코인)을 가지고 있을 수록</u> 그에 비례하여 블록에 기록할 권한이 더 많이 부여된다는 개념</p>
+  </li>
+  <li>
+    <p>채굴자에게는 마치 <u>**이자**와 같은 방식으로 코인이 지급</u>된다</p>
+  </li>
+  <li>
+    <p>일정 수 이상의 코인을 보관하고 있는 <u>**지갑**을 블록체인 네트워크에 연결시켜놓기만 하면 보상</u>을 받을 수 있다</p>
+  </li>
+  <li>
+    <p>블록 생성자와 <ㅡ> 지분 생성자의 이해관계를 일치시킴으로써 <u>블록을 나쁜 의도로 생성할 동기부여를 없애며,</u> 잘못 생성할 경우 패널티를 부여</ㅡ></p>
+  </li>
+  <li>
+    <p>PoW보다 <strong>에너지 소모가 적다</strong></p>
+  </li>
+  <li>
+    <p>코인을 가진 노드 누구나 네트워크에 허가없이 참여하기 때문에 분산화가 더 잘 되어 많은 노드가 <strong>의사결정 과정에 쉽게</strong> 참여할 수 있다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="위임-지분-증명-dpos-delegated-proof-of-stake">위임 지분 증명 (DPoS, Delegated Proof of Stake)</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/d10149e7-82f8-4628-a1b5-1b268c0c04f0/image.png" alt="" /></p>
+
+<ul>
+  <li><strong>‘위임 지분 증명’</strong>은 PoS에서 변형된 것이다</li>
+  <li><strong>시스템의 지분을 가진 각 노드</strong>가 투표를 통해
+트랜잭션의 유효성 검사를 다른 노드에 <u>위임하여 증명하는 개념</u></li>
+</ul>
+
+<blockquote>
+  <h3 id="장점-2">장점</h3>
+
+  <p>PoS에 비해 빠른 처리 속도(적은 수의 노드들끼리 합의)
+PoW에 비해 저렴한 비용</p>
+</blockquote>
+
+<h3 id="단점-2">단점</h3>
+
+<p>BP끼리 단합의 위험(탈중앙화에서 거리가 멀어짐)
+BP에 대한 디도스 공격 위험 가능성</p>
+
+<ul>
+  <li>BP (Block Producer) 👉 선출한 대표자</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0e3432fc-426f-43a9-898d-d83fcd3b0adf/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="비잔틴-장애-허용bft-byzantine-fault-tolerance">비잔틴 장애 허용(BFT, Byzantine Fault Tolerance)</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/11d6da7a-dd3f-42ef-bcf9-d5e531c12413/image.png" alt="" /></p>
+
+<blockquote>
+  <p>장애가 있더라도 전체의 3분의 1을 넘지 않는다면,
+시스템이 정상 작동하도록 허용하는 합의 알고리즘</p>
+</blockquote>
+
+<h3 id="장점-3">장점</h3>
+
+<p>빠른 처리 속도, 포크가 일어나지 않고 완료성이 좋다.</p>
+
+<h3 id="단점-3">단점</h3>
+
+<p>특정 노드에 권력 집중, 노드들 간의 단합 위험</p>
+
+<hr />
+
+<blockquote>
+
+</blockquote>
+
+<h3 id="포크-fork">포크 (Fork)</h3>
+
+<p>👉 블록체인 시스템 업그레이드 시 , 차이가 생겨 갈라지는 현상</p>
+
+<h3 id="하드-포크">하드 포크</h3>
+
+<p>👉 기존의 블록체인과 호환이 되지 않고 새로운 블록체인에서 새로운 암호화폐가 탄생 되는 것
+이 경우, 이전 버전을 사용할 수 없기 때문에 업그레이드 해야 사용 가능</p>
+
+<h3 id="소프트-포트">소프트 포트</h3>
+
+<p>👉 기존 버전의 블록체인과 호환이 가능한 업그레이드</p>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<p><a href="https://m.blog.naver.com/bodoblock00/221657805838">https://m.blog.naver.com/bodoblock00/221657805838</a></p>
+
+<hr />
+:ET
