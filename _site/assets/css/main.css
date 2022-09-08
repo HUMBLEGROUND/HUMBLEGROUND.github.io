@@ -40,7 +40,7 @@ a:hover { text-decoration: underline; }
 .social-media-list a:hover .username { text-decoration: underline; }
 
 /** Blockquotes */
-blockquote { background-color: #f8f9fa; color: #828282; border-left: 4px solid #00a2ff; padding-left: 1rem; padding-top: 1.5rem; padding-bottom: 0.05rem; font-size: 18px; font-style: italic; line-height: 1.8rem; }
+blockquote { background-color: #f8f9fa; color: #828282; border-left: 4px solid #00a2ff; padding-left: 15px; padding-top: 10px; padding-bottom: 10px; font-size: 18px; font-style: italic; line-height: 2rem; }
 
 blockquote > :last-child { margin-bottom: 0; }
 
