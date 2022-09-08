@@ -1,0 +1,146 @@
+I"A<p><img src="https://velog.velcdn.com/images/-__-/post/e76d9b7b-5ccb-411f-970f-7075f06c10e3/image.png" alt="" /></p>
+
+<p>⭐ 하이퍼레저 패브릭 2.2 ver 기준</p>
+
+<h4 id="하이퍼레저-패브릭-dapp-흐름">하이퍼레저 패브릭 Dapp 흐름</h4>
+
+<p>Dapp (클라이언트) 에서 입력받음 👉 입력값을 peer (서버)로 전달 👉 contractapi (init, invoke) 라이브러리 연결 👉 Chaincode 함수 호출</p>
+
+<hr />
+
+<h3 id="하이퍼레저-패브릭-개발환경-세팅">하이퍼레저 패브릭 개발환경 세팅</h3>
+
+<p>-1. VirtualBox 가상머신 을 실행한다</p>
+
+<blockquote>
+  <p>가상환경 시작 -&gt; VScode 실행</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3d0d58bc-4ec0-475c-b14e-97208443bad2/image.png" alt="" /></p>
+
+<p><a href="https://velog.io/@-__-/go1">https://velog.io/@-__-/go1</a><br />
+(👆 개발환경 세팅 1 ~ 5번까지 참고)</p>
+
+<hr />
+
+<p>-2. <code class="language-plaintext highlighter-rouge">.profile</code> 파일 수정 / <code class="language-plaintext highlighter-rouge">.bashrc</code> 파일 수정</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a16016a6-800e-4f29-a78b-090df6f60a13/image.png" alt="" /></p>
+
+<blockquote>
+  <p>export GOPATH=~/go<br />
+export PATH=$PATH:/usr/local/go/bin:~/fabric-samples/bin</p>
+</blockquote>
+
+<hr />
+
+<p>-3. 환경변수 설정</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/eaadff3c-7e01-4325-9db0-e7e0eb959284/image.png" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">. ~/.bashrc</code> 👈 명령어 실행<br />
+<code class="language-plaintext highlighter-rouge">echo $PATH</code> 👈 명령어 실행</p>
+</blockquote>
+
+<hr />
+
+<p>-4. 폴더구조 안에 경로를 통해 <strong>‘쉘 스크립트’</strong> 를 실행</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8debf088-83f1-4586-ae97-17c24e393a28/image.png" alt="" /></p>
+
+<blockquote>
+  <p>폴더 경로 <code class="language-plaintext highlighter-rouge">cd fabric-samples/fabcar/</code> <br />
+<code class="language-plaintext highlighter-rouge">./startFabric.sh</code> 👈 <strong>‘쉘 스크립트’</strong> 실행 명렁어</p>
+</blockquote>
+
+<hr />
+
+<h3 id="에러-발생--해결-내용">에러 발생 &amp; 해결 내용</h3>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">./startFabric.sh</code> <strong>‘쉘 스크립트’</strong> 실행 에러 발생</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2641f620-858d-4e00-bb54-319fc7ec50c5/image.png" alt="" /></p>
+
+<hr />
+
+<p>-1. 기존의 네트워크 확인 <code class="language-plaintext highlighter-rouge">docker ps -a</code></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/f02f38bd-f7ad-4d5c-9c17-ae3cac21545e/image.png" alt="" /></p>
+
+<blockquote>
+  <p>STATUS 상태가 <code class="language-plaintext highlighter-rouge">UP</code> 으로 되어있는지 확인 ❗</p>
+</blockquote>
+
+<hr />
+
+<p>-2. 네트워크, 이미지가 존재한다면 리셋해준다 (기존 네트워크 종료)</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">docker rm -f $(docker ps -aq)</code> 👉 도커 컨테이너 삭제</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">docker rmi -f $(docker images dev-* -q)</code> 👉 도커 컨테이너 이미지 삭제</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">docker network prune</code> 👉 도커가 생성한 컨테이너들간의 네트워크 삭제</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>-3. 폴더구조 안에 경로를 통해 <strong>‘쉘 스크립트’</strong> 를 실행</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/1130d9ec-74e6-43b9-a9a0-9fcedb59867d/image.png" alt="" /></p>
+
+<blockquote>
+  <p>폴더 경로 <code class="language-plaintext highlighter-rouge">cd fabric-samples/test-network/</code><br />
+<code class="language-plaintext highlighter-rouge">./network.sh down</code> 👈 실행중인 네트워크 <strong>중지 &amp; 삭제</strong> 명령어</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b7d6a53a-d482-4554-b097-b9c2790ae478/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 네트워크 초기화 상태 확인 <code class="language-plaintext highlighter-rouge">docker ps -a</code></p>
+</blockquote>
+
+<hr />
+
+<p>-4. <code class="language-plaintext highlighter-rouge">./startFabric.sh</code> <strong>‘쉘 스크립트’</strong> 조건 수정</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/fc5c14a2-b714-4450-b2d3-40c864068fa3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">couchdb</code> 네트워크를 생성하고 실행 한 뒤에<br />
+시간을 좀 두고 채널 연결을 해야한다 ❗<br /></p>
+
+  <p>네트워크가 생성되고 정상화 하는데 시간이 걸리는데<br />
+정상화가 되기 전에 채널 생성을 하려고 해서 발생한 에러 😵‍</p>
+</blockquote>
+
+<p>4-1. 네트워크를 시작하는 명령어와
+4-2. 채널을 생성하는 명령어를 분리
+4-3. 중간에 딜레이를 준다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/e2650574-d6ff-4dc0-ae18-e0ce40265080/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 하이퍼레저 패브릭 개발환경 세팅완료!</p>
+</blockquote>
+
+<hr />
+
+<h3 id="발생했던-에러-내용">발생했던 에러 내용</h3>
+
+<blockquote>
+  <p>[comm.tls] ClientHandshake -&gt; ERRO 001 Client TLS handshake failed after with error: EOF remoteaddress=127.0.0.1:7051
+[comm.tls] ClientHandshake -&gt; ERRO 002 Client TLS handshake failed after with error: read tcp 127.0.0.1:53180-&gt;127.0.0.1:7051: read: connection reset by peer remoteaddress=127.0.0.1:7051
+Error: error getting endorser client for channel: endorser client failed to connect to localhost:7051: failed to create new connection: connection error: desc = “transport: authentication handshake failed: read tcp 127.0.0.1:53180-&gt;127.0.0.1:7051: read: connection reset by peer”
+After 5 attempts, peer0.org1 has failed to join channel ‘mychannel’</p>
+</blockquote>
+
+<hr />
+:ET

@@ -1,0 +1,124 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/e8e82498-1aa2-40e7-bb53-a86d89450e94/image.png" alt="" /></p>
+
+<h3 id="마샬marsha">마샬(marsha)</h3>
+
+<p>데이터(객체)를 JSON 화 시키면 일렬로 바뀌는데<br />
+👉 이것을 <strong>‘바이트 코드’</strong> (byte code) 라고도 한다</p>
+
+<blockquote>
+  <p>Go 언어에서는 이것을<br />
+👉 <span style="background-color:#34CDEF; color:#000;">마샬(marsha) = 직렬화</span> 이라고 한다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="언마샬unmarshal">언마샬(Unmarshal)</h3>
+
+<p>JSON 을 다시 데이터(객체)로 변환시키면</p>
+
+<blockquote>
+  <p>👉 이것을 <span style="background-color:#F7969A; color:#000;">언마샬(unmarshal) = 역직렬화</span> 이라고 한다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3abfced9-abba-45ee-92fe-ee9ff848fa3c/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="chaincode-marshal--unmarshal">ChainCode Marshal &amp; Unmarshal</h3>
+
+<ul>
+  <li>
+    <p><strong>기본 형태</strong><br />
+구조체(데이터) 👉 json 형식으로 변환 👉 json 에서 필요한 값을 구조체(데이터)로 변환해서 사용</p>
+  </li>
+  <li>
+    <p><strong>web2.0 에서의 사용형태</strong><br />
+모바일앱 데이터 👉 데이터베이스(json) 👉 웹브라우저에서 읽음</p>
+  </li>
+  <li>
+    <p><strong>web3.0 에서의 사용형태</strong><br />
+스마트컨트랙트 데이터 👉 월드스테이트 DB (json) 👉</p>
+
+    <ol>
+      <li>데이터베이스 자체에서도 열어볼 수 있고</li>
+      <li>익스플로어 모니터링에서도 열어볼 수 있고</li>
+      <li>스마트컨트랙트에서 다시 꺼내 볼 수도 있다</li>
+    </ol>
+  </li>
+</ul>
+
+<blockquote>
+  <p>스마트컨트랙트는 Go 언어로 작성되어있지만<br />
+Unmarshal 되어 쓰이는 곳에서는 자바스크립트 일수도있고 파이썬일수도 있다<br />
+👉 그래서 <span style="background-color:#B5E045; color:#000;">블록에 저장될때 (원장에 저장될때)</span> json 형식으로 저장한다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="marshal--unmarshal-예제">Marshal &amp; Unmarshal 예제</h3>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"encoding/json"</span> <span class="c">// marshal 을 사용하기위해 import</span>
+	<span class="s">"fmt"</span>
+	<span class="s">"log"</span>
+<span class="p">)</span>
+
+<span class="c">// 데이터를 json화 시키면 일렬로 바뀌는데 이것을 바이트 코드라고 한다</span>
+<span class="c">// 👉 직렬화 = 마샬(marshal) 이라고 한다</span>
+
+<span class="c">// json을 데이터(객체)로 변환시키면 이것을 👉 역직렬화 = 언마샬(unmarshal) 이라고 한다</span>
+
+
+<span class="k">type</span> <span class="n">Task</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">Title</span> <span class="kt">string</span>
+	<span class="n">Status</span> <span class="kt">int</span>
+	<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="n">ExampleTask_marshalJSON</span><span class="p">()</span>
+<span class="n">ExampleTask_unmarshalJSON</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">ExampleTask_marshalJSON</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">t</span> <span class="o">:=</span> <span class="n">Task</span><span class="p">{</span>
+		<span class="s">"Laundry"</span><span class="p">,</span>
+		<span class="m">1</span><span class="p">,</span>
+	<span class="p">}</span> <span class="c">// 👉 marsha 시킨다 (한줄로 만들어줌)</span>
+	<span class="n">b</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">json</span><span class="o">.</span><span class="n">Marshal</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c">// t 변수를 Marshal함수에 넣고 돌린다</span>
+	<span class="c">// 에러가 날 경우도 변수로</span>
+
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span> <span class="c">// 에러 발생시</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+	<span class="c">// 출력값 👉 {"Title": "Laundry", "Status": 1}</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">ExampleTask_unmarshalJSON</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">b</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">(</span><span class="s">`{"Title":"Buy Milk","Status":2}`</span><span class="p">)</span>
+	<span class="n">t</span> <span class="o">:=</span> <span class="n">Task</span><span class="p">{}</span> <span class="c">// b 를 unmarsha시켜서 t 에 넣어주기 위한 공간</span>
+	<span class="n">err</span> <span class="o">:=</span> <span class="n">json</span><span class="o">.</span><span class="n">Unmarshal</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="c">// 👉 unmarsha 시킨다 (json을 풀어준다(해체))</span>
+	<span class="c">// b 를 unmarsha 시켜서 t 주소로 넣어준다</span>
+
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">Title</span><span class="p">)</span> <span class="c">// 👉 Buy Milk</span>
+	<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">Status</span><span class="p">)</span> <span class="c">// 👉 2</span>
+<span class="p">}</span>
+
+<span class="c">// 구조체(데이터) 👉 json 👉 json에서 필요한 값을 구조체(데이터)화 로 다시 변환</span>
+
+<span class="c">// 모바일앱 데이터 👉 데이터베이스(json) 👉 웹브라우저에서 읽음</span>
+
+<span class="c">// 스마트컨트랙트 데이터 👉 월드스테이트 데이터베이스 👉 데이터베이스자체 / 익스플로어 모니터링 / 스마트컨트랙트</span>
+</code></pre></div></div>
+
+<hr />
+:ET

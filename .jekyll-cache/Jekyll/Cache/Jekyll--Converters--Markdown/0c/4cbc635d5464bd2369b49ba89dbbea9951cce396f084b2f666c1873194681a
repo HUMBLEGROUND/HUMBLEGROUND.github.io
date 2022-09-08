@@ -1,0 +1,159 @@
+I"\<p><img src="https://velog.velcdn.com/images/-__-/post/cb9b7ed5-abe9-467b-af37-16473dfb03cd/image.png" alt="" /></p>
+
+<p>⭐ 하이퍼레저 패브릭 1.4 ver 기준</p>
+
+<h2 id="체인코드-컴파일-fabric">체인코드 컴파일 (fabric)</h2>
+
+<h3 id="컴파일-명령어-순서">컴파일 명령어 순서</h3>
+
+<blockquote>
+  <ul>
+    <li>
+      <p>. ~/.profile<br /></p>
+    </li>
+    <li>
+      <p>go mod init fabric<br /></p>
+    </li>
+    <li>
+      <p>go get github.com/hyperledger/fabric/core/chaincode/shim@v1.4<br /></p>
+    </li>
+    <li>
+      <p>go build</p>
+    </li>
+  </ul>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/bef9005e-91cb-4bef-950c-a107f8dea301/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="컴파일-명령어-분석">컴파일 명령어 분석</h3>
+
+<p>-1. 체인코드가 있는 경로로 이동
+<code class="language-plaintext highlighter-rouge">cd fabric/fabric-samples/chaincode/fabcar</code></p>
+
+<p>-2. <code class="language-plaintext highlighter-rouge">. ~/.profile</code> 환경변수를 등록해준다<br />
+👉 이때부터 go 프로그램을 동작시킬수 있다</p>
+
+<p>-3. mod 초기화 및 go.mod 파일 생성<br />
+<code class="language-plaintext highlighter-rouge">go mod init 'package name'</code></p>
+
+<p>-4. <code class="language-plaintext highlighter-rouge">go.mod</code> 파일이 생성되었는지 확인해본다 <code class="language-plaintext highlighter-rouge">ls</code></p>
+
+<p>-5. <code class="language-plaintext highlighter-rouge">go get</code> 명령어로 github repository 라이브러리 다운로드</p>
+
+<p>-6. <code class="language-plaintext highlighter-rouge">go build</code> 명령어로 go 파일을 실행명령 파일로 만들어준다</p>
+
+<hr />
+
+<h2 id="네트워크-상태-확인-초기화">네트워크 상태 확인 (초기화)</h2>
+
+<h3 id="초기화-명령어-순서">초기화 명령어 순서</h3>
+
+<blockquote>
+  <ul>
+    <li>
+      <p>docker ps -a<br /></p>
+    </li>
+    <li>
+      <p>docker rm -f $(docker ps -aq)<br /></p>
+    </li>
+    <li>
+      <p>docker rmi -f $(docker images dev-* -q)<br /></p>
+    </li>
+    <li>
+      <p>docker network prune<br /></p>
+    </li>
+    <li>
+      <p><code class="language-plaintext highlighter-rouge">./teardown.sh</code> (위의 명령어들을 압축)</p>
+    </li>
+  </ul>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a6c67ed6-e637-428b-9795-ba00063d0e12/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="초기화-명령어-분석">초기화 명령어 분석</h3>
+
+<p>-1. 네트워크 경로로 이동
+<code class="language-plaintext highlighter-rouge">cd fabric/fabric-samples/basic-network</code></p>
+
+<p>-2. 기존의 네트워크 확인 <code class="language-plaintext highlighter-rouge">docker ps -a</code></p>
+
+<p>-3. 네트워크, 이미지가 존재한다면 리셋해준다 (기존 네트워크 종료)</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">docker rm -f $(docker ps -aq)</code> 👉 도커 컨테이너 삭제<br /></li>
+  <li><code class="language-plaintext highlighter-rouge">docker rmi -f $(docker images dev-* -q)</code> 👉 도커 컨테이너 이미지 삭제<br /></li>
+  <li><code class="language-plaintext highlighter-rouge">docker network prune</code> 👉 도커가 생성한 컨테이너들간의 네트워크 삭제</li>
+</ul>
+
+<hr />
+
+<h2 id="네트워크-구축">네트워크 구축</h2>
+
+<blockquote>
+  <ul>
+    <li>
+      <p>./start.sh<br /></p>
+    </li>
+    <li>
+      <p>docker exec peer0.org1.example.com peer channel list</p>
+    </li>
+  </ul>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8ee607a5-079c-4096-bcc9-77f534981306/image.png" alt="" /></p>
+
+<hr />
+
+<h4 id="네트워크-구축---채널-생성---채널-가입">네트워크 구축 - 채널 생성 - 채널 가입</h4>
+
+<p>-1. <code class="language-plaintext highlighter-rouge">./start.sh</code> 👈 <strong>‘쉘 스크립트’</strong> 실행 명렁어</p>
+
+<blockquote>
+  <ul>
+    <li>기존에 동작하던 네트워크 &amp; 컨테이너 종료시킴<br /></li>
+    <li>docker-compose Tool 을 이용하여 사용할 컨테이너를 생성<br /></li>
+    <li>docker-compose.yml 파일에 컴테이너 설정값이 들어있다 👉 (환경변수, IP, PORT, 볼륨 등등)<br /></li>
+    <li>net_basic 생성 👉 컨테이너 간 통신을 위한 <strong>네트워크 구축</strong> (외부 인터넷으로도 연결 가능 - 공유기)<br /></li>
+    <li>STATUS 값이 <code class="language-plaintext highlighter-rouge">Up</code> 으로 되어있는지 확인 ❗<br /></li>
+    <li>4개의 컨테이너 생성 peer / ca / orderer / couchdb<br /></li>
+    <li><strong>채널 생성</strong> 👉 채널 생성을 위한 트랜잭션 파일을 👉 orderer 에 트랜잭션을 보냄<br /></li>
+    <li><u>orderer는 트랜잭션을 받고 블록생성을 한다</u><br /></li>
+    <li>config Block 생성 👉 트랜잭션 보낸곳에 다시 블록파일을 보낸다<br /></li>
+    <li>생성되어서 받아온 블록이 mychannel.block<br /></li>
+    <li><span style="background-color:#B5E045; color:#000;">peer 컨테이너 에서는 orderer 가 보내준 블록파일을 저장한다</span><br /></li>
+    <li>채널에 가입 완료 ⭐<br /></li>
+  </ul>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/7cc5719a-1c7e-448a-b846-d2198db1b48e/image.png" alt="" /></p>
+
+<p>-2. 가입된 채널 확인</p>
+
+<blockquote>
+  <p>peer0.org1 컨테이너는 mychannel 이라는 채널에 가입되어있음 👆</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>도커 컨테이너가 동작을 할수있는 네트워크 구축 (docker-compose Tool)<br /></li>
+    <li>컨테이너들을 (peer / ca / orderer / couchdb) 생성해서 <strong>네트워크위에 연결</strong><br /></li>
+    <li>peer 는 하이퍼레저 구성요소로써 네트워크에 구축되어 연결됐지만<br /></li>
+    <li>아무런 채널에 가입되지않고 체인코드도 보유하고있지 않는상태다 (붕 떠있는 상태)<br /></li>
+    <li>그래서 peer를 <strong>채널에 가입</strong>시킴<br /></li>
+    <li>하이퍼레저 패브릭의 채널은 하나의 네트워크에 <strong>여러개가</strong> 존재할 수 있다<br /></li>
+    <li>채널마다 동일한 원장을 보유하게 된다 (다른채널이면 원장의 내용은 달라진다)<br /></li>
+    <li><strong>채널별로 아예 다른 블록체인임</strong> ⭐<br /></li>
+    <li>동일한 채널에 가입되어있는 peer 들은 동일한 원장, 월드스테이트를 <span style="background-color:#B5E045; color:#000;">‘동기화’</span> 해서 보유한다<br /></li>
+    <li>이것을 <span style="background-color:#B5E045; color:#000;">‘합의’</span> 라고 하고<br /></li>
+    <li>합의를 통해서 전부다 동일한 블록과 원장을 보유하고 있는 집단을 <span style="background-color:#B5E045; color:#000;">‘채널’</span> 이라고 한다<br /></li>
+    <li>원장에 있는 데이터를 사용하기 위해 peer는 <strong>체인코드 컨테이너를 연결</strong>해서 보유한다<br /></li>
+    <li>트랜잭션이 오면 체인코드를 동작시킨다</li>
+  </ul>
+</blockquote>
+
+<hr />
+:ET
