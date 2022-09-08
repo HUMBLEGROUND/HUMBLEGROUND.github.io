@@ -122,6 +122,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
   }
 </style>
 
+<!-- tipuesearch -->
+ <link rel="stylesheet" href="/assets/tipuesearch/css/tipuesearch.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch.min.js"></script>
 </head>
 <body>
 
@@ -766,9 +772,7 @@ function googleTranslateElementInit() {
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <div class="framework">
-  <section class="main">
-
-     <div class="post">
+  <section class="main"><div class="post">
   <section>
 
 
@@ -920,16 +924,16 @@ function googleTranslateElementInit() {
       <div>관련 글</div>
       <ul>
         <li>
-          <a class="post-link" href="/blockchain/2022/08/28/bc52.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 4주차">[Blockchain] 블록체인에서의 CURD 기능</a>
+          <a class="post-link" href="/blockchain/2022/05/13/bc25.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 4주차">[Blockchain] CAP 이론 &amp; PACELC 이론</a>
         </li>
 <li>
-          <a class="post-link" href="/blockchain/2022/06/04/bc47.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 4주차">[Blockchain] 뭄바이(Mumbai) 테스트넷 폴리곤 받기 (MATIC Mumbai Faucet) &amp; 네트워크 추가</a>
+          <a class="post-link" href="/review/2022/03/18/beb3.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 4주차">코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차</a>
         </li>
 <li>
-          <a class="post-link" href="/error/2022/05/18/ubun7.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 4주차">[ubuntu 20.04] sudo apt-get update 명령어 에러 해결방법 / sources.list 초기화 (2620:2d:4000:1::16)...</a>
+          <a class="post-link" href="/review/2022/09/02/bs0.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 4주차">[멋쟁이사자처럼] 블록체인 스쿨 1기 최종합격 - 수강준비</a>
         </li>
 <li>
-          <a class="post-link" href="/review/2022/04/01/beb5.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 4주차">코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차</a>
+          <a class="post-link" href="/blockchain/2022/05/26/bc38.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 4주차">[Blockchain] 린케비(Rinkeby) 테스트넷 이더리움 받기 (Rinkeby Faucet)</a>
         </li>
 </ul>
     </div>
@@ -939,10 +943,17 @@ function googleTranslateElementInit() {
     <!-- <div class="post-comments"></div> -->
     <script src="https://utteranc.es/client.js" repo="wavescats/Github-Blog-Post-Comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script></section>
 </div>
-
-
-  </section>
-  <section class="sidebar" style="margin-left: 15px;">
+</section>
+  <section class="sidebar" style="margin-left: 15px">
+    <form action="/search">
+      <div class="tipue_search_left">
+        <img src="/assets/tipuesearch/search.png" class="tipue_search_icon">
+      </div>
+      <div class="tipue_search_right">
+        <input type="text" name="q" id="tipue_search_input" pattern=".{1,}" title="At least 1 characters" required>
+      </div>
+      <div style="clear: both"></div>
+    </form>
     <!-- Get sidebar items --><style type="text/css" media="screen">
 .post-menu ul {
   list-style: none;
@@ -1084,6 +1095,8 @@ function googleTranslateElementInit() {
 </div>
     </div>
   </div>
+
 </footer>
 </body>
+
 </html>

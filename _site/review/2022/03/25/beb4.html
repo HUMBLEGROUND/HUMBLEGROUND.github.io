@@ -122,6 +122,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
   }
 </style>
 
+<!-- tipuesearch -->
+ <link rel="stylesheet" href="/assets/tipuesearch/css/tipuesearch.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch.min.js"></script>
 </head>
 <body>
 
@@ -766,9 +772,7 @@ function googleTranslateElementInit() {
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <div class="framework">
-  <section class="main">
-
-     <div class="post">
+  <section class="main"><div class="post">
   <section>
 
 
@@ -926,16 +930,16 @@ function googleTranslateElementInit() {
       <div>관련 글</div>
       <ul>
         <li>
-          <a class="post-link" href="/blockchain/2022/05/03/bc2.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차">[Blockchain] 블록 &amp; 체인 &amp; 블록생성 &amp; 채굴 &amp; 노드</a>
+          <a class="post-link" href="/blockchain/2022/05/10/bc15.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차">[Blockchain] 중앙 은행 디지털 화폐 (CBDC)</a>
         </li>
 <li>
-          <a class="post-link" href="/solidity/2022/05/24/sol1.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차">[Solidity] ERC-20 기반 토큰(코인) 만들기</a>
+          <a class="post-link" href="/review/2022/04/08/beb6.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차">코드스테이츠 블록체인 부트캠프 후기 BEB 4기 6주차</a>
         </li>
 <li>
-          <a class="post-link" href="/typescript/2022/07/16/ts2.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차">[typescript] 클레이튼 caver-js 지갑연동  webpack &lt; 5 Error (Module not found)</a>
+          <a class="post-link" href="/blockchain/2022/05/26/bc39.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차">[Blockchain] ERC-721 (Ethereum Request for Comment-721)</a>
         </li>
 <li>
-          <a class="post-link" href="/project/2022/07/01/pj2.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차">[Project] Web 2.0 + Web 3.0 = DAO 커뮤니티</a>
+          <a class="post-link" href="/blockchain/2022/08/25/bc51.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 5주차">[Blockchain] 월드스테이트 데이터베이스 (World State DB)</a>
         </li>
 </ul>
     </div>
@@ -945,10 +949,17 @@ function googleTranslateElementInit() {
     <!-- <div class="post-comments"></div> -->
     <script src="https://utteranc.es/client.js" repo="wavescats/Github-Blog-Post-Comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script></section>
 </div>
-
-
-  </section>
-  <section class="sidebar" style="margin-left: 15px;">
+</section>
+  <section class="sidebar" style="margin-left: 15px">
+    <form action="/search">
+      <div class="tipue_search_left">
+        <img src="/assets/tipuesearch/search.png" class="tipue_search_icon">
+      </div>
+      <div class="tipue_search_right">
+        <input type="text" name="q" id="tipue_search_input" pattern=".{1,}" title="At least 1 characters" required>
+      </div>
+      <div style="clear: both"></div>
+    </form>
     <!-- Get sidebar items --><style type="text/css" media="screen">
 .post-menu ul {
   list-style: none;
@@ -1090,6 +1101,8 @@ function googleTranslateElementInit() {
 </div>
     </div>
   </div>
+
 </footer>
 </body>
+
 </html>

@@ -40,7 +40,7 @@ a:hover { text-decoration: underline; }
 .social-media-list a:hover .username { text-decoration: underline; }
 
 /** Blockquotes */
-blockquote { background-color: #f8f9fa; color: #828282; border-left: 4px solid #00a2ff; padding-left: 15px; padding-top: 10px; padding-bottom: 10px; font-size: 18px; font-style: italic; line-height: 2rem; }
+blockquote { background-color: #f8f9fa; color: #828282; border-left: 4px solid #00a2ff; padding-left: 1rem; padding-top: 1.5rem; padding-bottom: 0.05rem; font-size: 18px; font-style: italic; line-height: 2rem; }
 
 blockquote > :last-child { margin-bottom: 0; }
 
@@ -179,7 +179,7 @@ body { font-family: "MyLotteLight"; }
 
 .pagination .post-title a:visited:after { background-color: #fff; }
 
-.pagination .post-meta { font-size: 16px; color: #828282; margin-bottom: 15px; }
+.pagination .post-meta { font-size: 16px; color: #828282; margin-bottom: 15px; display: inline-block; width: 95px; }
 
 .pagination .post-link { font-size: 26.4px; font-weight: 600; color: #333; }
 
@@ -208,7 +208,7 @@ body { font-family: "MyLotteLight"; }
 
 .post .post-header .post-subtitle { font-weight: lighter; font-size: 1.2rem; }
 
-.post .post-header .post-meta { color: #808080; }
+.post .post-header .post-meta { color: #808080; display: inline-block; width: 95px; }
 
 .post .post-content { margin-bottom: 30px; overflow-wrap: normal; word-wrap: normal; word-break: normal; }
 
@@ -264,7 +264,7 @@ body { font-family: "MyLotteLight"; }
 
 .page-archives .archives-time:not(:first-child) { margin-top: 18px; }
 
-.page-archives .post-meta { font-size: 14px; color: #828282; }
+.page-archives .post-meta { font-size: 14px; color: #828282; display: inline-block; width: 95px; }
 
 /** Page banner */
 .visit-views { display: flex; }
@@ -301,7 +301,7 @@ body { font-family: "MyLotteLight"; }
 
 @media screen and (max-width: 600px) { .page-banner .page-banner-inner .post-subtitle { padding-right: 0; } }
 
-.page-banner .page-banner-inner .post-meta { color: #ffffffcc; }
+.page-banner .page-banner-inner .post-meta { color: #ffffffcc; display: inline-block; width: 95px; }
 
 .page-banner .page-banner-inner .left-vsplit:before { background: #e3e3e388; }
 
@@ -329,7 +329,7 @@ body { font-family: "MyLotteLight"; }
 
 .page-segments .segment-name:hover:before { content: "#"; left: -1em; position: absolute; }
 
-.page-segments .post-meta { font-size: 14px; color: #828282; }
+.page-segments .post-meta { font-size: 14px; color: #828282; display: inline-block; width: 95px; }
 
 .page-segments li a { color: #303030; }
 

@@ -122,6 +122,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
   }
 </style>
 
+<!-- tipuesearch -->
+ <link rel="stylesheet" href="/assets/tipuesearch/css/tipuesearch.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+ <script src="/assets/tipuesearch/tipuesearch.min.js"></script>
 </head>
 <body>
 
@@ -766,9 +772,7 @@ function googleTranslateElementInit() {
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <div class="framework">
-  <section class="main">
-
-     <div class="post">
+  <section class="main"><div class="post">
   <section>
 
 
@@ -903,16 +907,16 @@ function googleTranslateElementInit() {
       <div>관련 글</div>
       <ul>
         <li>
-          <a class="post-link" href="/blockchain/2022/05/29/bc42.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차">[Blockchain] 민팅 (Minting) &amp; 화이트리스트 (Whitelist)</a>
+          <a class="post-link" href="/blockchain/2022/05/18/bc33.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차">[Blockchain] 롭스텐 테스트넷 이더리움 받기 (Ropsten Faucet)</a>
         </li>
 <li>
-          <a class="post-link" href="/blockchain/2022/06/18/bc49.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차">[Blockchain] MetaMask 32603 Error / 32000 Error (Mumbai 테스트넷)</a>
+          <a class="post-link" href="/blockchain/2022/08/30/bc53.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차">[Blockchain] BaaS (Blockchain as a Service)</a>
         </li>
 <li>
-          <a class="post-link" href="/blockchain/2022/05/11/bc19.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차">[Blockchain] 스마트 컨트랙트 (Smart Contract)</a>
+          <a class="post-link" href="/blockchain/2022/05/09/bc13.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차">[Blockchain] 노드 &amp; 노드의 종류</a>
         </li>
 <li>
-          <a class="post-link" href="/review/2022/03/11/beb2.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차">코드스테이츠 블록체인 부트캠프 후기 BEB 4기 2주차</a>
+          <a class="post-link" href="/blockchain/2022/06/03/bc46.html" title="코드스테이츠 블록체인 부트캠프 후기 BEB 4기 3주차">[Blockchain] Web 3.0</a>
         </li>
 </ul>
     </div>
@@ -922,10 +926,17 @@ function googleTranslateElementInit() {
     <!-- <div class="post-comments"></div> -->
     <script src="https://utteranc.es/client.js" repo="wavescats/Github-Blog-Post-Comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script></section>
 </div>
-
-
-  </section>
-  <section class="sidebar" style="margin-left: 15px;">
+</section>
+  <section class="sidebar" style="margin-left: 15px">
+    <form action="/search">
+      <div class="tipue_search_left">
+        <img src="/assets/tipuesearch/search.png" class="tipue_search_icon">
+      </div>
+      <div class="tipue_search_right">
+        <input type="text" name="q" id="tipue_search_input" pattern=".{1,}" title="At least 1 characters" required>
+      </div>
+      <div style="clear: both"></div>
+    </form>
     <!-- Get sidebar items --><style type="text/css" media="screen">
 .post-menu ul {
   list-style: none;
@@ -1067,6 +1078,8 @@ function googleTranslateElementInit() {
 </div>
     </div>
   </div>
+
 </footer>
 </body>
+
 </html>
