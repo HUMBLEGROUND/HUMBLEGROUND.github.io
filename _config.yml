@@ -217,11 +217,11 @@ plugins:
   - jekyll-paginate
   - jekyll-spaceship
 
- tipue_search:
-     include:
-         pages: false
-         collections: []
-     exclude:
-         files: []
-         categories: []
-         tags: []
+tipue_search:
+  include:
+    pages: false
+    collections: []
+  exclude:
+    files: []
+    categories: []
+    tags: []
