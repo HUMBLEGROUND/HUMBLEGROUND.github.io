@@ -1,0 +1,47 @@
+I""<p><img src="https://velog.velcdn.com/images/-__-/post/dadcbed7-5f23-4e75-ba4e-809e3979fae7/image.png" alt="" /></p>
+
+<h3 id="1-프로젝트-보완해야-할-사항">#1 프로젝트 보완해야 할 사항</h3>
+
+<blockquote>
+  <h3 id="component-간-metamask-연결유지-기능">Component 간 MetaMask 연결유지 기능</h3>
+
+  <p>Wallet 부분에서 지갑과 연결된 상태정보를<br />
+다른 컴포넌트에서도 유지될수 있게 하는 기능이 쉬워보였는데<br />
+생각보다 구현이 잘 안됨<br /></p>
+
+  <p>MetaMask 가 계속 연결은 되어있으나<br />
+그 연결되어있다는 정보를 다른 컴포넌트에 가져와서<br />
+web3 로직을 짜야하는데 그 정보만 분리해서 가져오는게 힘들었다<br /></p>
+
+  <p>👉 리액트 함수 안에 함수(변수)를 <strong>export</strong> 할수는 없을까?<br />
+👉 리액트 컴포넌트 메인 함수 안에 MetaMask 가 연결된 정보가 담긴 변수를 <strong>export</strong> 할수는 없을까?</p>
+</blockquote>
+
+<hr />
+
+<hr />
+
+<h3 id="해결-방법-">해결 방법 😎</h3>
+
+<blockquote>
+  <p>MetaMask의 지갑주소가 담긴 useState <strong>‘account’</strong> 를 <span style="background-color:#FFC701; color:#000;"><strong>Props</strong></span>로 다른 컴포넌트 간 이동 가능하다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/5013dd52-484a-4211-bb30-7aec9da272dc/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 App.js 에서 <strong>MetaMask 지갑 연결</strong> 로직을 구현하고 Route로 연결된 컴포넌트에 <strong>‘Props’</strong> 로 뿌려준다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/7b086434-b594-4dc6-8a7b-747f18c54ab6/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 MetaMask 지갑과 연결된 상태정보를 Wallet.js 컴포넌트로 가져와서 적용</p>
+</blockquote>
+
+<hr />
+
+<h3 id="그럼-component-간-metamask-연결-상태가-계속-유지된다-">❗그럼 Component 간 MetaMask 연결 상태가 계속 유지된다 🦊</h3>
+
+<hr />
+:ET

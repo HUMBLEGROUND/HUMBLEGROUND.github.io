@@ -1,0 +1,59 @@
+I"8<p><img src="https://velog.velcdn.com/images/-__-/post/8c408976-3fa9-4d5f-8249-6825c3a47403/image.png" alt="" /></p>
+
+<h3 id="css를-사용하지-않고-중간부분-말줄임-표시하기">CSS를 사용하지 않고 중간부분 말줄임 표시하기</h3>
+
+<hr />
+
+<p>Kaikas 지갑을 연결하고 연결된 주소를 <strong>출력</strong>하고자 합니다</p>
+
+<p>제가 원하는 구현은 지갑주소의 <span style="background-color:#B5E045; color:#000;"><strong>중간부분 말줄임 ( … )</strong></span> 표시 입니다<br />
+👉 (지갑주소 총 42 글자)</p>
+
+<p>CSS를 사용하여 구현을 해보려 했는데</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0231901e-e301-4886-a0db-376a46e398e4/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 CSS 로는 <strong>‘끝부분만’</strong> 말줄임 표시가 되는것 같았습니다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="slice-함수를-이용한-코딩작업">slice 함수를 이용한 코딩작업</h3>
+
+<p>그래서 CSS 로는 제가 원하는 구현이 되지 않아 함수를 이용해보기로 했습니다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2af813fb-a496-497e-8f91-baa1c1df7648/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 결과는 성공입니다 !<br />
+중간부분 말줄임 표시를 위해 slice 함수를 이용하여 구현해봤습니다 !</p>
+</blockquote>
+
+<hr />
+
+<h3 id="성공한-코드-중간부분-말줄임-표시">성공한 코드 (중간부분 말줄임 표시)</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">str</span> <span class="o">=</span> <span class="nx">account</span><span class="p">;</span> <span class="c1">// 연결된 지갑주소 (42 글자수)</span>
+<span class="kd">let</span> <span class="nx">acc</span> <span class="o">=</span> <span class="nx">str</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> ...</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">str</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span> <span class="mi">42</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">();</span>
+<span class="c1">// 배열에 담겨있기에 [0]번째 👉 배열에서 꺼내는 작업</span>
+<span class="c1">// 42 글자수를 0~6 번째까지 잘라서 보여주고 + ... 말줄임표시 + 38 ~ 42 번째까지 잘라서 보여준다</span>
+<span class="c1">// 끝부분은 대문자로 표여주기 위해 toUpperCase() 적용</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">acc</span><span class="p">);</span>
+<span class="c1">// 콘솔을 찍어보면 👉 0x0156...F11C</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="css-코드-끝부분-말줄임-표시">CSS 코드 (끝부분 말줄임 표시)</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">.</span><span class="nx">wallet_account</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="mi">200</span><span class="nx">px</span><span class="p">;</span> <span class="c1">// 언제부터 말줄임 표시를 할지 길이를 설정</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nx">hidden</span><span class="p">;</span> <span class="c1">// 200px 이 넘어가면 숨겨주고</span>
+  <span class="nx">text</span><span class="o">-</span><span class="nx">overflow</span><span class="p">:</span> <span class="nx">ellipsis</span><span class="p">;</span> <span class="c1">// 숨겨진 후에 ... 표시</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+:ET

@@ -310,8 +310,6 @@ body {
     font-size: $base-font-size;
     color: $grey-color;
     margin-bottom: $spacing-unit * 0.5;
-    display: inline-block;
-    width: 95px;
   }
 
   .post-link {
@@ -402,8 +400,6 @@ body {
 
     .post-meta {
       color: #808080;
-      display: inline-block;
-      width: 95px;
     }
   }
 
@@ -563,8 +559,6 @@ body {
   .post-meta {
     font-size: $small-font-size;
     color: $grey-color;
-    display: inline-block;
-    width: 95px;
   }
 }
 
@@ -662,8 +656,6 @@ body {
 
     .post-meta {
       color: #ffffffcc;
-      display: inline-block;
-      width: 95px;
     }
 
     .left-vsplit:before {

@@ -1,0 +1,108 @@
+I"E<p><img src="https://velog.velcdn.com/images/-__-/post/eadd7415-7f8a-4f1e-802b-3a6576de36bb/image.png" alt="" /></p>
+
+<h3 id="eject">eject</h3>
+
+<blockquote>
+  <p>npm run eject<br /></p>
+
+  <p>👉 <strong><code class="language-plaintext highlighter-rouge">eject</code> 를 실행하면, 되돌릴 수 없다</strong><br /></p>
+
+  <p><img src="https://velog.velcdn.com/images/-__-/post/e6eeecf8-14d0-467a-b1cc-97aa95da26e1/image.png" alt="" /><br /></p>
+
+  <p>👉 <code class="language-plaintext highlighter-rouge">eject</code>를 수행한다는 것은 이제 저 설정들을 직접 유지보수해야 한다는 것과 같다</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><strong><code class="language-plaintext highlighter-rouge">eject</code></strong> 는 해당 프로젝트에 숨겨져 있는 모든 설정을 밖으로 추출해주는 명령어다</p>
+  </li>
+  <li>
+    <p>CRA (Create-React-App) 을 사용하다 보면<br />
+<code class="language-plaintext highlighter-rouge">babel</code> 이나 <code class="language-plaintext highlighter-rouge">webpack</code> 설정을 변경하기 위해 <code class="language-plaintext highlighter-rouge">eject</code>를 하는 경우가 있다</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">eject</code>를 하면 설정 파일을 수정할 수 있어서 유용하긴 한데 설정 파일이 지저분하게 보이게 된다</p>
+  </li>
+  <li>
+    <p>잘 모르는 npm들이 <strong>package.json</strong> 에 가득해서 가독성이 떨어진다</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>👉 이 문제를 <strong><code class="language-plaintext highlighter-rouge">react-app-rewired</code></strong> 를 사용하면 해결할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="react-app-rewired">react-app-rewired</h3>
+
+<ul>
+  <li>
+    <p>기존 프로젝트 설정을 유지하면서 새로 <span style="background-color:#B5E045; color:#000;">추가하고 싶은 설정만 <strong>오버라이딩</strong></span> 하는 방법도 있다</p>
+  </li>
+  <li>
+    <p>이 방법을 사용하면 <code class="language-plaintext highlighter-rouge">eject</code>를 사용해 기존 설정들을 신경쓰지 않고도<br />
+원하는 설정만 적용할 수 있어서 <span style="background-color:#B5E045; color:#000;">유지보수면이나 가독성 측면에서도 좋다</span></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">override</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">env</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">config</span><span class="p">.</span><span class="nx">module</span><span class="p">.</span><span class="nx">rules</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+    <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">mjs$/</span><span class="p">,</span>
+    <span class="na">include</span><span class="p">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">javascript/auto</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="nx">config</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>👆 오버라이딩 할 파일을 생성한다 <strong><code class="language-plaintext highlighter-rouge">config-overrides.js</code></strong></p>
+</blockquote>
+
+<hr />
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 기존 package.json 의 설정</span>
+<span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-scripts start</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">build</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-scripts build</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-scripts test</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">eject</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-scripts eject</span><span class="dl">"</span>
+<span class="p">}</span>
+
+<span class="err">👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇</span>
+
+<span class="c1">// react-app-rewired 를 적용한 설정</span>
+<span class="dl">"</span><span class="s2">scripts</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">start</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-app-rewired start</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">build</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-app-rewired build</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">test</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-app-rewired test</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">eject</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">react-scripts eject</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>👆 package.json 파일로 들어가서 <strong>실행 설정</strong>을 바꿔줘야한다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>
+    <p><a href="https://chanyeong.com/blog/post/42">https://chanyeong.com/blog/post/42</a></p>
+  </li>
+  <li>
+    <p><a href="https://medium.com/@jsh901220/create-react-app%EC%97%90%EC%84%9C-eject%EC%82%AC%EC%9A%A9%EC%95%88%ED%95%98%EA%B8%B0-customize-cra-react-app-rewired-10a83522ace0">https://medium.com/@jsh901220/create-react-app%EC%97%90%EC%84%9C-eject%EC%82%AC%EC%9A%A9%EC%95%88%ED%95%98%EA%B8%B0-customize-cra-react-app-rewired-10a83522ace0</a></p>
+  </li>
+  <li>
+    <p><a href="http://noartist.com/react-eject%EB%8A%94-%EA%B7%B8%EB%A7%8C-react-rewired-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95-feat-mobx/">http://noartist.com/react-eject%EB%8A%94-%EA%B7%B8%EB%A7%8C-react-rewired-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95-feat-mobx/</a></p>
+  </li>
+</ul>
+
+<hr />
+:ET

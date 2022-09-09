@@ -179,7 +179,7 @@ body { font-family: "MyLotteLight"; }
 
 .pagination .post-title a:visited:after { background-color: #fff; }
 
-.pagination .post-meta { font-size: 16px; color: #828282; margin-bottom: 15px; display: inline-block; width: 95px; }
+.pagination .post-meta { font-size: 16px; color: #828282; margin-bottom: 15px; }
 
 .pagination .post-link { font-size: 26.4px; font-weight: 600; color: #333; }
 
@@ -208,7 +208,7 @@ body { font-family: "MyLotteLight"; }
 
 .post .post-header .post-subtitle { font-weight: lighter; font-size: 1.2rem; }
 
-.post .post-header .post-meta { color: #808080; display: inline-block; width: 95px; }
+.post .post-header .post-meta { color: #808080; }
 
 .post .post-content { margin-bottom: 30px; overflow-wrap: normal; word-wrap: normal; word-break: normal; }
 
@@ -264,7 +264,7 @@ body { font-family: "MyLotteLight"; }
 
 .page-archives .archives-time:not(:first-child) { margin-top: 18px; }
 
-.page-archives .post-meta { font-size: 14px; color: #828282; display: inline-block; width: 95px; }
+.page-archives .post-meta { font-size: 14px; color: #828282; }
 
 /** Page banner */
 .visit-views { display: flex; }
@@ -301,7 +301,7 @@ body { font-family: "MyLotteLight"; }
 
 @media screen and (max-width: 600px) { .page-banner .page-banner-inner .post-subtitle { padding-right: 0; } }
 
-.page-banner .page-banner-inner .post-meta { color: #ffffffcc; display: inline-block; width: 95px; }
+.page-banner .page-banner-inner .post-meta { color: #ffffffcc; }
 
 .page-banner .page-banner-inner .left-vsplit:before { background: #e3e3e388; }
 

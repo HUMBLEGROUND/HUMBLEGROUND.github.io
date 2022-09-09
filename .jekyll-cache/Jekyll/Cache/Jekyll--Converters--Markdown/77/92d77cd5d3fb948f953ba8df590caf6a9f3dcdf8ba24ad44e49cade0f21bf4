@@ -1,0 +1,163 @@
+I"b$<p><img src="https://velog.velcdn.com/images/-__-/post/8e705f07-fde2-452c-8983-a92d34960af0/image.png" alt="" /></p>
+
+<h3 id="-project-lion-nft-블록체인-마켓-앱-만들기-with-그라운드x-3기---챕터-5-5-회고">🦁 [PROJECT LION] NFT 블록체인 마켓 앱 만들기 with 그라운드X 3기 - 챕터 5-5 회고</h3>
+
+<hr />
+
+<h3 id="이미지-링크로-nft-민팅하기">이미지 링크로 NFT 민팅하기</h3>
+
+<p>-1. 이미지 링크를 붙여넣으면 NFT 발행을 할 수 있도록 <code class="language-plaintext highlighter-rouge">Input</code> 창을 만들어 준다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0858b9da-1d2d-465a-9ef5-19da2fb0ed40/image.png" alt="" /></p>
+
+<blockquote>
+  <p>이미지링크를 <code class="language-plaintext highlighter-rouge">target.value</code>로 읽어와서<br />
+useState에 담아주고 <code class="language-plaintext highlighter-rouge">value</code> 값으로 그대로 전달한다</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">Form</span><span class="p">.</span><span class="nx">Group</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">Form</span><span class="p">.</span><span class="nx">Control</span> <span class="c1">// text input 창</span>
+    <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">mintImgUrl</span><span class="p">}</span>
+    <span class="c1">// 이미지를 띄워주는 value</span>
+    <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setMintImgUrl</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">}}</span> <span class="c1">// input 창에 이미지주소를 입력하면 그대로 useState에 담긴다</span>
+    <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
+    <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">이미지 주소를 입력하세요</span><span class="dl">"</span>
+  <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/Form.Group</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<hr />
+
+<p>-2. 이미지 링크를 붙여넣으면 이미지를 그대로 출력한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/16790590-7de2-4f1a-a22e-3ddd6cae12a2/image.gif" alt="" /></p>
+
+<hr />
+
+<p>-3. <strong>Klip API</strong>를 <code class="language-plaintext highlighter-rouge">axios</code> 로 받아온 후<br />
+<code class="language-plaintext highlighter-rouge">type: "execute_contract"</code> 의 파라미터를 입력하지않고 인자로 받아온다</p>
+
+<p><strong>UseKlip.js</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="c1">// 클립 API 에 👉 execute_contract 👉 transaction 파라미터</span>
+<span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">execute_contract</span><span class="dl">"</span><span class="p">,</span>
+<span class="dl">"</span><span class="s2">transaction</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+	<span class="dl">"</span><span class="s2">to</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0xA987...4321</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">abi</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">params</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>👇👇👇👇👇👇👇👇</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8cd5dea8-f2ce-4c73-8efc-fd02902c8e2b/image.png" alt="" /></p>
+
+<blockquote>
+  <p>파라미터값을 👉 인자로 대입한다</p>
+</blockquote>
+
+<hr />
+
+<p>-4. 위에 파라미터에 들어갈 인자 값을 대입한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/23a33cd8-0c83-4aa2-9fdc-2702ffdc5ecf/image.png" alt="" /></p>
+
+<blockquote>
+  <h4 id="mintwithtokenuri-함수를-실행하기-위한-인자">mintWithTokenURI 함수를 실행하기 위한 인자</h4>
+
+  <p>toAddress 👉 NFT 발행 지갑주소 (소유주)<br />
+tokenId 👉 발행하는 NFT 임의의 번호<br />
+tokenURI 👉 NFT의 정보 (이미지, 제목, 세부내용 등등)</p>
+</blockquote>
+
+<hr />
+
+<p>-5. App.js 로 가서 👉 파라미터가 저장된 함수를 가져온다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2b6cc6cc-aae4-4fbd-8926-798c51c1992b/image.png" alt="" /></p>
+
+<blockquote>
+  <h3 id="불러오는-과정-순서">불러오는 과정 순서</h3>
+
+  <h4 id="useklipjs">UseKlip.js</h4>
+
+  <p>5-1. executeContract 함수에서는<br />
+👉 <code class="language-plaintext highlighter-rouge">type: "execute_contract"</code> 의 파라미터값과 인자를 짝지어준다<br /></p>
+
+  <p>5-2. mintCardWithURI 함수에서는<br />
+👉 실행하고자 하는 ABI만 가져오고<br />
+👉 <code class="language-plaintext highlighter-rouge">executeContract</code> 함수를 호출해서 ‘ABI / 컨트랙트 주소’ 로 caver-js 를 통해 리액트와 연결준비<br />
+👉 <code class="language-plaintext highlighter-rouge">mintWithTokenURI</code> 함수를 실행하기 위한 인자<br />
+👉 <code class="language-plaintext highlighter-rouge">mintCardWithURI</code> 에 대한 QR코드 생성<br /></p>
+
+  <h4 id="appjs">App.js</h4>
+
+  <p>5-3. <code class="language-plaintext highlighter-rouge">KlipAPI.mintCardWithURI</code> 에서 설정한 인자에 해당하는 값들을 대입한다<br /></p>
+
+  <blockquote>
+    <p>❗ 여기서 <strong>TokenId</strong> 는 임의의 번호를 수동으로 지정하지않고 <code class="language-plaintext highlighter-rouge">10,000,000</code> 번호 안에서 랜덤한 값으로 지정해준다</p>
+  </blockquote>
+</blockquote>
+
+<hr />
+
+<p>-6. <code class="language-plaintext highlighter-rouge">npm run start</code> 로 실행시킨뒤 Klip 지갑 연결하고 NFT 발행 컨트랙트 실행</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2fee05ec-8bfe-4492-b5b7-075908e44284/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>👆 NFT 민팅이 성공하면 <strong>Alert 알림창이 뜬다</strong></p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/07360e06-e0f6-4366-81fe-df7060e92b1a/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li>QR코드로 Klip 지갑을 <strong>연결</strong>하고<br /></li>
+    <li>NFT로 만들고자하는 이미지링크를 붙여넣는다<br /></li>
+    <li><strong>발행</strong> 버튼을 누르면<br /></li>
+    <li>NFT를 발행하기 위한 컨트랙트로 <strong>QR코드</strong>가 다시 생성된다<br /></li>
+    <li>QR 코드로 Klip 지갑에 연결해서 컨트랙트를 <strong>실행</strong>시킨다<br /></li>
+    <li>컨트랙트를 실행해서 NFT 민팅이 성공하면 <strong>Alert 알림창이 뜬다</strong><br />
+⭐ 컨트랙트를 실행할때는 수수료(KLAY) 가 발생한다</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<p>-7. <strong>Klaytn IDE</strong> 로 와서 확인해보면 조회가 잘되는걸 볼 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/fdd68804-55e5-49f6-8119-43cb94d0837e/image.png" alt="" /></p>
+
+<blockquote>
+  <ul>
+    <li>
+      <p><strong>tokenOfOwnerByIndex</strong> 👉 주소와, 배열의 몇번째 를 입력하면 TokenId 를 확인<br />
+(<strong>나의 주소</strong>, 이번에 발행한 건 3번째라서 배열의 3번째인 <strong>2</strong>)<br /></p>
+
+      <blockquote>
+        <p>❗ <strong>TokenId</strong> 는 아까 <code class="language-plaintext highlighter-rouge">10,000,000</code> 번호 안에서 랜덤한 값으로 지정해줘서 <code class="language-plaintext highlighter-rouge">4,571,282</code> 라는 번호가 나왔다<br /></p>
+      </blockquote>
+    </li>
+    <li>
+      <p>tokenURI 👉 NFT의 TokenId 를 입력하면 URI를 확인<br />
+(내가 붙여넣은 이미지링크)</p>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <h3 id="klip-지갑-qr코드로-nft-발행하기-코드">Klip 지갑 QR코드로 NFT 발행하기 코드</h3>
+
+  <p><a href="https://github.com/genie19197/lecture-klay-market">https://github.com/genie19197/lecture-klay-market</a></p>
+</blockquote>
+
+<hr />
+
+<hr />
+:ET

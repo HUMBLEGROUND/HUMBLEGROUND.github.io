@@ -1,0 +1,107 @@
+I"�$<p><img src="https://velog.velcdn.com/images/-__-/post/90e2a691-8c6c-4927-947e-c1dff91e27d7/image.png" alt="" /></p>
+
+<h3 id="useeffect">useEffect()</h3>
+
+<ul>
+  <li>
+    <p>useEffect 란 코드를 언제 실행할지 선택하는 것</p>
+  </li>
+  <li>
+    <p>useEffect() 는 React component가 <strong>새로고침(렌더링) 될 때마다</strong> 특정 작업을 실행할 수 있도록 하는 리액트 Hook이다</p>
+  </li>
+  <li>
+    <p>비동기로 처리가 가능하다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="useeffect-함수-불러오기">useEffect 함수 불러오기</h3>
+
+<p><code class="language-plaintext highlighter-rouge">import React, { useEffect } from "react";</code></p>
+
+<hr />
+
+<h3 id="component가-실행될-때-나타날-때">Component가 실행될 때 (나타날 때)</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">새로고침 될때마다 실행</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>👆 새로고침 될때마다 실행</p>
+</blockquote>
+
+<hr />
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">맨 처음 실행될 때 한 번만 실행</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">},</span> <span class="p">[]);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>👆 새로고침할때마다 최초 한번만 실행하고 새로고침 전까진 실행될일이 없음</p>
+</blockquote>
+
+<hr />
+
+<h3 id="component가-update-되었을-때-props-state-변경">Component가 Update 되었을 때 (props, state 변경)</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">effect</span><span class="p">);</span> <span class="c1">// 새로고침할때마다 최초 한번만 실행하고</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">effect이라는 값이 업데이트 될 때만 실행</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">effect</span><span class="p">]);</span> <span class="c1">// effect 만 지켜본다는 뜻 / effect 가 Update될때마다 실행된다</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>👆 처음 한번 실행하고 그 이후로는 Update 될때만 실행</p>
+</blockquote>
+
+<hr />
+
+<h3 id="예제코드">예제코드</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">counter</span><span class="p">,</span> <span class="nx">setCounter</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 기본값은 0</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">keyword</span><span class="p">,</span> <span class="nx">setKeyword</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span> <span class="c1">// 기본값은 빈배열</span>
+
+  <span class="kd">const</span> <span class="nx">onClicks</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setCounter</span><span class="p">((</span><span class="nx">current</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">current</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 버튼을 클릭할때마다 1씩 증가</span>
+
+  <span class="kd">const</span> <span class="nx">onChanges</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setKeyword</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// input 창에 타자를 칠때마다 밸류를 인식</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">I run all the time</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 버튼, 타자칠때마다 문구를 consol에 출력</span>
+
+  <span class="c1">// useEffect 란 코드를 언제 실행할지 선택하는 것</span>
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">I First one</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 새로고침할때마다 최초 한번만 실행하고 새로고침 전까진 실행될일이 없음</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">I Keyword changes</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 새로고침할때마다 최초 한번만 실행하고</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">keyword</span><span class="p">]);</span> <span class="c1">// keyword 만 지켜본다는 뜻 / 타자를 칠때마다 실행된다</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">I counter changes</span><span class="dl">"</span><span class="p">);</span> <span class="c1">// 새로고침할때마다 최초 한번만 실행하고</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">counter</span><span class="p">]);</span> <span class="c1">// counter 만 지켜본다는 뜻 / 버튼을 누를때 마다 실행된다</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span>
+        <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">keyword</span><span class="p">}</span>
+        <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onChanges</span><span class="p">}</span>
+        <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span>
+        <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">next..</span><span class="dl">"</span>
+      <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onClicks</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">Me</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+:ET

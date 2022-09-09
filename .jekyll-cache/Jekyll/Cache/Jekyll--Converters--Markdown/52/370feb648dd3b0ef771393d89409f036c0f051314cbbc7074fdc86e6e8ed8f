@@ -1,0 +1,154 @@
+I"�9<h3 id="nft로-만들-이미지를-생성">NFT로 만들 이미지를 생성</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3549f783-0d5e-40d9-824e-d2dab6e44e29/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="이미지-props-설정--이미지-크기-설정">이미지 Props 설정 &amp; 이미지 크기 설정</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">FC</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Image</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@chakra-ui/react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">AnimalCardProps</span> <span class="p">{</span>
+  <span class="nl">animalType</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">AnimalCard</span><span class="p">:</span> <span class="nx">FC</span><span class="o">&lt;</span><span class="nx">AnimalCardProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">animalType</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// AnimalCardProps을 Props로 받는다</span>
+  <span class="c1">// animalType은 어떤 NFT를 뽑았는지 조회</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Image</span> <span class="nx">w</span><span class="o">=</span><span class="p">{</span><span class="mi">150</span><span class="p">}</span> <span class="nx">h</span><span class="o">=</span><span class="p">{</span><span class="mi">150</span><span class="p">}</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="s2">`images/</span><span class="p">${</span><span class="nx">animalType</span><span class="p">}</span><span class="s2">.png`</span><span class="p">}</span> <span class="nx">alt</span><span class="o">=</span><span class="dl">"</span><span class="s2">AnimalCard</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="c1">// animalType을 통해 NFT조회된걸 이미지로 그대로 출력한다</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">AnimalCard</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="web3js-를-통해-특정함수-가져오기-maintsx">web3.js 를 통해 특정함수 가져오기 (main.tsx)</h3>
+
+<ul>
+  <li>개발자는 <span style="background-color:#B5E045; color:#000;">‘스마트 컨트랙트 주소’</span>와 <span style="background-color:#B5E045; color:#000;">‘ABI’</span>를 알면 ‘web3.js’ 를 통해</li>
+  <li>스마트 컨트랙트를 생성하고 / 특정 함수를 실행할 수 있다</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">FC</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Box</span><span class="p">,</span> <span class="nx">Text</span><span class="p">,</span> <span class="nx">Flex</span><span class="p">,</span> <span class="nx">Button</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@chakra-ui/react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">mintAnimalTokenContract</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../contracts</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">AnimalCard</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../components/AnimalCard</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">MainProps</span> <span class="p">{</span>
+  <span class="nl">account</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// TypeScript 는 Props의 타입을 정해줘야한다</span>
+
+<span class="kd">const</span> <span class="nx">Main</span><span class="p">:</span> <span class="nx">FC</span><span class="o">&lt;</span><span class="nx">MainProps</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">account</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// 타입을 정해줬으니 Props를 사용</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">newAnimalType</span><span class="p">,</span> <span class="nx">setNewAnimalType</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nx">string</span><span class="o">&gt;</span><span class="p">();</span>
+
+  <span class="kd">const</span> <span class="nx">onClickMint</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">account</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span> <span class="c1">// 계정이 없는경우는 그냥 리턴</span>
+
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mintAnimalTokenContract</span><span class="p">.</span><span class="nx">methods</span>
+        <span class="c1">// 변수에 담는건 스마트컨트랙트 배포한 후에 나오는 함수를</span>
+        <span class="p">.</span><span class="nx">mintAnimalToken</span><span class="p">()</span> <span class="c1">// 인자 입력없이 이 함수를 클릭하면 민트가 되는 함수였다</span>
+        <span class="p">.</span><span class="nx">send</span><span class="p">({</span> <span class="na">from</span><span class="p">:</span> <span class="nx">account</span> <span class="p">});</span> <span class="c1">// 누구로 부터 왔는지 계정확인</span>
+
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="c1">// 👉 민트를 하면 트랙잭션에 콘솔에 찍힌다</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 민트 후에 status가 true 일 경우</span>
+        <span class="kd">const</span> <span class="nx">balanceLength</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mintAnimalTokenContract</span><span class="p">.</span><span class="nx">methods</span>
+          <span class="c1">// 스마트컨트랙트 배포후에 나오는 함수</span>
+          <span class="p">.</span><span class="nx">balanceOf</span><span class="p">(</span><span class="nx">account</span><span class="p">)</span> <span class="c1">// NFT 가지고 있는 갯수 조회 (인자에는 주소를 넣어야한다)</span>
+          <span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// 함수 부르기</span>
+
+        <span class="kd">const</span> <span class="nx">animalTokenId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mintAnimalTokenContract</span><span class="p">.</span><span class="nx">methods</span>
+          <span class="c1">// 스마트컨트랙트 배포후에 나오는 함수</span>
+          <span class="p">.</span><span class="nx">tokenOfOwnerByIndex</span><span class="p">(</span><span class="nx">account</span><span class="p">,</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">balanceLength</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span>
+          <span class="c1">// NFT의 Id 값을 조회 (인자는 주소와, 조회하려는 배열순번)</span>
+          <span class="c1">// length - 1 은 배열의 마지막을 불러온다는 뜻</span>
+          <span class="c1">// 현재 준비된 이미지가 5개밖에 없어서 민팅된 수량에 따라 조절해주면된다 -30</span>
+          <span class="c1">// string 타입이기 때문에 parseInt로 숫자로 형변환을 해준다, 10진수</span>
+          <span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// 함수 부르기</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">animalTokenId</span><span class="p">);</span>
+        <span class="kd">const</span> <span class="nx">animalType</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mintAnimalTokenContract</span><span class="p">.</span><span class="nx">methods</span>
+          <span class="c1">// 스마트컨트랙트 배포후에 나오는 함수</span>
+          <span class="p">.</span><span class="nx">animalTypess</span><span class="p">(</span><span class="nx">animalTokenId</span><span class="p">)</span>
+          <span class="c1">// 어떤 NFT를 뽑았는지 조회 (인자에는 NFT id를 넣는다)</span>
+          <span class="p">.</span><span class="nx">call</span><span class="p">();</span> <span class="c1">// 함수 부르기</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">animalType</span><span class="p">);</span>
+        <span class="nx">setNewAnimalType</span><span class="p">(</span><span class="nx">animalType</span><span class="p">);</span>
+        <span class="c1">// 최종적으로는 mint를 하면 👉 어떤 NFT가 뽑혔는지 NFT 이미지를 출력해주는 useState</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">Flex</span>
+      <span class="nx">w</span><span class="o">=</span><span class="dl">"</span><span class="s2">full</span><span class="dl">"</span>
+      <span class="nx">h</span><span class="o">=</span><span class="dl">"</span><span class="s2">100vh</span><span class="dl">"</span>
+      <span class="nx">justifyContent</span><span class="o">=</span><span class="dl">"</span><span class="s2">center</span><span class="dl">"</span>
+      <span class="nx">alignItems</span><span class="o">=</span><span class="dl">"</span><span class="s2">center</span><span class="dl">"</span>
+      <span class="nx">direction</span><span class="o">=</span><span class="dl">"</span><span class="s2">column</span><span class="dl">"</span>
+    <span class="o">&gt;</span>
+      <span class="p">{</span><span class="cm">/* CSS와 비슷한 개념인 코드 센터로 맞추고 / column으로 세로 방향 정렬*/</span><span class="p">}</span>
+
+      <span class="o">&lt;</span><span class="nx">Box</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="cm">/* AnimalCard 컴포넌트 Props로 👉 newAnimalType를 불러오는데
+      mint를 하면 👉 어떤 NFT가 뽑혔는지 NFT 이미지를 출력해주는 useState 이다 */</span><span class="p">}</span>
+        <span class="p">{</span><span class="nx">newAnimalType</span> <span class="p">?</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">AnimalCard</span> <span class="nx">animalType</span><span class="o">=</span><span class="p">{</span><span class="nx">newAnimalType</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="p">)</span> <span class="p">:</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="nx">Let</span><span class="dl">'</span><span class="s1">s mint Animal Card!!!&lt;/Text&gt;
+        )}
+        {/* 3항 연산자 */}
+      &lt;/Box&gt;
+      &lt;Button mt={4} size="sm" colorScheme="blue" onClick={onClickMint}&gt;
+        Mint
+      &lt;/Button&gt;
+    &lt;/Flex&gt;
+  );
+};
+
+export default Main;
+
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="mint-버튼을-누르면-nft-생성-구현">mint 버튼을 누르면 NFT 생성 구현</h3>
+
+<ul>
+  <li>mint 버튼을 누르면 👉 NFT가 생성되는데 👉 생성된 NFT와 이미지랑 연결시켜줘야한다</li>
+</ul>
+
+<p>-1. NFT가 몇개 생성되어있는지 갯수를 조회한다</p>
+
+<p>-2. 제일 최신으로 만들어진 NFT id 값을 조회 (length -1)</p>
+
+<p>-3. NFT id 값을 알아냈으면 👉 id값을 입력하여</p>
+
+<p>-4. 1 / 2 / 3 / 4 / 5 번중에 어떤 NFT를 생성했는지 조회</p>
+
+<p>-5. 조회된 NFT 1 ~ 5번 숫자를 👉 이미지 Props에 담아준다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/75bb1ebf-8b9f-4938-9d04-8c9428061f0e/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>👆 NFT 와 이미지랑 각 번호에 맞게 연결시켜서 출력</p>
+</blockquote>
+
+<hr />
+
+<h3 id="전체코드-github">전체코드 github</h3>
+
+<p><a href="https://github.com/wavescats/mini-project/pull/8/files">https://github.com/wavescats/mini-project/pull/8/files</a></p>
+
+<hr />
+:ET

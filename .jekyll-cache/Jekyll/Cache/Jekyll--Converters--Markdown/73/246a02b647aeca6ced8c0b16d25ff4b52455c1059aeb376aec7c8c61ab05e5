@@ -1,0 +1,302 @@
+I"hk<p><img src="https://velog.velcdn.com/images/-__-/post/b57a40f1-fdf0-4e37-aa5c-4abef4b25caf/image.png" alt="" /></p>
+
+<h3 id="-project-lion-nft-블록체인-마켓-앱-만들기-with-그라운드x-3기---챕터-5-4-회고">🦁 [PROJECT LION] NFT 블록체인 마켓 앱 만들기 with 그라운드X 3기 - 챕터 5-4 회고</h3>
+
+<hr />
+
+<h3 id="kip-17">KIP-17</h3>
+
+<ul>
+  <li>
+    <p>KIP-17은 ERC-721 토큰에서 파생되었다</p>
+  </li>
+  <li>
+    <p><span style="background-color:#F7969A; color:#000;"><strong>‘KIP-17’</strong> 기반으로 발행된 토큰은 대체가 불가능하다</span><br />
+👉 대체 불가능 토큰 (NFT, Non-Fungible Token)</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="nft-발행하고-조회하기">NFT 발행하고 조회하기</h3>
+
+<p>-1. Klaytn IDE 에서 <strong>‘KIP-17’</strong> 스마트 컨트랙트 코드 <strong>배포(Deploy)</strong></p>
+
+<blockquote>
+  <p>⭐ Klip 은 테스트넷(Baobab) 에서 실행을 못하기때문에<br />
+메인넷에서 사용할 <strong>실제 KLAY</strong> 가 필요하다 ❗</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0c9c417c-5b96-463d-8fdf-b99c76d9c4e6/image.png" alt="" /></p>
+
+<blockquote>
+  <ul>
+    <li>
+      <p>‘KIP17Token’ 을 선택해서 컴파일한 후 <strong>ABI 복사</strong><br /></p>
+    </li>
+    <li>
+      <p>‘KIP17Token’ 을 배포하고 나온 <strong>컨트랙트 주소</strong> 를 복사한다</p>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<p>-2. ‘KIP17Token’ 을 배포하고 나온 <strong>함수를 실행</strong>시켜 NFT 발행 (민팅)</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/5a307e4d-bf18-453a-a3e2-79db1aedebc5/image.png" alt="" /></p>
+
+<blockquote>
+  <h3 id="mintwithtokenuri-함수-실행"><code class="language-plaintext highlighter-rouge">mintWithTokenURI</code> 함수 실행</h3>
+
+  <p>to 👉 NFT 발행 지갑주소 (소유주)<br />
+tokenId 👉 발행하는 NFT 임의의 번호<br />
+tokenURI 👉 NFT의 정보 (이미지, 제목, 세부내용 등등)</p>
+</blockquote>
+
+<blockquote>
+  <p>저는 일단 이미지 2개를 준비해서<br />
+tokenId 100번, 101번 으로 발행시켜 보겠습니다<br />
+( https:// ~~ .png 로 준비했습니다 )</p>
+</blockquote>
+
+<hr />
+
+<p>-3. NFT를 발행 했으면 조회해본다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/92fb6c20-1f62-4a33-8038-6293c7354347/image.png" alt="" /></p>
+
+<blockquote>
+  <ul>
+    <li>
+      <p><strong>balanceOf</strong> 👉 해당 주소에 몇개의 NFT를 보유중인지 개수 확인<br /></p>
+    </li>
+    <li>
+      <p><strong>ownerOf</strong> 👉 NFT의 TokenId 를 입력하면 누가 소유중인지 주소를 확인<br /></p>
+    </li>
+    <li>
+      <p><strong>tokenOfOwnerByIndex</strong> 👉 주소와, 배열의 몇번째 를 입력하면 TokenId 를 확인<br />
+(총 2개를 발행했으니 배열에는 <code class="language-plaintext highlighter-rouge">[100, 101]</code> 이렇게 2개가 담겨있다<br />
+👉 0번째 -&gt; 100 / 1번째 -&gt; 101<br /></p>
+    </li>
+    <li>
+      <p><strong>tokenURI</strong> 👉 NFT의 TokenId 를 입력하면 URI를 확인</p>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<p>-4. <strong>‘ABI / 컨트랙트 주소’</strong> 로 caver-js 를 통해 리액트와 연결한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/1e1f4e0e-dcda-4923-99a3-a2fbb774c220/image.png" alt="" /></p>
+
+<p>⭐ Klaytn IDE에서 조회를 했던 함수들을 리액트에서도 호출할 수 있다</p>
+
+<blockquote>
+  <p>조회를 할때는 지갑에 가지고있는 NFT의 이미지를 다 client 에 출력할 것이므로 여러과정을 거쳐야한다<br /></p>
+
+  <ol>
+    <li><code class="language-plaintext highlighter-rouge">balanceOf</code> 를 이용해 몇개의 NFT를 보유중인지 개수를 변수에 담는다<br /></li>
+    <li>개수를 반복문을 돌려서 순차적으로 대입<br /></li>
+    <li><code class="language-plaintext highlighter-rouge">tokenOfOwnerByIndex</code> 를 이용해 TokonId 추출<br /></li>
+    <li><code class="language-plaintext highlighter-rouge">tokenURI</code> 를 이용해 tokenURI 추출<br /></li>
+    <li><strong>tokenId</strong> 와 <strong>tokenURI</strong> 를 짝지어서 출력한다</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<p>-5. App.js 👉 client 에 출력하기 위한 코드입력</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b196a7d0-1b64-4404-beee-4dd7b5f2fc19/image.png" alt="" /></p>
+
+<blockquote>
+  <p>호출한 함수들을 <strong>useState</strong> 빈배열에 담아준다</p>
+</blockquote>
+
+<hr />
+
+<p>-6. <code class="language-plaintext highlighter-rouge">npm run start</code> 로 실행시킨뒤 Klip 지갑 연결</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/d10ab6ee-35b7-4a50-9d19-9863e4dd6148/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>QR코드로 Klip 지갑을 <strong>연결</strong>하고<br />
+버튼을 누르면 지갑에 있는 <strong>모든 NFT를 조회</strong> 할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <h3 id="kip-17-스마트컨트랙트-코드">KIP-17 스마트컨트랙트 코드</h3>
+
+  <p><a href="https://github.com/wavescats/solidity-study/blob/main/Klip%20%EC%A7%80%EA%B0%91%20%EC%97%B0%EB%8F%99%20(KIP-17)/contracts/KIP17Token.sol">KIP-17 스마트컨트랙트 코드</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <h3 id="caver-js-를-통해-리액트와-연결하는-코드">caver-js 를 통해 리액트와 연결하는 코드</h3>
+</blockquote>
+
+<p><strong>UseCaver.js</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Caver</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">caver-js</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">KIP17ABI</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../abi/KIP17TokenABI.json</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">ACCESS_KEY_ID</span><span class="p">,</span>
+  <span class="nx">SECRET_ACCESS_KEY</span><span class="p">,</span>
+  <span class="nx">CHAIN_ID</span><span class="p">,</span>
+  <span class="nx">COUNT_CONTRACT</span><span class="p">,</span>
+  <span class="nx">KIP17</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../constants/index</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">option</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="c1">// Klaytn Node API를 사용하기 위한 코드 (Docs에 나와있음)</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span>
+      <span class="na">value</span><span class="p">:</span>
+        <span class="dl">"</span><span class="s2">Basic </span><span class="dl">"</span> <span class="o">+</span>
+        <span class="nx">Buffer</span><span class="p">.</span><span class="k">from</span><span class="p">(</span><span class="nx">ACCESS_KEY_ID</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">SECRET_ACCESS_KEY</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="dl">"</span><span class="s2">base64</span><span class="dl">"</span><span class="p">),</span>
+    <span class="p">},</span>
+    <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">x-chain-id</span><span class="dl">"</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">CHAIN_ID</span> <span class="p">},</span>
+  <span class="p">],</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">caver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Caver</span><span class="p">(</span>
+  <span class="k">new</span> <span class="nx">Caver</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">HttpProvider</span><span class="p">(</span>
+    <span class="dl">"</span><span class="s2">https://node-api.klaytnapi.com/v1/klaytn</span><span class="dl">"</span><span class="p">,</span>
+    <span class="nx">option</span>
+  <span class="p">)</span>
+<span class="p">);</span> <span class="c1">// Klaytn Node API를 사용하기 위한 코드 (Docs에 나와있음)</span>
+
+<span class="kd">const</span> <span class="nx">NFTContract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">caver</span><span class="p">.</span><span class="nx">contract</span><span class="p">(</span><span class="nx">KIP17ABI</span><span class="p">,</span> <span class="nx">KIP17</span><span class="p">);</span>
+<span class="c1">// // ⭐ 개발자는 '스마트 컨트랙트 주소'와 'ABI'를 알면 'caver' 를 통해</span>
+<span class="c1">// // ⭐ 스마트 컨트랙트를 생성하고 / 특정 함수를 실행할 수 있다</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">fetchCardsOf</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">nftOf</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NFTContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">balanceOf</span><span class="p">(</span><span class="nx">address</span><span class="p">).</span><span class="nx">call</span><span class="p">();</span>
+  <span class="c1">// 스마트컨트랙트 배포후에 나오는 함수</span>
+  <span class="c1">// 해당 주소에 몇개의 NFT를 보유중인지 개수를 표시하는 함수 balanceOf</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nftOf</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">tokenIds</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">nftOf</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NFTContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">tokenOfOwnerByIndex</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="nx">i</span><span class="p">).</span><span class="nx">call</span><span class="p">();</span>
+    <span class="c1">// 해당주소와 배열의 몇번째인지 숫자를 입력하면 tokenId 가 나온다</span>
+    <span class="nx">tokenIds</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+    <span class="c1">// 빈배열에 반복문을 돌려서 tokenId를 push 한다</span>
+  <span class="p">}</span>
+  <span class="kd">const</span> <span class="nx">tokenUris</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">nftOf</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">uris</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">NFTContract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">tokenURI</span><span class="p">(</span><span class="nx">tokenIds</span><span class="p">[</span><span class="nx">i</span><span class="p">]).</span><span class="nx">call</span><span class="p">();</span>
+    <span class="c1">// 해당 tokenId를 입력하면 tokenURI(이미지) 가 나온다</span>
+    <span class="nx">tokenUris</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">uris</span><span class="p">);</span>
+    <span class="c1">// 빈배열에 반복문을 돌려서 tokenURI를 push 한다</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">tokenIds</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tokenUris</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">nfts</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">nftOf</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">nfts</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="nx">tokenIds</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="na">uri</span><span class="p">:</span> <span class="nx">tokenUris</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="p">});</span>
+    <span class="c1">// 빈배열에 반복문을 돌려서 객체타입으로 담는다</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nfts</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">nfts</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// 블록체인 노드에 직접적으로 콜하기 어려워서 KAS 를 사용</span>
+<span class="c1">// KAS 는 우리가 블록체인에 접근하는걸 도와준다</span>
+<span class="c1">// 스마트컨트랙트에 있는 데이터를 읽고 실행하는걸 도와준다</span>
+<span class="c1">// 이 과정에서 Caver-js 를 쓰면 인간이 사용하는 코드를</span>
+<span class="c1">// 스마트컨트랙트 블록체인이 이해할수 있는 코드로 변형해줘서</span>
+<span class="c1">// Klaytn 노드와 상호작용할 수 있도록 도와준다</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">getBalance</span> <span class="o">=</span> <span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">caver</span><span class="p">.</span><span class="nx">rpc</span><span class="p">.</span><span class="nx">klay</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">(</span><span class="nx">address</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// 클레이 잔고를 확인 (다른코인이 있다면 klay말고 적으면 된다)</span>
+    <span class="kd">const</span> <span class="nx">balance</span> <span class="o">=</span> <span class="nx">caver</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">convertFromPeb</span><span class="p">(</span>
+      <span class="c1">// convertFromPeb -&gt; 10 ** 18 로 클레이단위를 변경</span>
+      <span class="nx">caver</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToNumberString</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+      <span class="c1">// 16진수문자열로 변경</span>
+    <span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">balance</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">balance</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <h3 id="appjs--client-에-출력하기-위한-코드">App.js 👉 client 에 출력하기 위한 코드</h3>
+</blockquote>
+
+<p><strong>App.js</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">"</span><span class="s2">./App.css</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./market.css</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">QRCode</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">qrcode.react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">KlipAPI</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./api/UseKlip</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">fetchCardsOf</span><span class="p">,</span> <span class="nx">getBalance</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./api/UseCaver</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Alert</span><span class="p">,</span> <span class="nx">Container</span><span class="p">,</span> <span class="nx">Card</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-bootstrap</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">bootstrap/dist/css/bootstrap.min.css</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">DEFAULT_QR_CODE</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">DEFAULT</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// QR코드는 기본 DEFAULT 값</span>
+<span class="kd">const</span> <span class="nx">DEFAULT_ADDRESS</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">0x00000000000000000</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// 주소 기본값</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">nfts</span><span class="p">,</span> <span class="nx">setNfts</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+  <span class="c1">// 인자로 들어가는값은 tokenId, tokenUri</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">myBalance</span><span class="p">,</span> <span class="nx">setMyBalance</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">"</span><span class="s2">0</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">myAddress</span><span class="p">,</span> <span class="nx">setMyAddress</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">DEFAULT_ADDRESS</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">qrvalue</span><span class="p">,</span> <span class="nx">setQrvalue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">DEFAULT_QR_CODE</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">fetchMyNFT</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">nftList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchCardsOf</span><span class="p">(</span>
+      <span class="dl">"</span><span class="s2">0x319229707F620F673a1261DCcCe4E239A71f3Bc0</span><span class="dl">"</span>
+    <span class="p">);</span> <span class="c1">// 해당 주소에 있는 nft 리스트</span>
+    <span class="nx">setNfts</span><span class="p">(</span><span class="nx">nftList</span><span class="p">);</span>
+    <span class="c1">// 빈배열에 담아준다</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">getUserData</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">KlipAPI</span><span class="p">.</span><span class="nx">getAddress</span><span class="p">(</span><span class="nx">setQrvalue</span><span class="p">,</span> <span class="k">async</span> <span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setMyAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+      <span class="kd">const</span> <span class="nx">balance</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getBalance</span><span class="p">(</span><span class="nx">address</span><span class="p">);</span>
+      <span class="c1">// UseCaver.js 에서 가져온 getBalance</span>
+      <span class="nx">setMyBalance</span><span class="p">(</span><span class="nx">balance</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">내</span> <span class="nx">지갑</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="p">{</span><span class="nx">myAddress</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">br</span> <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Alert</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">getUserData</span><span class="p">}</span> <span class="nx">variant</span><span class="o">=</span><span class="p">{</span><span class="dl">"</span><span class="s2">balance</span><span class="dl">"</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="nx">myBalance</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/Alert</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">container</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="p">{</span><span class="cm">/* map을 이용하여 nfts 배열에서 index 순서대로 이미지 출력 */</span><span class="p">}</span>
+          <span class="p">{</span><span class="nx">nfts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">list</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">Card</span><span class="p">.</span><span class="nx">Img</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">img-responsive</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">nfts</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">uri</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>          <span class="p">))}</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">QRCode</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">qrvalue</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">256</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/Container</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">fetchMyNFT</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">NFT</span> <span class="nx">가져오기</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+:ET

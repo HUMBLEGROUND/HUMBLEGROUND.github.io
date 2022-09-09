@@ -1,0 +1,108 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/dbb3c755-706f-455d-81b3-e143c50bd02e/image.png" alt="" /></p>
+
+<h3 id="천단위1000-이상-쉼표가-있는-숫자열-sort-정렬하기">천단위(1,000) 이상 쉼표가 있는 숫자열 Sort 정렬하기</h3>
+
+<hr />
+
+<p><strong>‘TVL’ 유동성 규모순</strong> 으로 리스트들을 정렬 하고자 합니다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/92dffa19-c9c7-4dcc-af42-e550ac88ba3f/image.png" alt="" /></p>
+
+<hr />
+
+<p><a href="https://wavescats.github.io/react/2022/07/10/react6.html">https://wavescats.github.io/react/2022/07/10/react6.html</a><br />
+(👆 리액트 Sort 수익률순 정렬하기 참고)</p>
+
+<p>앞서 해결했던 코드로 <strong>‘TVL 유동성규모순’</strong> 정렬도 해보려했는데</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/f4d0522d-ef09-435f-8868-77a0a50967e8/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>👆 정렬을 해주긴 하는데 <strong>천단위(1,000)</strong> 를 넘어가면서<br />
+<strong>쉼표( , )</strong> 를 인식못하고 정렬를 해주는듯 했습니다<br /></p>
+
+  <p>ex) <code class="language-plaintext highlighter-rouge">$ 1,393 -&gt; $ 3,565,130 -&gt; $ 3,868</code></p>
+</blockquote>
+
+<hr />
+
+<h3 id="listsortjs--리팩토링-작업">ListSort.js 👉 리팩토링 작업</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c77c3254-fd90-489c-b305-f6e4ba746ed3/image.png" alt="" /></p>
+
+<blockquote>
+  <p><strong>TVL 데이터</strong>를 불러와서 <br /></p>
+
+  <ol>
+    <li>쉼표( , )를 제거하고 <strong>변수에 담음</strong><br /></li>
+    <li>쉼표( , )가 제거된 상태에서 <strong>변수끼리 비교</strong></li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<h3 id="tvl-유동성-규모순-정렬">‘TVL’ 유동성 규모순 정렬</h3>
+
+<p>쉼표가 제거된 상태에서 비교를 하고 다시 유동성 규모순 정렬을 해보면 !</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/e55be0e0-4a56-4e07-817f-a5800393d718/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>결과는 성공입니다 ! 👆<br />
+<strong>‘TVL’ 유동성 규모순</strong> 정렬대로 나오는걸 확인 할수 있습니다</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <h3 id="성공한-코드-">성공한 코드 👇</h3>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">tvlUpSort</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// 높은유동성순 정렬</span>
+  <span class="kd">let</span> <span class="nx">tvlUpSorting</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">poolList</span><span class="p">];</span> <span class="c1">// useState 값</span>
+
+  <span class="nx">tvlUpSorting</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">tvlA</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">tvl</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/,/g</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span> <span class="c1">// 쉼표(,)를 제거하고 변수에 담음</span>
+    <span class="kd">let</span> <span class="nx">tvlB</span> <span class="o">=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">tvl</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/,/g</span><span class="p">,</span> <span class="dl">""</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">tvlB</span> <span class="o">-</span> <span class="nx">tvlA</span><span class="p">;</span> <span class="c1">// 쉼표(,)가 제거된 상태에서 비교</span>
+  <span class="p">});</span>
+
+  <span class="nx">setPoolList</span><span class="p">(</span><span class="nx">tvlUpSorting</span><span class="p">);</span> <span class="c1">// 정렬한 후 useState에 다시 담아주는 작업</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p><strong>‘1000 단위’ 마다 쉼표 ( , )를 추가해주는 코드</strong>👇</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">tvlString</span> <span class="o">=</span> <span class="nx">tvl</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\B(?=(\d{3})</span><span class="sr">+</span><span class="se">(?!\d))</span><span class="sr">/g</span><span class="p">,</span> <span class="dl">"</span><span class="s2">,</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/Mottie/tablesorter/issues/890">https://github.com/Mottie/tablesorter/issues/890</a></p>
+  </li>
+  <li>
+    <p><a href="https://stackoverflow.com/questions/18029304/java-script-sorting-an-array-having-amount-values-including-both-commas-and-peri">https://stackoverflow.com/questions/18029304/java-script-sorting-an-array-having-amount-values-including-both-commas-and-peri</a></p>
+  </li>
+  <li>
+    <p><a href="https://forum.jquery.com/topic/javascript-how-to-sort-strings-containing-comma-separated-values">https://forum.jquery.com/topic/javascript-how-to-sort-strings-containing-comma-separated-values</a></p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>javascript sort comma number array site:stackoverflow<br />
+javascript sort comma number array<br />
+javascript large numbers that contain commas sort<br />
+sort comma separated numbers in react</p>
+</blockquote>
+
+<hr />
+:ET
