@@ -1,26 +1,41 @@
 <header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">{{ heading | default: page.title | escape }}</h1>
-  <h2 class="post-subtitle">{{ subheading | default: page.subtitle | escape }}</h2>
+  <h1 class="post-title p-name" itemprop="name headline">
+    {{ heading | default: page.title | escape }}
+  </h1>
+  <h2 class="post-subtitle">
+    {{ subheading | default: page.subtitle | escape }}
+  </h2>
 
   <p class="post-meta">
-    <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+    <time
+      class="dt-published"
+      datetime="{{ page.date | date_to_xmlschema }}"
+      itemprop="datePublished"
+    >
       {%- assign date_format = site.yat.date_format | default: "%b %-d, %Y" -%}
+      <p>
+        <img
+          style="border-radius: 10px; float: right"
+          alt="Hits"
+          src="https://hits.sh/github.com/silentsoft/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}/{{ page.url | remove_first: '/' | replace: '/', '-' }}.svg?style=for-the-badge&label=%EC%A1%B0%ED%9A%8C%EC%88%98&color=ebebeb&labelColor=9f9f9f"
+        />
+      </p>
       <i class="fa fa-calendar"></i> {{ page.date | date: date_format }}
     </time>
 
-    {% assign article = page.content %}
-    {% assign lang = page.lang %}
-    {%- include functions.html func='get_reading_time' -%}
-    {% assign reading_time = return %}
+    {% assign article = page.content %} {% assign lang = page.lang %} {%-
+    include functions.html func='get_reading_time' -%} {% assign reading_time =
+    return %}
     <span class="post-reading-time left-vsplit"></span>
   </p>
 
   {%- if page.tags.size > 0 -%}
   <div class="post-tags">
     {%- for tag in page.tags -%}
-    <a class="post-tag" href="{{ '/tags.html ' | relative_url }}#{{tag}}">#{{tag}}</a>
+    <a class="post-tag" href="{{ '/tags.html ' | relative_url }}#{{tag}}"
+      >#{{tag}}</a
+    >
     {%- endfor -%}
   </div>
   {%- endif -%}
-
 </header>

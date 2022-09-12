@@ -329,7 +329,7 @@ body { font-family: "MyLotteLight"; }
 
 .page-segments .segment-name:hover:before { content: "#"; left: -1em; position: absolute; }
 
-.page-segments .post-meta { font-size: 14px; color: #828282; display: inline-block; width: 95px; }
+.page-segments .post-meta { font-size: 14px; color: #828282; width: 95px; display: inline-block; }
 
 .page-segments li a { color: #303030; }
 
