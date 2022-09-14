@@ -1,4 +1,4 @@
-I"Y<p><img src="https://velog.velcdn.com/images/-__-/post/898e496e-83cf-46bd-9410-39f75ebc1323/image.png" alt="" /></p>
+I"P<p><img src="https://velog.velcdn.com/images/-__-/post/898e496e-83cf-46bd-9410-39f75ebc1323/image.png" alt="" /></p>
 
 <h3 id="퍼블릭-블록체인-abi-application-binary-interface">퍼블릭 블록체인 ABI (Application Binary Interface)</h3>
 
@@ -36,8 +36,7 @@
 
 <blockquote>
   <ul>
-    <li>프라이빗, 컨소시엄 네트워크를 쓰는<br />
-<strong>‘하이퍼레저 패브릭’</strong> 에서는 <span style="background-color:#F7969A; color:#000;">‘ABI’ 가 필요없다</span></li>
+    <li>프라이빗, 컨소시엄 네트워크를 쓰는<br /> &gt; <strong>‘하이퍼레저 패브릭’</strong> 에서는 <span style="background-color:#F7969A; color:#000;">‘ABI’ 가 필요없다</span></li>
   </ul>
 </blockquote>
 
@@ -75,6 +74,21 @@
 ⭐ 필요한 개발자끼리만 코드를 공유한다</li>
   </ul>
 </blockquote>
+
+<hr />
+
+<h3 id="더-공부할-내용">더 공부할 내용</h3>
+
+<ul>
+  <li>하이퍼레저 소투스 (Hyperledger Sawtooth)</li>
+  <li>하이퍼레저 컴포저 (Hyperledger Composer)</li>
+  <li>하이퍼레저 인디 (Hyperledger Indy)</li>
+  <li>하이퍼레저 솔로 (SOLO, Single Ordering Service Node)</li>
+  <li>CouchDB vs LevelDB</li>
+  <li><a href="https://medium.com/decipher-media/%ED%95%98%EC%9D%B4%ED%8D%BC%EB%A0%88%EC%A0%80-%ED%8C%A8%EB%B8%8C%EB%A6%AD-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B5%AC%EC%A1%B0-hyperledger-fabric-network-structure-d7fd9c759983">하이퍼레저 패브릭 네트워크 구조</a></li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/744cfd16-ea61-4031-9dbc-c63e37356a9e/image.png" alt="" /></p>
 
 <hr />
 :ET
