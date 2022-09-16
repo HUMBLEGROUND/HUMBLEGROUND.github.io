@@ -1,0 +1,155 @@
+I"b<p><img src="https://velog.velcdn.com/images/-__-/post/f365a06e-067a-4301-bdfc-5af14adfdd8a/image.png" alt="" /></p>
+
+<h3 id="-project-lion-nft-블록체인-마켓-앱-만들기-with-그라운드x-3기---챕터-5-6-회고">🦁 [PROJECT LION] NFT 블록체인 마켓 앱 만들기 with 그라운드X 3기 - 챕터 5-6 회고</h3>
+
+<hr />
+
+<h3 id="nft-판매--구매-기능구현">NFT 판매 &amp; 구매 기능구현</h3>
+
+<p>-1. Klip 지갑을 연결하고 이미지 링크를 붙여넣어 이미지를 NFT로 만든다 👉 NFT 발행 컨트랙트 실행</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2fee05ec-8bfe-4492-b5b7-075908e44284/image.gif" alt="" /></p>
+
+<blockquote>
+  <p>👆 NFT 민팅이 성공하면 <strong>Alert 알림창이 뜬다</strong><br /></p>
+
+  <p>⭐ 컨트랙트를 실행할때는 수수료(KLAY) 가 발생한다</p>
+</blockquote>
+
+<hr />
+
+<p>-2. NFT가 발행됐다면 하단에 <strong>WALLET 탭</strong>에서 보유중인 NFT를 확인할 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/e1f1e725-7d44-48b4-9d3d-b87323c25b88/image.gif" alt="" /></p>
+
+<hr />
+
+<p>-3. <strong>Klip API</strong>를 <code class="language-plaintext highlighter-rouge">axios</code> 로 받아온 후 <br />
+<code class="language-plaintext highlighter-rouge">type: "execute_contract"</code> 의 파라미터를 입력하지않고 인자로 받아온다</p>
+
+<p><strong>UseKlip.js</strong></p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span> <span class="c1">// 클립 API 에 👉 execute_contract 👉 transaction 파라미터</span>
+<span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">execute_contract</span><span class="dl">"</span><span class="p">,</span>
+<span class="dl">"</span><span class="s2">transaction</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+	<span class="dl">"</span><span class="s2">to</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0xA987...4321</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">value</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">abi</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">params</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>👇👇👇👇👇👇👇👇</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8cd5dea8-f2ce-4c73-8efc-fd02902c8e2b/image.png" alt="" /></p>
+
+<blockquote>
+  <p>파라미터값을 👉 인자로 대입한다</p>
+</blockquote>
+
+<hr />
+
+<p>-4. 위에 파라미터에 들어갈 인자 값을 대입한다 <strong>(판매(송금)기능)</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/65638a78-01db-4afb-b290-3919a187868f/image.png" alt="" /></p>
+
+<blockquote>
+  <h4 id="safetransferfrom-함수를-실행하기-위한-인자">safeTransferFrom 함수를 실행하기 위한 인자</h4>
+
+  <p>fromAdderss 👉 NFT를 보내는 사람 주소<br />
+toAddress 👉 NFT를 받는 주소 (마켓 컨트랙트주소)<br />
+tokenId 👉 발행된 NFT의 번호<br /></p>
+
+  <p>⭐ 실행하고자 하는 ABI만 가져온다</p>
+</blockquote>
+
+<hr />
+
+<p>-5. 마켓 컨트랙트에서 <code class="language-plaintext highlighter-rouge">buyNFT</code> 함수에 들어갈 파라미터 인자 값도 대입 <strong>(구매기능)</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ba4154ba-fc70-4131-96d9-5294764a1aa7/image.png" alt="" /></p>
+
+<blockquote>
+  <h4 id="buynft-함수를-실행하기-위한-인자">buyNFT 함수를 실행하기 위한 인자</h4>
+
+  <p>tokenId 👉 발행된 NFT의 번호<br />
+toAddress 👉 NFT를 받는 주소 (KIP17 컨트랙트주소)<br /></p>
+
+  <p>⭐ 실행하고자 하는 ABI만 가져온다</p>
+</blockquote>
+
+<hr />
+
+<p>-6. <strong>App.js</strong> 로 가서 👉 파라미터가 저장된 함수를 가져온다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0c98bb92-cd60-4223-9ec1-f2e692488fdf/image.png" alt="" /></p>
+
+<blockquote>
+  <h4 id="appjs">App.js</h4>
+
+  <p><code class="language-plaintext highlighter-rouge">KlipAPI.saleCard</code> &gt; <code class="language-plaintext highlighter-rouge">KlipAPI.buyCard</code> 에서 설정한 인자에 해당하는 값들을 대입한다<br /></p>
+
+  <blockquote>
+    <p>❗ 함수에서 설정한 <code class="language-plaintext highlighter-rouge">tokenId</code>의 파라미터 값은<br />
+<strong>map</strong>을 이용하여 <u>nfts 배열안에 있는 id</u> 로 받아온다</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <h3 id="onclick">onClick</h3>
+
+  <p>이미지를 클릭하면 이벤트를 발생하게 한다<br />
+👉 <code class="language-plaintext highlighter-rouge">onClickCard</code> WALLET or MARKET 각 탭을 누를때마다 보이는 화면이 다르게 출력<br />
+👉 각 화면에서 NFT 이미지를 클릭하면 <strong>판매 or 구매</strong>를 하는 컨트랙트가 발생한다</p>
+</blockquote>
+
+<hr />
+
+<p>-7. WALLET에 있는 NFT 이미지를 클릭하면 <span style="background-color:#B5E045; color:#000;">NFT를 ‘판매’</span> 할 수 있는 컨트랙트가 <strong>QR코드</strong> 로 생성된다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/705a36cf-bbd7-4a91-a9ed-0a7901d3f04e/image.gif" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/1d6bf15d-9dbe-4420-a7c1-cb83d69d3b02/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li><strong>QR코드</strong>를 스캔하면 Klip 지갑에서 컨트랙트 실행요청<br /></li>
+    <li>실행을 승인하면 NFT 판매 컨트랙트가 실행<br /></li>
+    <li>WALLET 👉 MARKET 으로 NFT 이미지가 옮겨진다</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<p>-8. 마켓에 등록된 NFT 이미지를 클릭하면 <span style="background-color:#34CDEF; color:#000;">NFT를 ‘구매’</span> 할 수 있는 컨트랙트가 <strong>QR코드</strong> 로 생성된다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a944ec4d-8f0a-4966-bbbb-db2dd9a915bf/image.gif" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/706eec57-3d3c-4610-8f73-f66a58baef67/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li><strong>QR코드</strong>를 스캔하면 Klip 지갑에서 컨트랙트 실행요청<br /></li>
+    <li>스마트 컨트랙트 코드에서 NFT를 구매 할 때 <strong>0.01 KLAY</strong> 을 지불해야 한다고 설정한 값<br /></li>
+    <li>NFT를 판매하는 사람의 주소로 <strong>0.01 KLAY</strong> 가 전송된다<br /></li>
+    <li>실행을 승인하면 NFT 구매 컨트랙트가 실행<br /></li>
+    <li>MARKET 👉 WALLET 으로 NFT 이미지가 옮겨진다</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<p>-9. MARKET 👉 WALLET 으로 NFT가 옮겨진걸 확인 할 수 있다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/6ca1602d-7bc0-44ec-8f02-5ef5187fcd21/image.gif" alt="" /></p>
+
+<hr />
+
+<blockquote>
+  <h3 id="nft-판매--구매-기능구현-코드">NFT 판매 &amp; 구매 기능구현 코드</h3>
+
+  <p><a href="https://github.com/genie19197/lecture-klay-market">https://github.com/genie19197/lecture-klay-market</a></p>
+</blockquote>
+
+<hr />
+:ET

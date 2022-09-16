@@ -1,0 +1,107 @@
+I"<p><img src="https://velog.velcdn.com/images/-__-/post/b784ac09-6df6-468a-b71a-dbd5ac66df8b/image.png" alt="" /></p>
+
+<h3 id="코인--토큰">코인 ↔ 토큰</h3>
+
+<h3 id="코인">코인</h3>
+
+<blockquote>
+  <p>블록체인 <strong>‘노드’</strong>를 통해 <strong>‘채굴’</strong>하는, <u>채굴자에 대한 보상</u>으로 주어지는 암호화폐</p>
+</blockquote>
+
+<h3 id="토큰">토큰</h3>
+
+<blockquote>
+  <p>블록체인 <strong>‘네트워크’</strong> 위에서 구현된, 별개의 <u>생태계를 위해 사용되는 지역화폐</u></p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/aedab002-0a65-4f2c-9578-b2989096e88b/image.png" alt="" /></p>
+
+<p>👉 <strong>‘토큰’</strong> 은 사용될 수 있는 곳이, 발행된 블록체인 네트워크로 제한된다<br />
+그러나 이 지역화폐는, 코인처럼 <strong>새로운 생태계</strong>를 만들어 낼 수 있다</p>
+
+<p><span style="background-color: #fff5b1; color:#000;">가장 대표적인 예시가 <strong>‘탈중앙화 금융(De-Fi)’</strong></span></p>
+
+<ul>
+  <li>
+    <p>하나의 토큰을 거버넌스 토큰으로 정하고, 이 거버넌스 토큰을 중심으로 새로운 생태계를 구성한다<br />
+👉 <span style="background-color: #fff5b1; color:#000;"><strong>ex) 클레이스왑</strong></span></p>
+
+    <p><img src="https://velog.velcdn.com/images/-__-/post/64adb5b4-919d-41e1-8b1e-31cb77bf3867/image.png" alt="" /></p>
+  </li>
+  <li>
+    <p>이 생태계 내에서 새롭게 발행한 토큰을 자산처럼 취급하여, 거버넌스 토큰과 소통하며 <strong>생태계</strong>를 구성한다</p>
+  </li>
+  <li>
+    <p>‘De-Fi’ 에서는 거버넌스 토큰을 <strong>예치(스테이킹; Staking)</strong>하고, 토큰과 코인 또는 토큰과 토큰사이의 <u>거래 수수료를 예치한 사람들에게 '재분배'</u>하는 모델을 사용하기도 한다</p>
+  </li>
+  <li>
+    <p>이처럼 <u>'토큰'을 기반으로 새롭게 생성된 생태계</u>를 <span style="background-color: #ffdce0; color:#000;"><strong>‘토큰 이코노미’</strong></span>라고 하며, <br />
+‘<strong>토큰 이코노미’</strong>가 여럿 모여서 <span style="background-color: #ffdce0; color:#000;"><strong>‘크립토 이코노미’</strong></span>를 실현한다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="토큰-이코노미token-economy">토큰 이코노미(Token Economy)</h3>
+
+<ul>
+  <li>
+    <p>토큰 이코노미는 어떤 행동에 대해 <u>'토큰'을 보상</u>함으로써 특정 행동을 유도하는 <strong>경제 생태계</strong></p>
+  </li>
+  <li>
+    <p>보상으로 주어지는 <strong>‘토큰’</strong>은, 다른 유형의 물건이나 다른 서비스와 교환할 수 있는 ‘지역화폐’이다</p>
+  </li>
+  <li>
+    <p><strong>‘블록체인’</strong>과 <strong>‘토큰 이코노미’</strong>가 <strong>결합</strong>했을 때의 특징은 발생하는 <span style="background-color: #fff5b1; color:#000;">이익을 다수가 나눈다는 것이다</span></p>
+  </li>
+  <li>
+    <p>또 자신의 토큰이 속해있는 <u>네트워크가 커질수록</u> 토큰의 가치 또한 커지기🚀 때문에 적극적으로 서비스에 참여하게 된다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/171a8faf-5c21-4281-8ce9-6561e05291dc/image.png" alt="" /></p>
+
+<h3 id="sns-dapp-스팀잇">SNS dApp ‘스팀잇’</h3>
+
+<blockquote>
+  <p>스팀잇은 암호화폐 중 하나인 <strong>‘스팀(Steem)’</strong> 블록체인에 기반하여 운영되는 ‘블록체인 기반 SNS 시스템’으로 이다<br />
+👉 <span style="background-color: #fff5b1; color:#000;">콘텐츠를 올리는 사용자들에게 토큰으로 보상</span>을 주는 <strong>‘토큰 이코노미’</strong>의 사례로 볼 수 있다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="크립토-이코노미crypto-economy">크립토 이코노미(Crypto Economy)</h3>
+
+<ul>
+  <li>
+    <p><span style="background-color: #fff5b1; color:#000;">블록체인의 <strong>‘마이닝(채굴)’⛏</strong> 코인을 기반</span>으로 한 ‘토큰 이코노미’를 말한다</p>
+  </li>
+  <li>
+    <p>이처럼 <u>'토큰'을 기반으로 새롭게 생성된 생태계</u>를 <span style="background-color: #ffdce0; color:#000;"><strong>‘토큰 이코노미’</strong></span>라고 하며,<br />
+‘<strong>토큰 이코노미’</strong>가 여럿 모여서 <span style="background-color: #ffdce0; color:#000;"><strong>‘크립토 이코노미’</strong></span>를 실현한다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="채굴mining-">채굴(Mining) ⛏<br /></h3>
+
+<blockquote>
+  <p>블록체인 네트워크에 <u>노드로 트랜잭션을 검증</u>하여 <strong>‘분산원장’</strong>을 기록하고,<br /> &gt; <u>보상으로 암호화폐를 얻는 걸 뜻</u>하며 땅을 파서 광물 따위를 캐내는 행위에서 유래한 용어</p>
+</blockquote>
+
+<blockquote>
+  <h3 id="비트코인-채굴자가-하는-일">비트코인 채굴자가 하는 일</h3>
+
+  <ul>
+    <li>네트워크 동기화<br /></li>
+    <li>트랜잭션 검증<br /></li>
+    <li>블록 유효성 검사<br /></li>
+    <li>새로운 블록 생성<br /></li>
+    <li>작업 증명(PoW) 수행<br /></li>
+    <li>보상 수령</li>
+  </ul>
+</blockquote>
+
+<hr />
+:ET

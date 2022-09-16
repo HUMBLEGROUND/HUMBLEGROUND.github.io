@@ -1,0 +1,146 @@
+I"("<p><img src="https://velog.velcdn.com/images/-__-/post/35252a49-4532-4e8e-bb8a-21fce02767dd/image.png" alt="" /></p>
+
+<h3 id="cap-이론">CAP 이론</h3>
+
+<p>CAP 이론은 분산 데이터베이스 시스템을 바탕으로, <br />
+<strong>네트워크 분할 허용(Network Partition)</strong>이 이루어지는 경우에 <br />
+<strong>일관성(Consistency) / 가용성(Availability)</strong>을 <span style="background-color:#F7969A; color:#000;">동시에 만족하는 것은 불가능</span>하며,<br />
+‘일관성’과 ‘가용성’ 중 <strong>‘하나만 가질 수 있다’</strong>는 이론이다<br />
+<span style="background-color:#BFA8EE; color:#000;">(블록체인 트릴레마와 비슷한 개념)</span></p>
+
+<blockquote>
+  <p><strong>‘모든’</strong> 노드에 정보를 업데이트하여 <br /> &gt; <span style="background-color:#f4cba7; color:#000;">‘일관성’</span>을 지키되 <span style="background-color:#aed4e0; color:#000;">‘가용성’</span>을 포기할 것인가?<br /></p>
+
+  <p>혹은 <strong>‘일부’</strong> 노드에만 정보를 업데이트하여 <br /> &gt; <span style="background-color:#aed4e0; color:#000;">‘가용성’</span>을 지키되 <span style="background-color:#f4cba7; color:#000;">‘일관성’</span>를 포기할 것인가?</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a219940b-1b3f-46a3-8b53-f2d39f8dbd59/image.png" alt="" /></p>
+
+<h3 id="cap-요소">CAP 요소</h3>
+
+<ul>
+  <li>
+    <p><span style="background-color:#fffd91; color:#000;">분할 허용(P, Partition Tolerance)</span></p>
+
+    <p>👉 노드간 통신이 실패하는 경우라도 시스템은 정상 동작 한다<br />
+<strong>‘여러 개의 네트워크’</strong>가 동작하고 있을 때 접속이 <strong>단절되어</strong>🚫 <u>서로 메시지를 주고받지 못하더라도</u> 서비스가 <strong>잘 동작</strong>해야 한다</p>
+  </li>
+  <li>
+    <p><span style="background-color:#f4cba7; color:#000;">일관성(C, Consistency)</span></p>
+
+    <p>👉 모든 요청은 최신 데이터 또는 에러를 응답받는다<br />
+분산 시스템에서의 요청 및 응답 과정에서, <strong>‘노드가 여러 개’</strong> 있더라도 마치 <strong><u>'한 노드에서 실행되는 것처럼'</u></strong> 동작해야 한다</p>
+  </li>
+  <li>
+    <p><span style="background-color:#aed4e0; color:#000;">가용성(A, Availability)</span></p>
+
+    <p>👉 모든 요청은 정상 응답을 받는다<br />
+분산 시스템이 지속해서 가용하기 위해서 <strong>장애 없는(Non-Failing) 노드</strong>에 수신된 모든 요청은 <strong>반드시 응답</strong>돼야 한다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="cap의-상관관계">CAP의 상관관계</h3>
+
+<ul>
+  <li>
+    <p>CA 👉 <code class="language-plaintext highlighter-rouge">일관성과 / 가용성을 충족하지만 / 분할 허용을 충족하지 못한다</code><br />
+데이터에 대한 <strong>강한 신뢰를 부여</strong>할 수 있지만,<br />
+네트워크 문제가 <strong>시스템의 중단</strong>을 야기할 수 있다</p>
+  </li>
+  <li>
+    <p>CP 👉 <code class="language-plaintext highlighter-rouge">일관성과 / 분할 허용을 충족하지만 / 가용성을 충족하지 못한다</code><br />
+<strong>높은 확장성</strong>으로부터 <strong>성능을 확보</strong>할 수 있지만 일부 데이터가 <strong>비가용</strong>할 수 있다</p>
+  </li>
+  <li>
+    <p>AP 👉 <code class="language-plaintext highlighter-rouge">가용성과 / 분할 허용을 충족하지만 / 일관성을 충족하지 못한다</code><br />
+<strong>부정확한 응답</strong>을 허용하는 고성능 시스템에 적합하다</p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/147fa414-e474-428c-9d56-9bed2a620d2d/image.png" alt="" /></p>
+
+<blockquote>
+  <h3 id="ap-예시">AP 예시</h3>
+
+  <p>철수는 근처 펍에 가서 2018 월드컵 조별리그, 한국 대 독일의 경기를 보고 있고, 영희는 한국이 이기지 못할 것으로 생각해서 학교에서 시험 공부를 하고 있습니다. 경기가 끝나고 한국이 2:0 으로 이겼을 때, 철수는 감격한 나머지 포털 사이트에 접속해서 경기 결과를 재확인한 후 영희에게 카카오톡으로 메시지를 보내 경기 결과를 알려주었습니다.<br /></p>
+
+  <p>한국이 무려 2:0 으로 승리했다는 소식을 듣고 영희는 포털 사이트에 접속했으나 영희가 접속한 포털 사이트에는 여전히 게임이 진행되고 있다라는 표시가 나타났습니다.<br /></p>
+
+  <p>즉, 철수는 <u>최신 업데이트가 된 정보를 받을 수 있었지만</u>, 영희는 <u>최신 업데이트가 된 정보를 받지 못했습니다.</u> 다른 말로 철수와 연결된 서버 노드는 월드컵 경기가 끝나고 결과를 확인했지만, 영희와 연결된 서버 노드는 새로운 결과를 받지 못한 것입니다. 이러한 경우는 가용성을 우선시하고 Linearizable한 <strong>‘일관성을 포기’</strong>한 것이라 할 수 있습니다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="pacelc-이론">PACELC 이론</h3>
+
+<p>CAP 이론에 따르면 ‘일관성’과 ‘가용성’은 <strong>완전한 대립 관계</strong>에 있지만,<br />
+<span style="background-color:#F7969A; color:#000;">사실 <strong>완벽한</strong> CP 시스템과 AP 시스템은 쓸모가 없다</span><br />
+그리고 완벽한 CA 시스템은 가질 수 없다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8623984a-5c98-449e-926e-1b68b49c1b03/image.png" alt="" /></p>
+
+<blockquote>
+  <p>CAP 이론의 단점들을 보완하기 위해 나온 이론이 바로 <strong>‘PACELC’</strong> 이론이다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/01f80e8b-f432-4ccc-9683-8e6b32b2e2eb/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p><strong>네트워크 분할(P) 상황</strong><br />
+분할 상황(P)에서는 <strong>단절된 노드</strong>에 접근할 수 없기 때문에<br />
+👉 ‘일관성’을 포기하고 ‘가용성’을 제공할지(PA)<br />
+👉 ‘가용성’을 포기하고 ‘일관성’을 유지할지(PC)의 정도를 결정해야 한다</p>
+  </li>
+  <li>
+    <p><strong>네트워크 정상(E) 상황</strong><br />
+정상 상황(E)에서는 <strong>모든 노드에 업데이트</strong>를 반영해<br />
+👉 ‘일관성’을 유지하기 위한 긴 ‘대기 및 응답시간’을 가질지(EC),<br />
+👉 ‘일관성’을 포기하고 ‘짧은 지연시간’을 가질지(EL)의 정도를 결정해야 한다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="cap--pacelc-관점에서의-블록체인">CAP / PACELC 관점에서의 블록체인</h3>
+
+<ul>
+  <li>
+    <p>CAP 관점에서의 블록체인 ‘가용성’과 ‘분할 허용’을 충족하는 <strong>AP 시스템</strong>이다</p>
+  </li>
+  <li>
+    <p>PACELC 관점에서 보면 블록체인은 ‘일관성’보다는 <strong>‘가용성’과 ‘지연시간’을 중시</strong>한 분산 시스템이다</p>
+  </li>
+</ul>
+
+<blockquote>
+  <h3 id="네트워크-분할-상황">네트워크 분할 상황</h3>
+
+  <p>분할 상황에서 블록체인은 일관성보다는 가용성에 초점을 둔다<br />
+👉 채굴자는 자신이 참조하고 있는 블록이 네트워크에서 아직 합의를 이루지 못했다 할지라도 <strong>이전 블록으로 삼아 채굴을 이어간다</strong> &gt;<br /></p>
+
+  <h3 id="네트워크-정상-상황">네트워크 정상 상황</h3>
+
+  <p><br />정상 상황에서 블록체인은 일관성보다는 짧은 지연시간에 초점을 둔다<br />
+👉 블록체인에서는 채굴된 새 블록 혹은 더 무거운 체인 등을 통해 원장의 업데이트가 제안되는데, 모든 노드가 이를 따를 필요는 없다</p>
+</blockquote>
+
+<p>⭐ 블록체인은 <strong>‘가용성’과 ‘지연시간’을 중시</strong>하지만 충분한 완결성이 부여된 블록에 대해서는 <u>높은 확률로 '일관성'을 보장</u>하는 분산 시스템이다</p>
+
+<blockquote>
+  <p>현재 상태에 대해서는 👉 가용성과 지연시간을 중시하고<br />
+과거 상태에 대해서는 👉 일관성을 중시하는 분산 시스템이다</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/064e22d5-a4f1-4982-9c45-9c562d9d2183/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<p><a href="http://happinessoncode.com/2017/07/29/cap-theorem-and-pacelc-theorem/">http://happinessoncode.com/2017/07/29/cap-theorem-and-pacelc-theorem/</a></p>
+
+<hr />
+:ET

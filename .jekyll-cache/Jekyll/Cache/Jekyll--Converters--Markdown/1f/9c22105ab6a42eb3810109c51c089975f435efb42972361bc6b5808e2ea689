@@ -1,0 +1,180 @@
+I"I#<p><img src="https://velog.velcdn.com/images/-__-/post/47fb41f1-eb2d-4346-adf4-66fd8d6fa1fa/image.png" alt="" /></p>
+
+<h2 id="dapp-decentralized-application">DApp (Decentralized Application)</h2>
+
+<ul>
+  <li>
+    <p>dApp이란, 이더리움, 퀀텀, 이오스 같은 <strong>‘플랫폼 코인 위에서 작동’</strong>하는 <strong>탈중앙화 분산 앱</strong></p>
+  </li>
+  <li>
+    <p>플랫폼 코인 위에서 작동하는 dApp의 암호화폐는 <span style="background-color:#34CDEF; color:#000;">코인(Coin)이라고 하지 않고 토큰(Token)이라고 구별하여 부른다</span></p>
+  </li>
+  <li>
+    <p>dApp은 스마트 컨트랙트가 도입되면서 생겨났으며,<br />
+<u>스마트 컨트랙트가 없는</u> 비트코인에는 dApp이 <strong>존재하지 않는다</strong></p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/13b22f76-e260-4acf-ada5-3a6b693d903d/image.png" alt="" /></p>
+
+<h4 id="dapp은-스마트폰-블록체인을-기반으로-한-운영체제에서-구동된다-">dApp은 <span style="background-color:#34CDEF; color:#000;"><strong>‘스마트폰 블록체인을 기반으로 한 운영체제’</strong></span>에서 구동된다 📱</h4>
+
+<ul>
+  <li>
+    <p>플랫폼 코인을 운영체제라고 한다면, / 그 위에서 돌아가는 앱이 디앱이다</p>
+  </li>
+  <li>
+    <p>iOS 전용으로 개발된 앱을 / 안드로이드 운영체제에서 실행할 수 없는 것처럼,<br />
+디앱도 <span style="background-color:#F7969A; color:#000;">서로 다른 블록체인 네트워크에서 실행할 수 없다</span>고 보면 된다<br />
+블록체인을 <strong>‘OS’</strong>라고 쉽게 이해할 수 있다</p>
+  </li>
+  <li>
+    <p>또한, 어떤 블록체인을 기반으로 구동되는지에 따라 이더리움 디앱, 이오스 디앱 등으로 구분할 수 있다</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="dapp과-app의-차이">dApp과 App의 차이</h2>
+
+<ul>
+  <li>
+    <p>dApp은 사용자가 계정을 생성하는 절차부터 앱과 다르다</p>
+  </li>
+  <li>
+    <p>일반 앱에 회원가입을 할 때는 개인정보를 입력해 계정을 만들고 로그인 후 즉시 서비스를 이용할 수 있다</p>
+  </li>
+  <li>
+    <p>그러나 dApp의 경우는 계정을 만들 때, 이더리움, 이오스 등 <span style="background-color:#BFA8EE; color:#000;">해당 블록체인 지갑을 보유해야 한다</span></p>
+
+    <p>👉 해당 블록체인 서비스에 참여함으로써, 보상으로 받는 암호화폐를 저장하고 거래하기 위한 지갑을 준비해야 한다</p>
+
+    <p><code class="language-plaintext highlighter-rouge">이더리움 기반 디앱은 이더리움 지갑을 / 이오스 기반 디앱은 이오스 지갑을 갖춰야 한다</code></p>
+  </li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8be0f1ca-e496-4fdf-990f-92ba68393fe7/image.png" alt="" /></p>
+
+<ul>
+  <li>dApp 개발과 기존 앱 개발의 가장 큰 차이점은 얼마나 엄격하게, 정밀하게 점검하느냐이다</li>
+</ul>
+
+<blockquote>
+  <p>dApp은 <strong>‘소프트웨어 개발보다’</strong>는 <strong>‘하드웨어 개발’</strong>과 더 비슷합니다.<br />
+어떤 회사가 하드웨어를 완성했다면, 제품을 공개하기 전에 반드시 엄격하고 정밀하게 테스트를 한 후 공개해야 하고, 하드웨어 개발이 끝난 뒤 공개되었을 때, 미처 발견하지 못한 문제점들이 생긴다면 기존 소프트웨어 수정보다 훨씬 더 많은 돈과 시간을 요구하게 됩니다.<br />
+왜냐하면 dApp 개발에서 스마트 계약이 메인넷에서 <strong>‘한번 실행되면 절대 변경이 안 되기 때문’</strong>입니다.<br /></p>
+
+  <p>이와 반대로 기존 앱 개발은 빠르게 변하는 트렌드에 맞춰 새로운 서비스를 계속해서 만들어내는 것에 집중하는 편입니다.<br />
+개발자로서 최소한의 실행 가능한 제품<br />
+즉, MVPs를 만들고 사람들이 직접 테스트하게 한 후 가능한 한 빨리 업데이트된 버전을 출시하는 것이 요새 앱 개발의 추세이지만<br />
+현재 dApp 개발자들에게는 적합하지 않은 추세입니다.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="dapp의-특징">dApp의 특징</h2>
+
+<h3 id="탈중앙화">탈중앙화</h3>
+
+<ul>
+  <li>
+    <p>dApp은 블록체인의 탈중앙화 성격을 지니고 있다</p>
+  </li>
+  <li>
+    <p>일반적인 앱은 중앙화된 방식을 따르며, <strong>‘중앙 서버의 관리’</strong>를 받는다<br />
+👉 때문에 중앙 관리자인 구글과 애플 등 <strong>‘기업이 정보를 소유’</strong>하는 구조이다 <br />
+👉 반면, dApp은 블록체인 기술을 활용해 <span style="background-color:#FFC701; color:#000;"><strong>‘중앙 서버없이’</strong> 정보를 분산해 저장하고 구동</span>하게 된다 ✨</p>
+  </li>
+</ul>
+
+<h3 id="위변조-불가">위·변조 불가</h3>
+
+<ul>
+  <li>
+    <p>dApp은 <span style="background-color:#FFC701; color:#000;">데이터의 위·변조가 불가능해</span> 정보 보호 특면에서 장점을 지닌다</p>
+  </li>
+  <li>
+    <p>일반 앱을 다운 받을 때 동의하는 개인 정보 수집, 위치 정보 등이 다른 서비스 개발에 이용되거나 유출되어 문제가 발생하기도 하는데,<br />
+👉 dApp은 중요한 개인 정보는 <strong>‘블록체인 상에 안전하게 보관’</strong>되기 때문에 <u>무단으로 유출될 위험이 적다</u></p>
+  </li>
+</ul>
+
+<h3 id="가동성">가동성</h3>
+
+<ul>
+  <li>
+    <p>dApp 내에는 <span style="background-color:#FFC701; color:#000;"><strong>동일한 정보</strong>를 보유한 블록이 많기 때문에</span> 일부 블록이 다운되어도 앱 이용에 문제가 없다</p>
+  </li>
+  <li>
+    <p>기존 앱은 모든 정보를 처리하는 <u>중앙 서버가 다운되면 정보를 조회할 수 없지만,</u><br />
+👉 dApp은 네트워크 사고가 발생해도 즉시 <u>같은 정보를 갖고 있는</u> <strong>‘다른 블록에 접근’</strong>해 정보를 조회할 수 있다</p>
+  </li>
+</ul>
+
+<h3 id="토큰-이코노미">토큰 이코노미</h3>
+
+<ul>
+  <li>
+    <p>dApp의 생태계는 광고를 사용하는 일반 앱과는 달리 <span style="background-color:#FFC701; color:#000;"><strong>‘자체적인 토큰을 발행’</strong></span>함으로써 경제 생태계를 만들어 갈 수 있다</p>
+
+    <p><a href="https://wavescats.github.io/blockchain/2022/05/09/bc12.html">https://wavescats.github.io/blockchain/2022/05/09/bc12.html</a><br />
+👆 (토큰 이코노미 정리 참고)</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="dapp의-문제점">dApp의 문제점</h2>
+
+<h4 id="느린-속도와-이용에-따른-비용-문제">느린 속도와 이용에 따른 비용 문제</h4>
+
+<ul>
+  <li>
+    <p>dApp 초기에는 <strong>‘대부분 이더리움 기반’</strong>이었으나,<br />
+현재는 해당 문제점을 보완한 이오스와 트론 등 새로운 블록체인들이 성장하고 있다</p>
+  </li>
+  <li>
+    <p>이더리움의 초당 거래 수(TPS)는 20건임에 반해, 이오스는 3000건, 트론은 2000건으로 거래 속도가 <strong>점점 개선</strong>되고있다</p>
+  </li>
+</ul>
+
+<h4 id="사용자-편의성-문제">사용자 편의성 문제</h4>
+
+<ul>
+  <li>
+    <p>전통적인 앱에 비해, dApp을 <strong>‘이용하는 사용자 수가 적다’</strong><br />
+👉 이는 여전히 블록체인을 이해하고 암호화폐를 구매하는 <span style="background-color:#F7969A; color:#000;">절차가 일반 사람들에게는 쉽지 않기 때문이다</span></p>
+  </li>
+  <li>
+    <p>그래서 이 절차를 쉽게 <u>학습시키는 것만으로도 유저 유입이 증가할 것이다</u></p>
+  </li>
+  <li>
+    <p>실제로 2019년 초 진행한 설문조사에서 dApp 개발자들은<br />
+적은 사용자 수(67%)와 / 불편한 사용자 경험(44%)을 가장 큰 어려움으로 나왔다</p>
+  </li>
+</ul>
+
+<h4 id="가상통화암호화폐의-변덕스러운-시세">가상통화(암호화폐)의 변덕스러운 시세</h4>
+
+<ul>
+  <li>
+    <p><strong>‘미국 달러를 기준으로 한 테더(Tether)’</strong>를 포함하여</p>
+  </li>
+  <li>
+    <p><span style="background-color:#F7969A; color:#000;">가격 변동성을 최소화하는 <strong>‘스테이블 코인(Stable Coin)’</strong></span>들이 많이 등장했으며 이들의 역할이 점점 중요해지고 있다</p>
+  </li>
+</ul>
+
+<h4 id="지역에-따라-다른-규제적인-문제">지역에 따라 다른 규제적인 문제</h4>
+
+<ul>
+  <li>
+    <p><strong>가격 변동성, 투기성</strong> 등의 ‘부정적인 시각’을 지니고 있는 지역들은 블록체인과 dApp에 대한 규제가 강하다</p>
+  </li>
+  <li>
+    <p>단순히 돈을 벌기 위한 dApp 보다는 <u>생활의 편의성과 편리성에 기여</u>할 수 있는 dApp 출시가 필요하다</p>
+  </li>
+</ul>
+
+<hr />
+:ET

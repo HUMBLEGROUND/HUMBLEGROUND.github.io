@@ -1,0 +1,94 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/d2761059-6813-40ab-8c26-a0ff13be9b17/image.png" alt="" /></p>
+
+<h3 id="보일러플레이트-boilerplate-code">보일러플레이트 (Boilerplate code)</h3>
+
+<blockquote>
+  <p>⭐ 보일러플레이트는 노가다를 줄여준다</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>반복적으로 사용되는 부분을 재사용한다</p>
+  </li>
+  <li>
+    <p>최소한의 수정으로 다시 사용한다</p>
+  </li>
+  <li>
+    <p>개발자를 단순 작업을 해방해준다</p>
+
+    <p><img src="https://velog.velcdn.com/images/-__-/post/67d9e116-7c25-4d40-8257-b31f4e039ba5/image.png" alt="" /></p>
+  </li>
+</ul>
+
+<h3 id="cra-create-react-app">CRA (Create-React-App)</h3>
+
+<blockquote>
+  <ul>
+    <li>
+      <p>보일러플레이트의 가장 대표적인 예가 React를 설정해주는 <strong>Create-React-App (CRA)</strong> 이다<br /></p>
+    </li>
+    <li>
+      <p>이 도구가 없었다면 <strong>‘웹팩’</strong>을 시작으로 온갖 설정을 스스로 만들어야 할것이다<br /></p>
+    </li>
+    <li>
+      <p>프로젝트를 초기부터 셋팅하기는 어렵고 복잡한 부분이 많은데<br />
+그 과정들을 CRA가 해결해 주기 때문이다<br /></p>
+    </li>
+    <li>
+      <p>그 덕분에 리액트를 처음 시작하는 사용자들은 <strong>쉽게 리액트 프로젝트를 ‘빌드’</strong>할 수 있다</p>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h3 id="빌드">빌드</h3>
+
+<ul>
+  <li>
+    <p>빌드는, 소스코드를 실행 가능한 결과물로 변환하는 작업이다</p>
+  </li>
+  <li>
+    <p>수많은 모듈을 하나로 묶어주는 작업을 <strong>번들링(bundling)</strong>이라고 한다</p>
+  </li>
+  <li>
+    <p><strong>‘JSX’</strong> 파일과 같은 브라우저에서 자체적으로 해석이 불가능한<br />
+다양한 보조 기술들을 브라우저가 해석할 수 있도록 만들어주는 작업</p>
+  </li>
+  <li>
+    <p>이러한 과정을 통칭해 <strong>‘소프트웨어 빌드’</strong>라고 한다</p>
+  </li>
+</ul>
+
+<h3 id="웹팩-webpack">웹팩 (webpack)</h3>
+
+<blockquote>
+  <p>⭐ 수많은 모듈을 하나의 정적 파일로 만들어내는 번들링 과정<br /></p>
+
+  <p><img src="https://velog.velcdn.com/images/-__-/post/89933b74-610a-437f-923e-0f5b067ed033/image.png" alt="" /></p>
+</blockquote>
+
+<hr />
+
+<h3 id="빌드-툴">빌드 툴</h3>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/543a27b0-c2b3-425f-b365-d2f38e1845cb/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p><strong>webpack</strong> 👉 모듈 번들러</p>
+  </li>
+  <li>
+    <p><strong>babel</strong> 👉 TypeScript, JSX 등과 같이
+브라우저가 지원하지 않는 언어를 JavaScript로 바꿔주는 컴파일러</p>
+  </li>
+  <li>
+    <p><strong>ESLint</strong> 👉 자바스크립트 Code convention 및 문법 검사기</p>
+  </li>
+  <li>
+    <p><strong>Sass / less</strong> 👉 CSS Preprocessor</p>
+  </li>
+</ul>
+
+<hr />
+:ET

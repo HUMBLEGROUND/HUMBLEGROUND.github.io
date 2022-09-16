@@ -1,0 +1,93 @@
+I"<<p><img src="https://velog.velcdn.com/images/-__-/post/f0d96f30-228c-4428-b999-47566f317a5d/image.png" alt="" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">스마트 컨트랙트 코딩 👉 소스 코드 컴파일 👉 ABI 로부터 스마트 컨트랙트 객체 생성 👉 스마트 컨트랙트 배포 👉 채굴</code></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8bd241cf-0848-4ca0-b111-5a5e363833bf/image.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p><strong>‘솔리디티’</strong> 언어로 스마트 컨트랙트 코딩</p>
+  </li>
+  <li>
+    <p>EVM은 솔리디티를 못읽기때문에 <strong>‘solc’</strong>를 이용하여 소스코드 컴파일</p>
+  </li>
+  <li>
+    <p>EVM이 읽게 <strong>‘바이트코드’</strong> 형태로 만듬</p>
+  </li>
+  <li>
+    <p>구체적인 정보는 <strong>‘ABI’</strong> 에서 취득해야한다</p>
+  </li>
+  <li>
+    <p><strong>‘ABI’</strong>와 <strong>‘바이트코드’</strong>를 사용해 컨트랙트 객체를 만들어준 뒤</p>
+  </li>
+  <li>
+    <p>사용될 지갑주소가 포함된 트랙잭션을 생성해 함께 <strong>배포(deploy)</strong> 한다</p>
+  </li>
+  <li>
+    <p>배포(deploy)의 결과로는 <strong>트랙잭션 해시</strong>를 반환받는다</p>
+  </li>
+  <li>
+    <p>블록의 <strong>채굴</strong>이 이루어지면 최종적으로 이더리움 블록체인에 <strong>스마트 컨트랙트</strong>가 올라간다</p>
+  </li>
+</ol>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/eeb04591-0841-42bf-93d5-f497901e5656/image.png" alt="" /></p>
+
+<blockquote>
+  <p>⭐ 솔리디티 파일이 <strong>‘컴파일’</strong> 되면 컨트랙트 객체가 생성이 되는데<br />
+실제 블록체인에 배포될 코드인 <strong>‘바이트코드’</strong>와 <br />
+<strong>‘ABI (json 형태로 쉽게 보여지는 코드)’</strong> 가 생성된다<br /></p>
+
+  <p><strong>ABI</strong>는 👉 json 형태로 input, name, type 이런것들이 담겨있다<br />
+<strong>bytecode</strong>는 👉 0과 1 등 으로, 컴퓨터가 읽을 수 있는 언어<br />
+ex) 0101010100</p>
+</blockquote>
+
+<hr />
+
+<h3 id="solc-솔리디티-파일을-컴파일하는-javascript-라이브러리">solc (솔리디티 파일을 컴파일하는 Javascript 라이브러리)</h3>
+
+<blockquote>
+  <ul>
+    <li>
+      <p><strong>‘솔리디티’</strong> 언어를 이용하여 스마트 계약을 작성(코딩)하게 되면<br />
+확장자가 <strong>‘.sol’</strong> 인 파일을 생성하게 된다<br /></p>
+    </li>
+    <li>
+      <p><span style="background-color:#BFA8EE; color:#000;"><strong>‘.sol’</strong> 파일은 사람이 읽을 수 있는 파일이지 / 컴퓨터가 이해하는 파일이 아니기 때문에 / 바로 EVM (이더리움 가상 머신)에 올릴 수 없다</span><br /></p>
+    </li>
+    <li>
+      <p>그래서 <strong>‘솔리디티’</strong> 를 👉 <strong>‘바이트 코드’</strong>로 변환해서 EVM에 올려야 하는데<br />
+이처럼 <span style="background-color:#BFA8EE; color:#000;"><strong>‘.sol’</strong> 파일을 컴파일 해야 할 때, <strong>‘solc’</strong> 라이브러리를 사용해야 한다</span></p>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h3 id="컴파일-compile">컴파일 (Compile)</h3>
+
+<blockquote>
+  <ul>
+    <li>
+      <p><strong>‘특정 프로그래밍 언어’</strong>로 쓰여 있는 문서를 👉 <strong>‘다른 프로그래밍 언어’</strong>로 옮기는 언어 번역하는 과정<br /></p>
+    </li>
+    <li>
+      <p><strong>‘고급 프로그래밍 언어’</strong>를 실행 프로그램으로 만들기 위해 👉 <strong>‘저급 프로그래밍 언어’</strong>로 바꾸는 과정<br /></p>
+    </li>
+    <li>
+      <p><strong>‘원시 코드’</strong>에서 👉 <strong>‘목적 코드’</strong>로 옮기는 과정</p>
+    </li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
+
+<ul>
+  <li><a href="https://blog.naver.com/emmaeunji/221794755460">https://blog.naver.com/emmaeunji/221794755460</a></li>
+</ul>
+
+<hr />
+:ET
