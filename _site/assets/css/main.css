@@ -321,7 +321,7 @@ body { font-family: "MyLotteLight"; }
 @media screen and (max-width: 800px) { .framework .sidebar { display: none; } }
 
 /** Segments page */
-.page-segments .page-segments-list { margin-left: 0; list-style: none; }
+.page-segments .page-segments-list { margin-left: 0; list-style: none; width: 640px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .page-segments .segment-name { color: #00a2ff; font-weight: 600; margin-bottom: 8px; position: relative; font-size: 25.6px; }
 

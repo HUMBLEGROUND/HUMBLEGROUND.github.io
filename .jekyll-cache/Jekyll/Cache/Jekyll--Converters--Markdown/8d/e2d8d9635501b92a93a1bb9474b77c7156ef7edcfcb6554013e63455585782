@@ -1,4 +1,4 @@
-I"8<p><img src="https://velog.velcdn.com/images/-__-/post/8c408976-3fa9-4d5f-8249-6825c3a47403/image.png" alt="" /></p>
+I"<p><img src="https://velog.velcdn.com/images/-__-/post/8c408976-3fa9-4d5f-8249-6825c3a47403/image.png" alt="" /></p>
 
 <h3 id="css를-사용하지-않고-중간부분-말줄임-표시하기">CSS를 사용하지 않고 중간부분 말줄임 표시하기</h3>
 
@@ -52,6 +52,7 @@
   <span class="nl">width</span><span class="p">:</span> <span class="mi">200</span><span class="nx">px</span><span class="p">;</span> <span class="c1">// 언제부터 말줄임 표시를 할지 길이를 설정</span>
   <span class="nl">overflow</span><span class="p">:</span> <span class="nx">hidden</span><span class="p">;</span> <span class="c1">// 200px 이 넘어가면 숨겨주고</span>
   <span class="nx">text</span><span class="o">-</span><span class="nx">overflow</span><span class="p">:</span> <span class="nx">ellipsis</span><span class="p">;</span> <span class="c1">// 숨겨진 후에 ... 표시</span>
+  <span class="nx">white</span><span class="o">-</span><span class="nx">space</span><span class="p">:</span> <span class="nx">nowrap</span><span class="p">;</span> <span class="c1">// 자동줄바꿈 없애기</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
