@@ -1,0 +1,83 @@
+I"<p><img src="https://velog.velcdn.com/images/-__-/post/fa25a960-497c-4380-a829-cac5c899615d/image.png" alt="" /></p>
+
+<h2 id="찾아보게된-이유-">찾아보게된 이유 🧐</h2>
+
+<p><strong>‘chakra’</strong> 를 사용하기 위해서</p>
+
+<p>Create React App 설치</p>
+
+<p><code class="language-plaintext highlighter-rouge">npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6</code></p>
+
+<p>명령어 사용 중에 <code class="language-plaintext highlighter-rouge">code ERESOLVE</code> 에러 발생</p>
+
+<p>구글링을 해서 내가 해결한 방법을 기록으로 남기려고 한다.</p>
+
+<hr />
+
+<h2 id="해결-방법-">해결 방법 😎</h2>
+
+<p>리액트(React)의 버전 충돌이 나서 에러가 발생한것이었다</p>
+
+<p>에러 내용중에 해결 하려면<br />
+<code class="language-plaintext highlighter-rouge">--force</code> 나 <code class="language-plaintext highlighter-rouge">--legacy-peer-deps</code> 사용하려고 되어있는데</p>
+
+<p>👉 <code class="language-plaintext highlighter-rouge">--legacy-peer-deps</code>를 사용해본다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/d0c70665-72af-4876-9714-3288a05fb017/image.png" alt="" /></p>
+
+<blockquote>
+  <p>기존 명령어 뒤에 <code class="language-plaintext highlighter-rouge">--save --legacy-peer-deps</code> 를 사용해서<br />
+<code class="language-plaintext highlighter-rouge">npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6</code></p>
+</blockquote>
+
+<blockquote>
+  <p>실행 시켜보면<br />
+<code class="language-plaintext highlighter-rouge">npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 --save --legacy-peer-deps</code></p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3573f998-4848-4cfb-b9d9-ea395a92042d/image.png" alt="" /></p>
+
+<blockquote>
+  <p>정말 에러가 해결되고 install 이 잘 되는걸 볼 수 있다 👆</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3c6fb6b5-edb3-49a1-9533-09216642b83b/image.png" alt="" /></p>
+
+<blockquote>
+  <p>package.json을 확인해보면 <strong>‘chakra-ui’</strong> 가 install 된걸 확인할 수 있다 👆</p>
+</blockquote>
+
+<hr />
+
+<h3 id="발생했던-에러-내용">발생했던 에러 내용</h3>
+
+<blockquote>
+  <p>npm ERR! code ERESOLVE<br />
+npm ERR! ERESOLVE unable o resolve dependency tree<br />
+npm ERR!<br />
+npm ERR! While resolving: web3-boilerplate@0.1.0<br />
+npm ERR! Found: react@17.0.2<br />
+npm ERR! node_modules/react<br />
+npm ERR! react@”^17.0.2” from the root project<br />
+npm ERR! peer react@”&gt;=16.8.0” from @emotion/react@11.9.0<br />
+npm ERR! node_modules/@emotion/react<br />
+npm ERR! @emotion/react@”^11” from the root project<br />
+npm ERR! peer @emotion/react@”^11.0.0” from @chakra-ui/react@2.1.2<br />
+npm ERR! node_modules/@chakra-ui/react<br />
+npm ERR! @chakra-ui/react@”^2.1.2” from the root project<br />
+npm ERR! 1 more (@emotion/styled)<br />
+npm ERR! 3 more (@emotion/styled, framer-motion, react-dom)<br />
+npm ERR!<br />
+npm ERR! Could not resolve dependency:<br />
+npm ERR! peer react@”&gt;=18” from @chakra-ui/react@2.1.2<br />
+npm ERR! node_modules/@chakra-ui/react<br />
+npm ERR! @chakra-ui/react@”^2.1.2” from the root project<br />
+npm ERR!<br />
+npm ERR! Fix the upstream dependency conflict, or retry<br />
+npm ERR! this command with –force, or –legacy-peer-deps<br />
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.<br />
+npm ERR!</p>
+</blockquote>
+
+<hr />
+:ET

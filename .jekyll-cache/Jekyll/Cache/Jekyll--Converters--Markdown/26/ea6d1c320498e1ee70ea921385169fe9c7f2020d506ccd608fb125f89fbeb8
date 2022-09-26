@@ -1,0 +1,64 @@
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/124a39e1-0117-4753-b38a-b5b4102fd25f/image.png" alt="" /></p>
+
+<h2 id="github-올리기-순서">GITHUB 올리기 순서</h2>
+
+<p><code class="language-plaintext highlighter-rouge">git clone https://github.com/아이디/Repositories명.git</code></p>
+
+<ul>
+  <li>깃허브에 있는 Repositories 파일을 내 컴퓨터로 다운받아오는 작업</li>
+</ul>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">git init</code></p>
+
+<ul>
+  <li>git을 쓸 준비. 저장소를 초기화 해주는 작업</li>
+  <li>맨처음에만 해주고 이후로는 반복 안해줘도 된다</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git add .</code></p>
+
+<ul>
+  <li>add 쩜 은 폴더에 있는 파일을 전부다 올리겠다는 뜻</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git status</code></p>
+
+<ul>
+  <li>add. 한 파일들이 저장소에 잘 들어갔는지 확인
+(굳이 안해줘도 되는 작업)</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git commit -m "메세지"</code></p>
+
+<ul>
+  <li>깃허브로 올리기 위한 작업</li>
+  <li>히스토리를 만드는 작업</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git remote add origin git@커밋할 레파지토리주소</code><br />
+<code class="language-plaintext highlighter-rouge">git remote add origin git@https://github.com/wavescats/study.git</code></p>
+
+<ul>
+  <li>깃허브 저장소와 연결</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git push origin master</code></p>
+
+<ul>
+  <li>깃허브 저장소로 보내기</li>
+</ul>
+
+<hr />
+:ET

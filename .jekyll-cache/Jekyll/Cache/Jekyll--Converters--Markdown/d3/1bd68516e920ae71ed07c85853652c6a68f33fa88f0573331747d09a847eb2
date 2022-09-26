@@ -1,0 +1,102 @@
+I"�
+<p><img src="https://velog.velcdn.com/images/-__-/post/5659faaf-7958-4dd5-87de-41b77c28a76e/image.png" alt="" /></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3f75b25f-b97c-4a64-ae45-f9f41968a6f4/image.png" alt="" /></p>
+
+<hr />
+
+<p><code class="language-plaintext highlighter-rouge">git branch</code><br /></p>
+
+<ul>
+  <li>현재 branch 조회</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/9c9a902b-4782-4d8f-a840-b8a77fb63934/image.png" alt="" /></p>
+
+<ul>
+  <li>*표시는 현재 선택된 branch를 뜻함</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git branch 브랜치명</code><br /></p>
+
+<ul>
+  <li>branch 를 새로 생성</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git branch</code><br /></p>
+
+<ul>
+  <li>현재 branch 다시 조회</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/9862a5fd-d60f-41ca-8047-858c225d3e89/image.png" alt="" /></p>
+
+<ul>
+  <li>branch가 새로 생성된걸 확인 할수 있다</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git checkout 브랜치명</code></p>
+
+<ul>
+  <li>branch를 바꿔주는 명령어</li>
+</ul>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/42be1371-abbd-4cbe-ab87-022e7539dcf9/image.png" alt="" /></p>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git add .</code><br />
+<code class="language-plaintext highlighter-rouge">git commit -m '커밋할메세지'</code></p>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git status</code></p>
+
+<ul>
+  <li>커밋된 파일을 확인</li>
+</ul>
+
+<p>👇</p>
+
+<p><code class="language-plaintext highlighter-rouge">git push origin master</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">push</code> 하여 깃허브 홈페이지에 올린다</li>
+</ul>
+
+<p>👇</p>
+
+<p>깃허브 홈페이지에서 해당 레파지토리로 가보면</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/82c3a8cd-721f-4854-b1d8-11080f35b7af/image.png" alt="" /></p>
+
+<blockquote>
+  <p>노란색 띠가 뜨고 초록색 버튼이 나온다 👆</p>
+</blockquote>
+
+<hr />
+
+<p>👇</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ccdaf528-20bc-434c-a85b-967c93cabf8d/image.png" alt="" /></p>
+
+<blockquote>
+  <p>간단하게 PR 내용을 입력한 후 Create pull request 버튼을 클릭 👆</p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>새로 생성한 <code class="language-plaintext highlighter-rouge">branch</code> 를 <br />
+원래 브런치(main) 로 <code class="language-plaintext highlighter-rouge">merge</code> 시켜도 되고<br />
+<code class="language-plaintext highlighter-rouge">branch</code> 를 따로 관리해도 된다</li>
+</ul>
+
+<hr />
+:ET
