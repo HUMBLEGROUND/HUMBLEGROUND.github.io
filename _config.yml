@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: THISISWAVES
+title: THISI3WAVES
 email: your-email@domain.com
 author: wavescats
 
@@ -42,7 +42,7 @@ author: wavescats
 #
 copyright: "Unpublished Work (cleft) 2017-{currentYear} {author}"
 
-description: "THISISWAVES (A) wavescats 블록체인 개발 블로그 입니다"
+description: "THISI3WAVES (A) wavescats 블록체인 개발 블로그 입니다"
 favicon: "/assets/images/favicon/favicon.ico"
 # baseurl:
 

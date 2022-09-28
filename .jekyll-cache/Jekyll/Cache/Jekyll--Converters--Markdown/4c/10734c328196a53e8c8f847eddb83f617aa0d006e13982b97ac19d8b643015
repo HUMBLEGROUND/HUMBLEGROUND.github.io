@@ -1,6 +1,8 @@
-I"�&<p><img src="https://velog.velcdn.com/images/-__-/post/b6d953b3-0af7-4929-bc06-208b962e9137/image.png" alt="" /></p>
+I")#<p><img src="https://velog.velcdn.com/images/-__-/post/b6d953b3-0af7-4929-bc06-208b962e9137/image.png" alt="" /></p>
 
 <h2 id="kip-17-기반-nft-만들기-클레이튼-개발-환경에서-nft-개발">KIP-17 기반 NFT 만들기 (클레이튼 개발 환경에서 NFT 개발)</h2>
+
+<p><strong>Klaytn IDE 사용, Baobab Testnet 배포</strong></p>
 
 <h3 id="-bcs-1th-til-part-1-pfp-민팅-실습-회고">🦁 [BCS 1th TIL] Part 1-PFP 민팅 실습 회고</h3>
 
@@ -30,7 +32,7 @@
 
 <hr />
 
-<h3 id="baobab-테스트넷에-kip-17-토큰-만들고-배포하기">Baobab 테스트넷에 KIP-17 토큰 만들고 배포하기</h3>
+<h3 id="baobab-테스트넷에-kip-17-nft-만들고-배포하기">Baobab 테스트넷에 KIP-17 NFT 만들고 배포하기</h3>
 
 <p>-1. 카이카스에 접속하고, <strong>Baobab 테스트넷</strong> 을 선택한다</p>
 
@@ -128,7 +130,8 @@ tokenURI 에는 <strong>NFT화 시킬 이미지</strong>가 저장되어있는 <
 
 <p><img src="https://velog.velcdn.com/images/-__-/post/0fe0dee2-e93b-4ac1-bd4b-7c618e720408/image.png" alt="" /></p>
 
-<p>7-5. 그리고 작성한 <strong>json 파일</strong> 을 업로드 👆</p>
+<p>7-5. 그리고 작성한 <strong>json 파일</strong> 을 업로드 👆<br />
+이 <strong>json 파일</strong> 주소 CID 를 복사하여 tokenURI 에 입력한다</p>
 
 <hr />
 
@@ -186,39 +189,6 @@ NFT 발행시 수수료용 KLAY 필요</p>
     <li>소량의 KLAY (수수료 용)</li>
   </ol>
 </blockquote>
-
-<hr />
-
-<h3 id="개발-회고-">개발 회고 💡</h3>
-
-<p>KIP-17 기반으로 NFT 만들기</p>
-
-<p>클레이튼 기반 NFT는<br />
-그라운드 X 에서 만든 코딩 없이 NFT 발행하는 사이트도 있었다<br />
-개발이 아닌 창작물들은 이렇게 발행해도 괜찮겠는걸 😎</p>
-
-<p>공개된 코드들도 내가 직접 NFT를 만들어보니까<br />
-생각보다 재미있고 쉬웠다<br />
-여기에 경쟁력을 갖출만한 기술적인 코드가 추가되어야 되겠지!</p>
-
-<p>코인과 NFT를 발행하는 것은 생각보다 쉬워서<br />
-기술적인 아이디어와 디자인적인 부분,<br />
-그 가치를 뒷받침하는 커뮤니티의 형성,<br />
-마케팅이 더 중요할거라는 생각이 들었다</p>
-
-<p>틈틈이 배워둬야지 ✍</p>
-
-<hr />
-
-<h3 id="참고-했던-사이트-">참고 했던 사이트 🖥</h3>
-
-<ul>
-  <li>
-    <p><a href="https://www.youtube.com/watch?v=X_61rLj9hfw">https://www.youtube.com/watch?v=X_61rLj9hfw</a></p>
-
-    <p>(KIP-17 기반 NFT A-Z 만들기)</p>
-  </li>
-</ul>
 
 <hr />
 :ET
