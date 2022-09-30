@@ -1,0 +1,86 @@
+I"H<p><img src="https://velog.velcdn.com/images/-__-/post/95d3ca32-8239-475d-88b9-01797d77bc28/image.png" alt="" /></p>
+
+<h3 id="input-태그-onchange-이벤트-target-value-반복되는-코드-리팩토링하기-refactoring">input 태그 onChange 이벤트 target value 반복되는 코드 리팩토링하기 (Refactoring)</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Input</code> 👉 onChange 이벤트 👉 target.value<br />
+<code class="language-plaintext highlighter-rouge">Input</code> 창에 입력되는 값을 받아오는 경우</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a9d2b797-1f83-4917-883b-ff3bfc2fe15a/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 위와 같이 <code class="language-plaintext highlighter-rouge">Input</code> 창이 필요할때마다<br />
+비슷한 형태로 <span style="background-color:#FE5B05; color:#fff;">반복되는 코드</span>를 작성해주어야 한다</p>
+</blockquote>
+
+<p>반복되는 코드가 보이면 효율적인 형태로 리팩토링하고 싶어지는데<br />
+<strong>‘두가지 방법’</strong> 을 기록하려한다 😎</p>
+
+<hr />
+
+<h3 id="1-커스텀-hook-만들어서-관리하기">1. 커스텀 Hook 만들어서 관리하기</h3>
+
+<p><strong>useInput.js</strong> 이라는 파일을 하나 생성해서<br />
+<code class="language-plaintext highlighter-rouge">useState</code> 와 <code class="language-plaintext highlighter-rouge">useCallback</code> 을 이용한 컴포넌트를 만들어준다</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useCallback</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">useInput</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">inputValue</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">targetValue</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setValue</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="p">[</span><span class="nx">value</span><span class="p">]</span>
+  <span class="p">);</span>
+  <span class="k">return</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">targetValue</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">useInput</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c04f66a6-2ba3-45d4-90ba-1f2bf429e0df/image.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p><strong>useInput</strong> 컴포넌트를 👉 Hook 처럼 사용하면서</p>
+  </li>
+  <li>
+    <p>target.value 값을 <code class="language-plaintext highlighter-rouge">useState</code> 에 담아주면</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>👆 onChange 이벤트를 뿌려주는 효과를 그대로 구현할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="2-input-태그에-name-지정해서-연결">2. input 태그에 name 지정해서 연결</h3>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">useState</code> Hook 으로 넘겨줄 name 값을 정하고</p>
+  </li>
+  <li>
+    <p>target.value 를 받아올 onChange 이벤트 함수를 <strong>하나만 생성</strong> 해준다</p>
+  </li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">onChangeForm</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setLoginForm</span><span class="p">({</span>
+    <span class="p">...</span><span class="nx">loginForm</span><span class="p">,</span>
+    <span class="p">[</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">name</span><span class="p">]:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">loginForm</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/202e5c68-959b-4372-9855-511a9f95b0e0/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 하나의 함수로 onChange 이벤트 효과를 구현할 수 있다</p>
+</blockquote>
+
+<hr />
+:ET
