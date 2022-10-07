@@ -863,15 +863,125 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
-        <a class="post-link" href="/project/2022/10/03/pj5.html">
+        <a class="post-link" href="/react/2022/10/07/react16.html">
+          [React] MetaMask 연결하고 새로고침 &amp; localStorage 저장하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 07, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/react/2022/10/07/react16.html">
+        <p>
+        
+
+프로젝트 보완해야 할 사항
+
+새로고침하면 지갑연결이 풀리는 현상
+
+메타마스크 지갑 연결 후 웹페이지 새로고침을 누르면
+
+MetaMask 지갑이 연결은 되었는데
+새로고침을 하면 연결이 풀리는 것과 같이 보여지고 있습니다
+(실제로 연결은 되어있는데 버튼은 풀려 보이는 현상)
+
+
+
+해결 방법 😎
+
+window.ethereum.request / method
+
+
+  
+    "eth_requestAccounts" 👉 클라이언트와 메타마스크 계정을 연결
+  
+  
+    "eth_accounts" 👉 클라이언트가 소유한 주소 목록을 반환
+  
+
+
+localStorage (로컬스토리지) 저장소
+
+
+  
+    localSt... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/project/2022/10/02/pj5.html">
           [Project] Crypto Donate! (이더리움으로 축하금 받기)
         </a>
       </h2>
       <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Oct 03, 2022</span>
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 02, 2022</span>
         <span class="post-reading-time left-vsplit"></span>
       </div>
-      <a class="post-excerpt" href="/project/2022/10/03/pj5.html">
+      <a class="post-excerpt" href="/project/2022/10/02/pj5.html">
         <p>
         [Project] Toy 프로젝트 회고
 
@@ -894,7 +1004,7 @@ function googleTranslateElementInit() {
 
 🚦 프로젝트 구성
 
-프로젝트 기간 (10/1 ~ 10/3)
+프로젝트 기간 (10/1 ~ 10/2)
 
 
   
@@ -1788,114 +1898,6 @@ SHA-256의 경우에는 ... <span class="read_more">Read More</span>
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#blockchain">#blockchain</a></div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/blockchain/2022/09/17/bc56.html">
-          [Blockchain] 이더리움 2.0 골리 (Goerli) 테스트넷 이더리움 받기
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Sep 17, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/blockchain/2022/09/17/bc56.html">
-        <p>
-        
-
-Ethereum Goerli ETH Faucet
-
-
-  
-    Goerli 고엘리 테스트넷에서 사용할수있는 ‘테스트용’으로 나눠주는 이더리움
-  
-  
-    24시간마다 0.25 Goerli ETH 받을 수 있다 (Faucet)
-  
-  
-    'Alchemy' 홈페이지에 구글계정으로 가입해야 받을 수 있다
-  
-
-
-https://goerlifaucet.com/
-
-👆 위 사이트에서 Faucet 받기를 누르면 된다
-
-
-
-
-
-
-  만약 24시간 내에 테스트 수수료로 ‘0.25 ETH’ 을 다썼다면
-‘다른 Faucet 사이트’ 에서도 추가로 받을 수 있다
-
-
-https://goerli-faucet.pk910.d... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#blockchain">#blockchain</a></div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -1908,7 +1910,7 @@ https://goerli-faucet.pk910.d... <span class="read_more">Read More</span>
     
     </span>
 
-    <span class="indicator"> 1/14</span>
+    <span class="indicator"> 1/15</span>
 
     <span class="next">
     
@@ -1956,7 +1958,7 @@ https://goerli-faucet.pk910.d... <span class="read_more">Read More</span>
   <ul>
     <li>
       <a href="/index.html">
-        All<span>140</span>
+        All<span>141</span>
       </a>
     </li>
 
@@ -1969,7 +1971,7 @@ https://goerli-faucet.pk910.d... <span class="read_more">Read More</span>
     
       <li>
         <a href="/categories.html#h-React">
-          React <span>14</span>
+          React <span>15</span>
         </a>
       </li>
     

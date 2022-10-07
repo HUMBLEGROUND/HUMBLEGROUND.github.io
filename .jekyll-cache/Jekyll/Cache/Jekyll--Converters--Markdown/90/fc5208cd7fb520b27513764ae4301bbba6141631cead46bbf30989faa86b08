@@ -1,4 +1,4 @@
-I"�<h2 id="project-toy-프로젝트-회고">[Project] Toy 프로젝트 회고</h2>
+I"�<h2 id="project-toy-프로젝트-회고">[Project] Toy 프로젝트 회고</h2>
 
 <h2 id="-crypto-donate">💰 Crypto Donate!</h2>
 
@@ -19,7 +19,7 @@
 
 <h3 id="-프로젝트-구성">🚦 프로젝트 구성</h3>
 
-<p><strong>프로젝트 기간 (10/1 ~ 10/3)</strong></p>
+<p><strong>프로젝트 기간 (10/1 ~ 10/2)</strong></p>
 
 <ul>
   <li>
@@ -77,14 +77,15 @@
 
 <p>Donate 받은 금액이 <strong>오른쪽 상단에 표시</strong>됩니다</p>
 
-<p><code class="language-plaintext highlighter-rouge">withdraw</code> 버튼을 누르면 그동안 모인 ETH가 컨트랙트 배포자에게 금액이 <strong>전송</strong> 됩니다</p>
+<p><code class="language-plaintext highlighter-rouge">withdraw</code> 버튼을 누르면 그동안 모인 ETH가 컨트랙트 배포자에게 <strong>전송</strong> 됩니다</p>
 
 <p><img src="https://velog.velcdn.com/images/-__-/post/eaec2d06-ac61-4171-844a-7c0550bec33d/image.gif" alt="" /></p>
 
 <hr />
 
 <blockquote>
-  <p>‘Crypto Donate’ Github 코드 <br /> &gt; <a href="https://github.com/wavescats/Wardrobe-dApp">https://github.com/wavescats/Wardrobe-dApp</a></p>
+  <p>‘Crypto Donate’ Github 코드 <br />
+<a href="https://github.com/wavescats/Crypto_Donate-dApp">https://github.com/wavescats/Crypto_Donate-dApp</a></p>
 </blockquote>
 
 <hr />
