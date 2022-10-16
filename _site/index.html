@@ -863,6 +863,250 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/aws/2022/10/14/aws2.html">
+          [AWS] AWS S3 버킷에 NFT metadata 저장공간 세팅하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 14, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/aws/2022/10/14/aws2.html">
+        <p>
+        [AWS] NFT metadata 저장공간 세팅하기 (Setting)
+
+
+  IPFS 저장공간이 아닌 AWS S3 버킷 를 이용하여 NFT를 만들어 보려합니다
+
+
+
+
+1. AWS S3 에서 버킷을 만들어준다
+
+
+
+
+
+2. 버킷 구성 설정후 생성
+
+
+
+
+  
+    버킷 이름
+    AWS 리전
+    퍼블릭 엑세스 차단 체크 해제
+    현재 설정 확인 체크 ✅
+  
+
+
+
+
+3. 생성된 버킷에서 권한 탭에 있는 버킷정책 편집 을 클릭
+
+
+
+
+  👆 정책 생성기로 버킷 정책을 생성해준다
+
+
+
+
+4. 정책 생성기로 버킷 정책생성하기
+
+
+
+
+  
+    Select Type of Policy 👉 S3 Bucket Pol... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#AWS">#AWS</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/aws/2022/10/13/aws1.html">
+          [AWS] AWS EC2 서버를 로컬에서 연결하기 (PuTTY / VSCode)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 13, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/aws/2022/10/13/aws1.html">
+        <p>
+        
+  ❗ AWS EC2 인스턴스가 생성되어 있다는 가정하에 진행합니다
+
+
+AWS EC2 서버 연결하는 3가지 방법
+
+1. AWS EC2 홈페이지에서 직접 연결
+
+1-1. 실행중인 인스턴스 세부정보 페이지로 이동
+
+
+
+
+  👆 우측 상단에 있는 연결 버튼 클릭
+
+
+
+
+1-2. EC2 인스턴스 연결 탭에서 주황색 연결 버튼 클릭
+
+
+
+
+
+1-3. EC2 서버 연결이 완료되면 터미널이 열린다
+
+
+
+
+  👆 리눅스(Linux) 터미널 명령어를 입력할 수 있다
+
+
+
+
+2. PuTTY 프로그램을 통한 서버 연결
+
+
+  EC2 인스턴스 키페어 를 발급 받았다면 로컬 환경에서도 접속이 가능하다
+
+
+
+  PuTTY 프로그램으로 연... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#AWS">#AWS</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/react/2022/10/07/react16.html">
           [React] MetaMask 연결하고 새로고침 &amp; localStorage 저장하기
         </a>
@@ -1669,235 +1913,6 @@ SHA-256의 경우에는 ... <span class="read_more">Read More</span>
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#blockchain">#blockchain</a></div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/blockchain/2022/09/18/bc58.html">
-          [Blockchain] 채굴 (Mining) / 채굴 난이도 / 거래 수수료 (Fee)
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Sep 18, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/blockchain/2022/09/18/bc58.html">
-        <p>
-        
-
-🦁 [BCS 1st TIL] 3일차 회고
-
-
-
-채굴 (Mining)
-
-
-  
-    마이닝(채굴)은 ‘논스’ 값을 돌려서 하는것이다
-  
-  
-    블록구조 중에 블록 안에는 여러가지가 들어가있다
-  
-  
-    이 여러가지 정보들을 기반으로 블록해시가 만들어지는데
-👉 이 블록해시는 ‘16진수 숫자’ 이다
-  
-  
-    ‘논스’ 값을 바꾸면 해시값이 바뀌는데
-  
-  
-    ‘해시값’ 이 바뀌면 해시블록이 바뀌게 되고
-  
-  
-    해시블록은 타겟값보다 낮아야 마이닝이 성공된다
-  
-  
-    이 16진수 숫자가 타겟값보다 낮으면 ‘블록생성에 성공’하는거고
-  
-  
-    이 16진수 숫자가 타... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#blockchain">#blockchain</a></div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/blockchain/2022/09/17/bc57.html">
-          [Blockchain] 블록체인의 7가지 특징
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Sep 17, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/blockchain/2022/09/17/bc57.html">
-        <p>
-        
-
-🦁 [BCS 1st TIL] 2일차 회고
-
-
-
-1. 익명성 (Anonymous)
-
-
-  
-    블록체인에서는 ‘지갑주소’ 를 사용한다
-  
-  
-    암호화 된 주소만 보고는 누가 누구인지 알수가 없는 익명성 을 보장한다
-  
-
-
-
-
-2. 추적성 (Traceability)
-
-
-  
-    블록체인에서는 ‘지갑주소’ 를 사용하여 진행된 거래가 모두 기록된다
-  
-  
-    거래가 발생한 트랜잭션을 따라 추적해보면 누가 언제 얼마를 어떻게 거래했는지 모두 기록되어 확인 가능하다
-  
-
-
-
-
-3. 무신뢰성 (Trustless)
-
-
-  
-    아무도 믿지 않아도 된다
-  
-  
-    심지어 거래하고 있는 상대... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#blockchain">#blockchain</a></div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -1910,7 +1925,7 @@ SHA-256의 경우에는 ... <span class="read_more">Read More</span>
     
     </span>
 
-    <span class="indicator"> 1/15</span>
+    <span class="indicator"> 1/13</span>
 
     <span class="next">
     
@@ -1958,10 +1973,16 @@ SHA-256의 경우에는 ... <span class="read_more">Read More</span>
   <ul>
     <li>
       <a href="/index.html">
-        All<span>141</span>
+        All<span>122</span>
       </a>
     </li>
 
+    
+      <li>
+        <a href="/categories.html#h-AWS">
+          AWS <span>2</span>
+        </a>
+      </li>
     
       <li>
         <a href="/categories.html#h-Go">
@@ -1995,7 +2016,7 @@ SHA-256의 경우에는 ... <span class="read_more">Read More</span>
     
       <li>
         <a href="/categories.html#h-review">
-          review <span>30</span>
+          review <span>9</span>
         </a>
       </li>
     

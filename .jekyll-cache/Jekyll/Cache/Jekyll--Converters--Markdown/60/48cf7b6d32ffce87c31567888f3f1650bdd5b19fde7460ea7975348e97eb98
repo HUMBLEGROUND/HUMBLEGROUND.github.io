@@ -1,0 +1,77 @@
+I"=<h3 id="aws-nft-metadata-저장공간-세팅하기-setting">[AWS] NFT metadata 저장공간 세팅하기 (Setting)</h3>
+
+<blockquote>
+  <p>IPFS 저장공간이 아닌 <strong>AWS S3 버킷</strong> 를 이용하여 NFT를 만들어 보려합니다</p>
+</blockquote>
+
+<hr />
+
+<h4 id="1-aws-s3-에서-버킷을-만들어준다">1. AWS S3 에서 버킷을 만들어준다</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/71bb1b5b-90ac-4aef-a933-5e89a6f7f8ea/image.png" alt="" /></p>
+
+<hr />
+
+<h4 id="2-버킷-구성-설정후-생성">2. 버킷 구성 설정후 생성</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3c0d4cd5-48da-43ea-8e97-b18d8fd0e6f5/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li>버킷 이름</li>
+    <li>AWS 리전</li>
+    <li>퍼블릭 엑세스 차단 <code class="language-plaintext highlighter-rouge">체크 해제</code></li>
+    <li>현재 설정 확인 체크 ✅</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<h4 id="3-생성된-버킷에서-권한-탭에-있는-버킷정책-편집-을-클릭">3. 생성된 버킷에서 <code class="language-plaintext highlighter-rouge">권한</code> 탭에 있는 버킷정책 <code class="language-plaintext highlighter-rouge">편집</code> 을 클릭</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/8602ad62-aa70-4a99-abd6-024951592e82/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 정책 생성기로 버킷 정책을 생성해준다</p>
+</blockquote>
+
+<hr />
+
+<h4 id="4-정책-생성기로-버킷-정책생성하기">4. 정책 생성기로 버킷 정책생성하기</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/41a3f65b-3ef6-46a0-a033-8ec4c4724132/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li>Select Type of Policy 👉 <code class="language-plaintext highlighter-rouge">S3 Bucket Policy</code></li>
+    <li>Principal 👉 <code class="language-plaintext highlighter-rouge">*</code></li>
+    <li>Actions 👉 <code class="language-plaintext highlighter-rouge">GetObject</code> (추가로 더 선택해도 됨)</li>
+    <li>Amazon Resource Name (ARN) 👉 <code class="language-plaintext highlighter-rouge">arn:aws:s3:::nftss/*</code><br />
+<code class="language-plaintext highlighter-rouge">arn:aws:s3:::버킷이름/*</code></li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<h4 id="5-generate-policy-버튼을-누르면-json-파일이-생성된다">5. <code class="language-plaintext highlighter-rouge">Generate Policy</code> 버튼을 누르면 <code class="language-plaintext highlighter-rouge">Json</code> 파일이 생성된다</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/429a902b-5c0a-411f-9c93-2fa92d959d80/image.png" alt="" /></p>
+
+<hr />
+
+<h4 id="6-json-파일을-정책편집에-그대로-붙여넣고-저장">6. Json 파일을 정책편집에 그대로 붙여넣고 저장!</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/78da50c2-8a5a-4926-9291-0ef39c89c28a/image.png" alt="" /></p>
+
+<hr />
+
+<h4 id="7-액세스가-퍼블릭-상태로-바뀌어-있는걸-확인">7. 액세스가 <code class="language-plaintext highlighter-rouge">퍼블릭</code> 상태로 바뀌어 있는걸 확인!</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/575f7d15-9a59-4f85-a61f-cfd2793cf673/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 NFT에 들어갈 metadata 저장공간 세팅이 완료되었다 😎</p>
+</blockquote>
+
+<hr />
+:ET

@@ -1,0 +1,144 @@
+I"�<blockquote>
+  <p>❗ AWS EC2 인스턴스가 생성되어 있다는 가정하에 진행합니다</p>
+</blockquote>
+
+<h2 id="aws-ec2-서버-연결하는-3가지-방법">AWS EC2 서버 연결하는 3가지 방법</h2>
+
+<h3 id="1-aws-ec2-홈페이지에서-직접-연결">1. AWS EC2 홈페이지에서 직접 연결</h3>
+
+<p><strong>1-1. 실행중인 인스턴스 세부정보 페이지로 이동</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/fd7f2060-caca-4364-806a-f6c9d052bfb4/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 우측 상단에 있는 <code class="language-plaintext highlighter-rouge">연결</code> 버튼 클릭</p>
+</blockquote>
+
+<hr />
+
+<p><strong>1-2. <code class="language-plaintext highlighter-rouge">EC2 인스턴스 연결</code> 탭에서 주황색 <span style="background-color:#FE5B05; color:#fff;">연결</span> 버튼 클릭</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2365d80d-9e49-437b-bf50-e03c8f435384/image.png" alt="" /></p>
+
+<hr />
+
+<p><strong>1-3. EC2 서버 연결이 완료되면 터미널이 열린다</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/74a18779-4a99-41a8-b677-accd48f0e1c5/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 리눅스(Linux) 터미널 명령어를 입력할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="2-putty-프로그램을-통한-서버-연결">2. PuTTY 프로그램을 통한 서버 연결</h3>
+
+<blockquote>
+  <p>EC2 인스턴스 <code class="language-plaintext highlighter-rouge">키페어</code> 를 발급 받았다면 로컬 환경에서도 접속이 가능하다</p>
+</blockquote>
+
+<blockquote>
+  <p>PuTTY 프로그램으로 연결하려면 키페어의 확장자가 <code class="language-plaintext highlighter-rouge">.ppk</code> 이어야 한다<br />
+❗ <code class="language-plaintext highlighter-rouge">.pem</code> -&gt; <code class="language-plaintext highlighter-rouge">.ppk</code> 변환을 해야한다면 방법은 구글링…</p>
+</blockquote>
+
+<hr />
+
+<p><strong>2-1. 퍼블릭 IP 주소 (or DNS) 와 사용자 이름을 알고 있어야한다</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/f2d14447-1b1a-46b1-a19a-82773962b20e/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 퍼블릭 IP 주소 or DNS / 사용자 이름</p>
+</blockquote>
+
+<hr />
+
+<p>2-2. <code class="language-plaintext highlighter-rouge">Session</code> 카테고리에서 <strong>Host Name</strong> 입력 / Port는 22</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c526d809-3f9a-430a-998e-2e3f6e36e0e7/image.png" alt="" /></p>
+
+<blockquote>
+  <p>ec2-user@3.34.138.15 또는<br /> &gt; ec2-user@ec2-3-34-138-15.ap-northeast-2.compute.amazonaws.com</p>
+</blockquote>
+
+<hr />
+
+<p>2-3. <code class="language-plaintext highlighter-rouge">Auth</code> 카테고리에서 <code class="language-plaintext highlighter-rouge">.ppk</code> <strong>프라이빗 키</strong> 불러오기</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/4582d384-4c11-4c7e-bd3e-36c872f6903d/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 <strong>프라이빗 키</strong>까지 불러왔다면 서버 연결</p>
+</blockquote>
+
+<hr />
+
+<p>2-4. PuTTY 프로그램으로 로컬에서 <strong>EC2 서버</strong> 연결 완료!</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/3b2f6f2d-9343-47cf-b472-bdb6491ab7c8/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 리눅스(Linux) 터미널 명령어를 입력할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<h3 id="3-ssh-통신을-통한-vscode-연결">3. SSH 통신을 통한 VSCode 연결</h3>
+
+<p><strong>3-1. VSCode Extension에서 <code class="language-plaintext highlighter-rouge">Remote Development</code> 설치</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/af373e10-deeb-4f6e-b2fb-80f621bdb664/image.png" alt="" /></p>
+
+<p><strong>3-2. <code class="language-plaintext highlighter-rouge">Remote Development</code> 설치되었다면</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/190c887e-ee03-4a13-a029-86a347bc6527/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li>F1 키를 눌러서 <code class="language-plaintext highlighter-rouge">SSH</code> 라고 검색</li>
+    <li><code class="language-plaintext highlighter-rouge">Remote-SSH: Open COnfiguration File</code> 선택</li>
+    <li><code class="language-plaintext highlighter-rouge">config</code> 경로 선택</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<p><strong>3-3. <code class="language-plaintext highlighter-rouge">config</code> 파일이 열리는데 설정해준다</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/610ca1e5-6e51-4f3a-b005-51dddb49939a/image.png" alt="" /></p>
+
+<blockquote>
+  <ol>
+    <li>Host 👉 임의로 지정</li>
+    <li>HostName 👉 퍼블릭 IPv4 주소 (or DNS)</li>
+    <li>User 👉 EC2 사용자 이름</li>
+    <li>Port 👉 22</li>
+    <li>IdentityFile 👉 pem 키가 있는 경로</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<p><strong>3-4. 설정을 끝냈다면 목록이 생기는데 아이콘버튼을 누르면 <code class="language-plaintext highlighter-rouge">Connect</code> 된다</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/18280f12-6e53-44de-bd85-e38621ee9276/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 <code class="language-plaintext highlighter-rouge">Connect</code> 된다면 VSCode 새창이 하나 뜨면서 운영체제를 선택할 수 있다</p>
+</blockquote>
+
+<hr />
+
+<p><strong>3-5. VSCode 로 연결된 EC2 인스턴스 서버</strong></p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/da0677eb-ba71-4861-96dc-ff56d0b20517/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 리눅스(Linux) 터미널 명령어를 입력할 수 있고<br />
+npm 명령어도 입력할 수 있다</p>
+</blockquote>
+
+<hr />
+:ET
