@@ -1,4 +1,4 @@
-I"<<p><img src="https://velog.velcdn.com/images/-__-/post/f67489a5-c51a-47ae-ae37-9e69d95cd1ae/image.png" alt="" /></p>
+I"�<p><img src="https://velog.velcdn.com/images/-__-/post/f67489a5-c51a-47ae-ae37-9e69d95cd1ae/image.png" alt="" /></p>
 
 <h2 id="찾아보게된-이유-">찾아보게된 이유 🧐</h2>
 
@@ -17,6 +17,17 @@
     <li>http://localhost:3000 (클라이언트)<br /></li>
     <li>http://localhost:8080 (서버)</li>
   </ul>
+</blockquote>
+
+<blockquote>
+  <p><strong>Postman에서는 왜 ‘Cors’ 에러가 발생하지 않을까?</strong><br /></p>
+
+  <p>⭐ CORS 정책 위반 판단 검사를 시행하는 주체는 ‘브라우저’ 이다.<br />
+서버를 테스트하기 위해 Postman에서 요청을 실행할땐 문제없이 잘 동작하다가<br />
+서버를 실행하고 브라우저에서 통신을 하는 순간 ‘Cors’ 에러가 발생한다<br /></p>
+
+  <p><span style="background-color:#FE5B05; color:#fff;">원인은 바로 ‘브라우저’에 있다.</span><br />
+👉 그래서 브라우저 없이 서버 간 통신을 진행하는 Postman 에서는 ‘Cors’ 에러가 발생하지 않는다!</p>
 </blockquote>
 
 <hr />
