@@ -1,0 +1,90 @@
+I"�<blockquote>
+  <p>❗ github 레포지토리와 remote 된 상태에서 진행합니다!</p>
+</blockquote>
+
+<hr />
+
+<h4 id="1-완성된-리액트-파일을-build-시킨다">1. 완성된 리액트 파일을 build 시킨다</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c5804b2f-7785-41f7-8a4c-6a3218470d0d/image.png" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">npm run build</code> 👉 ‘build’ 파일 생성 완료</p>
+</blockquote>
+
+<hr />
+
+<h4 id="2-gh-pages-설치">2. <code class="language-plaintext highlighter-rouge">gh-pages</code> 설치</h4>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">npm i gh-pages</code></p>
+</blockquote>
+
+<hr />
+
+<h4 id="3-packagejson-에서-deploy-설정">3. <code class="language-plaintext highlighter-rouge">package.json</code> 에서 deploy 설정</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/bedef741-59cf-4d0f-8ec6-2dd4dea35e38/image.png" alt="" /></p>
+
+<blockquote>
+  <p>“scripts”부분에서<br />
+<code class="language-plaintext highlighter-rouge">"deploy": "gh-pages -d build"</code> 추가 해주고<br /></p>
+
+  <p>맨밑에는<br />
+<code class="language-plaintext highlighter-rouge">"homepage": "https://wavescats.github.io/Firebase-web3/"</code> 추가한다<br /></p>
+
+  <p>본인의 <code class="language-plaintext highlighter-rouge">깃헙아이디.github.io/레포지토리 이름/</code></p>
+</blockquote>
+
+<hr />
+
+<h4 id="4-github-pages-에-배포하기">4. GitHub Pages 에 배포하기</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/c8bcb6d3-594c-4da8-a6e9-3eec0cac5b57/image.png" alt="" /></p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">npm run deploy</code> 👉 GitHub Pages 에 배포완료</p>
+</blockquote>
+
+<hr />
+
+<h4 id="5-github-에서-branch-설정">5. Github 에서 branch 설정</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/de180ddb-0694-444d-9a95-16095fea6665/image.png" alt="" /></p>
+
+<blockquote>
+  <p>Github 레포지토리 👉 Settings 👉 Pages <br />
+👉 GitHub Pages 👉 Branch를 <code class="language-plaintext highlighter-rouge">gh-pages</code> 으로 바꿔준다</p>
+</blockquote>
+
+<hr />
+
+<h4 id="6-firebase-페이지에서-도메인-추가">6. Firebase 페이지에서 도메인 추가</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/60df9de1-9f16-4c39-84a7-c5ff91c39eb1/image.png" alt="" /></p>
+
+<blockquote>
+  <p>Firebase 해당 프로젝트 👉 Authentication 👉 Settings 👉 도메인추가</p>
+</blockquote>
+
+<blockquote>
+  <p>Github 페이지 주소 입력
+<code class="language-plaintext highlighter-rouge">"https://wavescats.github.io/"</code></p>
+</blockquote>
+
+<blockquote>
+  <p>본인의 <code class="language-plaintext highlighter-rouge">깃헙아이디.github.io/</code></p>
+</blockquote>
+
+<hr />
+
+<h4 id="7-배포-완료된-페이지-확인하기">7. 배포 완료된 페이지 확인하기</h4>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/ff1b8e85-1f75-4903-b9e5-fff2ba510f0a/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 <code class="language-plaintext highlighter-rouge">View deployment</code> 를 클릭하면 배포 완료된 페이지를 확인할 수 있다!</p>
+</blockquote>
+
+<hr />
+:ET
