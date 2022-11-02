@@ -1,0 +1,86 @@
+I"P<blockquote>
+  <p>EC2 인스턴스 CPU 사용률이 100% 까지 올라가서<br />
+서버가 터지고 SSH 연결이 끊기는 에러발생 😵‍💫</p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/72d4ba6a-f5b3-4835-9836-549421fa5940/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="ec2-인스턴스-재부팅">EC2 인스턴스 재부팅</h3>
+
+<p>CPU 사용률이 100% 현상이 발생 했을때 <br />
+인스턴스 상태 에서 👉 <code class="language-plaintext highlighter-rouge">인스턴스 재부팅</code></p>
+
+<p>재부팅을 한번 해주면 에러가 해결된다 !</p>
+
+<blockquote>
+  <p>❗ 재부팅으로도 해결이 안된다면 <code class="language-plaintext highlighter-rouge">인스턴스 중지</code> 👉 <code class="language-plaintext highlighter-rouge">인스턴스 시작</code></p>
+</blockquote>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/79e8a3fe-db9d-4e9a-aec8-8a10c5f3c4f0/image.png" alt="" /></p>
+
+<hr />
+
+<h3 id="탄력적-ip">탄력적 IP</h3>
+
+<p>위와 같은 방법으로 EC2 인스턴스 에러를 해결하면 <br />
+<code class="language-plaintext highlighter-rouge">퍼블릭 IPv4 주소</code> 와 <code class="language-plaintext highlighter-rouge">퍼블릭 IPv4 DNS</code> 가 바뀌게 되는데</p>
+
+<p>그러면 SSH 통신을 다시 설정해줘야 하는 상황이 발생한다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a93e0f9c-2146-4110-85c4-8bf1675ae850/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 <code class="language-plaintext highlighter-rouge">퍼블릭 IPv4 주소</code> 와 <code class="language-plaintext highlighter-rouge">퍼블릭 IPv4 DNS</code> 가 바뀐상태<br />
+( 프라이빗 주소는 바뀌지 않는다 )</p>
+</blockquote>
+
+<hr />
+
+<h4 id="퍼블릭-ipv4-주소가-바뀌지않게-고정된-값을-설정해줄수는-없을까">퍼블릭 IPv4 주소가 바뀌지않게 고정된 값을 설정해줄수는 없을까?</h4>
+
+<p>👉 <code class="language-plaintext highlighter-rouge">탄력적 IP</code> <span style="background-color:#B5E045; color:#000;">주소를 할당받아서 EC2 인스턴스와 연결</span> 시켜주면 된다!</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/862a54be-a70d-4034-9232-2e14ea6dd382/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 EC2에서 <code class="language-plaintext highlighter-rouge">네트워크 및 보안</code> 👉 <code class="language-plaintext highlighter-rouge">탄력적 IP</code> 탭으로 들어간다</p>
+</blockquote>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/2cd5e83a-a649-4475-8c10-bceda7e46589/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 <code class="language-plaintext highlighter-rouge">탄력적 IP 주소 할당</code> 으로 IP주소를 <code class="language-plaintext highlighter-rouge">할당</code> 받는다</p>
+</blockquote>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/b4407aab-a562-4670-a751-e5b7d78d7a01/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 <code class="language-plaintext highlighter-rouge">탄력적 IP 주소 연결</code> 을 클릭해서<br />
+생성되어있는 EC2 인스턴스를 선택하여 연결 시켜준다</p>
+</blockquote>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/cd4069c7-931c-45ff-ae1e-76fca1d7ec36/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 EC2 인스턴스와 연결된 <code class="language-plaintext highlighter-rouge">탄력적 IP주소</code> 확인</p>
+</blockquote>
+
+<hr />
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/a2ecd93c-8d41-40e4-8cd4-47f776b867c6/image.png" alt="" /></p>
+
+<blockquote>
+  <p>👆 이제 EC2 인스턴스를 재부팅 &amp; 중지 해도 <br />
+<code class="language-plaintext highlighter-rouge">퍼블릭 IPv4 주소</code> 와 <code class="language-plaintext highlighter-rouge">퍼블릭 IPv4 DNS</code> 는 고정된다</p>
+</blockquote>
+
+<hr />
+:ET

@@ -863,6 +863,238 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/react/2022/11/01/react19.html">
+          [React] Redux를 이용한 MetaMask 연결 &amp; 지갑주소 가져오기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 01, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/react/2022/11/01/react19.html">
+        <p>
+        Metamask 지갑연결 후 저장된 지갑주소를 props drilling 이 아니라
+어디서든 가져올 수 있는 redux store에서 가져오겠습니다
+
+
+
+
+
+Redux 세팅
+
+
+  ❗ 기본적인 Redux store 세팅과정은 생략합니다
+
+
+WalletActions.js
+
+
+
+
+  
+    
+      action type 으로 Reducer에 접근하는 함수
+    
+    
+      payload 에 비동기로 지갑연결 후 지갑주소를 담아줍니다
+    
+  
+
+
+
+
+WalletReducer.js
+
+
+
+어떠한 action 일때 실행할지 지정해줍니다
+
+
+  
+    
+      action type 을 가져옵니다
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/aws/2022/10/27/aws5.html">
+          [AWS] EC2 인스턴스 CPU 사용량 100% 에러 해결 &amp; 퍼블릭 IPv4 주소 고정시키기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Oct 27, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/aws/2022/10/27/aws5.html">
+        <p>
+        
+  EC2 인스턴스 CPU 사용률이 100% 까지 올라가서
+서버가 터지고 SSH 연결이 끊기는 에러발생 😵‍💫
+
+
+
+
+
+
+EC2 인스턴스 재부팅
+
+CPU 사용률이 100% 현상이 발생 했을때 
+인스턴스 상태 에서 👉 인스턴스 재부팅
+
+재부팅을 한번 해주면 에러가 해결된다 !
+
+
+  ❗ 재부팅으로도 해결이 안된다면 인스턴스 중지 👉 인스턴스 시작
+
+
+
+
+
+
+탄력적 IP
+
+위와 같은 방법으로 EC2 인스턴스 에러를 해결하면 
+퍼블릭 IPv4 주소 와 퍼블릭 IPv4 DNS 가 바뀌게 되는데
+
+👉 그러면 SSH 통신을 ‘다시’ 설정해줘야 하는 상황이 발생한다
+
+
+
+
+  👆 퍼블릭 IPv4 주소 와 퍼블릭 IPv4 DN... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#AWS">#AWS</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/react/2022/10/21/react18.html">
           [React] Firebase Hosting 에 리액트 SPA 웹페이지 배포하기 (Deploy)
         </a>
@@ -1719,213 +1951,6 @@ Harthat 으로 스마트컨트랙트 배포 ... <span class="read_more">Read Mor
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8">#프로젝트</a></div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/react/2022/09/30/react15.html">
-          [React] onChange 이벤트 target.value 반복되는 코드 리팩토링하기
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Sep 30, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/react/2022/09/30/react15.html">
-        <p>
-        
-
-input 태그 onChange 이벤트 target value 반복되는 코드 리팩토링하기 (Refactoring)
-
-Input 👉 onChange 이벤트 👉 target.value
-Input 창에 입력되는 값을 받아오는 경우
-
-
-
-
-  👆 위와 같이 Input 창이 필요할때마다
-비슷한 형태로 반복되는 코드를 작성해주어야 한다
-
-
-반복되는 코드가 보이면 효율적인 형태로 리팩토링하고 싶어지는데
-
-‘두가지 방법’ 을 기록하려한다 😎
-
-
-
-1. 커스텀 Hook 만들어서 관리하기
-
-useInput.js 이라는 파일을 하나 생성해서
-
-useState 와 useCallback 을 이용한 컴포넌트를 만들어준다
-
-import ... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/review/2022/09/30/bsc3.html">
-          [멋쟁이사자처럼] 블록체인 스쿨 후기 BCS 1기 3주차
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Sep 30, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/review/2022/09/30/bsc3.html">
-        <p>
-        
-
-🦁 [BCS 1기] 3주차 후기 / 회고
-
-
-
-KIP-17으로 NFT 민팅 &amp; ERC-20, ERC-721 세부 분석
-
-ERC-20, ERC-721 코드를 가지고
-복붙해서 내가 발행하고자 하는
-토큰, NFT 이미지, 이름만 설정하고 배포 하는 것까지만 확실히 알고 있었고
-
-세부 코드는 자세하게까지 모르고 있었는데
-이번에 코드 하나하나 뜯어서 원리를 제대로 배웠습니다
-
-특히 이해가 어려운 allowance 함수에 대해 자세한 설명을 해주셨습니다
-
-
-  allowance 👉 owner가 spender에게 양도 설정한 토큰의 양을 확인
-
-
-
-  A와 B가 서로 거래를 하는데 못 믿을 수도 있으니
-  C 라는 ... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8%20%EC%8A%A4%EC%BF%A8%20%ED%9B%84%EA%B8%B0">#블록체인 스쿨 후기</a></div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -1986,14 +2011,14 @@ ERC-20, ERC-721 코드를 가지고
   <ul>
     <li>
       <a href="/index.html">
-        All<span>126</span>
+        All<span>128</span>
       </a>
     </li>
 
     
       <li>
         <a href="/categories.html#h-AWS">
-          AWS <span>4</span>
+          AWS <span>5</span>
         </a>
       </li>
     
@@ -2005,7 +2030,7 @@ ERC-20, ERC-721 코드를 가지고
     
       <li>
         <a href="/categories.html#h-React">
-          React <span>17</span>
+          React <span>18</span>
         </a>
       </li>
     
