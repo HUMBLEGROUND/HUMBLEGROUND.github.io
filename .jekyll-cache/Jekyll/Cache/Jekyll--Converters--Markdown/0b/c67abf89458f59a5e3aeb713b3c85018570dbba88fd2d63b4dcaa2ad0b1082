@@ -1,0 +1,89 @@
+I"�<h2 id="project-toy-프로젝트-회고">[Project] Toy 프로젝트 회고</h2>
+
+<h3 id="-프로젝트-명-closesea">⛵ 프로젝트 명 ‘CloseSea’</h3>
+
+<p><img src="https://user-images.githubusercontent.com/97342533/174011145-1161884e-5cab-40a1-99f9-cb20b09bf956.png" alt="스크린샷, 2022-06-15 01-52-42" /></p>
+
+<p><strong>‘CloseSea’는 NFT 가격의 지속적인 하락으로 인해 Open된 Sea를 Close로 문을 잠시 닫는다는🚫 의미입니다</strong><br /></p>
+
+<p><img src="https://user-images.githubusercontent.com/97342533/174014715-d0c6d57a-164a-4b44-9fb5-6bd35a02832d.png" alt="image" /></p>
+
+<p><strong>‘CloseSea’ 웹 페이지는</strong><br />
+간단한 기능을 가진 NFT Marketplace 입니다</p>
+
+<blockquote>
+  <p>🖼 민팅<br />
+🔎 조회 <br />
+💳 판매 &amp; 구매</p>
+</blockquote>
+
+<hr />
+
+<h3 id="-아키텍처-설계">🧬 아키텍처 설계</h3>
+
+<p><img src="https://user-images.githubusercontent.com/97342533/200131663-5e1358dd-495f-48b6-adf2-f38346746024.png" alt="" /></p>
+
+<hr />
+
+<h3 id="-프로젝트-구성">🚦 프로젝트 구성</h3>
+
+<p><strong>프로젝트 기간 (6/13 ~ 6/17)</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Front-end</strong><br />
+<code class="language-plaintext highlighter-rouge">Next js</code> 를 이용한 웹페이지 UI/UX 구성</p>
+  </li>
+  <li>
+    <p><strong>Smart Contract</strong><br />
+<code class="language-plaintext highlighter-rouge">Polygon mumbai</code> 테스트넷에서 스마트컨트랙트 배포<br />
+<code class="language-plaintext highlighter-rouge">Thirdweb</code>을 이용한 web3 개발</p>
+  </li>
+  <li>
+    <p><strong>Back-end</strong><br />
+<code class="language-plaintext highlighter-rouge">Sanity</code>에 유저 정보 &amp; NFT 정보 저장<br />
+<code class="language-plaintext highlighter-rouge">Pinata</code>를 이용한 IPFS 저장소 이용</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="-기능-소개">💻 기능 소개</h3>
+
+<p><strong>Wallet</strong></p>
+
+<p>웹페이지와 MetaMask 지갑연결 &amp; 연결상태 확인</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/0f7a0796-a6d5-4ebe-9526-04c433a408cf/image.gif" alt="" /></p>
+
+<hr />
+
+<p><strong>Explore</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">Explore</code> 버튼을 클릭하면<br />
+민팅된 NFT 리스트를 확인 할 수 있습니다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/46af09f6-d509-4ef3-990e-42ee87d54877/image.gif" alt="" /></p>
+
+<hr />
+
+<p><strong>NFTs</strong></p>
+
+<p>리스트에 있는 NFT의 세부정보를 확인 할 수 있습니다</p>
+
+<p><img src="https://velog.velcdn.com/images/-__-/post/75a90336-897d-4a2c-88b1-91ea06f48727/image.gif" alt="" /></p>
+
+<hr />
+
+<h3 id="closesea-github-코드">CloseSea Github 코드</h3>
+
+<blockquote>
+  <p><a href="https://github.com/wavescats/NFT-Marketplace">https://github.com/wavescats/NFT-Marketplace</a></p>
+</blockquote>
+
+<hr />
+
+<h2 id="개발-회고-">개발 회고 💡</h2>
+
+<hr />
+:ET
