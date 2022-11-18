@@ -863,6 +863,134 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/solidity/2022/11/18/sol9.html">
+          [Solidity] ERC-20 토큰으로 Uniswap Liquidity Pool 구성 &amp; 스왑하기 (유니스왑 유동성 풀 &amp; Stable Swap)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Nov 18, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/solidity/2022/11/18/sol9.html">
+        <p>
+        ERC-20 토큰을 두가지 발행해보겠습니다
+
+
+  
+    
+      BCS (스왑용 토큰)
+    
+    
+      UBCS (스테이블 코인)
+    
+  
+
+  👉 각 100만개씩 발행
+
+
+ERC-20 토큰을 만들기 위한 코드
+
+👆 (코드가 길어서 링크 첨부)
+
+
+
+1. 배포된 ERC-20 토큰 메타마스크로 가져오기
+
+
+
+
+  메타마스크 토큰 가져오기에서
+토큰 계약 주소 칸에 배포된 컨트랙트 주소를 입력합니다
+❗ 토큰 기호와 토큰 소수점은 배포된대로 자동으로 입력됩니다
+
+
+
+
+2. BCS / UBCS 토큰
+
+
+
+
+  👆 100만개씩 발행된 토큰 확인
+
+
+
+
+3. 유니스왑 페이지에서 세팅
+
+
+
+
+  
+   ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EC%86%94%EB%A6%AC%EB%94%94%ED%8B%B0">#솔리디티</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/review/2022/11/13/bsc4.html">
           [BCS 1st] 멋쟁이사자처럼 블록체인스쿨 Part2 세션 후기
         </a>
@@ -1841,116 +1969,6 @@ AWS EC2 서버 연결하는 3가지 방법
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#AWS">#AWS</a></div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/react/2022/10/07/react16.html">
-          [React] MetaMask 연결하고 새로고침 &amp; localStorage 저장하기
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Oct 07, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/react/2022/10/07/react16.html">
-        <p>
-        
-
-프로젝트 보완해야 할 사항
-
-새로고침하면 지갑연결이 풀리는 현상
-
-메타마스크 지갑 연결 후 웹페이지 새로고침을 누르면
-
-MetaMask 지갑이 연결은 되었는데
-새로고침을 하면 연결이 풀리는 것과 같이 보여지고 있습니다
-(실제로 연결은 되어있는데 버튼은 풀려 보이는 현상)
-
-
-
-해결 방법 😎
-
-window.ethereum.request / method
-
-
-  
-    "eth_requestAccounts" 👉 클라이언트와 메타마스크 계정을 연결
-  
-  
-    "eth_accounts" 👉 클라이언트가 소유한 주소 목록을 반환
-  
-
-
-localStorage (로컬스토리지) 저장소
-
-
-  
-    localSt... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -2011,7 +2029,7 @@ localStorage (로컬스토리지) 저장소
   <ul>
     <li>
       <a href="/index.html">
-        All<span>128</span>
+        All<span>129</span>
       </a>
     </li>
 
@@ -2060,7 +2078,7 @@ localStorage (로컬스토리지) 저장소
     
       <li>
         <a href="/categories.html#h-solidity">
-          solidity <span>9</span>
+          solidity <span>10</span>
         </a>
       </li>
     
