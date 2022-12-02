@@ -469,7 +469,7 @@ body {
   .post-related {
     & > *:first-child {
       @include relative-font-size(1.425);
-      color: #1b75a8;
+      color: #8141be;
       margin-bottom: 14px;
       font-weight: bold;
     }
@@ -517,7 +517,7 @@ body {
 
   .previous:before {
     content: " ";
-    border: solid #1b75a8;
+    border: solid #8141be;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
@@ -528,7 +528,7 @@ body {
 
   .next:after {
     content: " ";
-    border: solid #1b75a8;
+    border: solid #8141be;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 4px;
@@ -726,7 +726,7 @@ body {
   }
 
   .segment-name {
-    color: #00a2ff;
+    color: #8141be;
     font-weight: $base-font-weight * 1.5;
     margin-bottom: 8px;
     position: relative;

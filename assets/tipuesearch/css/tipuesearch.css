@@ -36,7 +36,7 @@ http://www.tipue.com/search
   color: #333;
   max-width: 210px;
   padding: 10px;
-  border: 3px solid #1b75a8;
+  border: 3px solid #8141be;
   border-radius: 1rem;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -47,14 +47,14 @@ http://www.tipue.com/search
   transition: all 0.2s linear;
 }
 #tipue_search_input:hover {
-  box-shadow: 0px 0px 10px #1b75a8;
+  box-shadow: 0px 0px 10px #eb09eb;
 }
 .tipue_search_icon {
   width: 3rem;
   height: 3rem;
   margin-top: -1.2rem;
   margin-left: 1rem;
-  border: 2px solid #1b75a8;
+  border: 2px solid #8141be;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s linear;

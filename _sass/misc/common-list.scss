@@ -2,7 +2,7 @@
  * Common list
  */
 .common-list {
-  @include relative-font-size(1.0);
+  @include relative-font-size(1);
   min-width: 200px;
 
   ul {
@@ -36,7 +36,7 @@
       display: inline-block;
       border-radius: 10px;
       align-self: center;
-      background: #1b75a8;
+      background: #8141be;
       padding: 0px 8px;
       margin-left: 20px;
       color: $white-color;

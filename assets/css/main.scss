@@ -11,7 +11,7 @@ $theme-colors: (
 
 // Default brand colors
 $brand-colors: (
-  "orangered": #00a2ff,
+  "orangered": #eb09eb,
   "greatgold": #f2cb05,
   "greenblue": #389092,
 );
@@ -30,7 +30,7 @@ $brand-color: map-get($brand-colors, "orangered");
 @if map-has-key($brand-colors, $brand-name) {
   $brand-color: map-get($brand-colors, $brand-name);
 } @else if str-index($brand-name, "#") == 1 {
-  $brand-color: {{ site.brand_color | default: '#00a2ff' }};
+  $brand-color: {{ site.brand_color | default: '#eb09eb' }};
 }
 
 $content-width: {{ site.content_width | default: '920px' }};
