@@ -863,6 +863,334 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/react/2023/01/02/react23.html">
+          [React] 리액트에서 3D 모델링파일 불러오기 &amp; 자동회전 시키기 (Three.js)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 02, 2023</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/react/2023/01/02/react23.html">
+        <p>
+        
+  리액트에서 Three.js 사용을 위한 개발환경 만들기
+
+
+
+
+1. Three.js npm 패키지 설치
+
+npm install @react-three/drei @react-three/fiber
+
+
+
+2. 3D 모델링 다운받아오기
+
+
+
+
+  https://sketchfab.com/
+
+  
+    sketchfab 페이지로 접속 후 ‘EXPLORE’ 탭으로 들어간다
+  
+
+
+
+
+
+  
+    우측상단에 다운로드표시가 있을경우 무료다운이 가능하다
+    상세 페이지로 넘어와서 다운로드 클릭
+    GLB Converted format 다운로드
+  
+
+
+
+
+3. 3D 모델링 파일을 리액트 jsx 파일로 변환시키기
+
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/react/2022/12/28/react22.html">
+          [React] 리액트에서 3D 공(ball) 모형에 슬라임 효과주기 (Three.js)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 28, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/react/2022/12/28/react22.html">
+        <p>
+        
+  리액트에서 Three.js 사용을 위한 개발환경 만들기
+
+
+
+
+1. Three.js npm 패키지 설치
+
+npm install @react-three/drei @react-three/fiber
+
+
+
+2. 3D 모형 불러오기 ( Sphere.js )
+
+
+
+import React from "react";
+import { Sphere } from "@react-three/drei";
+
+function Sphere() {
+  return &lt;Sphere visible args={[1, 100, 200]} scale={2}&gt;&lt;/Sphere&gt;;
+}
+
+export default Sphere;
+
+
+
+  ... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/react/2022/12/27/react21.html">
+          [React] Three.js 를 이용하여 리액트에서 3D 모형 불러오기 (박스모델)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 27, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/react/2022/12/27/react21.html">
+        <p>
+        
+  리액트에서 Three.js 사용을 위한 개발환경 만들기
+
+
+
+
+1. Three.js npm 패키지 설치
+
+npm install @react-three/drei @react-three/fiber
+
+
+
+2. 3D 모형 불러오기 ( Box.js )
+
+
+
+import React from "react";
+
+function Box() {
+  return (
+    &lt;mesh rotation={[90, 0, 20]}&gt;
+      &lt;boxBufferGeometry attach="geometry" args={[3, 3, 3]} /&gt;
+    &lt;/mesh&gt;
+  );
+}
+
+export default... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/error/2022/12/02/ts5.html">
           [typescript] Next.js &amp; Typescript 에서 하드햇(Hardhat) 테스트 에러 (An unexpected error occurred)
         </a>
@@ -1624,339 +1952,6 @@ CPU 사용률이 100% 현상이 발생 했을때
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/react/2022/10/20/react17.html">
-          [React] Firebase로 작업된 파일 GitHub Pages 에 배포하기 (Deploy)
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Oct 20, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/react/2022/10/20/react17.html">
-        <p>
-        
-  ❗ github 레포지토리와 remote 된 상태에서 진행합니다!
-
-
-
-
-1. 완성된 리액트 파일을 build 시킨다
-
-
-
-
-  npm run build 👉 ‘build’ 파일 생성 완료
-
-
-
-
-2. gh-pages 설치
-
-
-  npm i gh-pages
-
-
-
-
-3. package.json 에서 deploy 설정
-
-
-
-
-  “scripts”부분에서
-"deploy": "gh-pages -d build" 추가 해주고
-
-  맨밑에는
-"homepage": "https://wavescats.github.io/Firebase-web3/" 추가한다
-
-  본인의 깃헙아이디.github.io/레포지토리 이름/
-
-
-
-
-4. G... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/aws/2022/10/16/aws4.html">
-          [AWS] 민팅된 NFT에 metadata Properties 추가 &amp; 변경 하기
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Oct 16, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/aws/2022/10/16/aws4.html">
-        <p>
-        [AWS] 민팅된 NFT에 metadata Properties 추가하기
-
-
-
-IPFS ↔ AWS S3 버킷에 저장된 metadata 차이
-
-
-  민팅된 NFT에 특성, 레벨 등을 변경해서
-그 가치를 올려줘야 할 경우 🔺
-Properties 를 추가 / 변경 / 삭제 해줘야 한다
-
-
-
-  
-    분산저장소 ‘IPFS’ 에 저장된 metadata 는 수정이 불가능한데
-  
-  
-    ‘AWS S3 버킷’ 에 저장된 metadata 는 수정이 가능하다
-  
-
-
-
-
-1. AWS S3 버킷에 업로드된 metadata Json 파일
-
-{
-  "image": "https://nftss.s3.ap-northeast-2.ama... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#AWS">#AWS</a></div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/aws/2022/10/15/aws3.html">
-          [AWS] AWS S3 버킷을 이용한 NFT 민팅하기 (ERC-721 / Mumbai Testnet)
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Oct 15, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/aws/2022/10/15/aws3.html">
-        <p>
-        [AWS] AWS S3 버킷을 이용한 NFT 민팅하기
-
-
-  
-    
-      ‘메타데이터 JSON 파일’ 을 블록체인에 그대로 저장하면 가스비(gas)가 많이
-나오기 때문에 분산저장소에 데이터를 담고 그 경로를 블록체인에 담는다
-    
-    
-      ‘메타데이터 JSON’ 👉 NFT 에 넣을 정보를 담는 그릇
-이미지 / 동영상 / 소리 등 같은 데이터는 가스비가 많이 나온다
-    
-    
-      분산저장소 개념 정리
-    
-  
-
-
-
-
-1. NFT로 만들 이미지를 준비합니다
-
-
-
-
-
-2. 생성한 AWS S3 버킷에 이미지 업로드
-
-AWS S3 버킷에 NFT metadata 저장공간 세팅하기
-
-... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#AWS">#AWS</a></div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -2017,7 +2012,7 @@ AWS S3 버킷에 NFT metadata 저장공간 세팅하기
   <ul>
     <li>
       <a href="/index.html">
-        All<span>131</span>
+        All<span>134</span>
       </a>
     </li>
 
@@ -2036,7 +2031,7 @@ AWS S3 버킷에 NFT metadata 저장공간 세팅하기
     
       <li>
         <a href="/categories.html#h-React">
-          React <span>19</span>
+          React <span>22</span>
         </a>
       </li>
     
