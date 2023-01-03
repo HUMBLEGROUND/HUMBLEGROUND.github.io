@@ -863,6 +863,99 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/solidity/2023/01/03/sol12.html">
+          [Solidity] NFT Minting whitelist (화이트리스트)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 03, 2023</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/solidity/2023/01/03/sol12.html">
+        <p>
+        NFT whitelist (화이트리스트) 란
+
+NFT를 구매(민팅) 할때 아무나 구매하지 못하도록
+일종의 ‘구매자격’ 을 부여하는 시스템이다
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.7;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract MintNFT is ERC721Enumerable, Ownable {
+
+    constructor() ERC721("B... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EC%86%94%EB%A6%AC%EB%94%94%ED%8B%B0">#솔리디티</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/react/2023/01/02/react23.html">
           [React] 리액트에서 3D 모델링파일 불러오기 &amp; 자동회전 시키기 (Three.js)
         </a>
@@ -915,6 +1008,102 @@ npm install @react-three/drei @react-three/fiber
         </p>
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/solidity/2022/12/30/sol11.html">
+          [Solidity] NFT metadata Reveal (랜덤박스 뽑기 만들기)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 30, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/solidity/2022/12/30/sol11.html">
+        <p>
+        
+
+NFT Reveal (리빌) 이란
+
+NFT를 랜덤박스형태 처럼 만들어서 판매하는
+일종의 뽑기 시스템이다
+
+처음에는 랜덤박스같은 metadata가 저장된 NFT를
+나중에 가치가 있는 metadata로 reveal 시켜준다
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.7;
+
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract MintNFT is ERC721Enum... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EC%86%94%EB%A6%AC%EB%94%94%ED%8B%B0">#솔리디티</a></div>
     </li>
 <li>
       
@@ -1126,6 +1315,104 @@ export default... <span class="read_more">Read More</span>
         </p>
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/solidity/2022/12/22/sol10.html">
+          [Solidity] ERC721 간단 분석 &amp; NFT 멀티민팅하기 (한번에 100개 민팅)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Dec 22, 2022</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/solidity/2022/12/22/sol10.html">
+        <p>
+        ERC721 기본적인 코드
+
+
+  아래는 ERC721 표준을 따르는 가장 기본적인 코드이다
+
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.7;
+
+// 1. openzeppelin 불러오기
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+
+contract MintNFT is ERC721Enumerable {
+
+  // 2. 초기 배포 기본값
+    constructor() ERC721("BlockChainSchool", "BCS") {}
+
+
+    // 3 &amp; 4.... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EC%86%94%EB%A6%AC%EB%94%94%ED%8B%B0">#솔리디티</a></div>
     </li>
 <li>
       
@@ -1598,360 +1885,6 @@ ERC-20 토큰을 만들기 위한 코드
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8%20%EC%8A%A4%EC%BF%A8%20%ED%9B%84%EA%B8%B0">#블록체인 스쿨 후기</a></div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/react/2022/11/01/react19.html">
-          [React] Redux를 이용한 MetaMask 연결 &amp; 지갑주소 가져오기
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Nov 01, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/react/2022/11/01/react19.html">
-        <p>
-        Metamask 지갑연결 후 저장된 지갑주소를 props drilling 이 아니라
-어디서든 가져올 수 있는 redux store에서 가져오겠습니다
-
-
-
-
-
-Redux 세팅
-
-
-  ❗ 기본적인 Redux store 세팅과정은 생략합니다
-
-
-WalletActions.js
-
-
-
-
-  
-    
-      action type 으로 Reducer에 접근하는 함수
-    
-    
-      payload 에 비동기로 지갑연결 후 지갑주소를 담아줍니다
-    
-  
-
-
-
-
-WalletReducer.js
-
-
-
-어떠한 action 일때 실행할지 지정해줍니다
-
-
-  
-    
-      action type 을 가져옵니다
-  ... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/aws/2022/10/27/aws5.html">
-          [AWS] EC2 인스턴스 CPU 사용량 100% 에러 해결 &amp; 퍼블릭 IPv4 주소 고정시키기
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Oct 27, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/aws/2022/10/27/aws5.html">
-        <p>
-        
-  EC2 인스턴스 CPU 사용률이 100% 까지 올라가서
-서버가 터지고 SSH 연결이 끊기는 에러발생 😵‍💫
-
-
-
-
-
-
-EC2 인스턴스 재부팅
-
-CPU 사용률이 100% 현상이 발생 했을때 
-인스턴스 상태 에서 👉 인스턴스 재부팅
-
-재부팅을 한번 해주면 에러가 해결된다 !
-
-
-  ❗ 재부팅으로도 해결이 안된다면 인스턴스 중지 👉 인스턴스 시작
-
-
-
-
-
-
-탄력적 IP
-
-위와 같은 방법으로 EC2 인스턴스 에러를 해결하면 
-퍼블릭 IPv4 주소 와 퍼블릭 IPv4 DNS 가 바뀌게 되는데
-
-👉 그러면 SSH 통신을 ‘다시’ 설정해줘야 하는 상황이 발생한다
-
-
-
-
-  👆 퍼블릭 IPv4 주소 와 퍼블릭 IPv4 DN... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#AWS">#AWS</a></div>
-    </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/react/2022/10/21/react18.html">
-          [React] Firebase Hosting 에 리액트 SPA 웹페이지 배포하기 (Deploy)
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Oct 21, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/react/2022/10/21/react18.html">
-        <p>
-        
-  ❗ Firebase 계정 생성이 되었다는 가정하에 진행합니다!
-
-
-
-
-1. 완성된 리액트 파일을 build 시킨다
-
-
-
-
-  npm run build
-
-
-
-
-2. Firebase에서 프로젝트를 하나 만들고 Hosting 서비스 시작하기
-
-
-
-
-
-3. ‘Firebase 호스팅 설정’ 이 나오는데 터미널을 열고 해당 명령어를 입력한다
-
-
-
-
-  npm install -g firebase-tools 설치
-
-
-
-
-4. Firebase ↔ Local 연결 로그인
-
-
-
-
-  firebase login
-
-
-
-
-
-  Allow Firebase to collect CLI and Emulator Suite usage and e... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -2012,7 +1945,7 @@ CPU 사용률이 100% 현상이 발생 했을때
   <ul>
     <li>
       <a href="/index.html">
-        All<span>134</span>
+        All<span>137</span>
       </a>
     </li>
 
@@ -2061,7 +1994,7 @@ CPU 사용률이 100% 현상이 발생 했을때
     
       <li>
         <a href="/categories.html#h-solidity">
-          solidity <span>10</span>
+          solidity <span>13</span>
         </a>
       </li>
     
