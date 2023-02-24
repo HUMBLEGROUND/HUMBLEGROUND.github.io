@@ -975,6 +975,123 @@ https://faucet.sepolia.dev/
 
 
 <h2 class="post-title">
+        <a class="post-link" href="/solidity/2023/01/24/sol13.html">
+          [Solidity] BEP-20 토큰으로 DEX에서 가격형성하고 스왑하기 (PancakeSwap 팬케이크스왑 Liquidity Pool &amp; Swap)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jan 24, 2023</span>
+        <span class="post-reading-time left-vsplit"></span>
+      </div>
+      <a class="post-excerpt" href="/solidity/2023/01/24/sol13.html">
+        <p>
+        ERC-20 토큰을 두가지 발행해보겠습니다
+
+
+  
+    
+      LP (스왑용 토큰)
+    
+    
+      BCS (LP토큰의 2배 가격)
+    
+  
+
+  👉 각 100만개씩 발행
+
+
+BEP-20 토큰을 만들기 위한 코드
+
+👆 (코드가 길어서 링크 첨부)
+
+
+
+1. 팬케이크스왑 페이지에서 세팅하기
+
+
+
+
+  
+    https://pancakeswap.finance/
+  
+
+  
+    팬케이크스왑 페이지에서 Trade 👉 Liquidity 탭으로 이동
+    메타마스크 연결
+    ‘Binance Smart Chain Testnet’ 선택
+    ‘Add Liquidity’ 버튼 선택
+  
+
+
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags"><a class="post-tag" href="/tags.html#%EC%86%94%EB%A6%AC%EB%94%94%ED%8B%B0">#솔리디티</a></div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
         <a class="post-link" href="/blockchain/2023/01/20/bc61.html">
           [Blockchain] 바이낸스 (BSC) 테스트넷 TBNB 받기 (TBNB Faucet) &amp; BSC 테스트 네트워크 추가
         </a>
@@ -1732,104 +1849,6 @@ export default... <span class="read_more">Read More</span>
       </a>
       <div class="post-tags"><a class="post-tag" href="/tags.html#%EB%A6%AC%EC%95%A1%ED%8A%B8">#리액트</a></div>
     </li>
-<li>
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="post-title">
-        <a class="post-link" href="/solidity/2022/12/22/sol10.html">
-          [Solidity] ERC721 간단 분석 &amp; NFT 멀티민팅하기 (한번에 100개 민팅)
-        </a>
-      </h2>
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Dec 22, 2022</span>
-        <span class="post-reading-time left-vsplit"></span>
-      </div>
-      <a class="post-excerpt" href="/solidity/2022/12/22/sol10.html">
-        <p>
-        ERC721 기본적인 코드
-
-
-  아래는 ERC721 표준을 따르는 가장 기본적인 코드이다
-
-
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.8.7;
-
-// 1. openzeppelin 불러오기
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-
-contract MintNFT is ERC721Enumerable {
-
-  // 2. 초기 배포 기본값
-    constructor() ERC721("BlockChainSchool", "BCS") {}
-
-
-    // 3 &amp; 4.... <span class="read_more">Read More</span>
-        </p>
-      </a>
-      <div class="post-tags"><a class="post-tag" href="/tags.html#%EC%86%94%EB%A6%AC%EB%94%94%ED%8B%B0">#솔리디티</a></div>
-    </li>
 </ul>
 
   <!-- Pagination links -->
@@ -1890,7 +1909,7 @@ contract MintNFT is ERC721Enumerable {
   <ul>
     <li>
       <a href="/index.html">
-        All<span>141</span>
+        All<span>142</span>
       </a>
     </li>
 
@@ -1939,7 +1958,7 @@ contract MintNFT is ERC721Enumerable {
     
       <li>
         <a href="/categories.html#h-solidity">
-          solidity <span>13</span>
+          solidity <span>14</span>
         </a>
       </li>
     
